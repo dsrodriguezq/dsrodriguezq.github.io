@@ -1,0 +1,63 @@
+# Actualiza el Monitor de mercado con los datos públicos de la Superintendencia Financiera.
+# Corre solo los días 6 y 21 de cada mes, y también a mano desde la pestaña Actions.
+name: Monitor de mercado
+
+on:
+  schedule:
+    - cron: "17 11 6,21 * *"        # 6:17 a. m. hora de Colombia
+  workflow_dispatch:
+    inputs:
+      desde:
+        description: "Carga hacia atrás desde este mes (AAAA-MM). Déjalo vacío para la actualización normal."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monitor-mercado
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    defaults:
+      run:
+        working-directory: proyectos/monitor-mercado/codigo
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install pandas requests
+
+      - name: Descargar meses nuevos
+        env:
+          SOCRATA_APP_TOKEN: ${{ secrets.SOCRATA_APP_TOKEN }}
+        run: |
+          if [ -n "${{ github.event.inputs.desde }}" ]; then
+            python actualizar.py --desde "${{ github.event.inputs.desde }}"
+          else
+            python actualizar.py
+          fi
+
+      - name: Construir datos del tablero
+        run: python construir.py
+
+      - name: Guardar cambios
+        working-directory: .
+        run: |
+          git config user.name "monitor-mercado[bot]"
+          git config user.email "monitor-mercado@users.noreply.github.com"
+          git add proyectos/monitor-mercado/datos
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los datos."
+          else
+            git commit -m "Actualiza datos del Monitor de mercado ($(date -u +%Y-%m-%d))"
+            git push
+          fi

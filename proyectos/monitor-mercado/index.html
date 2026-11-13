@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monitor de tasas y desembolsos · Diana Rodríguez</title>
+<meta name="description" content="Monitor del mercado de crédito bancario en Colombia con datos públicos de la Superintendencia Financiera, actualizado automáticamente: participación, tasas, plazos, regiones, alertas y análisis automático.">
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+<style>
+  :root{color-scheme:light;--surface:#fff;--surface-2:#F5F8FB;--line:#E3E8EF;--grid:#EDF1F5;--ink:#0E1B2C;--ink-2:#4B5768;--muted:#6B7686;--accent:#1C6E9E;--foco:#2a78d6;--mercado:#6B7686;--up:#C2410C;--down:#1C6E9E}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--surface);color:var(--ink);font-family:'Century Gothic',CenturyGothic,'Didact Gothic',AppleGothic,sans-serif;line-height:1.6}
+  a{color:var(--ink)} a:hover{color:var(--accent)}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  header.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700;letter-spacing:.2em;font-size:14px}
+  .eyebrow,.lbl{margin:0;font-size:13px;letter-spacing:.16em;color:var(--accent)}
+  h1{margin:8px 0 12px;font-size:46px;line-height:1.1}
+  h2{margin:0 0 8px;font-size:28px}
+  .lead{font-size:18px;color:var(--ink-2);max-width:780px;margin:0}
+  .aviso{margin-top:22px;display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid var(--accent);border-left:5px solid var(--accent);border-radius:6px;background:#EEF5FB;max-width:880px}
+  .story{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;padding:48px 0 0}
+  .story h3{margin:0 0 6px;font-size:13px;letter-spacing:.14em;color:var(--accent);font-weight:400}
+  .story p{margin:0;color:var(--ink-2)}
+  .dash{background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0 56px;margin-top:56px}
+  .toolbar{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin:16px 0 18px}
+  .toolbar label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--ink-2)}
+  select{font:inherit;font-size:15px;min-height:44px;padding:0 12px;border:1px solid #C9D3DE;border-radius:4px;background:#fff;color:var(--ink);min-width:180px;max-width:280px}
+  .ia-btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:15px;font-weight:700;min-height:44px;padding:0 18px;border:0;border-radius:6px;background:var(--accent);color:#fff;cursor:pointer;margin-left:auto}
+  .ia-btn:hover{background:#155A82}
+  .tabs{display:flex;gap:2px;border-bottom:1px solid #C9D3DE;margin-bottom:20px;flex-wrap:wrap}
+  .tabs button{font:inherit;font-size:15px;min-height:44px;padding:0 16px;border:0;background:none;color:var(--ink-2);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
+  .tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:700}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:14px}
+  .kpi{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+  .kpi .v{font-size:28px;font-weight:700;line-height:1.15}
+  .kpi .l{font-size:13px;color:var(--ink-2)}
+  .delta{font-size:13px;font-weight:700;white-space:nowrap}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(480px,1fr));gap:14px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px 20px 14px;min-width:0;margin-bottom:14px}
+  .card h3{margin:0;font-size:17px}
+  .sub{margin:2px 0 12px;font-size:13px;color:var(--ink-2)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-2);margin-bottom:6px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:12px;height:12px;border-radius:50%;display:inline-block;flex:none}
+  .ln{width:18px;height:3px;border-radius:2px;display:inline-block}
+  .axis text{fill:var(--muted);font-size:11px}
+  svg text{font-family:inherit}
+  .tip{position:fixed;pointer-events:none;background:var(--ink);color:#fff;font-size:13px;padding:8px 10px;border-radius:4px;line-height:1.45;max-width:300px;opacity:0;transition:opacity .1s;z-index:40}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{text-align:left;font-weight:700;font-size:12px;letter-spacing:.04em;color:var(--ink-2);border-bottom:1px solid var(--ink);padding:9px 8px;white-space:nowrap}
+  td{padding:8px;border-bottom:1px solid var(--line);vertical-align:middle}
+  td.num,th.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+  tr.foco td{background:#EEF5FB} tr.foco td:first-child{box-shadow:inset 3px 0 0 var(--foco);font-weight:700}
+  .tablebox{overflow-x:auto}
+  .heat td.num{font-size:13px}
+  .rank{color:var(--muted);font-size:12px;margin-right:8px;font-variant-numeric:tabular-nums}
+  .seg{display:inline-flex;border:1px solid #C9D3DE;border-radius:6px;overflow:hidden;background:#fff}
+  .seg button{font:inherit;font-size:13px;min-height:36px;padding:0 12px;border:0;background:#fff;cursor:pointer}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .alerta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:10px 0;border-bottom:1px solid var(--line)}
+  .alerta small{grid-column:1/3;color:var(--ink-2);font-size:12px}
+  .empty{padding:28px;border:1px dashed #B9C4D0;border-radius:6px;background:#fff;color:var(--ink-2)}
+  .tiles{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;max-width:560px}
+  .tile{aspect-ratio:1/1;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;font-weight:700;cursor:default;border:1px solid rgba(14,27,44,.06)}
+  .tile small{font-size:10px;font-weight:400}
+  .ramp{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-2);margin-top:10px}
+  .ramp i{display:block;width:180px;height:10px;border-radius:5px}
+  .how{padding:56px 0}
+  .how ol{margin:16px 0 0;padding-left:22px;color:var(--ink-2);max-width:900px}
+  .how li{margin-bottom:10px}
+  code{font-size:13px;background:var(--surface-2);padding:1px 6px;border-radius:3px}
+  footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:13px;color:var(--ink-2)}
+  [hidden]{display:none !important}
+  .ia-panel{position:fixed;top:0;right:0;width:min(480px,100vw);height:100vh;background:#fff;border-left:1px solid var(--line);box-shadow:-12px 0 32px rgba(14,27,44,.12);z-index:30;display:flex;flex-direction:column}
+  .ia-head{padding:18px 20px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+  .ia-head h3{margin:2px 0 0;font-size:19px}
+  .ia-head button{font:inherit;font-size:13px;min-height:36px;padding:0 12px;border:1px solid #C9D3DE;background:#fff;border-radius:4px;cursor:pointer}
+  .ia-body{padding:16px 20px 28px;overflow-y:auto;flex:1;font-size:14px}
+  .ia-body h4{margin:22px 0 8px;font-size:12px;letter-spacing:.14em;color:var(--accent);font-weight:400}
+  .ia-diag{padding:12px 14px;background:var(--surface-2);border-radius:6px;line-height:1.55}
+  .ia-list{margin:0;padding:0;list-style:none}
+  .ia-list li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)}
+  .ia-rec{margin:0;padding-left:18px}.ia-rec li{margin-bottom:9px;line-height:1.5}
+  .ia-foot{font-size:11px;color:var(--muted);margin-top:18px}
+  .ia-mini{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;align-items:center;gap:10px;background:var(--ink);color:#fff;border-radius:24px;padding:6px 6px 6px 16px;box-shadow:0 8px 24px rgba(14,27,44,.25);font-size:14px}
+  .ia-mini button{font:inherit;font-size:13px;min-height:36px;padding:0 14px;border:0;border-radius:18px;background:#fff;color:var(--ink);cursor:pointer}
+  @media (max-width:980px){.g21{grid-template-columns:1fr !important}}
+  @media (max-width:760px){h1{font-size:34px}.grid2{grid-template-columns:1fr}.wrap{padding:0 18px}.ia-btn{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="../../"><svg aria-hidden="true" width="30" height="24" viewBox="0 0 30 24"><rect x="0" y="4" width="30" height="5" rx="2.5" fill="#0E1B2C"/><rect x="0" y="15" width="8" height="5" rx="2.5" fill="#1C6E9E"/></svg>DIANA RODRÍGUEZ</a>
+    <a href="../../#trabajo" style="font-size:14px">← Volver al portafolio</a>
+  </header>
+  <section style="padding:36px 0 0">
+    <p class="eyebrow">PROYECTO 2 · DATOS PÚBLICOS REALES · SE ACTUALIZA SOLO</p>
+    <h1>Monitor de tasas y desembolsos</h1>
+    <p class="lead">Cuánto presta cada banco en Colombia, a qué tasa y a qué plazo, mes a mes. Elige un banco y el monitor lo compara contra el mercado, encuentra quién mueve sus tasas y te dice qué cambió.</p>
+    <div class="aviso" role="note">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1C6E9E" stroke-width="2" stroke-linecap="round" style="flex:none;margin-top:2px"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7.5v.5"/></svg>
+      <p style="margin:0;font-size:15px"><strong>Datos reales y públicos</strong> de la Superintendencia Financiera de Colombia, publicados en datos.gov.co, solo para establecimientos bancarios. Una acción de GitHub los descarga y procesa los días 6 y 21 de cada mes. Es un análisis independiente: no representa la posición de ninguna entidad. <span id="avisoCorte"></span></p>
+    </div>
+  </section>
+  <section class="story">
+    <div><h3>EL PROBLEMA</h3><p>Saber cómo se mueve la competencia exigía descargar millones de registros cada semana, limpiarlos y cruzarlos a mano. Tomaba horas y llegaba tarde.</p></div>
+    <div><h3>LA SOLUCIÓN</h3><p>Un proceso que consulta la API pública, sortea sus caídas, agrega millones de filas y publica este tablero sin intervención humana.</p></div>
+    <div><h3>EL RESULTADO</h3><p>La versión que construí en mi trabajo redujo el análisis competitivo semanal de 10 horas a 6 minutos. Esta es una versión abierta, con datos públicos.</p></div>
+  </section>
+</div>
+
+<section class="dash" aria-label="Monitor interactivo">
+  <div class="wrap">
+    <h2>Monitor</h2>
+    <p class="sub" id="meta" style="font-size:14px"></p>
+    <div id="vacio" class="empty" hidden></div>
+    <div id="app" hidden>
+      <div class="toolbar" role="group" aria-label="Filtros">
+        <label>Banco a comparar<select id="fBanco"></select></label>
+        <label>Mes<select id="fMes"></select></label>
+        <label>Tipo de crédito<select id="fTipo"></select></label>
+        <label>Producto<select id="fProd"></select></label>
+        <button type="button" class="ia-btn" id="iaBtn" aria-expanded="false" aria-controls="iaPanel"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>Micro IA</button>
+      </div>
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-tab="mer">Mercado</button>
+        <button role="tab" aria-selected="false" data-tab="ban">Bancos mes a mes</button>
+        <button role="tab" aria-selected="false" data-tab="pla">Plazos</button>
+        <button role="tab" aria-selected="false" data-tab="reg">Regiones</button>
+        <button role="tab" aria-selected="false" data-tab="pos">Posicionamiento</button>
+        <button role="tab" aria-selected="false" data-tab="int">Interanual</button>
+      </div>
+
+      <div data-panel="mer">
+        <div class="kpis" id="kpis"></div>
+        <div class="grid2">
+          <div class="card"><h3 id="tTasa">Tasa ponderada mes a mes</h3><p class="sub">Tasa efectiva anual ponderada por monto desembolsado.</p><div class="legend" id="lTasa"></div><div id="cTasa"></div></div>
+          <div class="card"><h3 id="tShare">Participación mes a mes</h3><p class="sub">Porcentaje del monto desembolsado por todos los bancos.</p><div id="cShare"></div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(300px,1fr);gap:14px" class="g21">
+          <div class="card"><h3>Top 10 del mes por monto desembolsado</h3><p class="sub" id="sTop"></p><div class="tablebox"><table id="tTop"></table></div></div>
+          <div class="card"><h3>Alertas de tasas</h3><p class="sub">Bancos que movieron su tasa más de lo habitual frente al mes anterior (más de 2 desviaciones de su historia o más de 1 punto si hay poca historia).</p><div id="alertas"></div></div>
+        </div>
+      </div>
+
+      <div data-panel="ban" hidden>
+        <div class="card"><h3>Tasa ponderada por banco</h3><p class="sub">Los 15 bancos con más monto en el periodo. Más oscuro = tasa más alta. Últimos 12 meses.</p><div class="tablebox"><table class="heat" id="tHeatTasa"></table></div></div>
+        <div class="card"><h3>Monto desembolsado por banco</h3><p class="sub">Miles de millones de pesos. La última columna compara el mes elegido con el anterior.</p><div class="tablebox"><table class="heat" id="tHeatMonto"></table></div></div>
+      </div>
+
+      <div data-panel="pla" hidden>
+        <div class="card"><h3>Distribución del monto por plazo</h3><p class="sub" id="sPlazo"></p><div class="legend" id="lPlazo"></div><div id="cPlazo"></div></div>
+        <div class="card"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start"><div><h3>Tasa por plazo</h3><p class="sub">Mismos bancos. M.V. = 12 × [(1 + E.A.)<sup>1/12</sup> − 1].</p></div><div class="seg" role="group" aria-label="Tipo de tasa"><button type="button" aria-pressed="true" data-t="ea">E.A.</button><button type="button" aria-pressed="false" data-t="mv">Nominal M.V.</button></div></div><div class="tablebox"><table id="tPlazoTasa"></table></div></div>
+      </div>
+
+      <div data-panel="reg" hidden>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start"><div><h3>Mapa por departamento</h3><p class="sub">Cada cuadro es un departamento, ubicado según su posición aproximada en el país.</p></div>
+          <div class="seg" role="group" aria-label="Indicador del mapa" id="segMapa"><button type="button" aria-pressed="true" data-m="share">Participación del banco</button><button type="button" aria-pressed="false" data-m="tasa">Tasa del mercado</button><button type="button" aria-pressed="false" data-m="dif">Tasa banco vs. mercado</button></div></div>
+          <div style="display:flex;gap:32px;flex-wrap:wrap;margin-top:12px"><div style="flex:1 1 420px;min-width:0"><div class="tiles" id="mapa"></div><div class="ramp" id="ramp"></div></div>
+          <div style="flex:1 1 380px;min-width:0"><table id="tDeptos"></table></div></div>
+        </div>
+      </div>
+
+      <div data-panel="pos" hidden>
+        <div class="card"><h3>¿Quién cobra más caro y aun así gana mercado?</h3><p class="sub">Cada punto es un banco en el mes elegido. Horizontal: cuánta participación ganó o perdió frente al mes anterior. Vertical: cuánto más alta o más baja es su tasa que la del mercado. El tamaño es su participación.</p><div class="legend"><span><i class="sw" style="background:var(--foco)"></i>Banco elegido</span><span><i class="sw" style="background:#AEB8C4"></i>Otros bancos</span></div><div id="cPos"></div></div>
+      </div>
+
+      <div data-panel="int" hidden>
+        <div class="card"><h3>Comparativo interanual</h3><p class="sub" id="sInt"></p><div class="tablebox"><table id="tInt"></table></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap how">
+  <h2>Cómo funciona</h2>
+  <ol>
+    <li><strong>Descarga.</strong> <code>actualizar.py</code> consulta la API de datos.gov.co: el conjunto reciente (últimos ~2 meses) mes a mes y, para cargar hacia atrás, el histórico grande por tramos de días. Reintenta los errores pasajeros, descarta filas repetidas entre páginas y, si un tramo no responde, lo parte a la mitad hasta 2 días. Los meses incompletos se marcan y se vuelven a pedir.</li>
+    <li><strong>Transformación.</strong> <code>construir.py</code> une los meses, convierte el texto del plazo a meses y lo agrupa en rangos, abrevia los nombres de los bancos y saca el departamento del código del municipio. La tasa se pondera por monto.</li>
+    <li><strong>Automatización.</strong> Una acción de GitHub ejecuta los dos pasos los días 6 y 21, guarda los datos en el repositorio y la página se actualiza sola.</li>
+    <li><strong>Análisis.</strong> En tu navegador: comparación contra el mercado, alertas de tasas por desviación histórica y la Micro IA, que resume lo que cambió y propone acciones.</li>
+  </ol>
+  <p style="margin-top:18px"><a href="https://github.com/dsrodriguezq/dsrodriguezq.github.io/tree/main/proyectos/monitor-mercado">Ver el código en GitHub →</a></p>
+</div>
+<div class="wrap"><footer>Diana Sofía Rodríguez Díaz · <a href="../../">dsrodriguezq.github.io</a> · Fuente: Superintendencia Financiera de Colombia, datos.gov.co. Análisis independiente.</footer></div>
+
+<aside class="ia-panel" id="iaPanel" aria-label="Análisis de la Micro IA" hidden>
+  <div class="ia-head"><div><p class="lbl">MICRO IA · ANÁLISIS DEL MERCADO</p><h3 id="iaTitulo"></h3><div class="sub" style="margin:2px 0 0" id="iaSub"></div></div><button type="button" id="iaMin">Minimizar</button></div>
+  <div class="ia-body" id="iaBody"></div>
+</aside>
+<div class="ia-mini" id="iaMini" hidden><span id="iaMiniTxt">Micro IA</span><button type="button" id="iaRest">Abrir</button></div>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+(async function(){
+  const $=id=>document.getElementById(id), NS="http://www.w3.org/2000/svg";
+  const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const el=(t,a={},p)=>{const n=document.createElementNS(NS,t);for(const k in a)n.setAttribute(k,a[k]);if(p)p.appendChild(n);return n};
+  const tip=$("tip"),showTip=(e,h)=>{tip.innerHTML=h;tip.style.opacity=1;tip.style.left=Math.min(e.clientX+14,innerWidth-310)+"px";tip.style.top=(e.clientY+14)+"px"},hideTip=()=>tip.style.opacity=0;
+  let D;
+  try{D=await fetch("datos/mercado.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()})}catch(e){D=null}
+  if(!D){$("vacio").hidden=false;$("vacio").innerHTML="<strong>Todavía no hay datos cargados.</strong> El monitor se llena la primera vez que corre la acción de GitHub <em>Monitor de mercado</em> (pestaña Actions del repositorio → Run workflow). Desde ahí se actualiza solo los días 6 y 21 de cada mes.";return}
+  $("app").hidden=false;
+
+  // ---------- utilidades
+  const nf=(v,d=1)=>v.toLocaleString("es-CO",{minimumFractionDigits:d,maximumFractionDigits:d});
+  const dinero=mm=>{if(mm==null||!isFinite(mm))return"—";const a=Math.abs(mm);return a>=1e6?"$"+nf(mm/1e6,2)+" billones":a>=1e3?"$"+nf(mm/1e3,1)+" mil M":"$"+nf(mm,0)+" M"};
+  const pct=v=>v==null||!isFinite(v)?"—":nf(v,1)+" %";
+  const tasa=v=>v==null||!isFinite(v)?"—":nf(v,2)+" %";
+  const pp=v=>v==null||!isFinite(v)?"—":(v>0?"+":v<0?"−":"")+nf(Math.abs(v),2)+" pp";
+  const flecha=(v,inv)=>v==null||!isFinite(v)||Math.abs(v)<1e-9?"":`<span class="delta" style="color:${(v>0)!==!!inv?"var(--up)":"var(--down)"}">${v>0?"▲":"▼"} ${pp(v).replace("+","").replace("−","")}</span>`;
+  const MES=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+  const P=D.dim.periodos, parcial=new Set(D.meta.parciales||[]);
+  const mesLbl=i=>{const[y,m]=P[i].split("-");return MES[+m-1]+" "+y.slice(2)+(parcial.has(P[i])?"*":"")};
+  const mesLargo=i=>{const[y,m]=P[i].split("-");return["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"][+m-1]+" de "+y+(parcial.has(P[i])?" (parcial)":"")};
+  const B=D.dim.bancos, I={per:0,ban:1,tip:2,pro:3,pla:4,mon:5,des:6,mct:7,txm:8};
+  const corte=D.meta.ultima_fecha_corte?new Date(D.meta.ultima_fecha_corte+"T12:00:00").toLocaleDateString("es-CO",{day:"numeric",month:"long",year:"numeric"}):"";
+  $("avisoCorte").textContent=corte?`Último corte publicado: ${corte}.`:"";
+  $("meta").textContent=`${B.length} bancos · ${P.length} meses (${mesLbl(0)} a ${mesLbl(P.length-1)}) · montos en pesos colombianos, tasas efectivas anuales${parcial.size?" · * mes en curso, incompleto":""}`;
+
+  // ---------- filtros
+  const agg=(rows,key)=>{const m=new Map();for(const r of rows){const k=key(r);let a=m.get(k);if(!a){a={monto:0,des:0,mct:0,txm:0};m.set(k,a)}a.monto+=r[I.mon];a.des+=r[I.des]||0;a.mct+=r[I.mct];a.txm+=r[I.txm]}for(const a of m.values())a.tasa=a.mct>0?a.txm/a.mct:null;return m};
+  const total=rows=>agg(rows,()=>0).get(0)||{monto:0,mct:0,txm:0,tasa:null};
+  const completos=P.map((p,i)=>i).filter(i=>!parcial.has(P[i]));
+  const ultimoCompleto=completos.length?completos[completos.length-1]:P.length-1;
+  P.forEach((p,i)=>$("fMes").add(new Option(mesLargo(i).replace(/^./,c=>c.toUpperCase()),i)));
+  $("fMes").value=ultimoCompleto;
+  $("fTipo").add(new Option("Todos los tipos",""));D.dim.tipos.forEach((t,i)=>$("fTipo").add(new Option(t,i)));
+  const prodsPorTipo={};D.filas.forEach(r=>{(prodsPorTipo[r[I.tip]]=prodsPorTipo[r[I.tip]]||new Set()).add(r[I.pro])});
+  function llenarProductos(){const t=$("fTipo").value,v=$("fProd").value;$("fProd").innerHTML="";$("fProd").add(new Option("Todos los productos",""));
+    const ps=t===""?D.dim.productos.map((_,i)=>i):[...(prodsPorTipo[t]||[])];ps.sort((a,b)=>D.dim.productos[a].localeCompare(D.dim.productos[b],"es")).forEach(i=>$("fProd").add(new Option(D.dim.productos[i],i)));
+    if([...$("fProd").options].some(o=>o.value===v))$("fProd").value=v}
+  llenarProductos();
+  const filtrar=rows=>{const t=$("fTipo").value,p=$("fProd").value;return rows.filter(r=>(t===""||r[I.tip]==t)&&(p===""||r[I.pro]==p))};
+  // banco por defecto: el de más monto
+  const rankTot=[...agg(D.filas,r=>r[I.ban]).entries()].sort((a,b)=>b[1].monto-a[1].monto);
+  [...B.keys()].sort((a,b)=>B[a].localeCompare(B[b],"es")).forEach(i=>$("fBanco").add(new Option(B[i],i)));
+  $("fBanco").value=rankTot[0][0];
+  const filtroTxt=()=>[$("fTipo").value===""?null:D.dim.tipos[$("fTipo").value],$("fProd").value===""?null:D.dim.productos[$("fProd").value]].filter(Boolean).join(" · ")||"Todo el crédito";
+
+  // ---------- estado calculado
+  function calcular(){
+    const R=filtrar(D.filas), m=+$("fMes").value, f=+$("fBanco").value;
+    const porMes=agg(R,r=>r[I.per]), porBM=agg(R,r=>r[I.ban]+"|"+r[I.per]);
+    const delMes=[...agg(R.filter(r=>r[I.per]===m),r=>r[I.ban]).entries()].map(([b,a])=>({b,...a})).sort((x,y)=>y.monto-x.monto);
+    const prev=m>0?agg(R.filter(r=>r[I.per]===m-1),r=>r[I.ban]):new Map();
+    const totM=porMes.get(m)||{monto:0,tasa:null},totP=porMes.get(m-1)||{monto:0,tasa:null};
+    delMes.forEach((x,i)=>{x.rank=i+1;x.share=totM.monto?x.monto/totM.monto*100:0;const p=prev.get(x.b);x.shareP=p&&totP.monto?p.monto/totP.monto*100:null;x.tasaP=p?p.tasa:null;x.dShare=x.shareP==null?null:x.share-x.shareP;x.dTasa=x.tasa!=null&&x.tasaP!=null?x.tasa-x.tasaP:null});
+    return {R,m,f,porMes,porBM,delMes,totM,totP,foco:delMes.find(x=>x.b===f)};
+  }
+  function alertas(S){
+    const out=[];
+    S.delMes.slice(0,20).forEach(x=>{if(x.dTasa==null)return;
+      const hist=[];for(let i=1;i<=S.m;i++){const a=S.porBM.get(x.b+"|"+i),b=S.porBM.get(x.b+"|"+(i-1));if(i<S.m&&a&&b&&a.tasa!=null&&b.tasa!=null)hist.push(a.tasa-b.tasa)}
+      const sd=hist.length>=4?Math.sqrt(hist.reduce((s,v)=>s+v*v,0)/hist.length):null;
+      const umbral=sd!=null?Math.max(2*sd,0.5):1;
+      if(Math.abs(x.dTasa)>umbral)out.push({...x,umbral,sd})});
+    return out.sort((a,b)=>Math.abs(b.dTasa)-Math.abs(a.dTasa));
+  }
+
+  // ---------- gráficas
+  function lineas(box,series,{fmt=tasa,ymin,ymax,ysuf=""}={}){
+    const c=$(box);c.innerHTML="";const W=560,H=280,L=52,R=88,T=14,Bt=28;
+    const n=P.length,vals=series.flatMap(s=>s.data.filter(v=>v!=null));if(!vals.length){c.innerHTML='<p class="sub">Sin datos para este filtro.</p>';return}
+    let lo=ymin??Math.min(...vals),hi=ymax??Math.max(...vals);const pad=(hi-lo)*.15||1;lo-=pad;hi+=pad;
+    const X=i=>L+(n>1?i/(n-1):.5)*(W-L-R),Y=v=>T+(1-(v-lo)/(hi-lo))*(H-T-Bt);
+    const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,width:"100%",role:"img"},c),ax=el("g",{class:"axis"},svg);
+    for(let k=0;k<=4;k++){const v=lo+(hi-lo)*k/4;el("line",{x1:L,x2:W-R,y1:Y(v),y2:Y(v),stroke:"var(--grid)"},ax);el("text",{x:L-6,y:Y(v)+4,"text-anchor":"end"},ax).textContent=nf(v,1)+ysuf}
+    const step=Math.ceil(n/8);P.forEach((p,i)=>{if(i%step===0||i===n-1)el("text",{x:X(i),y:H-8,"text-anchor":"middle"},ax).textContent=mesLbl(i)});
+    const mSel=+$("fMes").value;el("line",{x1:X(mSel),x2:X(mSel),y1:T,y2:H-Bt,stroke:"#0E1B2C","stroke-dasharray":"2 3",opacity:.35},svg);
+    series.forEach(s=>{const pts=s.data.map((v,i)=>v==null?null:[X(i),Y(v)]);let d="",on=false;pts.forEach(p=>{if(!p){on=false;return}d+=(on?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1);on=true});
+      el("path",{d,fill:"none",stroke:s.color,"stroke-width":s.w||2,"stroke-linejoin":"round"},svg);
+      const li=s.data.map((v,i)=>v==null?-1:i).filter(i=>i>=0).pop();if(li!=null){el("circle",{cx:X(li),cy:Y(s.data[li]),r:3.5,fill:s.color},svg);el("text",{x:X(li)+8,y:Y(s.data[li])+4,"font-size":11,fill:"#0E1B2C"},svg).textContent=s.short||""}});
+    const cross=el("line",{y1:T,y2:H-Bt,stroke:"#0E1B2C",opacity:0},svg),hit=el("rect",{x:L,y:T,width:W-L-R,height:H-T-Bt,fill:"transparent"},svg);
+    hit.addEventListener("mousemove",e=>{const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const q=pt.matrixTransform(svg.getScreenCTM().inverse());const i=Math.max(0,Math.min(n-1,Math.round((q.x-L)/((W-L-R)/(n-1||1)))));
+      cross.setAttribute("x1",X(i));cross.setAttribute("x2",X(i));cross.setAttribute("opacity",.3);showTip(e,`<strong>${mesLbl(i)}</strong><br>`+series.map(s=>`${esc(s.name)}: ${fmt(s.data[i])}`).join("<br>"))});
+    hit.addEventListener("mouseleave",()=>{hideTip();cross.setAttribute("opacity",0)});
+  }
+  const rampa=(t,c0=[234,242,250],c1=[11,79,122])=>`rgb(${c0.map((v,i)=>Math.round(v+(c1[i]-v)*Math.max(0,Math.min(1,t)))).join(",")})`;
+  const tinta=t=>t>0.55?"#fff":"#0E1B2C";
+
+  // ---------- pestañas
+  function renderMercado(S){
+    const f=S.foco,nb=B[S.f],tm=S.totM,tp=S.totP,dM=tp.monto?(tm.monto/tp.monto-1)*100:null,dT=tm.tasa!=null&&tp.tasa!=null?tm.tasa-tp.tasa:null;
+    $("kpis").innerHTML=[
+      [dinero(tm.monto),`desembolsado por los bancos en ${mesLargo(S.m)}`+(dM!=null?` <span class="delta" style="color:var(--ink-2)">${dM>=0?"+":"−"}${nf(Math.abs(dM),1)} % vs. mes anterior</span>`:"")],
+      [tasa(tm.tasa),"tasa ponderada del mercado "+(dT!=null?flecha(dT):"")],
+      [f?pct(f.share):"—",`participación de ${esc(nb)}`+(f?` · puesto ${f.rank} de ${S.delMes.length} `+(f.dShare!=null?flecha(f.dShare,true):""):"")],
+      [f&&tm.tasa!=null?pp(f.tasa-tm.tasa):"—",`tasa de ${esc(nb)} frente al mercado (${f?tasa(f.tasa):"—"})`]
+    ].map(([v,l])=>`<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
+    $("tTasa").textContent=`Tasa ponderada: ${nb} frente al mercado`;$("tShare").textContent=`Participación de ${nb}`;
+    const sF=P.map((_,i)=>{const a=S.porBM.get(S.f+"|"+i);return a?a.tasa:null}),sM=P.map((_,i)=>{const a=S.porMes.get(i);return a?a.tasa:null});
+    $("lTasa").innerHTML=`<span><i class="ln" style="background:var(--foco)"></i>${esc(nb)}</span><span><i class="ln" style="background:var(--mercado)"></i>Mercado</span>`;
+    const corto=nb.replace(/^Banco (de |del )?/i,"").slice(0,14);
+    lineas("cTasa",[{name:nb,short:corto,data:sF,color:"var(--foco)",w:2.6},{name:"Mercado",short:"Mercado",data:sM,color:"var(--mercado)"}]);
+    lineas("cShare",[{name:nb,short:"",data:P.map((_,i)=>{const a=S.porBM.get(S.f+"|"+i),t=S.porMes.get(i);return a&&t&&t.monto?a.monto/t.monto*100:null}),color:"var(--foco)",w:2.6}],{fmt:pct,ysuf:" %"});
+    $("sTop").textContent=`${mesLargo(S.m)} · ${filtroTxt()}. Variaciones frente al mes anterior.`;
+    const top=S.delMes.slice(0,10);if(f&&f.rank>10)top.push(f);
+    $("tTop").innerHTML="<thead><tr><th>Banco</th><th class='num'>Monto</th><th class='num'>Part.</th><th class='num'>Δ part.</th><th class='num'>Tasa E.A.</th><th class='num'>Δ tasa</th></tr></thead><tbody>"+
+      top.map(x=>`<tr class="${x.b===S.f?"foco":""}"><td><span class="rank">${String(x.rank).padStart(2,"0")}</span>${esc(B[x.b])}</td><td class="num">${dinero(x.monto)}</td><td class="num">${pct(x.share)}</td><td class="num">${x.dShare==null?"—":flecha(x.dShare,true)||"0 pp"}</td><td class="num">${tasa(x.tasa)}</td><td class="num">${x.dTasa==null?"—":flecha(x.dTasa)||"0 pp"}</td></tr>`).join("")+
+      `<tr><td><strong>Total bancos</strong></td><td class="num"><strong>${dinero(tm.monto)}</strong></td><td class="num">100 %</td><td></td><td class="num"><strong>${tasa(tm.tasa)}</strong></td><td class="num">${dT==null?"":flecha(dT)}</td></tr></tbody>`;
+    const al=alertas(S);
+    $("alertas").innerHTML=al.length?al.slice(0,8).map(a=>`<div class="alerta"><span><strong>${esc(B[a.b])}</strong> ${a.b===S.f?'<span class="rank">(banco elegido)</span>':""}</span>${flecha(a.dTasa)}<small>${tasa(a.tasaP)} → ${tasa(a.tasa)} · su movimiento habitual es ${a.sd!=null?"± "+nf(a.sd,2)+" pp":"desconocido (poca historia)"} · participación ${pct(a.share)}</small></div>`).join(""):'<p class="sub">Ningún banco del top 20 movió su tasa por fuera de lo habitual este mes.</p>';
+  }
+  function heatTabla(id,S,valor,fmt){
+    const ult=Math.max(0,S.m-11),cols=[];for(let i=ult;i<=S.m;i++)cols.push(i);
+    const bancos=[...agg(S.R.filter(r=>r[I.per]>=ult&&r[I.per]<=S.m),r=>r[I.ban]).entries()].sort((a,b)=>b[1].monto-a[1].monto).slice(0,15).map(x=>x[0]);
+    if(!bancos.includes(S.f)&&S.porBM.has(S.f+"|"+S.m))bancos.push(S.f);
+    const vals=bancos.flatMap(b=>cols.map(i=>{const a=S.porBM.get(b+"|"+i);return a?valor(a):null})).filter(v=>v!=null);
+    const lo=Math.min(...vals),hi=Math.max(...vals);
+    $(id).innerHTML="<thead><tr><th>Banco</th>"+cols.map(i=>`<th class="num">${mesLbl(i)}</th>`).join("")+"<th class='num'>Δ mes</th></tr></thead><tbody>"+
+      bancos.map(b=>{const cur=S.porBM.get(b+"|"+S.m),pr=S.porBM.get(b+"|"+(S.m-1));const d=cur&&pr?valor(cur)-valor(pr):null;
+        return `<tr class="${b===S.f?"foco":""}"><td style="white-space:nowrap">${esc(B[b])}</td>`+cols.map(i=>{const a=S.porBM.get(b+"|"+i),v=a?valor(a):null;if(v==null)return'<td class="num">—</td>';const t=(v-lo)/((hi-lo)||1);return`<td class="num" style="background:${rampa(t)};color:${tinta(t)}">${fmt(v)}</td>`}).join("")+
+        `<td class="num">${d==null?"—":id==="tHeatTasa"?flecha(d)||"0":((d>=0?"+":"−")+fmt(Math.abs(d)))}</td></tr>`}).join("")+"</tbody>";
+  }
+  let tipoTasa="ea";const aMV=ea=>ea==null?null:12*(Math.pow(1+ea/100,1/12)-1)*100;
+  function renderPlazos(S){
+    const PL=D.dim.plazos,R=S.R.filter(r=>r[I.per]===S.m);
+    const bancos=S.delMes.slice(0,10).map(x=>x.b);if(!bancos.includes(S.f)&&S.foco)bancos.push(S.f);
+    const celda=agg(R,r=>r[I.ban]+"|"+r[I.pla]),tot=agg(R,r=>r[I.ban]),mer=agg(R,r=>r[I.pla]),merT=total(R);
+    $("sPlazo").textContent=`${mesLargo(S.m)} · ${filtroTxt()}. Cada barra suma 100 %: muestra a qué plazos presta cada banco.`;
+    const tonos=PL.map((_,k)=>rampa(PL[k]==="Sin plazo"?-1:(k+1)/(PL.filter(p=>p!=="Sin plazo").length),[214,230,244],[11,61,99]).replace("rgb(234,242,250)","#D5DCE4"));
+    PL.forEach((p,k)=>{if(p==="Sin plazo")tonos[k]="#C9CFD7"});
+    $("lPlazo").innerHTML=PL.map((p,k)=>`<span><i class="sw" style="background:${tonos[k]};border-radius:2px"></i>${esc(p)}</span>`).join("");
+    const filas=[{b:-1,nom:"Mercado"},...bancos.map(b=>({b,nom:B[b]}))];
+    const box=$("cPlazo");box.innerHTML="";const W=1100,rh=26,L=200,H=filas.length*rh+10;
+    const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,width:"100%",role:"img","aria-label":"Distribución por plazo"},box);
+    filas.forEach((fi,j)=>{const y=j*rh+4;let x=L;const t=fi.b<0?merT.monto:(tot.get(fi.b)||{monto:0}).monto;
+      el("text",{x:L-10,y:y+15,"text-anchor":"end","font-size":12,fill:"#0E1B2C","font-weight":fi.b===S.f||fi.b<0?700:400},svg).textContent=fi.nom;
+      PL.forEach((p,k)=>{const a=fi.b<0?mer.get(k):celda.get(fi.b+"|"+k);if(!a||!t)return;const w=a.monto/t*(W-L-10);if(w<=0)return;
+        const r=el("rect",{x:x+1,y,width:Math.max(w-2,0.5),height:rh-8,fill:tonos[k],rx:2},svg);
+        r.addEventListener("mousemove",e=>showTip(e,`<strong>${esc(fi.nom)}</strong><br>${esc(p)}: ${pct(a.monto/t*100)} del monto<br>Tasa ${tasa(a.tasa)}`));r.addEventListener("mouseleave",hideTip);
+        if(w>38)el("text",{x:x+w/2,y:y+13,"text-anchor":"middle","font-size":10,fill:k>=3&&p!=="Sin plazo"?"#fff":"#0E1B2C","pointer-events":"none"},svg).textContent=Math.round(a.monto/t*100)+"%";x+=w})});
+    const fx=v=>tasa(tipoTasa==="mv"?aMV(v):v);
+    $("tPlazoTasa").innerHTML="<thead><tr><th>Banco</th>"+PL.map(p=>`<th class="num">${esc(p)}</th>`).join("")+"<th class='num'>Total</th></tr></thead><tbody>"+
+      filas.map(fi=>`<tr class="${fi.b===S.f?"foco":""}"><td style="white-space:nowrap">${fi.b<0?"<strong>Mercado</strong>":esc(fi.nom)}</td>`+PL.map((p,k)=>{const a=fi.b<0?mer.get(k):celda.get(fi.b+"|"+k);return`<td class="num">${a?fx(a.tasa):"—"}</td>`}).join("")+`<td class="num"><strong>${fx(fi.b<0?merT.tasa:(tot.get(fi.b)||{}).tasa)}</strong></td></tr>`).join("")+"</tbody>";
+  }
+  document.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>{tipoTasa=b.dataset.t;document.querySelectorAll("[data-t]").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
+
+  const POS={"88":[0,0],"44":[4,0],"08":[2,1],"47":[3,1],"20":[4,1],"23":[1,2],"70":[2,2],"13":[3,2],"54":[4,2],"81":[5,2],"27":[0,3],"05":[1,3],"68":[3,3],"15":[4,3],"85":[5,3],"99":[6,3],"66":[1,4],"17":[2,4],"25":[3,4],"11":[4,4],"94":[6,4],"76":[0,5],"63":[1,5],"73":[2,5],"50":[4,5],"95":[5,5],"97":[6,5],"19":[1,6],"41":[2,6],"18":[3,6],"52":[0,7],"86":[2,7],"91":[4,7]};
+  const ABR={"05":"ANT","08":"ATL","11":"BOG","13":"BOL","15":"BOY","17":"CAL","18":"CAQ","19":"CAU","20":"CES","23":"COR","25":"CUN","27":"CHO","41":"HUI","44":"GUA","47":"MAG","50":"MET","52":"NAR","54":"NSA","63":"QUI","66":"RIS","68":"SAN","70":"SUC","73":"TOL","76":"VAL","81":"ARA","85":"CAS","86":"PUT","88":"SAI","91":"AMA","94":"GUN","95":"GUV","97":"VAU","99":"VIC"};
+  let modoMapa="share";
+  function renderRegiones(S){
+    const DP=D.dim.deptos,t=$("fTipo").value,p=$("fProd").value;
+    const rows=D.filas_depto.filter(r=>r[0]===S.m&&(t===""||r[3]==t)&&(p===""||r[4]==p));
+    const mapa=$("mapa");mapa.innerHTML="";$("tDeptos").innerHTML="";
+    if(!rows.length){mapa.innerHTML='<p class="sub" style="grid-column:1/8">El detalle por departamento solo se guarda para los últimos 3 meses. Elige un mes más reciente.</p>';$("ramp").innerHTML="";return}
+    const A=k=>{const o={monto:0,mct:0,txm:0};return o};const mer={},foc={};
+    rows.forEach(r=>{const d=r[2];(mer[d]=mer[d]||A()).monto+=r[5];mer[d].mct+=r[6];mer[d].txm+=r[7];if(r[1]===S.f){(foc[d]=foc[d]||A()).monto+=r[5];foc[d].mct+=r[6];foc[d].txm+=r[7]}});
+    const val={};Object.keys(mer).forEach(d=>{const m=mer[d],f=foc[d],tm=m.mct?m.txm/m.mct:null,tf=f&&f.mct?f.txm/f.mct:null;
+      val[d]={share:f?f.monto/m.monto*100:0,tasa:tm,dif:tf!=null&&tm!=null?tf-tm:null,monto:m.monto,tf}});
+    const k=modoMapa,vs=Object.values(val).map(v=>v[k]).filter(v=>v!=null);const lo=Math.min(...vs),hi=Math.max(...vs),mx=Math.max(Math.abs(lo),Math.abs(hi))||1;
+    const color=v=>v==null?"#EEF1F4":k==="dif"?(v>=0?rampa(v/mx,[238,240,243],[194,65,12]):rampa(-v/mx,[238,240,243],[28,110,158])):rampa((v-lo)/((hi-lo)||1));
+    const txt=v=>v==null?"#4B5768":k==="dif"?(Math.abs(v)/mx>0.55?"#fff":"#0E1B2C"):tinta((v-lo)/((hi-lo)||1));
+    const fmt=v=>v==null?"—":k==="share"?pct(v):k==="tasa"?tasa(v):pp(v);
+    const grid=Array.from({length:8},()=>Array(7).fill(null));DP.forEach((d,i)=>{const p=POS[d.cod];if(p)grid[p[1]][p[0]]=i});
+    grid.forEach(row=>row.forEach(i=>{const div=document.createElement("div");if(i==null){mapa.appendChild(div);return}const d=DP[i],v=val[i];
+      div.className="tile";div.style.background=color(v?v[k]:null);div.style.color=txt(v?v[k]:null);div.innerHTML=`${ABR[d.cod]||d.cod}<small>${v?fmt(v[k]):"—"}</small>`;
+      div.addEventListener("mousemove",e=>showTip(e,`<strong>${esc(d.nombre)}</strong><br>Monto del mercado: ${v?dinero(v.monto):"—"}<br>Participación de ${esc(B[S.f])}: ${v?pct(v.share):"—"}<br>Tasa del mercado: ${v?tasa(v.tasa):"—"}<br>Tasa de ${esc(B[S.f])}: ${v?tasa(v.tf):"—"}`));div.addEventListener("mouseleave",hideTip);mapa.appendChild(div)}));
+    $("ramp").innerHTML=k==="dif"?`<span>Más barato que el mercado</span><i style="background:linear-gradient(90deg,#1C6E9E,#EEF0F3,#C2410C)"></i><span>Más caro</span>`:`<span>${fmt(lo)}</span><i style="background:linear-gradient(90deg,${rampa(0)},${rampa(1)})"></i><span>${fmt(hi)}</span>`;
+    const lista=Object.entries(val).sort((a,b)=>b[1].monto-a[1].monto).slice(0,12);
+    $("tDeptos").innerHTML=`<thead><tr><th>Departamento</th><th class="num">Monto mercado</th><th class="num">Part. banco</th><th class="num">Tasa banco vs. mercado</th></tr></thead><tbody>`+lista.map(([i,v])=>`<tr><td>${esc(DP[i].nombre)}</td><td class="num">${dinero(v.monto)}</td><td class="num">${pct(v.share)}</td><td class="num">${v.dif==null?"—":pp(v.dif)}</td></tr>`).join("")+"</tbody>";
+  }
+  document.querySelectorAll("[data-m]").forEach(b=>b.onclick=()=>{modoMapa=b.dataset.m;document.querySelectorAll("[data-m]").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
+
+  function renderPos(S){
+    const box=$("cPos");box.innerHTML="";const tm=S.totM.tasa;
+    const pts=S.delMes.filter(x=>x.tasa!=null&&x.dShare!=null&&tm!=null).map(x=>({...x,gx:x.dShare,gy:x.tasa-tm}));
+    if(!pts.length){box.innerHTML='<p class="sub">Se necesita el mes anterior para calcular el cambio de participación.</p>';return}
+    const W=1100,H=440,L=60,R=150,T=22,Bt=44;
+    const mx=Math.max(...pts.map(p=>Math.abs(p.gx)))*1.15||1,my=Math.max(...pts.map(p=>Math.abs(p.gy)))*1.15||1;
+    const X=v=>L+(v+mx)/(2*mx)*(W-L-R),Y=v=>T+(1-(v+my)/(2*my))*(H-T-Bt);
+    const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,width:"100%",role:"img","aria-label":"Cambio de participación frente a diferencia de tasa por banco"},box),ax=el("g",{class:"axis"},svg);
+    for(let k=-2;k<=2;k++){const vx=mx/2*k/1.15*1.0,vy=my/2*k/1.15;
+      el("line",{x1:X(vx),x2:X(vx),y1:T,y2:H-Bt,stroke:k===0?"#0E1B2C":"var(--grid)","stroke-dasharray":k===0?"3 3":"",opacity:k===0?.5:1},ax);el("text",{x:X(vx),y:H-Bt+16,"text-anchor":"middle"},ax).textContent=pp(vx);
+      el("line",{x1:L,x2:W-R,y1:Y(vy),y2:Y(vy),stroke:k===0?"#0E1B2C":"var(--grid)","stroke-dasharray":k===0?"3 3":"",opacity:k===0?.5:1},ax);el("text",{x:L-6,y:Y(vy)+4,"text-anchor":"end"},ax).textContent=pp(vy)}
+    el("text",{x:(L+W-R)/2,y:H-6,"text-anchor":"middle"},ax).textContent="Cambio de participación frente al mes anterior";
+    el("text",{x:14,y:(T+H-Bt)/2,"text-anchor":"middle",transform:`rotate(-90 14 ${(T+H-Bt)/2})`},ax).textContent="Tasa frente al mercado";
+    [["Más caro y gana mercado",W-R-6,T+12,"end"],["Más barato y gana mercado",W-R-6,H-Bt-8,"end"],["Más caro y pierde mercado",L+6,T+12,"start"],["Más barato y pierde mercado",L+6,H-Bt-8,"start"]]
+      .forEach(([t,x,y,an])=>el("text",{x,y,"text-anchor":an,"font-size":12,fill:"#6B7686"},svg).textContent=t);
+    const usados=[];
+    [...pts].sort((a,b)=>(a.b===S.f)-(b.b===S.f)).forEach(p=>{const foco=p.b===S.f,r=Math.max(5,Math.min(18,Math.sqrt(p.share)*3.2)),cx=X(p.gx),cy=Y(p.gy);
+      const c=el("circle",{cx,cy,r,fill:foco?"var(--foco)":"#AEB8C4","fill-opacity":foco?1:.75,stroke:"#fff","stroke-width":2},svg);
+      c.addEventListener("mousemove",e=>showTip(e,`<strong>${esc(B[p.b])}</strong><br>Participación: ${pct(p.share)} (${pp(p.dShare)})<br>Tasa: ${tasa(p.tasa)} · ${pp(p.gy)} frente al mercado`));c.addEventListener("mouseleave",hideTip)});
+    [...pts].filter(p=>p.b===S.f||p.rank<=6).sort((a,b)=>(b.b===S.f)-(a.b===S.f)).forEach(p=>{const r=Math.max(5,Math.min(18,Math.sqrt(p.share)*3.2));let x=X(p.gx)+r+5,y=Y(p.gy)+4,an="start";
+      if(x>W-R+60){x=X(p.gx)-r-5;an="end"}
+      while(usados.some(u=>Math.abs(u.y-y)<14&&Math.abs(u.x-x)<150))y+=14;usados.push({x,y});
+      el("text",{x,y,"text-anchor":an,"font-size":12,fill:"#0E1B2C","font-weight":p.b===S.f?700:400,"paint-order":"stroke",stroke:"#fff","stroke-width":3},svg).textContent=B[p.b]});
+  }
+  function renderInt(S){
+    const [y,mm]=P[S.m].split("-"),anios=[+y-2,+y-1,+y].map(String),idx=anios.map(a=>P.indexOf(a+"-"+mm));
+    const disp=idx.filter(i=>i>=0).length;
+    $("sInt").textContent=`${MES[+mm-1]} de cada año · ${filtroTxt()}. `+(disp<2?"Se completa cuando el histórico tenga datos del mismo mes en años anteriores (carga hacia atrás con la acción de GitHub).":"");
+    const porMes=idx.map(i=>i>=0?S.porMes.get(i):null);
+    const bancos=S.delMes.slice(0,10).map(x=>x.b);if(!bancos.includes(S.f))bancos.push(S.f);
+    $("tInt").innerHTML="<thead><tr><th>Banco</th>"+anios.map(a=>`<th class="num">Monto ${a}</th>`).join("")+anios.map(a=>`<th class="num">Part. ${a}</th>`).join("")+`<th class="num">Var. ${anios[1]}→${anios[2]}</th></tr></thead><tbody>`+
+      bancos.map(b=>{const v=idx.map(i=>i>=0?S.porBM.get(b+"|"+i):null);const va=v[1]&&v[2]&&v[1].monto?(v[2].monto/v[1].monto-1)*100:null;
+        return`<tr class="${b===S.f?"foco":""}"><td>${esc(B[b])}</td>`+v.map(a=>`<td class="num">${a?dinero(a.monto):"—"}</td>`).join("")+v.map((a,k)=>`<td class="num">${a&&porMes[k]?pct(a.monto/porMes[k].monto*100):"—"}</td>`).join("")+`<td class="num">${va==null?"—":(va>=0?"+":"−")+nf(Math.abs(va),1)+" %"}</td></tr>`}).join("")+"</tbody>";
+  }
+
+  // ---------- Micro IA del mercado
+  let iaEstado="cerrado";
+  function analisis(S){
+    const nb=B[S.f],f=S.foco,tm=S.totM,tp=S.totP;
+    if(!f)return `<p class="ia-diag">${esc(nb)} no tiene desembolsos en ${mesLargo(S.m)} para este filtro. Prueba con otro producto o mes.</p>`;
+    const dM=tp.monto?(tm.monto/tp.monto-1)*100:null,dT=tm.tasa!=null&&tp.tasa!=null?tm.tasa-tp.tasa:null;
+    const ganan=S.delMes.filter(x=>x.dShare!=null).sort((a,b)=>b.dShare-a.dShare),pierden=[...ganan].reverse();
+    const al=alertas(S),gap=f.tasa-tm.tasa;
+    // brechas por producto (solo si no hay producto elegido)
+    const Rm=D.filas.filter(r=>r[I.per]===S.m&&($("fTipo").value===""||r[I.tip]==$("fTipo").value));
+    const pm=agg(Rm,r=>r[I.pro]),pf=agg(Rm.filter(r=>r[I.ban]===S.f),r=>r[I.pro]);
+    const prodGap=[...pf.entries()].map(([p,a])=>{const m=pm.get(p);return{p,share:m&&m.monto?a.monto/m.monto*100:0,gap:a.tasa!=null&&m.tasa!=null?a.tasa-m.tasa:null,peso:a.monto}}).filter(x=>x.gap!=null&&x.peso>0).sort((a,b)=>b.peso-a.peso).slice(0,6);
+    const caro=prodGap.filter(x=>x.gap>0.5).sort((a,b)=>b.gap-a.gap)[0],barato=prodGap.filter(x=>x.gap<-0.5).sort((a,b)=>a.gap-b.gap)[0];
+    const rec=[];
+    if(f.dShare!=null&&f.dShare<-0.2)rec.push(`<b>${esc(nb)} perdió ${pp(-f.dShare).replace("+","")} de participación.</b> Revisar si la caída viene de precio (su tasa ${f.dTasa!=null&&f.dTasa>0?"subió "+pp(f.dTasa):"no subió"}) o de menor gestión comercial.`);
+    else if(f.dShare!=null&&f.dShare>0.2)rec.push(`<b>${esc(nb)} ganó ${pp(f.dShare)} de participación.</b> Identificar qué productos lo explican para sostenerlo el próximo mes.`);
+    if(caro)rec.push(`<b>En ${esc(D.dim.productos[caro.p])} cobra ${pp(caro.gap)} por encima del mercado</b> con ${pct(caro.share)} de participación. Si el objetivo es crecer ahí, ese diferencial es la primera palanca a revisar.`);
+    if(barato)rec.push(`<b>En ${esc(D.dim.productos[barato.p])} está ${pp(-barato.gap).replace("+","")} por debajo del mercado.</b> Hay espacio para mejorar margen sin salirse del rango de la competencia.`);
+    const comp=al.filter(a=>a.b!==S.f).slice(0,2);if(comp.length)rec.push(`<b>Vigilar a ${comp.map(a=>esc(B[a.b])).join(" y ")}:</b> movieron su tasa por fuera de lo habitual (${comp.map(a=>pp(a.dTasa)).join(", ")}). Puede ser el inicio de una campaña de precio.`);
+    if(ganan[0]&&ganan[0].b!==S.f)rec.push(`<b>${esc(B[ganan[0].b])} fue quien más participación ganó</b> (${pp(ganan[0].dShare)}) con tasa de ${tasa(ganan[0].tasa)}. Vale la pena entender qué hizo distinto.`);
+    return `<div class="ia-diag">En ${mesLargo(S.m)} los bancos desembolsaron <b>${dinero(tm.monto)}</b>${dM!=null?` (${dM>=0?"+":"−"}${nf(Math.abs(dM),1)} % frente al mes anterior)`:""} a una tasa ponderada de <b>${tasa(tm.tasa)}</b>${dT!=null?` (${pp(dT)})`:""}. <b>${esc(nb)}</b> es el puesto ${f.rank} con ${pct(f.share)} de participación y una tasa ${gap>=0?"de "+pp(gap)+" por encima":"de "+pp(-gap).replace("+","")+" por debajo"} del mercado.</div>
+      <h4>POSICIÓN DE ${esc(nb.toUpperCase())} POR PRODUCTO</h4>
+      <ul class="ia-list">${prodGap.map(x=>`<li><span>${esc(D.dim.productos[x.p])}<br><small style="color:var(--ink-2)">participación ${pct(x.share)}</small></span><span class="delta" style="color:${x.gap>0?"var(--up)":"var(--down)"}">${pp(x.gap)} vs. mercado</span></li>`).join("")||"<li>Sin datos por producto.</li>"}</ul>
+      <h4>QUIÉN GANÓ Y QUIÉN PERDIÓ PARTICIPACIÓN</h4>
+      <ul class="ia-list">${ganan.slice(0,3).map(x=>`<li><span>${esc(B[x.b])}</span>${flecha(x.dShare,true)}</li>`).join("")}${pierden.slice(0,3).map(x=>`<li><span>${esc(B[x.b])}</span>${flecha(x.dShare,true)}</li>`).join("")}</ul>
+      <h4>MOVIMIENTOS DE TASA FUERA DE LO HABITUAL</h4>
+      <ul class="ia-list">${al.slice(0,5).map(a=>`<li><span>${esc(B[a.b])}<br><small style="color:var(--ink-2)">${tasa(a.tasaP)} → ${tasa(a.tasa)}</small></span>${flecha(a.dTasa)}</li>`).join("")||"<li>Ningún movimiento atípico este mes.</li>"}</ul>
+      <h4>LECTURA Y ACCIONES SUGERIDAS</h4>
+      <ol class="ia-rec">${rec.map(r=>`<li>${r}</li>`).join("")||"<li>Sin cambios relevantes frente al mes anterior.</li>"}</ol>
+      <p class="ia-foot">Generado en tu navegador con reglas sobre datos públicos de la Superintendencia Financiera. No usa servicios externos. Análisis independiente.</p>`;
+  }
+  function pintarIA(S){if(iaEstado==="cerrado")return;S=S||calcular();$("iaTitulo").textContent=B[S.f];$("iaSub").textContent=`${mesLargo(S.m)} · ${filtroTxt()}`;$("iaBody").innerHTML=analisis(S);$("iaMiniTxt").textContent="Micro IA · "+B[S.f]}
+  function estadoIA(e){iaEstado=e;$("iaPanel").hidden=e!=="abierto";$("iaMini").hidden=e!=="min";$("iaBtn").setAttribute("aria-expanded",e==="abierto");pintarIA();if(e==="abierto")$("iaMin").focus()}
+  $("iaBtn").onclick=()=>estadoIA(iaEstado==="abierto"?"min":"abierto");$("iaMin").onclick=()=>estadoIA("min");$("iaRest").onclick=()=>estadoIA("abierto");
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&iaEstado==="abierto")estadoIA("min")});
+
+  // ---------- render
+  const tabs=[...document.querySelectorAll("[role=tab]")];
+  tabs.forEach(b=>b.onclick=()=>{tabs.forEach(x=>x.setAttribute("aria-selected",x===b));document.querySelectorAll("[data-panel]").forEach(p=>p.hidden=p.dataset.panel!==b.dataset.tab)});
+  function render(){const S=calcular();renderMercado(S);heatTabla("tHeatTasa",S,a=>a.tasa,v=>nf(v,1));heatTabla("tHeatMonto",S,a=>a.monto/1e3,v=>nf(v,0));renderPlazos(S);renderRegiones(S);renderPos(S);renderInt(S);pintarIA(S)}
+  $("fTipo").onchange=()=>{llenarProductos();render()};["fBanco","fMes","fProd"].forEach(i=>$(i).onchange=render);
+  render();
+})();
+</script>
+</body>
+</html>
