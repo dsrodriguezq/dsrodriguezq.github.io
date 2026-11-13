@@ -11,6 +11,7 @@
     "presupuesto: 10 códigos sin planta activa (se excluyen)",
     "desembolsos: 10 códigos sin planta activa (se excluyen)",
     "radicaciones: 10 códigos sin planta activa (se excluyen)",
-    "tubo: 10 códigos sin planta activa (se excluyen)"
+    "tubo: 10 códigos sin planta activa (se excluyen)",
+    "campañas: 10 códigos sin planta activa (se excluyen)"
   ]
 }

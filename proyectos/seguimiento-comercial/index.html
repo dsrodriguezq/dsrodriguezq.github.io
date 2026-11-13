@@ -94,6 +94,30 @@
   footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:13px;color:var(--ink-2)}
   [hidden]{display:none !important}
   @media (max-width:760px){h1{font-size:34px}.grid2{grid-template-columns:1fr}.wrap{padding:0 18px}.agent{grid-template-columns:1fr}.arrow{display:none}}
+  .ia-btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:15px;font-weight:700;min-height:44px;padding:0 18px;border:0;border-radius:6px;background:var(--accent);color:#fff;cursor:pointer}
+  .ia-btn:hover{background:#155A82}
+  .ia-panel{position:fixed;top:0;right:0;width:min(470px,100vw);height:100vh;background:#fff;border-left:1px solid var(--line);box-shadow:-12px 0 32px rgba(14,27,44,.12);z-index:30;display:flex;flex-direction:column}
+  .ia-head{padding:18px 20px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+  .ia-head h3{margin:2px 0 0;font-size:19px}
+  .ia-head .ctl{display:flex;gap:6px}
+  .ia-head button{font:inherit;font-size:13px;min-height:36px;padding:0 12px;border:1px solid #C9D3DE;background:#fff;border-radius:4px;cursor:pointer}
+  .ia-body{padding:16px 20px 28px;overflow-y:auto;flex:1;font-size:14px}
+  .ia-body h4{margin:22px 0 8px;font-size:12px;letter-spacing:.14em;color:var(--accent);font-weight:400}
+  .ia-diag{padding:12px 14px;background:var(--surface-2);border-radius:6px;line-height:1.55}
+  .ia-top{margin:0;padding:0;list-style:none;counter-reset:t}
+  .ia-top li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:8px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--line);counter-increment:t}
+  .ia-top li::before{content:counter(t);font-size:12px;color:var(--muted)}
+  .ia-top small{display:block;color:var(--ink-2);font-size:12px}
+  .op{display:grid;grid-template-columns:110px minmax(0,1fr) 58px;gap:4px 10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--grid)}
+  .op .bar{height:8px;background:var(--grid);border-radius:4px;position:relative;overflow:hidden}
+  .op .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--accent)}
+  .op .det{grid-column:2/4;font-size:12px;color:var(--ink-2)}
+  .op b{font-size:13px}
+  .ia-rec{margin:0;padding-left:18px}
+  .ia-rec li{margin-bottom:9px;line-height:1.5}
+  .ia-foot{font-size:11px;color:var(--muted);margin-top:18px}
+  .ia-mini{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;align-items:center;gap:10px;background:var(--ink);color:#fff;border-radius:24px;padding:6px 6px 6px 16px;box-shadow:0 8px 24px rgba(14,27,44,.25);font-size:14px}
+  .ia-mini button{font:inherit;font-size:13px;min-height:36px;padding:0 14px;border:0;border-radius:18px;background:#fff;color:var(--ink);cursor:pointer}
 </style>
 </head>
 <body>
@@ -109,7 +133,7 @@
   <section style="padding:36px 0 0">
     <p class="eyebrow">PROYECTO 1 · DATOS, AUTOMATIZACIÓN E IA</p>
     <h1>Sistema de Seguimiento Comercial</h1>
-    <p class="lead">De 7 archivos sueltos a un tablero, un pronóstico de cierre con probabilidad, 45 correos personalizados y un agente que responde preguntas. Todo con un solo comando.</p>
+    <p class="lead">De 8 archivos sueltos a un tablero, un pronóstico de cierre con probabilidad, 45 correos personalizados, una Micro IA que analiza cada nivel y un agente que responde preguntas. Todo con un solo comando.</p>
     <div class="aviso" role="note">
       <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1C6E9E" stroke-width="2" stroke-linecap="round" style="flex:none;margin-top:2px"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7.5v.5"/></svg>
       <p style="margin:0;font-size:15px"><strong>Proyecto de demostración con datos 100 % ficticios.</strong> Recrea, con un banco inventado ("Banco Andino"), personas inventadas y datos generados por código, el tipo de sistema que construí en mi trabajo. No contiene información, código ni cifras de ninguna entidad real.</p>
@@ -123,13 +147,13 @@
   </section>
 
   <div class="flow" aria-label="Cómo fluye la información">
-    <div class="step"><span class="n">01</span><b>7 fuentes</b><span>Planta, presupuesto, desembolsos, radicaciones, visitas, tubo e histórico</span></div>
+    <div class="step"><span class="n">01</span><b>8 fuentes</b><span>Planta, presupuesto, desembolsos, radicaciones, visitas, tubo, campañas e histórico</span></div>
     <div class="arrow" aria-hidden="true">→</div>
     <div class="step"><span class="n">02</span><b>Pipeline</b><span>Limpieza, homologación y cruces validados</span></div>
     <div class="arrow" aria-hidden="true">→</div>
     <div class="step"><span class="n">03</span><b>Pronóstico</b><span>Ritmo + histórico, probabilidad y segmentos</span></div>
     <div class="arrow" aria-hidden="true">→</div>
-    <div class="step"><span class="n">04</span><b>Tablero y agente</b><span>Por nivel, con preguntas en lenguaje natural</span></div>
+    <div class="step"><span class="n">04</span><b>Tablero, Micro IA y agente</b><span>Análisis por nivel y preguntas en lenguaje natural</span></div>
     <div class="arrow" aria-hidden="true">→</div>
     <div class="step"><span class="n">05</span><b>Correos</b><span>Uno por líder, con su equipo en copia</span></div>
   </div>
@@ -141,6 +165,10 @@
     <p class="sub" id="corte" style="font-size:14px"></p>
     <div class="toolbar">
       <div class="seg-btns" role="group" aria-label="Producto" id="prodBtns"></div>
+      <button type="button" class="ia-btn" id="iaBtn" aria-expanded="false" aria-controls="iaPanel">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>
+        Micro IA
+      </button>
     </div>
     <div class="tabs" role="tablist" aria-label="Nivel">
       <button role="tab" aria-selected="true" data-tab="div">Divisional</button>
@@ -233,17 +261,25 @@
 <div class="wrap how">
   <h2>Cómo funciona</h2>
   <ol>
-    <li><strong>Fuentes.</strong> <code>generar_fuentes.py</code> crea 7 archivos ficticios con los problemas de la vida real: encabezados distintos, códigos con ".0", productos escritos de 4 formas, valores en pesos y personas retiradas.</li>
+    <li><strong>Fuentes.</strong> <code>generar_fuentes.py</code> crea 8 archivos ficticios con los problemas de la vida real: encabezados distintos, códigos con ".0", productos escritos de 4 formas, valores en pesos y personas retiradas.</li>
     <li><strong>Pipeline.</strong> <code>pipeline.py</code> normaliza y homologa, convierte el presupuesto de formato ancho a largo y cruza todo por código y producto. Antes y después de cada cruce valida que no se dupliquen filas: si pasa, se detiene.</li>
     <li><strong>Pronóstico.</strong> <code>pronostico.py</code> estima el cierre con 60 % del ritmo del mes y 40 % del cumplimiento histórico, y calcula la probabilidad de cumplir con la volatilidad de cada comercial (solo con 3 meses o más de historia). Luego agrupa a los comerciales con K-Means y asigna una acción concreta.</li>
     <li><strong>Correos.</strong> <code>correos.py</code> arma un correo por líder con sus brechas principales, valida destinatarios, tiene modo de prueba y deja registro de cada envío.</li>
-    <li><strong>Tablero y agente.</strong> Esta página lee <code>consolidado.json</code>. El agente clasifica tu pregunta con TF-IDF y responde con los mismos datos.</li>
+    <li><strong>Tablero, Micro IA y agente.</strong> Esta página lee <code>consolidado.json</code>. El botón <b>Micro IA</b> analiza el nivel que estás viendo (división, zona o tu selección de comerciales): top 10 de menor cumplimiento, resumen operativo de desembolsos, radicaciones, visitas, campañas y tubo, y acciones recomendadas. El agente clasifica tu pregunta con TF-IDF y responde con los mismos datos.</li>
   </ol>
   <p style="margin-top:18px">Todo corre con <code>python codigo/ejecutar_todo.py</code>. <a href="https://github.com/dsrodriguezq/dsrodriguezq.github.io/tree/main/proyectos/seguimiento-comercial">Ver el código en GitHub →</a></p>
   <p id="calidad" style="font-size:14px;color:var(--ink-2)"></p>
 </div>
 
 <div class="wrap"><footer>Diana Sofía Rodríguez Díaz · <a href="../../">dsrodriguezq.github.io</a> · Proyecto de demostración: todos los datos, nombres y correos son ficticios.</footer></div>
+<aside class="ia-panel" id="iaPanel" aria-label="Análisis de la Micro IA" hidden>
+  <div class="ia-head">
+    <div><p class="lbl" style="margin:0">MICRO IA · ANÁLISIS AUTOMÁTICO</p><h3 id="iaTitulo"></h3><div class="sub" style="margin:2px 0 0" id="iaSub"></div></div>
+    <div class="ctl"><button type="button" id="iaMin">Minimizar</button></div>
+  </div>
+  <div class="ia-body" id="iaBody"></div>
+</aside>
+<div class="ia-mini" id="iaMini" hidden><span id="iaMiniTxt">Micro IA</span><button type="button" id="iaRest">Abrir</button></div>
 <div class="tip" id="tip" role="tooltip"></div>
 
 <script>
@@ -280,13 +316,13 @@
   PRODS.forEach(k=>{const b=document.createElement("button");b.type="button";b.textContent=P[k].etiqueta;b.dataset.p=k;b.setAttribute("aria-pressed",k===prod);
     b.onclick=()=>{prod=k;document.querySelectorAll("#prodBtns button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.p===prod));render()};$("prodBtns").appendChild(b)});
   const tabs=[...document.querySelectorAll('[role=tab]')];
-  const goTab=t=>{tabs.forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===t));document.querySelectorAll("[data-panel]").forEach(p=>p.hidden=p.dataset.panel!==t)};
+  const goTab=t=>{tabs.forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===t));document.querySelectorAll("[data-panel]").forEach(p=>p.hidden=p.dataset.panel!==t);if(typeof pintarIA==="function")pintarIA()};
   tabs.forEach(b=>b.onclick=()=>goTab(b.dataset.tab));
   const zonas=[...new Set(D.zonales.map(z=>z.ZONA))].sort((a,b)=>a.localeCompare(b,"es"));
   zonas.forEach(z=>{$("fZonaZ").add(new Option(z,z));$("fZonaC").add(new Option(z,z))});
   SEGS.forEach(s=>$("fSeg").add(new Option(s.k,s.k)));
   $("segLegend").innerHTML=SEGS.map(s=>`<span><i class="sw" style="background:${s.c}"></i>${s.k}</span>`).join("");
-  const irZona=z=>{$("fZonaZ").value=z;goTab("zon");renderZon();window.scrollTo({top:document.querySelector(".tabs").getBoundingClientRect().top+scrollY-20,behavior:"smooth"})};
+  const irZona=z=>{$("fZonaZ").value=z;goTab("zon");renderZon();pintarIA();window.scrollTo({top:document.querySelector(".tabs").getBoundingClientRect().top+scrollY-20,behavior:"smooth"})};
 
   const kpis=(r,box)=>{$(box).innerHTML=[
     [fv(r.REAL),`colocado · debía llevar ${fv(r.PPTO_CORTE)}`],
@@ -358,7 +394,7 @@
     $("linkMailZona").onclick=e=>{e.preventDefault();if(m){abrirCorreo(m.archivo);document.querySelector("#mailFrame").scrollIntoView({behavior:"smooth",block:"center"})}};
     $("linkMailZona").textContent=`Ver el correo que recibe ${zn} →`;
   }
-  $("fZonaZ").onchange=renderZon;
+  $("fZonaZ").onchange=()=>{renderZon();pintarIA()};
 
   // ---------- COMERCIALES
   function filtrados(){const q=$("fQ").value.trim().toLowerCase();return byP(D.comerciales).filter(r=>(!$("fZonaC").value||r.ZONA===$("fZonaC").value)&&(!$("fSeg").value||r.SEGMENTO===$("fSeg").value)&&(!q||r.NOMBRE.toLowerCase().includes(q)))}
@@ -381,11 +417,11 @@
     $("tCom").tBodies[0].innerHTML=shown.map(r=>`<tr><td><strong>${esc(r.NOMBRE)}</strong><br><span style="font-size:13px;color:var(--ink-2)">${esc(cargo(r.CARGO))}</span></td><td>${esc(r.ZONA)}</td><td><span style="display:inline-flex;align-items:center;gap:6px"><i class="sw" style="background:${segColor[r.SEGMENTO]}"></i>${esc(r.SEGMENTO)}</span></td><td class="num">${fp(r.CUMP_CORTE)}</td><td>${chip(r.ALERTA,r.PROB)}</td><td class="num">${fv(r.BRECHA)}</td><td>${esc(r.ACCION)}</td></tr>`).join("");
     $("more").hidden=sorted.length<=15;$("more").textContent=showAll?"Mostrar solo los 15 primeros":`Mostrar los ${sorted.length}`;
   }
-  ["fZonaC","fSeg"].forEach(i=>$(i).onchange=renderCom);$("fQ").oninput=renderCom;$("more").onclick=()=>{showAll=!showAll;renderCom()};
+  ["fZonaC","fSeg"].forEach(i=>$(i).onchange=()=>{renderCom();pintarIA()});$("fQ").oninput=()=>{renderCom();pintarIA()};$("more").onclick=()=>{showAll=!showAll;renderCom()};
 
   // ---------- CORREOS
   const muestras=[CORREOS.find(x=>x.nivel==="DIVISIONAL"),CORREOS.find(x=>x.nivel==="ZONAL"),
-    CORREOS.find(x=>x.archivo.includes("isabella-gomez"))||CORREOS.find(x=>x.nivel==="GERENTE CN")];
+    CORREOS.find(x=>x.nivel==="GERENTE CN"&&x.reconocimiento)||CORREOS.find(x=>x.nivel==="GERENTE CN")];
   const etiquetas=["Divisional","Zonal","Gerente de centro de negocio"];
   function abrirCorreo(a){$("mailFrame").src=a;document.querySelectorAll("#mailTabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.a===a))}
   muestras.forEach((m,i)=>{const b=document.createElement("button");b.type="button";b.dataset.a=m.archivo;b.textContent=`${etiquetas[i]} · ${m.responsable}`;b.onclick=()=>abrirCorreo(m.archivo);$("mailTabs").appendChild(b)});
@@ -452,7 +488,81 @@
     .forEach(s=>{const b=document.createElement("button");b.type="button";b.textContent=s;b.onclick=()=>preguntar(s);$("sugg").appendChild(b)});
   say("Hola, soy el agente del tablero. Pregúntame por la división, una zona, una persona o por quién está en riesgo. Todo lo calculo aquí mismo, sin internet.","b");
 
-  function render(){renderDiv();renderZon();renderCom()}
+
+  // ---------- MICRO IA: análisis automático del nivel visible
+  let iaEstado="cerrado";
+  const tabActual=()=>tabs.find(b=>b.getAttribute("aria-selected")==="true").dataset.tab;
+  function alcance(){
+    const t=tabActual();
+    if(t==="zon"){const z=$("fZonaZ").value||zonas[0];return {nombre:`Zona ${z}`,rows:byP(D.comerciales).filter(r=>r.ZONA===z),nivel:byP(D.zonales).find(r=>r.ZONA===z)}}
+    if(t==="com"){const rows=filtrados(),f=[$("fZonaC").value,$("fSeg").value,$("fQ").value.trim()].filter(Boolean);
+      return {nombre:f.length?`Selección: ${f.join(" · ")}`:"Todos los comerciales",rows,nivel:null}}
+    return {nombre:"División completa",rows:byP(D.comerciales),nivel:byP(D.divisional)[0]};
+  }
+  const suma=(rows,k)=>rows.reduce((a,r)=>a+(+r[k]||0),0);
+  const barra=(etq,real,meta,det)=>{const p=meta>0?real/meta:null,w=Math.max(0,Math.min(p??0,1.2))/1.2*100;
+    return `<div class="op"><b>${etq}</b><div class="bar" role="img" aria-label="${etq}: ${fp(p)}"><i style="width:${w}%;${p!=null&&p<0.9?"background:#C27C0E":""}"></i></div><span style="text-align:right;font-variant-numeric:tabular-nums">${fp(p)}</span><div class="det">${det}</div></div>`};
+  function analisis(){
+    const A=alcance(),R=A.rows,m=mon(),et=P[prod].etiqueta,av=c.avance,fq=v=>m?fv(v):fv(v)+" tarjetas";
+    if(!R.length)return {A,html:`<p class="ia-diag">No hay comerciales con los filtros actuales. Cambia la zona, el segmento o la búsqueda.</p>`};
+    const real=suma(R,"REAL"),ppto=suma(R,"PPTO"),pc=ppto*av,brecha=Math.max(ppto-real,0);
+    const rad=suma(R,"REAL_RADICACIONES"),prad=suma(R,"PPTO_RADICACIONES")*av;
+    const vis=suma(R,"REAL_VISITAS"),pvis=suma(R,"PPTO_VISITAS")*av;
+    const t30=suma(R,"TUBO_30"),t60=suma(R,"TUBO_60"),t90=suma(R,"TUBO_90");
+    const asig=suma(R,"CAMP_ASIGNADOS"),gest=suma(R,"CAMP_GESTIONADOS"),conv=suma(R,"CAMP_CONVERTIDOS"),pot=suma(R,"CAMP_POTENCIAL");
+    const pron=A.nivel?A.nivel.PRON_REAL:suma(R,"PRON_REAL"),pronC=pron/ppto;
+    const ritmoDia=real/Math.max(c.dias_transcurridos,1),necesita=brecha/Math.max(c.dias_restantes,1);
+    const tasaConv=gest?conv/gest:0,pend=Math.max(asig-gest,0),potPend=asig?pot*pend/asig:0,esperado=potPend*tasaConv;
+    const cRad=prad?rad/prad:null,cVis=pvis?vis/pvis:null,cDes=pc?real/pc:null;
+    const top=[...R].filter(r=>r.CUMP_CORTE!=null).sort((a,b)=>a.CUMP_CORTE-b.CUMP_CORTE).slice(0,10);
+    const brechaTop=suma(top,"BRECHA"),brechaInd=suma(R,"BRECHA");
+    const enRiesgo=R.filter(r=>r.ALERTA!=="ALTA PROBABILIDAD").length;
+
+    // Diagnóstico
+    let diag=`${A.nombre} lleva <b>${fq(real)}</b> en ${et}: ${fp(cDes)} de lo que debía llevar al día hábil ${c.dias_transcurridos} de ${c.dias_mes}. `
+      +`El pronóstico de cierre es <b>${fp(pronC)}</b>`+(A.nivel?` ${chip(A.nivel.ALERTA,A.nivel.PROB)}`:"")+`. `
+      +`${enRiesgo} de ${R.length} comerciales no tienen alta probabilidad de cumplir.`;
+
+    // Recomendaciones
+    const rec=[];
+    if(brecha<=0) rec.push(`La meta del mes ya está cumplida. Conviene proponer una meta extendida y reconocer públicamente a quienes la superaron.`);
+    else if(necesita>ritmoDia*1.03) rec.push(`<b>Subir el ritmo diario</b> de ${fq(ritmoDia)} a ${fq(necesita)} por día hábil (+${Math.round((necesita/ritmoDia-1)*100)} %) durante los ${c.dias_restantes} días que quedan.`);
+    else if(A.nivel&&A.nivel.ALERTA!=="ALTA PROBABILIDAD") rec.push(`<b>El ritmo de hoy alcanza, pero no hay margen:</b> ${fq(ritmoDia)} por día hábil frente a ${fq(necesita)} necesarios. El histórico de este grupo cierra por debajo de su ritmo de mitad de mes, por eso la probabilidad es baja: hay que adelantar cierres esta semana.`);
+    else rec.push(`<b>Sostener el ritmo:</b> con ${fq(ritmoDia)} por día hábil alcanza para cubrir los ${fq(necesita)} diarios que faltan.`);
+    const etapas=[["visitas",cVis,pvis-vis],["radicaciones",cRad,prad-rad]].filter(e=>e[1]!=null&&e[1]<0.9).sort((a,b)=>a[1]-b[1]);
+    if(etapas.length){const [n,p,f]=etapas[0];rec.push(`<b>El cuello de botella está en ${n}</b> (${fp(p)} de lo esperado al corte): faltan ${Math.ceil(f).toLocaleString("es-CO")} ${n} para ir al ritmo. Sin ${n} no habrá desembolsos la próxima semana.`)}
+    if(brecha>0){if(t30>=brecha)rec.push(`<b>Cerrar el tubo a 30 días:</b> tiene ${fq(t30)}, suficiente para cubrir la brecha de ${fq(brecha)}. Hay que revisar caso por caso qué falta para desembolsar.`);
+      else if(t30>0)rec.push(`<b>El tubo a 30 días cubre ${fp(t30/brecha)} de la brecha</b> (${fq(t30)} de ${fq(brecha)}). El resto debe salir de campañas y de nuevas radicaciones.`)}
+    if(pend>0)rec.push(`<b>Activar campañas:</b> quedan ${pend.toLocaleString("es-CO")} clientes asignados sin gestionar. Con la conversión actual (${fp(tasaConv)}) podrían aportar cerca de ${fq(esperado)}.`);
+    if(top.length&&brechaInd>0)rec.push(`<b>Acompañamiento 1:1 esta semana</b> a ${top.slice(0,3).map(r=>esc(r.NOMBRE)).join(", ")}. Los 10 de menor cumplimiento concentran ${fp(brechaTop/brechaInd)} de la brecha individual.`);
+
+    const html=`
+      <div class="ia-diag">${diag}</div>
+      <h4>TOP 10 · MENOR CUMPLIMIENTO AL CORTE</h4>
+      <ol class="ia-top">${top.map(r=>`<li><span><strong>${esc(r.NOMBRE)}</strong><small>${esc(cargo(r.CARGO))} · ${esc(r.ZONA)}</small></span><span style="text-align:right;font-variant-numeric:tabular-nums">${fp(r.CUMP_CORTE)}<small>faltan ${fq(r.BRECHA)}</small></span></li>`).join("")}</ol>
+      <h4>RESUMEN OPERATIVO</h4>
+      ${barra("Desembolsos",real,pc,`${fq(real)} de ${fq(pc)} esperados al corte · meta del mes ${fq(ppto)}`)}
+      ${barra("Radicaciones",rad,prad,`${Math.round(rad).toLocaleString("es-CO")} de ${Math.round(prad).toLocaleString("es-CO")} esperadas al corte`)}
+      ${pvis?barra("Visitas",vis,pvis,`${Math.round(vis).toLocaleString("es-CO")} de ${Math.round(pvis).toLocaleString("es-CO")} esperadas al corte`):`<div class="op"><b>Visitas</b><span class="det" style="grid-column:2/4;margin:0">Sin meta de visitas en este grupo</span></div>`}
+      ${barra("Campañas",gest,asig,`${gest.toLocaleString("es-CO")} de ${asig.toLocaleString("es-CO")} clientes gestionados · ${conv.toLocaleString("es-CO")} convertidos (${fp(tasaConv)})`)}
+      <div class="op"><b>Tubo</b><span style="grid-column:2/4">${fq(t30)} a 30 días · ${fq(t60)} a 60 · ${fq(t90)} a 90</span><div class="det">${brecha>0?`El tubo a 30 días equivale a ${fp(t30/brecha)} de la brecha del mes`:"Sin brecha pendiente este mes"}</div></div>
+      <h4>ACCIONES RECOMENDADAS</h4>
+      <ol class="ia-rec">${rec.map(x=>`<li>${x}</li>`).join("")}</ol>
+      <p class="ia-foot">Análisis generado en tu navegador con reglas sobre los datos del tablero. No usa servicios externos. Datos 100 % ficticios.</p>`;
+    return {A,html};
+  }
+  function pintarIA(){
+    if(iaEstado==="cerrado")return;
+    const {A,html}=analisis();
+    $("iaTitulo").textContent=A.nombre;$("iaSub").textContent=`${P[prod].etiqueta} · corte día hábil ${c.dias_transcurridos} de ${c.dias_mes}`;
+    $("iaBody").innerHTML=html;$("iaMiniTxt").textContent=`Micro IA · ${A.nombre}`;
+  }
+  function estadoIA(e){iaEstado=e;$("iaPanel").hidden=e!=="abierto";$("iaMini").hidden=e!=="min";$("iaBtn").setAttribute("aria-expanded",e==="abierto");pintarIA();if(e==="abierto")$("iaMin").focus()}
+  $("iaBtn").onclick=()=>estadoIA(iaEstado==="abierto"?"min":"abierto");
+  $("iaMin").onclick=()=>{estadoIA("min");$("iaRest").focus()};
+  $("iaRest").onclick=()=>estadoIA("abierto");
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&iaEstado==="abierto")estadoIA("min")});
+  function render(){renderDiv();renderZon();renderCom();pintarIA()}
   render();
 })();
 </script>

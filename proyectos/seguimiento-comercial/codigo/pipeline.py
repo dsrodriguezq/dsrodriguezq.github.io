@@ -1,7 +1,7 @@
 """
 Paso 1 · Pipeline de consolidación.
 
-Lee las 7 fuentes ficticias de fuentes/, las limpia y las cruza en una base maestra
+Lee las 8 fuentes ficticias de fuentes/, las limpia y las cruza en una base maestra
 con una fila por comercial y producto. Antes y después de cada cruce valida que no se
 dupliquen filas: si un cruce multiplica registros, el proceso se detiene.
 
@@ -175,6 +175,20 @@ def cargar_tubo():
     return out
 
 
+def cargar_campanas():
+    """Clientes de campaña por comercial y producto: asignados, gestionados, convertidos y potencial."""
+    df = limpiar_encabezados(pd.read_excel(C.CARPETA_FUENTES / "campanas.xlsx"))
+    df["CODIGO"] = df[buscar_columna(df, ["CODIGO ASESOR", "CODIGO"])].map(normalizar_codigo)
+    df["PRODUCTO"] = df[buscar_columna(df, ["PRODUCTO"])].map(homologar_producto)
+    renombres = {buscar_columna(df, ["CLIENTES ASIGNADOS"]): "CAMP_ASIGNADOS",
+                 buscar_columna(df, ["CLIENTES GESTIONADOS"]): "CAMP_GESTIONADOS",
+                 buscar_columna(df, ["CLIENTES CONVERTIDOS"]): "CAMP_CONVERTIDOS",
+                 buscar_columna(df, ["POTENCIAL"]): "CAMP_POTENCIAL"}
+    df = df.rename(columns=renombres)
+    log(f"Campañas: {df[buscar_columna(df, ['CAMPANA'])].nunique()} campañas, {int(df.CAMP_ASIGNADOS.sum())} clientes asignados")
+    return df.groupby(["CODIGO", "PRODUCTO"], as_index=False)[list(renombres.values())].sum()
+
+
 def cargar_historico():
     df = limpiar_encabezados(pd.read_excel(C.CARPETA_FUENTES / "historico.xlsx"))
     df["CODIGO"] = df.CODIGO.map(normalizar_codigo)
@@ -200,7 +214,8 @@ def construir_base():
     for nombre, fuente, llaves in (("presupuesto", cargar_presupuesto(), ["CODIGO", "PRODUCTO"]),
                                    ("desembolsos", cargar_desembolsos(), ["CODIGO", "PRODUCTO"]),
                                    ("radicaciones", cargar_radicaciones(), ["CODIGO", "PRODUCTO"]),
-                                   ("tubo", cargar_tubo(), ["CODIGO", "PRODUCTO"])):
+                                   ("tubo", cargar_tubo(), ["CODIGO", "PRODUCTO"]),
+                                   ("campañas", cargar_campanas(), ["CODIGO", "PRODUCTO"])):
         sin_planta = set(fuente.CODIGO) - set(personas.CODIGO)
         if sin_planta:
             log(f"{nombre}: {len(sin_planta)} códigos sin planta activa (se excluyen)", "ADVERTENCIA")
@@ -214,7 +229,8 @@ def construir_base():
     validar_merge(antes, base, "visitas")
     base["PPTO_VISITAS"] = base.CARGO.map(C.PPTO_VISITAS_POR_ROL).astype(float)
 
-    for col in ["REAL", "REAL_RADICACIONES", "REAL_VISITAS", "TUBO_30", "TUBO_60", "TUBO_90"]:
+    for col in ["REAL", "REAL_RADICACIONES", "REAL_VISITAS", "TUBO_30", "TUBO_60", "TUBO_90",
+                "CAMP_ASIGNADOS", "CAMP_GESTIONADOS", "CAMP_CONVERTIDOS", "CAMP_POTENCIAL"]:
         base[col] = base[col].fillna(0.0)
     sin_ppto = base.PPTO.isna().sum()
     if sin_ppto:

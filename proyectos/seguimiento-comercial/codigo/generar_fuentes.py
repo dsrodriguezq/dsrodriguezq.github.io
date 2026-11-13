@@ -13,6 +13,7 @@ Archivos que crea en fuentes/:
     visitas.xlsx             visitas comerciales del mes
     tubo_oportunidades.xlsx  negocios en curso por plazo de cierre
     historico.xlsx           real y presupuesto mensual de enero a octubre
+    campanas.xlsx            clientes asignados en campañas comerciales y su gestión
 """
 import numpy as np
 import pandas as pd
@@ -97,6 +98,10 @@ PPTO_BASE = {   # meta mensual por rol: préstamo en millones, tarjeta en unidad
     "TARJETA DE CREDITO": {"GTE RELACION": 22, "GTE CN": 18, "EJECUTIVO": 28, "ASESOR": 40},
 }
 TICKET_MM = 32   # monto promedio de un préstamo, en millones
+CAMPANAS = {
+    "PP": ["Preaprobados de fin de año", "Compra de cartera", "Retanqueo clientes actuales"],
+    "TC": ["Tarjeta sin cuota de manejo", "Mejora a tarjeta Platinum"],
+}
 
 
 def generar_todo():
@@ -107,7 +112,7 @@ def generar_todo():
     transcurridos = [d for d in habiles if d.date() <= C.FECHA_CORTE]
     avance = len(transcurridos) / len(habiles)
 
-    ppto_rows, desem, radic, visitas, tubo, hist = [], [], [], [], [], []
+    ppto_rows, desem, radic, visitas, tubo, hist, camp = [], [], [], [], [], [], []
     for r in com.itertuples():
         ppto_vis = C.PPTO_VISITAS_POR_ROL[r.cargo]
         fila_ppto = {"Cod. Comercial": f"{r.codigo}.0", "Nombre": r.nombre}
@@ -147,6 +152,19 @@ def generar_todo():
                 tubo.append({"CODIGO": r.codigo, "PRODUCTO": prod.title(), "PLAZO_CIERRE_DIAS": plazo,
                              "VALOR": round(max(ppto * peso * rng.normal(r.nivel, 0.25), 0), 1)})
 
+            # Campañas: clientes asignados, cuántos ya se gestionaron y cuántos compraron
+            for nombre_camp in CAMPANAS[corto]:
+                if r.cargo == "GTE RELACION" and rng.random() < 0.5:
+                    continue
+                asignados = int(rng.integers(4, 18))
+                gestion = float(np.clip(rng.normal(0.45 * avance / 0.47 * (0.7 + 0.3 * r.nivel), 0.15), 0.02, 1))
+                gestionados = int(round(asignados * gestion))
+                convertidos = int(rng.binomial(gestionados, float(np.clip(rng.normal(0.22, 0.06), 0.03, 0.5))))
+                ticket = TICKET_MM * rng.uniform(0.7, 1.3) if corto == "PP" else 1
+                camp.append({"Codigo Asesor": r.codigo, "Campaña": nombre_camp, "Producto": prod.title(),
+                             "Clientes asignados": asignados, "Clientes gestionados": gestionados,
+                             "Clientes convertidos": convertidos, "Potencial": round(asignados * ticket, 1)})
+
             # Histórico enero-octubre: cumplimiento alrededor del nivel del comercial
             for mes in range(1, 11):
                 if rng.random() < 0.08:      # meses sin dato (ingresó tarde o no tuvo meta)
@@ -169,6 +187,7 @@ def generar_todo():
     pd.DataFrame(visitas).to_excel(C.CARPETA_FUENTES / "visitas.xlsx", index=False)
     pd.DataFrame(tubo).to_excel(C.CARPETA_FUENTES / "tubo_oportunidades.xlsx", index=False)
     pd.DataFrame(hist).to_excel(C.CARPETA_FUENTES / "historico.xlsx", index=False)
+    pd.DataFrame(camp).to_excel(C.CARPETA_FUENTES / "campanas.xlsx", index=False, sheet_name="CAMPAÑAS")
     print(f"Planta: {len(planta)} personas | Desembolsos: {len(desem)} operaciones | "
           f"Radicaciones: {len(radic)} | Histórico: {len(hist)} filas | Avance del mes: {avance:.0%}")
 

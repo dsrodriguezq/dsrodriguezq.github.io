@@ -268,7 +268,8 @@ def main():
         (C.CARPETA_CORREOS / f"{archivo}.eml").write_bytes(bytes(msg))
         log.append({"FECHA": datetime.now().strftime("%Y-%m-%d %H:%M"), "NIVEL": c["nivel"], "RESPONSABLE": c["responsable"],
                     "PARA": c["para"], "CC": c["cc"], "ESTADO": "VISTA PREVIA"})
-        indice.append({"nivel": c["nivel"], "responsable": c["responsable"], "archivo": f"correos/{archivo}.html"})
+        indice.append({"nivel": c["nivel"], "responsable": c["responsable"], "archivo": f"correos/{archivo}.html",
+                       "reconocimiento": "META DEL MES CUMPLIDA" in c["html"]})
     pd.DataFrame(log).to_csv(C.CARPETA_CORREOS / "log_envio.csv", index=False, encoding="utf-8-sig")
     (C.CARPETA_CORREOS / "indice.json").write_text(json.dumps(indice, ensure_ascii=False), encoding="utf-8")
     print(f"[OK] {len(lista)} correos generados en {C.CARPETA_CORREOS.name}/ (modo prueba: {C.MODO_PRUEBA})")

@@ -8,11 +8,11 @@
 
 | Paso | Script | Resultado |
 |---|---|---|
-| 0 | `codigo/generar_fuentes.py` | 7 fuentes ficticias "desordenadas" en `fuentes/` (planta, presupuesto, desembolsos, radicaciones, visitas, tubo de oportunidades e histórico) |
+| 0 | `codigo/generar_fuentes.py` | 8 fuentes ficticias "desordenadas" en `fuentes/` (planta, presupuesto, desembolsos, radicaciones, visitas, tubo de oportunidades, campañas e histórico) |
 | 1 | `codigo/pipeline.py` | Limpia, homologa productos, convierte el presupuesto de ancho a largo y cruza todo validando que ningún cruce duplique filas |
 | 2 | `codigo/pronostico.py` | Indicadores por nivel (divisional, zonal, gerente + equipo, comercial), pronóstico de cierre 60 % ritmo + 40 % histórico, probabilidad de cumplir, segmentación K-Means y acción sugerida |
 | 3 | `codigo/correos.py` | 45 correos personalizados con prevalidación de destinatarios, modo de prueba, vistas previas `.html`, archivos `.eml` y registro |
-| 4 | `index.html` | Tablero con pestañas por nivel, filtro de producto y un agente que responde preguntas sin internet (TF-IDF + similitud de coseno) |
+| 4 | `index.html` | Tablero con pestañas por nivel, filtro de producto, **Micro IA** (top 10 de menor cumplimiento, resumen operativo y acciones recomendadas para el nivel visible) y un agente que responde preguntas sin internet (TF-IDF + similitud de coseno) |
 
 ## Cómo ejecutarlo
 

@@ -32,7 +32,8 @@ from sklearn.preprocessing import StandardScaler
 
 import config as C
 
-METRICAS = ["PPTO", "REAL", "PPTO_RADICACIONES", "REAL_RADICACIONES", "TUBO_30", "TUBO_60", "TUBO_90"]
+METRICAS = ["PPTO", "REAL", "PPTO_RADICACIONES", "REAL_RADICACIONES", "TUBO_30", "TUBO_60", "TUBO_90",
+            "CAMP_ASIGNADOS", "CAMP_GESTIONADOS", "CAMP_CONVERTIDOS", "CAMP_POTENCIAL"]
 SEGMENTOS = ["Prioridad de acompañamiento", "En observación", "Sólidos"]
 
 
@@ -197,7 +198,8 @@ def main():
 
     comunes = ["PRODUCTO", "PPTO", "REAL", "PPTO_CORTE", "CUMP_CORTE", "CUMP_MES", "PPTO_RADICACIONES",
                "REAL_RADICACIONES", "CUMP_RAD_CORTE", "REAL_VISITAS", "PPTO_VISITAS", "BRECHA", "BRECHA_RAD",
-               "META_DIARIA", "TUBO_30", "TUBO_60", "TUBO_90", "PRON_REAL", "PRON_CUMP", "PROB", "ALERTA", "HIST_MESES"]
+               "META_DIARIA", "TUBO_30", "TUBO_60", "TUBO_90", "CAMP_ASIGNADOS", "CAMP_GESTIONADOS",
+               "CAMP_CONVERTIDOS", "CAMP_POTENCIAL", "PRON_REAL", "PRON_CUMP", "PROB", "ALERTA", "HIST_MESES"]
     salida = {
         "meta": {"banco": C.BANCO, "corte": corte, "productos": C.PRODUCTOS,
                  "divisional": {"nombre": divisional.NOMBRE, "correo": divisional.CORREO},
