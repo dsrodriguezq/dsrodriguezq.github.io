@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistema de Seguimiento Comercial · Diana Rodríguez</title>
+<meta name="description" content="Proyecto de demostración con datos 100 % ficticios: pipeline de consolidación, pronóstico con probabilidad de cumplimiento, segmentación con machine learning, correos automáticos y un agente que responde preguntas sin internet.">
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: light;
+    --surface:#FFFFFF; --surface-2:#F5F8FB; --line:#E3E8EF; --grid:#EDF1F5;
+    --ink:#0E1B2C; --ink-2:#4B5768; --muted:#6B7686; --accent:#1C6E9E; --bar:#1C6E9E;
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--surface);color:var(--ink);font-family:'Century Gothic',CenturyGothic,'Didact Gothic',AppleGothic,sans-serif;line-height:1.6}
+  a{color:var(--ink)} a:hover{color:var(--accent)}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+  header.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700;letter-spacing:.2em;font-size:14px}
+  .eyebrow{margin:0;font-size:13px;letter-spacing:.16em;color:var(--accent)}
+  h1{margin:8px 0 12px;font-size:46px;line-height:1.1}
+  h2{margin:0 0 8px;font-size:28px}
+  .lead{font-size:18px;color:var(--ink-2);max-width:760px;margin:0}
+  .aviso{margin-top:22px;display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid var(--accent);border-left:5px solid var(--accent);border-radius:6px;background:#EEF5FB;max-width:860px}
+  .story{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;padding:48px 0 40px}
+  .story h3,.lbl{margin:0 0 6px;font-size:13px;letter-spacing:.14em;color:var(--accent);font-weight:400}
+  .story p{margin:0;color:var(--ink-2)}
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;padding-bottom:48px;border-bottom:1px solid var(--line)}
+  .step{flex:1 1 170px;border:1px solid var(--line);border-radius:6px;padding:14px 16px;background:#fff}
+  .step b{display:block;font-size:15px} .step span{font-size:13px;color:var(--ink-2)}
+  .step .n{font-size:12px;color:var(--accent);letter-spacing:.12em}
+  .arrow{align-self:center;color:var(--muted);font-size:20px}
+  .dash{background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0 56px;margin-top:56px}
+  .toolbar{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin:14px 0 18px}
+  .seg-btns{display:inline-flex;border:1px solid #C9D3DE;border-radius:6px;overflow:hidden;background:#fff}
+  .seg-btns button{font:inherit;font-size:14px;min-height:42px;padding:0 16px;border:0;background:#fff;color:var(--ink);cursor:pointer}
+  .seg-btns button[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .tabs{display:flex;gap:4px;border-bottom:1px solid #C9D3DE;margin-bottom:20px;flex-wrap:wrap}
+  .tabs button{font:inherit;font-size:15px;min-height:44px;padding:0 18px;border:0;background:none;color:var(--ink-2);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
+  .tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:700}
+  .filters{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin:0 0 18px}
+  .filters label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--ink-2)}
+  select,input[type=search],input[type=text]{font:inherit;font-size:15px;min-height:44px;padding:0 12px;border:1px solid #C9D3DE;border-radius:4px;background:#fff;color:var(--ink);min-width:200px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-bottom:16px}
+  .kpi{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+  .kpi .v{font-size:28px;font-weight:700;line-height:1.15}
+  .kpi .l{font-size:13px;color:var(--ink-2)}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:14px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px 20px 14px;min-width:0;margin-bottom:14px}
+  .card h3{margin:0;font-size:17px}
+  .sub{margin:2px 0 12px;font-size:13px;color:var(--ink-2)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-2);margin-bottom:6px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:12px;height:12px;border-radius:50%;display:inline-block;flex:none}
+  .axis text{fill:var(--muted);font-size:11px}
+  svg text{font-family:inherit}
+  .tip{position:fixed;pointer-events:none;background:var(--ink);color:#fff;font-size:13px;padding:8px 10px;border-radius:4px;line-height:1.45;max-width:280px;opacity:0;transition:opacity .1s;z-index:20}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{text-align:left;font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--ink-2);border-bottom:1px solid var(--ink);padding:9px 8px;white-space:nowrap}
+  td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  td.num,th.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+  tr.click{cursor:pointer} tr.click:hover td{background:var(--surface-2)}
+  .tablebox{overflow-x:auto}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;white-space:nowrap}
+  .chip i{width:8px;height:8px;border-radius:50%}
+  .a-alta{background:#E7F4EE;color:#17643F}.a-alta i{background:#17643F}
+  .a-riesgo{background:#FFF4E0;color:#8A5300}.a-riesgo i{background:#C27C0E}
+  .a-baja{background:#FDECEA;color:#9E2A1E}.a-baja i{background:#C53B2B}
+  .a-sin{background:#EEF1F4;color:#4B5768}.a-sin i{background:#8A94A3}
+  button.more{font:inherit;font-size:14px;min-height:44px;padding:0 18px;margin-top:12px;border:1px solid var(--ink);background:#fff;border-radius:4px;cursor:pointer}
+  .agent{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px}
+  .chat{height:380px;overflow-y:auto;border:1px solid var(--line);border-radius:6px;padding:14px;background:var(--surface-2);display:flex;flex-direction:column;gap:10px}
+  .msg{max-width:88%;padding:10px 14px;border-radius:10px;font-size:14px;line-height:1.5}
+  .msg.u{align-self:flex-end;background:var(--ink);color:#fff;border-bottom-right-radius:2px}
+  .msg.b{align-self:flex-start;background:#fff;border:1px solid var(--line);border-bottom-left-radius:2px}
+  .msg.b .meta{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
+  .ask{display:flex;gap:8px;margin-top:10px}
+  .ask input{flex:1;min-width:0}
+  .ask button,.sugg button{font:inherit;cursor:pointer;border-radius:4px}
+  .ask button{min-height:44px;padding:0 18px;border:0;background:var(--ink);color:#fff;font-size:15px}
+  .sugg{display:flex;flex-direction:column;gap:8px}
+  .sugg button{min-height:40px;padding:6px 12px;border:1px solid #C9D3DE;background:#fff;text-align:left;font-size:14px}
+  .sugg button:hover{border-color:var(--accent)}
+  .mail-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 12px}
+  .mail-tabs button{font:inherit;font-size:14px;min-height:42px;padding:0 16px;border:1px solid #C9D3DE;background:#fff;border-radius:4px;cursor:pointer}
+  .mail-tabs button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  iframe.mail{width:100%;height:640px;border:1px solid var(--line);border-radius:6px;background:#EEF1F4}
+  .how{padding:56px 0}
+  .how ol{margin:16px 0 0;padding-left:22px;color:var(--ink-2);max-width:880px}
+  .how li{margin-bottom:10px}
+  code{font-size:13px;background:var(--surface-2);padding:1px 6px;border-radius:3px}
+  footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:13px;color:var(--ink-2)}
+  [hidden]{display:none !important}
+  @media (max-width:760px){h1{font-size:34px}.grid2{grid-template-columns:1fr}.wrap{padding:0 18px}.agent{grid-template-columns:1fr}.arrow{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="../../">
+      <svg aria-hidden="true" width="30" height="24" viewBox="0 0 30 24"><rect x="0" y="4" width="30" height="5" rx="2.5" fill="#0E1B2C"/><rect x="0" y="15" width="8" height="5" rx="2.5" fill="#1C6E9E"/></svg>
+      DIANA RODRÍGUEZ
+    </a>
+    <a href="../../#trabajo" style="font-size:14px">← Volver al portafolio</a>
+  </header>
+
+  <section style="padding:36px 0 0">
+    <p class="eyebrow">PROYECTO 1 · DATOS, AUTOMATIZACIÓN E IA</p>
+    <h1>Sistema de Seguimiento Comercial</h1>
+    <p class="lead">De 7 archivos sueltos a un tablero, un pronóstico de cierre con probabilidad, 45 correos personalizados y un agente que responde preguntas. Todo con un solo comando.</p>
+    <div class="aviso" role="note">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1C6E9E" stroke-width="2" stroke-linecap="round" style="flex:none;margin-top:2px"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7.5v.5"/></svg>
+      <p style="margin:0;font-size:15px"><strong>Proyecto de demostración con datos 100 % ficticios.</strong> Recrea, con un banco inventado ("Banco Andino"), personas inventadas y datos generados por código, el tipo de sistema que construí en mi trabajo. No contiene información, código ni cifras de ninguna entidad real.</p>
+    </div>
+  </section>
+
+  <section class="story">
+    <div><h3>EL PROBLEMA</h3><p>Cada semana alguien cruzaba a mano planta, presupuesto, desembolsos, radicaciones y visitas en Excel. Para cuando el reporte llegaba, ya era tarde para corregir el mes.</p></div>
+    <div><h3>LA SOLUCIÓN</h3><p>Un pipeline que consolida y valida las fuentes, un pronóstico que estima el cierre y su probabilidad, y correos que le dicen a cada líder dónde enfocarse ese día.</p></div>
+    <div><h3>EL RESULTADO</h3><p>La versión real que construí en un banco convirtió reportes de horas en minutos y contribuyó a lograr un cumplimiento presupuestal que no se alcanzaba hace años.</p></div>
+  </section>
+
+  <div class="flow" aria-label="Cómo fluye la información">
+    <div class="step"><span class="n">01</span><b>7 fuentes</b><span>Planta, presupuesto, desembolsos, radicaciones, visitas, tubo e histórico</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="step"><span class="n">02</span><b>Pipeline</b><span>Limpieza, homologación y cruces validados</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="step"><span class="n">03</span><b>Pronóstico</b><span>Ritmo + histórico, probabilidad y segmentos</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="step"><span class="n">04</span><b>Tablero y agente</b><span>Por nivel, con preguntas en lenguaje natural</span></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="step"><span class="n">05</span><b>Correos</b><span>Uno por líder, con su equipo en copia</span></div>
+  </div>
+</div>
+
+<section class="dash" aria-label="Tablero interactivo">
+  <div class="wrap">
+    <h2>Tablero</h2>
+    <p class="sub" id="corte" style="font-size:14px"></p>
+    <div class="toolbar">
+      <div class="seg-btns" role="group" aria-label="Producto" id="prodBtns"></div>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Nivel">
+      <button role="tab" aria-selected="true" data-tab="div">Divisional</button>
+      <button role="tab" aria-selected="false" data-tab="zon">Zonal</button>
+      <button role="tab" aria-selected="false" data-tab="com">Equipos y comerciales</button>
+    </div>
+
+    <!-- DIVISIONAL -->
+    <div data-panel="div">
+      <div class="kpis" id="kDiv"></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>Cumplimiento por zona</h3>
+          <p class="sub">Al corte frente a lo que debía llevar, y pronóstico de cierre. Clic en una zona para ver su detalle.</p>
+          <div class="legend"><span><i class="sw" style="background:var(--bar);border-radius:2px;width:16px;height:10px"></i>Cumplimiento al corte</span><span><i class="sw" style="background:var(--ink);border-radius:1px;width:3px;height:14px"></i>Pronóstico de cierre</span></div>
+          <div id="cZonas"></div>
+        </div>
+        <div class="card">
+          <h3>Cumplimiento mensual del año</h3>
+          <p class="sub">Toda la división. Noviembre es el pronóstico de cierre.</p>
+          <div class="legend"><span><i class="sw" style="background:var(--accent);height:3px;border-radius:0;width:16px"></i>Cumplimiento real</span><span><i class="sw" style="border-top:2px dotted var(--accent);height:0;border-radius:0;width:16px"></i>Pronóstico</span><span><i class="sw" style="border-top:2px dashed var(--muted);height:0;border-radius:0;width:16px"></i>Meta (100 %)</span></div>
+          <div id="cHist"></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Zonas</h3>
+        <p class="sub">Ordenadas de menor a mayor probabilidad de cumplir.</p>
+        <div class="tablebox"><table id="tZonas"><thead><tr><th>Zona</th><th>Gerente zonal</th><th class="num">Al corte</th><th class="num">Pronóstico</th><th>Probabilidad</th><th class="num">Brecha</th><th class="num">Meta diaria</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </div>
+
+    <!-- ZONAL -->
+    <div data-panel="zon" hidden>
+      <div class="filters"><label>Zona<select id="fZonaZ"></select></label></div>
+      <div class="kpis" id="kZon"></div>
+      <div class="card">
+        <h3>Gerentes de la zona</h3>
+        <p class="sub">Cada gerente de centro de negocio aparece con su equipo (ejecutivos y asesores). Los gerentes de relación aparecen solos.</p>
+        <div class="tablebox"><table id="tUni"><thead><tr><th>Gerente</th><th class="num">Personas</th><th class="num">Al corte</th><th class="num">Pronóstico</th><th>Probabilidad</th><th class="num">Brecha</th><th>Acción sugerida</th></tr></thead><tbody></tbody></table></div>
+        <p style="margin:14px 0 4px;font-size:14px"><a href="#" id="linkMailZona">Ver el correo que recibe este zonal →</a></p>
+      </div>
+    </div>
+
+    <!-- COMERCIALES -->
+    <div data-panel="com" hidden>
+      <div class="filters">
+        <label>Zona<select id="fZonaC"><option value="">Todas las zonas</option></select></label>
+        <label>Segmento<select id="fSeg"><option value="">Todos los segmentos</option></select></label>
+        <label>Buscar<input type="search" id="fQ" placeholder="Nombre"></label>
+      </div>
+      <div class="card">
+        <h3>Segmentos de la fuerza comercial (K-Means)</h3>
+        <p class="sub">Cada punto es un comercial. Horizontal: cumplimiento al corte. Vertical: probabilidad de cumplir la meta del mes.</p>
+        <div class="legend" id="segLegend"></div>
+        <div id="cScatter"></div>
+      </div>
+      <div class="card">
+        <h3>Acciones por comercial</h3>
+        <p class="sub">Ordenado por la brecha que le falta a cada uno para cumplir el mes.</p>
+        <div class="tablebox"><table id="tCom"><thead><tr><th>Comercial</th><th>Zona</th><th>Segmento</th><th class="num">Al corte</th><th>Probabilidad</th><th class="num">Brecha</th><th>Acción sugerida</th></tr></thead><tbody></tbody></table></div>
+        <button class="more" id="more" type="button">Mostrar todos</button>
+      </div>
+    </div>
+
+    <!-- AGENTE -->
+    <div class="card" style="margin-top:28px">
+      <p class="lbl">AGENTE DE SEGUIMIENTO · FUNCIONA SIN INTERNET</p>
+      <h3 style="font-size:20px">Pregúntale al tablero</h3>
+      <p class="sub">Entiende tu pregunta comparándola con frases de ejemplo (TF-IDF y similitud de coseno), reconoce zonas, personas y productos, y responde con los datos del tablero. No usa ningún servicio externo.</p>
+      <div class="agent">
+        <div>
+          <div class="chat" id="chat" aria-live="polite"></div>
+          <form class="ask" id="askForm"><input type="text" id="askIn" placeholder="Ej.: ¿Cómo va Cali en tarjeta?" aria-label="Escribe tu pregunta"><button type="submit">Preguntar</button></form>
+        </div>
+        <div class="sugg" id="sugg"><p class="sub" style="margin:0">Prueba con:</p></div>
+      </div>
+    </div>
+
+    <!-- CORREOS -->
+    <div class="card">
+      <p class="lbl">CORREOS AUTOMÁTICOS</p>
+      <h3 style="font-size:20px">Un correo para cada líder, con su equipo en copia</h3>
+      <p class="sub">45 correos personalizados: 1 divisional, 17 zonales y 27 gerentes de centro de negocio. Antes de enviar, el sistema valida todos los destinatarios; si uno falla, no sale ninguno. Cuando alguien ya cumplió la meta, el correo lo reconoce.</p>
+      <div class="mail-tabs" id="mailTabs"></div>
+      <iframe class="mail" id="mailFrame" title="Vista previa del correo"></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="wrap how">
+  <h2>Cómo funciona</h2>
+  <ol>
+    <li><strong>Fuentes.</strong> <code>generar_fuentes.py</code> crea 7 archivos ficticios con los problemas de la vida real: encabezados distintos, códigos con ".0", productos escritos de 4 formas, valores en pesos y personas retiradas.</li>
+    <li><strong>Pipeline.</strong> <code>pipeline.py</code> normaliza y homologa, convierte el presupuesto de formato ancho a largo y cruza todo por código y producto. Antes y después de cada cruce valida que no se dupliquen filas: si pasa, se detiene.</li>
+    <li><strong>Pronóstico.</strong> <code>pronostico.py</code> estima el cierre con 60 % del ritmo del mes y 40 % del cumplimiento histórico, y calcula la probabilidad de cumplir con la volatilidad de cada comercial (solo con 3 meses o más de historia). Luego agrupa a los comerciales con K-Means y asigna una acción concreta.</li>
+    <li><strong>Correos.</strong> <code>correos.py</code> arma un correo por líder con sus brechas principales, valida destinatarios, tiene modo de prueba y deja registro de cada envío.</li>
+    <li><strong>Tablero y agente.</strong> Esta página lee <code>consolidado.json</code>. El agente clasifica tu pregunta con TF-IDF y responde con los mismos datos.</li>
+  </ol>
+  <p style="margin-top:18px">Todo corre con <code>python codigo/ejecutar_todo.py</code>. <a href="https://github.com/dsrodriguezq/dsrodriguezq.github.io/tree/main/proyectos/seguimiento-comercial">Ver el código en GitHub →</a></p>
+  <p id="calidad" style="font-size:14px;color:var(--ink-2)"></p>
+</div>
+
+<div class="wrap"><footer>Diana Sofía Rodríguez Díaz · <a href="../../">dsrodriguezq.github.io</a> · Proyecto de demostración: todos los datos, nombres y correos son ficticios.</footer></div>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+(async function(){
+  const NS="http://www.w3.org/2000/svg";
+  const [D, CORREOS, CAL] = await Promise.all([
+    fetch("datos/consolidado.json").then(r=>r.json()),
+    fetch("correos/indice.json").then(r=>r.json()),
+    fetch("datos/calidad.json").then(r=>r.json())
+  ]);
+  const P = D.meta.productos, PRODS = Object.keys(P);
+  let prod = PRODS[0], showAll = false;
+  const SEGS=[{k:"Sólidos",c:"var(--s1)"},{k:"Prioridad de acompañamiento",c:"var(--s2)"},{k:"En observación",c:"var(--s3)"}];
+  const segColor=Object.fromEntries(SEGS.map(s=>[s.k,s.c]));
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const mon=()=>P[prod].monetario;
+  const fv=(v,m=mon())=>v==null||isNaN(v)?"—":(m?"$"+Math.round(v).toLocaleString("es-CO")+" M":Math.round(v).toLocaleString("es-CO"));
+  const fp=v=>v==null||isNaN(v)?"—":(v*100).toLocaleString("es-CO",{maximumFractionDigits:1})+" %";
+  const chip=(a,p)=>{const k={"ALTA PROBABILIDAD":"alta","EN RIESGO":"riesgo","BAJA PROBABILIDAD":"baja"}[a]||"sin";
+    const t=a.charAt(0)+a.slice(1).toLowerCase(); return `<span class="chip a-${k}"><i></i>${t}${p!=null&&!isNaN(p)?" · "+fp(p):""}</span>`;};
+  const tip=$("tip"); const showTip=(e,h)=>{tip.innerHTML=h;tip.style.opacity=1;tip.style.left=Math.min(e.clientX+14,innerWidth-290)+"px";tip.style.top=(e.clientY+14)+"px"};
+  const hideTip=()=>tip.style.opacity=0;
+  const el=(t,a={},p)=>{const n=document.createElementNS(NS,t);for(const k in a)n.setAttribute(k,a[k]);if(p)p.appendChild(n);return n};
+  const byP=arr=>arr.filter(r=>r.PRODUCTO===prod);
+  const CARGOS={"GTE RELACION":"Gerente de relación","GTE CN":"Gerente de centro de negocio","EJECUTIVO":"Ejecutivo","ASESOR":"Asesor"};
+  const cargo=c=>CARGOS[c]||c;
+  const c=D.meta.corte;
+  const fecha=new Date(c.fecha_corte+"T12:00:00").toLocaleDateString("es-CO",{day:"numeric",month:"long",year:"numeric"});
+  $("corte").textContent=`${D.meta.banco} · corte al ${fecha} · día hábil ${c.dias_transcurridos} de ${c.dias_mes} · préstamo en millones de pesos, tarjeta en unidades`;
+  $("calidad").textContent=`Control de calidad de esta corrida: ${CAL.filas_base} filas consolidadas de ${CAL.comerciales} comerciales; ${CAL.advertencias.length} advertencias registradas (por ejemplo: "${CAL.advertencias[0]||"ninguna"}").`;
+
+  // ---------- producto y pestañas
+  PRODS.forEach(k=>{const b=document.createElement("button");b.type="button";b.textContent=P[k].etiqueta;b.dataset.p=k;b.setAttribute("aria-pressed",k===prod);
+    b.onclick=()=>{prod=k;document.querySelectorAll("#prodBtns button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.p===prod));render()};$("prodBtns").appendChild(b)});
+  const tabs=[...document.querySelectorAll('[role=tab]')];
+  const goTab=t=>{tabs.forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===t));document.querySelectorAll("[data-panel]").forEach(p=>p.hidden=p.dataset.panel!==t)};
+  tabs.forEach(b=>b.onclick=()=>goTab(b.dataset.tab));
+  const zonas=[...new Set(D.zonales.map(z=>z.ZONA))].sort((a,b)=>a.localeCompare(b,"es"));
+  zonas.forEach(z=>{$("fZonaZ").add(new Option(z,z));$("fZonaC").add(new Option(z,z))});
+  SEGS.forEach(s=>$("fSeg").add(new Option(s.k,s.k)));
+  $("segLegend").innerHTML=SEGS.map(s=>`<span><i class="sw" style="background:${s.c}"></i>${s.k}</span>`).join("");
+  const irZona=z=>{$("fZonaZ").value=z;goTab("zon");renderZon();window.scrollTo({top:document.querySelector(".tabs").getBoundingClientRect().top+scrollY-20,behavior:"smooth"})};
+
+  const kpis=(r,box)=>{$(box).innerHTML=[
+    [fv(r.REAL),`colocado · debía llevar ${fv(r.PPTO_CORTE)}`],
+    [fp(r.CUMP_CORTE),"cumplimiento al corte"],
+    [fp(r.PRON_CUMP),`pronóstico de cierre · ${chip(r.ALERTA,r.PROB)}`],
+    [fv(r.META_DIARIA),`por día hábil para cerrar la brecha de ${fv(r.BRECHA)}`]
+  ].map(([v,l])=>`<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("")};
+
+  // ---------- DIVISIONAL
+  function renderDiv(){
+    kpis(byP(D.divisional)[0],"kDiv");
+    const zs=byP(D.zonales);
+    // barras por zona
+    const box=$("cZonas");box.innerHTML="";
+    const data=[...zs].sort((a,b)=>a.CUMP_CORTE-b.CUMP_CORTE);
+    const W=540,rowH=22,top=6,left=110,right=48,H=top+data.length*rowH+26;
+    const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,width:"100%",role:"img","aria-label":"Cumplimiento por zona"},box);
+    const vals=data.flatMap(d=>[d.CUMP_CORTE,d.PRON_CUMP]);
+    const x0=Math.floor(Math.min(0.7,...vals)*10)/10,x1=Math.ceil(Math.max(1.1,...vals)*10)/10;
+    const X=v=>left+(Math.max(v,x0)-x0)/(x1-x0)*(W-left-right);
+    const ax=el("g",{class:"axis"},svg);
+    for(let t=x0;t<=x1+1e-9;t+=0.1){const one=Math.abs(t-1)<1e-9;el("line",{x1:X(t),x2:X(t),y1:top-2,y2:H-22,stroke:one?"#0E1B2C":"var(--grid)","stroke-dasharray":one?"3 3":""},ax);el("text",{x:X(t),y:H-6,"text-anchor":"middle"},ax).textContent=Math.round(t*100)+" %"}
+    data.forEach((d,i)=>{const y=top+i*rowH,g=el("g",{},svg);
+      el("text",{x:left-8,y:y+14,"text-anchor":"end","font-size":12,fill:"#0E1B2C"},g).textContent=d.ZONA;
+      el("rect",{x:left,y:y+5,width:Math.max(X(d.CUMP_CORTE)-left,2),height:12,rx:4,fill:"var(--bar)"},g);
+      el("rect",{x:X(d.PRON_CUMP)-1.5,y:y+2,width:3,height:18,fill:"#0E1B2C"},g);
+      el("text",{x:Math.max(X(d.CUMP_CORTE),X(d.PRON_CUMP))+6,y:y+15,"font-size":11,fill:"#4B5768"},g).textContent=Math.round(d.CUMP_CORTE*100)+" %";
+      const hit=el("rect",{x:0,y,width:W,height:rowH,fill:"transparent",style:"cursor:pointer"},g);
+      hit.addEventListener("mousemove",e=>showTip(e,`<strong>${esc(d.ZONA)}</strong><br>Al corte: ${fp(d.CUMP_CORTE)}<br>Pronóstico: ${fp(d.PRON_CUMP)}<br>Probabilidad: ${fp(d.PROB)}<br><span style="opacity:.75">Clic para ver la zona</span>`));
+      hit.addEventListener("mouseleave",hideTip);hit.addEventListener("click",()=>{hideTip();irZona(d.ZONA)})});
+    // histórico
+    const hb=$("cHist");hb.innerHTML="";
+    const hs=D.historico.filter(h=>h.PRODUCTO===prod).sort((a,b)=>a.MES.localeCompare(b.MES));
+    const dv=byP(D.divisional)[0];
+    const pts=hs.map(h=>h.CUMP),all=pts.concat([dv.PRON_CUMP,1]);
+    const HW=540,HH=330,L=46,R=14,T=12,B=28;
+    const y0=Math.floor(Math.min(...all)*20)/20-0.05,y1=Math.ceil(Math.max(...all)*20)/20+0.05;
+    const XX=i=>L+i*(HW-L-R)/10,YY=v=>T+(1-(v-y0)/(y1-y0))*(HH-T-B);
+    const s2=el("svg",{viewBox:`0 0 ${HW} ${HH}`,width:"100%",role:"img","aria-label":"Cumplimiento mensual del año"},hb);
+    const a2=el("g",{class:"axis"},s2);
+    for(let t=Math.ceil(y0*20)/20;t<=y1+1e-9;t+=0.05){el("line",{x1:L,x2:HW-R,y1:YY(t),y2:YY(t),stroke:"var(--grid)"},a2);el("text",{x:L-6,y:YY(t)+4,"text-anchor":"end"},a2).textContent=Math.round(t*100)+" %"}
+    ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov"].forEach((m,i)=>el("text",{x:XX(i),y:HH-8,"text-anchor":"middle"},a2).textContent=m);
+    el("line",{x1:L,x2:HW-R,y1:YY(1),y2:YY(1),stroke:"#6B7686","stroke-dasharray":"6 4","stroke-width":1.5},s2);
+    const path=p=>p.map((q,i)=>(i?"L":"M")+q[0].toFixed(1)+" "+q[1].toFixed(1)).join(" ");
+    el("path",{d:path(pts.map((v,i)=>[XX(i),YY(v)])),fill:"none",stroke:"var(--accent)","stroke-width":2.2},s2);
+    el("path",{d:path([[XX(9),YY(pts[9])],[XX(10),YY(dv.PRON_CUMP)]]),fill:"none",stroke:"var(--accent)","stroke-width":2.2,"stroke-dasharray":"2 4","stroke-linecap":"round"},s2);
+    el("circle",{cx:XX(10),cy:YY(dv.PRON_CUMP),r:4.5,fill:"#fff",stroke:"var(--accent)","stroke-width":2},s2);
+    const vals2=pts.concat([dv.PRON_CUMP]);
+    const cross=el("line",{y1:T,y2:HH-B,stroke:"#0E1B2C",opacity:0},s2),dot=el("circle",{r:4.5,fill:"var(--accent)",stroke:"#fff","stroke-width":2,opacity:0},s2);
+    const hit=el("rect",{x:L,y:T,width:HW-L-R,height:HH-T-B,fill:"transparent"},s2);
+    const MESES=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre (pronóstico)"];
+    hit.addEventListener("mousemove",e=>{const p=s2.createSVGPoint();p.x=e.clientX;p.y=e.clientY;const q=p.matrixTransform(s2.getScreenCTM().inverse());
+      const i=Math.max(0,Math.min(10,Math.round((q.x-L)/((HW-L-R)/10))));cross.setAttribute("x1",XX(i));cross.setAttribute("x2",XX(i));cross.setAttribute("opacity",.3);
+      dot.setAttribute("cx",XX(i));dot.setAttribute("cy",YY(vals2[i]));dot.setAttribute("opacity",1);showTip(e,`<strong>${MESES[i]}</strong><br>Cumplimiento: ${fp(vals2[i])}`)});
+    hit.addEventListener("mouseleave",()=>{hideTip();cross.setAttribute("opacity",0);dot.setAttribute("opacity",0)});
+    // tabla
+    const tb=$("tZonas").tBodies[0];
+    tb.innerHTML=[...zs].sort((a,b)=>(a.PROB??-1)-(b.PROB??-1)).map(z=>`<tr class="click" data-z="${esc(z.ZONA)}" tabindex="0"><td><strong>${esc(z.ZONA)}</strong></td><td>${esc(z.NOMBRE_ZONAL)}</td><td class="num">${fp(z.CUMP_CORTE)}</td><td class="num">${fp(z.PRON_CUMP)}</td><td>${chip(z.ALERTA,z.PROB)}</td><td class="num">${fv(z.BRECHA)}</td><td class="num">${fv(z.META_DIARIA)}</td></tr>`).join("");
+    tb.querySelectorAll("tr").forEach(tr=>{tr.onclick=()=>irZona(tr.dataset.z);tr.onkeydown=e=>{if(e.key==="Enter")irZona(tr.dataset.z)}});
+  }
+
+  // ---------- ZONAL
+  function renderZon(){
+    const z=$("fZonaZ").value||zonas[0];$("fZonaZ").value=z;
+    kpis(byP(D.zonales).find(r=>r.ZONA===z),"kZon");
+    const us=byP(D.unidades).filter(u=>u.ZONA===z).sort((a,b)=>b.BRECHA-a.BRECHA);
+    $("tUni").tBodies[0].innerHTML=us.map(u=>`<tr><td><strong>${esc(u.NOMBRE)}</strong><br><span style="font-size:13px;color:var(--ink-2)">${u.CARGO==="GTE CN"?"Gerente de centro de negocio + equipo":"Gerente de relación"}</span></td><td class="num">${u.PERSONAS}</td><td class="num">${fp(u.CUMP_CORTE)}</td><td class="num">${fp(u.PRON_CUMP)}</td><td>${chip(u.ALERTA,u.PROB)}</td><td class="num">${fv(u.BRECHA)}</td><td>${esc(u.ACCION)}</td></tr>`).join("");
+    const zn=D.zonales.find(r=>r.ZONA===z).NOMBRE_ZONAL, m=CORREOS.find(x=>x.nivel==="ZONAL"&&x.responsable===zn);
+    $("linkMailZona").onclick=e=>{e.preventDefault();if(m){abrirCorreo(m.archivo);document.querySelector("#mailFrame").scrollIntoView({behavior:"smooth",block:"center"})}};
+    $("linkMailZona").textContent=`Ver el correo que recibe ${zn} →`;
+  }
+  $("fZonaZ").onchange=renderZon;
+
+  // ---------- COMERCIALES
+  function filtrados(){const q=$("fQ").value.trim().toLowerCase();return byP(D.comerciales).filter(r=>(!$("fZonaC").value||r.ZONA===$("fZonaC").value)&&(!$("fSeg").value||r.SEGMENTO===$("fSeg").value)&&(!q||r.NOMBRE.toLowerCase().includes(q)))}
+  function renderCom(){
+    const rows=filtrados(),ids=new Set(rows.map(r=>r.CODIGO)),todos=byP(D.comerciales);
+    const box=$("cScatter");box.innerHTML="";
+    const W=1100,H=340,L=52,R=18,T=12,B=40;
+    const xs=todos.map(r=>r.CUMP_CORTE).filter(v=>v!=null);
+    const x0=Math.floor(Math.min(...xs)*10)/10,x1=Math.ceil(Math.max(...xs)*10)/10;
+    const X=v=>L+(v-x0)/(x1-x0)*(W-L-R),Y=v=>T+(1-v)*(H-T-B);
+    const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,width:"100%",role:"img","aria-label":"Comerciales por cumplimiento al corte y probabilidad, coloreados por segmento"},box);
+    const ax=el("g",{class:"axis"},svg);
+    for(let t=x0;t<=x1+1e-9;t+=0.1){const one=Math.abs(t-1)<1e-9;el("line",{x1:X(t),x2:X(t),y1:T,y2:H-B,stroke:one?"#0E1B2C":"var(--grid)","stroke-dasharray":one?"3 3":""},ax);el("text",{x:X(t),y:H-B+16,"text-anchor":"middle"},ax).textContent=Math.round(t*100)+" %"}
+    for(let t=0;t<=1.0001;t+=0.25){el("line",{x1:L,x2:W-R,y1:Y(t),y2:Y(t),stroke:"var(--grid)"},ax);el("text",{x:L-6,y:Y(t)+4,"text-anchor":"end"},ax).textContent=Math.round(t*100)+" %"}
+    el("text",{x:(L+W-R)/2,y:H-4,"text-anchor":"middle"},ax).textContent="Cumplimiento al corte";
+    [...todos].sort((a,b)=>ids.has(a.CODIGO)-ids.has(b.CODIGO)).forEach(r=>{if(r.PROB==null||r.CUMP_CORTE==null)return;const on=ids.has(r.CODIGO);
+      const d=el("circle",{cx:X(r.CUMP_CORTE),cy:Y(r.PROB),r:on?5.5:4,fill:on?segColor[r.SEGMENTO]:"#D5DCE4",stroke:"#fff","stroke-width":1.5},svg);
+      if(on){d.style.cursor="pointer";d.addEventListener("mousemove",e=>showTip(e,`<strong>${esc(r.NOMBRE)}</strong><br>${esc(cargo(r.CARGO))} · ${esc(r.ZONA)}<br>${esc(r.SEGMENTO)}<br>Al corte: ${fp(r.CUMP_CORTE)} · Probabilidad: ${fp(r.PROB)}`));d.addEventListener("mouseleave",hideTip)}});
+    const sorted=[...rows].sort((a,b)=>b.BRECHA-a.BRECHA),shown=showAll?sorted:sorted.slice(0,15);
+    $("tCom").tBodies[0].innerHTML=shown.map(r=>`<tr><td><strong>${esc(r.NOMBRE)}</strong><br><span style="font-size:13px;color:var(--ink-2)">${esc(cargo(r.CARGO))}</span></td><td>${esc(r.ZONA)}</td><td><span style="display:inline-flex;align-items:center;gap:6px"><i class="sw" style="background:${segColor[r.SEGMENTO]}"></i>${esc(r.SEGMENTO)}</span></td><td class="num">${fp(r.CUMP_CORTE)}</td><td>${chip(r.ALERTA,r.PROB)}</td><td class="num">${fv(r.BRECHA)}</td><td>${esc(r.ACCION)}</td></tr>`).join("");
+    $("more").hidden=sorted.length<=15;$("more").textContent=showAll?"Mostrar solo los 15 primeros":`Mostrar los ${sorted.length}`;
+  }
+  ["fZonaC","fSeg"].forEach(i=>$(i).onchange=renderCom);$("fQ").oninput=renderCom;$("more").onclick=()=>{showAll=!showAll;renderCom()};
+
+  // ---------- CORREOS
+  const muestras=[CORREOS.find(x=>x.nivel==="DIVISIONAL"),CORREOS.find(x=>x.nivel==="ZONAL"),
+    CORREOS.find(x=>x.archivo.includes("isabella-gomez"))||CORREOS.find(x=>x.nivel==="GERENTE CN")];
+  const etiquetas=["Divisional","Zonal","Gerente de centro de negocio"];
+  function abrirCorreo(a){$("mailFrame").src=a;document.querySelectorAll("#mailTabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.a===a))}
+  muestras.forEach((m,i)=>{const b=document.createElement("button");b.type="button";b.dataset.a=m.archivo;b.textContent=`${etiquetas[i]} · ${m.responsable}`;b.onclick=()=>abrirCorreo(m.archivo);$("mailTabs").appendChild(b)});
+  abrirCorreo(muestras[0].archivo);
+
+  // ---------- AGENTE (TF-IDF + coseno, sin servicios externos)
+  const norm=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9ñ ]/g," ");
+  const STOP=new Set("el la los las de del en y a que como cual cuales es son por para con un una al lo se me mi va van esta este hay".split(" "));
+  const tok=s=>norm(s).split(/\s+/).filter(w=>w&&!STOP.has(w));
+  const INTENTS={
+    resumen:["como vamos","resumen general","como va la division","como vamos este mes","estado general","como va el banco","dame un resumen"],
+    zona:["como va la zona","estado de la zona","como esta la zona","resultado de la zona","como le va a la zona"],
+    persona:["como va el comercial","como le va a","estado del gerente","como va el gerente","resultado de la persona","como esta"],
+    brechas:["quien tiene la mayor brecha","top brechas","mayores brechas","quienes estan mas lejos de la meta","a quien le falta mas","peores resultados"],
+    riesgo:["que zonas estan en riesgo","quienes no van a cumplir","zonas con baja probabilidad","riesgo de no cumplir","alertas","quien no llega a la meta"],
+    lideres:["quienes van mejor","mejores comerciales","quien va adelante","top cumplimiento","lideres","quien supera la meta"],
+    plan:["que debe hacer","plan para cerrar la brecha","como cierra la brecha","que accion recomiendas","plan de accion","que hago con"],
+    metodo:["como se calcula el pronostico","que es la probabilidad","como funciona el modelo","de donde salen los datos","que es la segmentacion","como funciona el agente"],
+    ayuda:["ayuda","que puedes hacer","que te puedo preguntar","hola"]
+  };
+  const docs=[];Object.entries(INTENTS).forEach(([k,fs])=>fs.forEach(f=>docs.push({k,t:tok(f)})));
+  const df={};docs.forEach(d=>new Set(d.t).forEach(w=>df[w]=(df[w]||0)+1));
+  const idf=w=>Math.log((docs.length+1)/((df[w]||0)+1))+1;
+  const vec=t=>{const v={};t.forEach(w=>v[w]=(v[w]||0)+1);for(const w in v)v[w]*=idf(w);return v};
+  const cos=(a,b)=>{let d=0,na=0,nb=0;for(const w in a){na+=a[w]*a[w];if(b[w])d+=a[w]*b[w]}for(const w in b)nb+=b[w]*b[w];return na&&nb?d/Math.sqrt(na*nb):0};
+  docs.forEach(d=>d.v=vec(d.t));
+  const zonaDe=q=>{const n=norm(q);return zonas.filter(z=>n.includes(norm(z))).sort((a,b)=>b.length-a.length)[0]};
+  const personaDe=q=>{const n=" "+norm(q)+" ";let best=null;for(const r of D.comerciales){const nm=norm(r.NOMBRE);if(n.includes(" "+nm+" ")&&(!best||nm.length>norm(best.NOMBRE).length))best=r}return best};
+  const prodDe=q=>{const n=norm(q);return /tarjeta|\btc\b/.test(n)?"TARJETA DE CREDITO":/prestamo|credito personal|libre/.test(n)?"PRESTAMO PERSONAL":null};
+  function responder(q){
+    const p=prodDe(q)||prod, et=P[p].etiqueta, m=P[p].monetario, f=v=>fv(v,m);
+    const zona=zonaDe(q), per=personaDe(q), v=vec(tok(q));
+    let best={k:"ayuda",s:0};docs.forEach(d=>{const s=cos(v,d.v);if(s>best.s)best={k:d.k,s}});
+    let k=best.s<0.15?"ayuda":best.k, motivo=`similitud ${best.s.toFixed(2)}`;
+    if(per&&!["plan","metodo"].includes(k)){k="persona";motivo=`reconocí a ${per.NOMBRE}`}
+    if(zona&&!per&&["resumen","persona","ayuda"].includes(k)){k="zona";motivo=`reconocí la zona ${zona}`}
+    const conf=` <span class="meta">Intención: ${k} · ${esc(motivo)} · producto: ${et}</span>`;
+    const div=D.divisional.find(r=>r.PRODUCTO===p);
+    if(k==="resumen")return `En <b>${et}</b> la división lleva ${f(div.REAL)} (${fp(div.CUMP_CORTE)} de lo que debía llevar al corte). El pronóstico de cierre es ${fp(div.PRON_CUMP)} con ${fp(div.PROB)} de probabilidad de cumplir: ${chip(div.ALERTA,div.PROB)}. Faltan ${f(div.BRECHA)}, es decir ${f(div.META_DIARIA)} por día hábil.`+conf;
+    if(k==="zona"){if(!zona)return "¿De qué zona? Puedes decirme, por ejemplo, «¿Cómo va Medellín?»."+conf;
+      const z=D.zonales.find(r=>r.ZONA===zona&&r.PRODUCTO===p),u=D.unidades.filter(r=>r.ZONA===zona&&r.PRODUCTO===p).sort((a,b)=>b.BRECHA-a.BRECHA)[0];
+      return `<b>${zona}</b> (${esc(z.NOMBRE_ZONAL)}) en ${et}: ${fp(z.CUMP_CORTE)} al corte y pronóstico de ${fp(z.PRON_CUMP)}. ${chip(z.ALERTA,z.PROB)} La mayor brecha es la de ${esc(u.NOMBRE)}: ${f(u.BRECHA)}.`+conf}
+    if(k==="persona"||(k==="plan"&&per)){if(!per)return "No reconocí a la persona. Escribe su nombre y apellido tal como aparece en la tabla."+conf;
+      const r=D.comerciales.find(x=>x.CODIGO===per.CODIGO&&x.PRODUCTO===p);
+      if(k==="plan")return `Plan para <b>${esc(r.NOMBRE)}</b> en ${et}: ${esc(r.ACCION)} Le faltan ${f(r.BRECHA)} para cumplir el mes.`+conf;
+      return `<b>${esc(r.NOMBRE)}</b> (${esc(cargo(r.CARGO).toLowerCase())}, ${esc(r.ZONA)}) en ${et}: ${fp(r.CUMP_CORTE)} al corte, pronóstico ${fp(r.PRON_CUMP)}. ${chip(r.ALERTA,r.PROB)} Segmento: ${esc(r.SEGMENTO)}.`+conf}
+    if(k==="plan")return "Dime para quién quieres el plan. Por ejemplo: «¿Qué debe hacer "+esc(D.comerciales[0].NOMBRE)+"?»."+conf;
+    if(k==="brechas"){const base=(zona?D.unidades.filter(r=>r.ZONA===zona):D.unidades).filter(r=>r.PRODUCTO===p).sort((a,b)=>b.BRECHA-a.BRECHA).slice(0,3);
+      return `Mayores brechas en ${et}${zona?" en "+zona:""}:<br>`+base.map((r,i)=>`${i+1}. ${esc(r.NOMBRE)} (${esc(r.ZONA)}): faltan ${f(r.BRECHA)}`).join("<br>")+conf}
+    if(k==="riesgo"){const zs=D.zonales.filter(r=>r.PRODUCTO===p&&r.ALERTA!=="ALTA PROBABILIDAD").sort((a,b)=>a.PROB-b.PROB);
+      return `En ${et}, ${zs.length} de ${zonas.length} zonas no tienen alta probabilidad de cumplir. Las más comprometidas: `+zs.slice(0,4).map(z=>`${z.ZONA} (${fp(z.PROB)})`).join(", ")+"."+conf}
+    if(k==="lideres"){const t=D.comerciales.filter(r=>r.PRODUCTO===p&&(!zona||r.ZONA===zona)).sort((a,b)=>b.CUMP_CORTE-a.CUMP_CORTE).slice(0,3);
+      return `Quienes van más adelante en ${et}${zona?" en "+zona:""}:<br>`+t.map((r,i)=>`${i+1}. ${esc(r.NOMBRE)} (${esc(r.ZONA)}): ${fp(r.CUMP_CORTE)} al corte`).join("<br>")+conf}
+    if(k==="metodo")return "El pronóstico combina 60 % del ritmo del mes (lo colocado dividido por el avance de días hábiles) y 40 % del cumplimiento histórico mediano. La probabilidad sale de una distribución normal con la volatilidad histórica de cada uno, y solo se calcula con 3 meses o más de historia. Los segmentos salen de K-Means con 3 grupos. Yo, el agente, comparo tu pregunta con frases de ejemplo usando TF-IDF y similitud de coseno."+conf;
+    return "Puedo darte el resumen de la división, el estado de una zona o de una persona, las mayores brechas, quiénes están en riesgo, quiénes van adelante, un plan de acción o explicarte el modelo. Si mencionas «tarjeta» o «préstamo», respondo para ese producto."+conf;
+  }
+  const chat=$("chat");
+  const say=(t,who)=>{const d=document.createElement("div");d.className="msg "+who;if(who==="u")d.textContent=t;else d.innerHTML=t;chat.appendChild(d);chat.scrollTop=chat.scrollHeight};
+  const preguntar=q=>{if(!q.trim())return;say(q,"u");say(responder(q),"b")};
+  $("askForm").onsubmit=e=>{e.preventDefault();preguntar($("askIn").value);$("askIn").value=""};
+  const peorZona=D.zonales.filter(r=>r.PRODUCTO===PRODS[0]).sort((a,b)=>a.PROB-b.PROB)[0].ZONA;
+  const unaPersona=D.comerciales.filter(r=>r.PRODUCTO===PRODS[0]).sort((a,b)=>b.BRECHA-a.BRECHA)[0].NOMBRE;
+  [`¿Cómo vamos este mes?`,`¿Cómo va ${peorZona}?`,`¿Quién tiene la mayor brecha en tarjeta?`,`¿Qué zonas están en riesgo?`,`¿Qué debe hacer ${unaPersona}?`,`¿Cómo se calcula el pronóstico?`]
+    .forEach(s=>{const b=document.createElement("button");b.type="button";b.textContent=s;b.onclick=()=>preguntar(s);$("sugg").appendChild(b)});
+  say("Hola, soy el agente del tablero. Pregúntame por la división, una zona, una persona o por quién está en riesgo. Todo lo calculo aquí mismo, sin internet.","b");
+
+  function render(){renderDiv();renderZon();renderCom()}
+  render();
+})();
+</script>
+</body>
+</html>

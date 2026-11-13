@@ -1,0 +1,16 @@
+{
+  "fecha_corte": "2026-11-13",
+  "dias_mes": 19,
+  "dias_transcurridos": 9,
+  "dias_restantes": 10,
+  "avance": 0.47368421052631576,
+  "filas_base": 464,
+  "comerciales": 232,
+  "advertencias": [
+    "10 personas retiradas excluidas de la planta",
+    "presupuesto: 10 códigos sin planta activa (se excluyen)",
+    "desembolsos: 10 códigos sin planta activa (se excluyen)",
+    "radicaciones: 10 códigos sin planta activa (se excluyen)",
+    "tubo: 10 códigos sin planta activa (se excluyen)"
+  ]
+}

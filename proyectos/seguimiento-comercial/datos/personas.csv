@@ -1,0 +1,251 @@
+CODIGO,NOMBRE,CARGO,CODIGO_JEFE,ZONA,CORREO,ESTADO,CODIGO_ZONAL,NOMBRE_ZONAL,CODIGO_GERENTE_CN
+39999,Tomás Duarte,GTE DIVISIONAL,,DIVISIÓN,tomas.duarte@bancoandino.example,ACTIVO,,,
+40001,Nicolás Rodríguez,GTE ZONAL,39999,Bogotá Norte,nicolas.rodriguez@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,
+40002,Ricardo Rodríguez,GTE RELACION,40001,Bogotá Norte,ricardo.rodriguez@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,
+40003,Felipe Ortiz,GTE CN,40001,Bogotá Norte,felipe.ortiz@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,
+40004,Laura Mejía,EJECUTIVO,40003,Bogotá Norte,laura.mejia@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40003
+40005,Santiago Salazar,EJECUTIVO,40003,Bogotá Norte,santiago.salazar@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40003
+40006,Adriana Jiménez,EJECUTIVO,40003,Bogotá Norte,adriana.jimenez@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40003
+40007,Laura Muñoz,ASESOR,40003,Bogotá Norte,laura.munoz@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40003
+40008,Mateo Moreno,ASESOR,40003,Bogotá Norte,mateo.moreno@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40003
+40009,Juliana Ortiz,ASESOR,40003,Bogotá Norte,juliana.ortiz@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40003
+40011,Natalia Vargas,ASESOR,40003,Bogotá Norte,natalia.vargas@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40003
+40012,Diego Moreno,GTE CN,40001,Bogotá Norte,diego.moreno@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,
+40013,Gloria Arango,EJECUTIVO,40012,Bogotá Norte,gloria.arango@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40012
+40014,Esteban Ramírez,EJECUTIVO,40012,Bogotá Norte,esteban.ramirez@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40012
+40015,Alejandro Ortiz,ASESOR,40012,Bogotá Norte,alejandro.ortiz@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40012
+40016,Lina Ortiz,ASESOR,40012,Bogotá Norte,lina.ortiz@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40012
+40017,Daniela Restrepo,ASESOR,40012,Bogotá Norte,daniela.restrepo@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40012
+40018,Camila Gómez,ASESOR,40012,Bogotá Norte,camila.gomez@bancoandino.example,ACTIVO,40001,Nicolás Rodríguez,40012
+40019,Juliana López,GTE ZONAL,39999,Bogotá Centro,juliana.lopez@bancoandino.example,ACTIVO,40019,Juliana López,
+40020,Mariana Vargas,GTE RELACION,40019,Bogotá Centro,mariana.vargas@bancoandino.example,ACTIVO,40019,Juliana López,
+40021,Angélica Rodríguez,GTE RELACION,40019,Bogotá Centro,angelica.rodriguez@bancoandino.example,ACTIVO,40019,Juliana López,
+40022,Nicolás Restrepo,GTE CN,40019,Bogotá Centro,nicolas.restrepo@bancoandino.example,ACTIVO,40019,Juliana López,
+40023,Julián López,EJECUTIVO,40022,Bogotá Centro,julian.lopez@bancoandino.example,ACTIVO,40019,Juliana López,40022
+40024,Julián García,EJECUTIVO,40022,Bogotá Centro,julian.garcia@bancoandino.example,ACTIVO,40019,Juliana López,40022
+40025,Angélica Ortiz,ASESOR,40022,Bogotá Centro,angelica.ortiz@bancoandino.example,ACTIVO,40019,Juliana López,40022
+40026,Adriana García,ASESOR,40022,Bogotá Centro,adriana.garcia@bancoandino.example,ACTIVO,40019,Juliana López,40022
+40028,Sebastián Martínez,ASESOR,40022,Bogotá Centro,sebastian.martinez@bancoandino.example,ACTIVO,40019,Juliana López,40022
+40029,Paula Martínez,GTE ZONAL,39999,Bogotá Sur,paula.martinez@bancoandino.example,ACTIVO,40029,Paula Martínez,
+40030,Simón Pineda,GTE RELACION,40029,Bogotá Sur,simon.pineda@bancoandino.example,ACTIVO,40029,Paula Martínez,
+40031,Tomás Ortiz,GTE RELACION,40029,Bogotá Sur,tomas.ortiz@bancoandino.example,ACTIVO,40029,Paula Martínez,
+40032,Tomás Castro,GTE CN,40029,Bogotá Sur,tomas.castro@bancoandino.example,ACTIVO,40029,Paula Martínez,
+40033,Verónica Bermúdez,EJECUTIVO,40032,Bogotá Sur,veronica.bermudez@bancoandino.example,ACTIVO,40029,Paula Martínez,40032
+40034,Catalina Ramírez,EJECUTIVO,40032,Bogotá Sur,catalina.ramirez@bancoandino.example,ACTIVO,40029,Paula Martínez,40032
+40035,Sebastián Gómez,ASESOR,40032,Bogotá Sur,sebastian.gomez@bancoandino.example,ACTIVO,40029,Paula Martínez,40032
+40036,Manuela Ramírez,ASESOR,40032,Bogotá Sur,manuela.ramirez@bancoandino.example,ACTIVO,40029,Paula Martínez,40032
+40037,Catalina Moreno,ASESOR,40032,Bogotá Sur,catalina.moreno@bancoandino.example,ACTIVO,40029,Paula Martínez,40032
+40038,Sara Gómez,GTE CN,40029,Bogotá Sur,sara.gomez@bancoandino.example,ACTIVO,40029,Paula Martínez,
+40039,Angélica Mejía,EJECUTIVO,40038,Bogotá Sur,angelica.mejia@bancoandino.example,ACTIVO,40029,Paula Martínez,40038
+40040,Esteban Hernández,EJECUTIVO,40038,Bogotá Sur,esteban.hernandez@bancoandino.example,ACTIVO,40029,Paula Martínez,40038
+40041,Esteban López,EJECUTIVO,40038,Bogotá Sur,esteban.lopez@bancoandino.example,ACTIVO,40029,Paula Martínez,40038
+40042,Camilo Gómez,ASESOR,40038,Bogotá Sur,camilo.gomez@bancoandino.example,ACTIVO,40029,Paula Martínez,40038
+40043,Isabella Castro,ASESOR,40038,Bogotá Sur,isabella.castro@bancoandino.example,ACTIVO,40029,Paula Martínez,40038
+40044,Natalia Restrepo,ASESOR,40038,Bogotá Sur,natalia.restrepo@bancoandino.example,ACTIVO,40029,Paula Martínez,40038
+40045,David Salazar,GTE ZONAL,39999,Medellín,david.salazar@bancoandino.example,ACTIVO,40045,David Salazar,
+40046,Alejandro Quintero,GTE RELACION,40045,Medellín,alejandro.quintero@bancoandino.example,ACTIVO,40045,David Salazar,
+40047,Laura García,GTE CN,40045,Medellín,laura.garcia@bancoandino.example,ACTIVO,40045,David Salazar,
+40048,Mateo Cardona,EJECUTIVO,40047,Medellín,mateo.cardona@bancoandino.example,ACTIVO,40045,David Salazar,40047
+40049,Paula Zapata,EJECUTIVO,40047,Medellín,paula.zapata@bancoandino.example,ACTIVO,40045,David Salazar,40047
+40050,Natalia Castro,EJECUTIVO,40047,Medellín,natalia.castro@bancoandino.example,ACTIVO,40045,David Salazar,40047
+40051,Valentina García,ASESOR,40047,Medellín,valentina.garcia@bancoandino.example,ACTIVO,40045,David Salazar,40047
+40052,Juliana Duarte,ASESOR,40047,Medellín,juliana.duarte@bancoandino.example,ACTIVO,40045,David Salazar,40047
+40053,Simón Moreno,ASESOR,40047,Medellín,simon.moreno@bancoandino.example,ACTIVO,40045,David Salazar,40047
+40054,Diego Bermúdez,ASESOR,40047,Medellín,diego.bermudez@bancoandino.example,ACTIVO,40045,David Salazar,40047
+40055,Isabella Vargas,ASESOR,40047,Medellín,isabella.vargas@bancoandino.example,ACTIVO,40045,David Salazar,40047
+40056,Paula Gómez,GTE CN,40045,Medellín,paula.gomez@bancoandino.example,ACTIVO,40045,David Salazar,
+40057,Sara Ortiz,EJECUTIVO,40056,Medellín,sara.ortiz@bancoandino.example,ACTIVO,40045,David Salazar,40056
+40059,Felipe Castro,ASESOR,40056,Medellín,felipe.castro@bancoandino.example,ACTIVO,40045,David Salazar,40056
+40060,Camilo Rodríguez,ASESOR,40056,Medellín,camilo.rodriguez@bancoandino.example,ACTIVO,40045,David Salazar,40056
+40061,Esteban Zapata,ASESOR,40056,Medellín,esteban.zapata@bancoandino.example,ACTIVO,40045,David Salazar,40056
+40063,Tomás Vargas,GTE ZONAL,39999,Cali,tomas.vargas@bancoandino.example,ACTIVO,40063,Tomás Vargas,
+40064,Verónica Vargas,GTE RELACION,40063,Cali,veronica.vargas@bancoandino.example,ACTIVO,40063,Tomás Vargas,
+40065,Laura Cardona,GTE CN,40063,Cali,laura.cardona@bancoandino.example,ACTIVO,40063,Tomás Vargas,
+40066,Mateo Ortiz,EJECUTIVO,40065,Cali,mateo.ortiz@bancoandino.example,ACTIVO,40063,Tomás Vargas,40065
+40067,Diego Hernández,EJECUTIVO,40065,Cali,diego.hernandez@bancoandino.example,ACTIVO,40063,Tomás Vargas,40065
+40068,Alejandro Pineda,EJECUTIVO,40065,Cali,alejandro.pineda@bancoandino.example,ACTIVO,40063,Tomás Vargas,40065
+40069,Alejandro Rodríguez,ASESOR,40065,Cali,alejandro.rodriguez@bancoandino.example,ACTIVO,40063,Tomás Vargas,40065
+40071,Sara Torres,ASESOR,40065,Cali,sara.torres@bancoandino.example,ACTIVO,40063,Tomás Vargas,40065
+40072,Juan Pablo Bermúdez,ASESOR,40065,Cali,juan.bermudez@bancoandino.example,ACTIVO,40063,Tomás Vargas,40065
+40073,Santiago Bermúdez,GTE ZONAL,39999,Barranquilla,santiago.bermudez@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,
+40074,Juan Pablo Arango,GTE RELACION,40073,Barranquilla,juan.arango@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,
+40075,Felipe Moreno,GTE RELACION,40073,Barranquilla,felipe.moreno@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,
+40076,Daniela Arango,GTE CN,40073,Barranquilla,daniela.arango@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,
+40077,Juliana Pineda,EJECUTIVO,40076,Barranquilla,juliana.pineda@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40076
+40078,Ricardo Moreno,EJECUTIVO,40076,Barranquilla,ricardo.moreno@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40076
+40079,Daniela Bermúdez,EJECUTIVO,40076,Barranquilla,daniela.bermudez@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40076
+40080,Diego Pineda,ASESOR,40076,Barranquilla,diego.pineda@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40076
+40081,Sebastián Rodríguez,ASESOR,40076,Barranquilla,sebastian.rodriguez@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40076
+40082,Mariana Moreno,ASESOR,40076,Barranquilla,mariana.moreno@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40076
+40083,Andrés Ortiz,ASESOR,40076,Barranquilla,andres.ortiz@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40076
+40084,Gloria García,GTE CN,40073,Barranquilla,gloria.garcia@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,
+40085,Ricardo Pineda,EJECUTIVO,40084,Barranquilla,ricardo.pineda@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40084
+40086,Nicolás Ramírez,EJECUTIVO,40084,Barranquilla,nicolas.ramirez@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40084
+40087,Mauricio Vargas,ASESOR,40084,Barranquilla,mauricio.vargas@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40084
+40088,Isabella Rodríguez,ASESOR,40084,Barranquilla,isabella.rodriguez@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40084
+40089,Mauricio Muñoz,ASESOR,40084,Barranquilla,mauricio.munoz@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40084
+40090,Angélica Bermúdez,ASESOR,40084,Barranquilla,angelica.bermudez@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40084
+40091,Tomás Mejía,ASESOR,40084,Barranquilla,tomas.mejia@bancoandino.example,ACTIVO,40073,Santiago Bermúdez,40084
+40092,Mariana Bermúdez,GTE ZONAL,39999,Cartagena,mariana.bermudez@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,
+40093,Simón Quintero,GTE RELACION,40092,Cartagena,simon.quintero@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,
+40094,Paula Restrepo,GTE RELACION,40092,Cartagena,paula.restrepo@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,
+40095,Catalina Pineda,GTE CN,40092,Cartagena,catalina.pineda@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,
+40096,Daniela Rodríguez,EJECUTIVO,40095,Cartagena,daniela.rodriguez@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40095
+40097,Diego Salazar,EJECUTIVO,40095,Cartagena,diego.salazar@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40095
+40098,Laura Salazar,EJECUTIVO,40095,Cartagena,laura.salazar@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40095
+40099,Verónica Salazar,ASESOR,40095,Cartagena,veronica.salazar@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40095
+40100,Santiago Rodríguez,ASESOR,40095,Cartagena,santiago.rodriguez@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40095
+40101,Felipe Torres,ASESOR,40095,Cartagena,felipe.torres@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40095
+40102,Daniela Jiménez,ASESOR,40095,Cartagena,daniela.jimenez@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40095
+40103,Adriana Rodríguez,ASESOR,40095,Cartagena,adriana.rodriguez@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40095
+40104,Adriana Torres,GTE CN,40092,Cartagena,adriana.torres@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,
+40105,Natalia Salazar,EJECUTIVO,40104,Cartagena,natalia.salazar@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40104
+40107,Gloria Bermúdez,ASESOR,40104,Cartagena,gloria.bermudez@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40104
+40108,Diego Zapata,ASESOR,40104,Cartagena,diego.zapata@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40104
+40109,Isabella Rojas,ASESOR,40104,Cartagena,isabella.rojas@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40104
+40110,Verónica Quintero,ASESOR,40104,Cartagena,veronica.quintero@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40104
+40111,Carolina Castro,ASESOR,40104,Cartagena,carolina.castro@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40104
+40112,Verónica Moreno,ASESOR,40104,Cartagena,veronica.moreno@bancoandino.example,ACTIVO,40092,Mariana Bermúdez,40104
+40113,Mateo Vargas,GTE ZONAL,39999,Bucaramanga,mateo.vargas@bancoandino.example,ACTIVO,40113,Mateo Vargas,
+40114,Manuela Salazar,GTE RELACION,40113,Bucaramanga,manuela.salazar@bancoandino.example,ACTIVO,40113,Mateo Vargas,
+40115,Verónica García,GTE RELACION,40113,Bucaramanga,veronica.garcia@bancoandino.example,ACTIVO,40113,Mateo Vargas,
+40116,Isabella Gómez,GTE CN,40113,Bucaramanga,isabella.gomez@bancoandino.example,ACTIVO,40113,Mateo Vargas,
+40117,Nicolás Zapata,EJECUTIVO,40116,Bucaramanga,nicolas.zapata@bancoandino.example,ACTIVO,40113,Mateo Vargas,40116
+40118,Lina Cardona,EJECUTIVO,40116,Bucaramanga,lina.cardona@bancoandino.example,ACTIVO,40113,Mateo Vargas,40116
+40119,Juliana Arango,ASESOR,40116,Bucaramanga,juliana.arango@bancoandino.example,ACTIVO,40113,Mateo Vargas,40116
+40120,Gloria Restrepo,ASESOR,40116,Bucaramanga,gloria.restrepo@bancoandino.example,ACTIVO,40113,Mateo Vargas,40116
+40121,Mauricio Gómez,ASESOR,40116,Bucaramanga,mauricio.gomez@bancoandino.example,ACTIVO,40113,Mateo Vargas,40116
+40122,Santiago Pineda,ASESOR,40116,Bucaramanga,santiago.pineda@bancoandino.example,ACTIVO,40113,Mateo Vargas,40116
+40123,Sara Mejía,ASESOR,40116,Bucaramanga,sara.mejia@bancoandino.example,ACTIVO,40113,Mateo Vargas,40116
+40124,Valentina Zapata,GTE ZONAL,39999,Pereira,valentina.zapata@bancoandino.example,ACTIVO,40124,Valentina Zapata,
+40125,Simón Torres,GTE RELACION,40124,Pereira,simon.torres@bancoandino.example,ACTIVO,40124,Valentina Zapata,
+40126,Sara Vargas,GTE RELACION,40124,Pereira,sara.vargas@bancoandino.example,ACTIVO,40124,Valentina Zapata,
+40127,Paula Hernández,GTE CN,40124,Pereira,paula.hernandez@bancoandino.example,ACTIVO,40124,Valentina Zapata,
+40128,Carolina Ospina,EJECUTIVO,40127,Pereira,carolina.ospina@bancoandino.example,ACTIVO,40124,Valentina Zapata,40127
+40130,Juliana Rojas,EJECUTIVO,40127,Pereira,juliana.rojas@bancoandino.example,ACTIVO,40124,Valentina Zapata,40127
+40131,Laura Rojas,ASESOR,40127,Pereira,laura.rojas@bancoandino.example,ACTIVO,40124,Valentina Zapata,40127
+40132,Juan Pablo Moreno,ASESOR,40127,Pereira,juan.moreno@bancoandino.example,ACTIVO,40124,Valentina Zapata,40127
+40133,Daniela Muñoz,ASESOR,40127,Pereira,daniela.munoz@bancoandino.example,ACTIVO,40124,Valentina Zapata,40127
+40134,Diego Mejía,ASESOR,40127,Pereira,diego.mejia@bancoandino.example,ACTIVO,40124,Valentina Zapata,40127
+40135,Mariana Quintero,GTE ZONAL,39999,Manizales,mariana.quintero@bancoandino.example,ACTIVO,40135,Mariana Quintero,
+40136,Juan Pablo Ortiz,GTE RELACION,40135,Manizales,juan.ortiz@bancoandino.example,ACTIVO,40135,Mariana Quintero,
+40137,Sara Hernández,GTE RELACION,40135,Manizales,sara.hernandez@bancoandino.example,ACTIVO,40135,Mariana Quintero,
+40138,Angélica Zapata,GTE CN,40135,Manizales,angelica.zapata@bancoandino.example,ACTIVO,40135,Mariana Quintero,
+40139,Carolina Vargas,EJECUTIVO,40138,Manizales,carolina.vargas@bancoandino.example,ACTIVO,40135,Mariana Quintero,40138
+40140,Juan Pablo Hernández,EJECUTIVO,40138,Manizales,juan.hernandez@bancoandino.example,ACTIVO,40135,Mariana Quintero,40138
+40141,Julián Vargas,ASESOR,40138,Manizales,julian.vargas@bancoandino.example,ACTIVO,40135,Mariana Quintero,40138
+40142,Daniela Zapata,ASESOR,40138,Manizales,daniela.zapata@bancoandino.example,ACTIVO,40135,Mariana Quintero,40138
+40143,Diego Rodríguez,ASESOR,40138,Manizales,diego.rodriguez@bancoandino.example,ACTIVO,40135,Mariana Quintero,40138
+40144,Diego Vargas,ASESOR,40138,Manizales,diego.vargas@bancoandino.example,ACTIVO,40135,Mariana Quintero,40138
+40145,Isabella Moreno,ASESOR,40138,Manizales,isabella.moreno@bancoandino.example,ACTIVO,40135,Mariana Quintero,40138
+40146,Valentina Vargas,ASESOR,40138,Manizales,valentina.vargas@bancoandino.example,ACTIVO,40135,Mariana Quintero,40138
+40147,Laura Restrepo,GTE CN,40135,Manizales,laura.restrepo@bancoandino.example,ACTIVO,40135,Mariana Quintero,
+40148,David Duarte,EJECUTIVO,40147,Manizales,david.duarte@bancoandino.example,ACTIVO,40135,Mariana Quintero,40147
+40149,Isabella Arango,EJECUTIVO,40147,Manizales,isabella.arango@bancoandino.example,ACTIVO,40135,Mariana Quintero,40147
+40150,Isabella Ortiz,EJECUTIVO,40147,Manizales,isabella.ortiz@bancoandino.example,ACTIVO,40135,Mariana Quintero,40147
+40152,Tomás Pineda,ASESOR,40147,Manizales,tomas.pineda@bancoandino.example,ACTIVO,40135,Mariana Quintero,40147
+40153,Juan Pablo Rodríguez,ASESOR,40147,Manizales,juan.rodriguez@bancoandino.example,ACTIVO,40135,Mariana Quintero,40147
+40154,Gloria Jiménez,ASESOR,40147,Manizales,gloria.jimenez@bancoandino.example,ACTIVO,40135,Mariana Quintero,40147
+40155,Nicolás Torres,GTE ZONAL,39999,Ibagué,nicolas.torres@bancoandino.example,ACTIVO,40155,Nicolás Torres,
+40156,Laura Castro,GTE RELACION,40155,Ibagué,laura.castro@bancoandino.example,ACTIVO,40155,Nicolás Torres,
+40157,Camila Ospina,GTE RELACION,40155,Ibagué,camila.ospina@bancoandino.example,ACTIVO,40155,Nicolás Torres,
+40158,Juliana Ramírez,GTE CN,40155,Ibagué,juliana.ramirez@bancoandino.example,ACTIVO,40155,Nicolás Torres,
+40159,Catalina Salazar,EJECUTIVO,40158,Ibagué,catalina.salazar@bancoandino.example,ACTIVO,40155,Nicolás Torres,40158
+40160,David Cardona,EJECUTIVO,40158,Ibagué,david.cardona@bancoandino.example,ACTIVO,40155,Nicolás Torres,40158
+40161,Camila García,EJECUTIVO,40158,Ibagué,camila.garcia@bancoandino.example,ACTIVO,40155,Nicolás Torres,40158
+40162,Juliana Vargas,ASESOR,40158,Ibagué,juliana.vargas@bancoandino.example,ACTIVO,40155,Nicolás Torres,40158
+40163,Tomás Rojas,ASESOR,40158,Ibagué,tomas.rojas@bancoandino.example,ACTIVO,40155,Nicolás Torres,40158
+40164,Verónica Ramírez,ASESOR,40158,Ibagué,veronica.ramirez@bancoandino.example,ACTIVO,40155,Nicolás Torres,40158
+40165,Angélica Restrepo,ASESOR,40158,Ibagué,angelica.restrepo@bancoandino.example,ACTIVO,40155,Nicolás Torres,40158
+40166,Nicolás Castro,ASESOR,40158,Ibagué,nicolas.castro@bancoandino.example,ACTIVO,40155,Nicolás Torres,40158
+40167,Laura Ramírez,GTE CN,40155,Ibagué,laura.ramirez@bancoandino.example,ACTIVO,40155,Nicolás Torres,
+40168,Sebastián Duarte,EJECUTIVO,40167,Ibagué,sebastian.duarte@bancoandino.example,ACTIVO,40155,Nicolás Torres,40167
+40170,Felipe Ospina,ASESOR,40167,Ibagué,felipe.ospina@bancoandino.example,ACTIVO,40155,Nicolás Torres,40167
+40171,Mateo Jiménez,ASESOR,40167,Ibagué,mateo.jimenez@bancoandino.example,ACTIVO,40155,Nicolás Torres,40167
+40172,Sara Arango,ASESOR,40167,Ibagué,sara.arango@bancoandino.example,ACTIVO,40155,Nicolás Torres,40167
+40173,Santiago Duarte,GTE ZONAL,39999,Neiva,santiago.duarte@bancoandino.example,ACTIVO,40173,Santiago Duarte,
+40174,Esteban Gómez,GTE RELACION,40173,Neiva,esteban.gomez@bancoandino.example,ACTIVO,40173,Santiago Duarte,
+40175,Esteban Mejía,GTE RELACION,40173,Neiva,esteban.mejia@bancoandino.example,ACTIVO,40173,Santiago Duarte,
+40176,Santiago Quintero,GTE CN,40173,Neiva,santiago.quintero@bancoandino.example,ACTIVO,40173,Santiago Duarte,
+40177,Adriana Martínez,EJECUTIVO,40176,Neiva,adriana.martinez@bancoandino.example,ACTIVO,40173,Santiago Duarte,40176
+40178,Camila Castro,EJECUTIVO,40176,Neiva,camila.castro@bancoandino.example,ACTIVO,40173,Santiago Duarte,40176
+40179,Ricardo Duarte,ASESOR,40176,Neiva,ricardo.duarte@bancoandino.example,ACTIVO,40173,Santiago Duarte,40176
+40180,Laura Ospina,ASESOR,40176,Neiva,laura.ospina@bancoandino.example,ACTIVO,40173,Santiago Duarte,40176
+40181,Lina Bermúdez,ASESOR,40176,Neiva,lina.bermudez@bancoandino.example,ACTIVO,40173,Santiago Duarte,40176
+40182,Alejandro Castro,GTE CN,40173,Neiva,alejandro.castro@bancoandino.example,ACTIVO,40173,Santiago Duarte,
+40183,Juan Pablo Martínez,EJECUTIVO,40182,Neiva,juan.martinez@bancoandino.example,ACTIVO,40173,Santiago Duarte,40182
+40184,Daniela Vargas,EJECUTIVO,40182,Neiva,daniela.vargas@bancoandino.example,ACTIVO,40173,Santiago Duarte,40182
+40185,Gloria Cardona,ASESOR,40182,Neiva,gloria.cardona@bancoandino.example,ACTIVO,40173,Santiago Duarte,40182
+40186,Camilo Restrepo,ASESOR,40182,Neiva,camilo.restrepo@bancoandino.example,ACTIVO,40173,Santiago Duarte,40182
+40187,Santiago Torres,ASESOR,40182,Neiva,santiago.torres@bancoandino.example,ACTIVO,40173,Santiago Duarte,40182
+40188,Sebastián Torres,ASESOR,40182,Neiva,sebastian.torres@bancoandino.example,ACTIVO,40173,Santiago Duarte,40182
+40189,Gloria Ramírez,ASESOR,40182,Neiva,gloria.ramirez@bancoandino.example,ACTIVO,40173,Santiago Duarte,40182
+40190,Alejandro Vargas,GTE ZONAL,39999,Villavicencio,alejandro.vargas@bancoandino.example,ACTIVO,40190,Alejandro Vargas,
+40191,Isabella Muñoz,GTE RELACION,40190,Villavicencio,isabella.munoz@bancoandino.example,ACTIVO,40190,Alejandro Vargas,
+40192,Tomás Ramírez,GTE CN,40190,Villavicencio,tomas.ramirez@bancoandino.example,ACTIVO,40190,Alejandro Vargas,
+40193,Catalina Cardona,EJECUTIVO,40192,Villavicencio,catalina.cardona@bancoandino.example,ACTIVO,40190,Alejandro Vargas,40192
+40194,Alejandro García,EJECUTIVO,40192,Villavicencio,alejandro.garcia@bancoandino.example,ACTIVO,40190,Alejandro Vargas,40192
+40195,Angélica Vargas,ASESOR,40192,Villavicencio,angelica.vargas@bancoandino.example,ACTIVO,40190,Alejandro Vargas,40192
+40196,David García,ASESOR,40192,Villavicencio,david.garcia@bancoandino.example,ACTIVO,40190,Alejandro Vargas,40192
+40197,Simón Salazar,ASESOR,40192,Villavicencio,simon.salazar@bancoandino.example,ACTIVO,40190,Alejandro Vargas,40192
+40198,Andrés Moreno,GTE CN,40190,Villavicencio,andres.moreno@bancoandino.example,ACTIVO,40190,Alejandro Vargas,
+40199,Julián Zapata,EJECUTIVO,40198,Villavicencio,julian.zapata@bancoandino.example,ACTIVO,40190,Alejandro Vargas,40198
+40200,Adriana Vargas,EJECUTIVO,40198,Villavicencio,adriana.vargas@bancoandino.example,ACTIVO,40190,Alejandro Vargas,40198
+40201,Andrés Castro,ASESOR,40198,Villavicencio,andres.castro@bancoandino.example,ACTIVO,40190,Alejandro Vargas,40198
+40202,Camilo Salazar,ASESOR,40198,Villavicencio,camilo.salazar@bancoandino.example,ACTIVO,40190,Alejandro Vargas,40198
+40203,Natalia Arango,ASESOR,40198,Villavicencio,natalia.arango@bancoandino.example,ACTIVO,40190,Alejandro Vargas,40198
+40204,Camila Quintero,ASESOR,40198,Villavicencio,camila.quintero@bancoandino.example,ACTIVO,40190,Alejandro Vargas,40198
+40205,Camila Jiménez,ASESOR,40198,Villavicencio,camila.jimenez@bancoandino.example,ACTIVO,40190,Alejandro Vargas,40198
+40206,Paula Ramírez,GTE ZONAL,39999,Pasto,paula.ramirez@bancoandino.example,ACTIVO,40206,Paula Ramírez,
+40207,Esteban Rodríguez,GTE RELACION,40206,Pasto,esteban.rodriguez@bancoandino.example,ACTIVO,40206,Paula Ramírez,
+40208,Juan Pablo Jiménez,GTE CN,40206,Pasto,juan.jimenez@bancoandino.example,ACTIVO,40206,Paula Ramírez,
+40209,Manuela Quintero,EJECUTIVO,40208,Pasto,manuela.quintero@bancoandino.example,ACTIVO,40206,Paula Ramírez,40208
+40210,Camilo Vargas,EJECUTIVO,40208,Pasto,camilo.vargas@bancoandino.example,ACTIVO,40206,Paula Ramírez,40208
+40211,Laura Quintero,EJECUTIVO,40208,Pasto,laura.quintero@bancoandino.example,ACTIVO,40206,Paula Ramírez,40208
+40212,Camila Duarte,ASESOR,40208,Pasto,camila.duarte@bancoandino.example,ACTIVO,40206,Paula Ramírez,40208
+40213,Verónica Restrepo,ASESOR,40208,Pasto,veronica.restrepo@bancoandino.example,ACTIVO,40206,Paula Ramírez,40208
+40214,Gloria Vargas,ASESOR,40208,Pasto,gloria.vargas@bancoandino.example,ACTIVO,40206,Paula Ramírez,40208
+40215,Juan Pablo Salazar,ASESOR,40208,Pasto,juan.salazar@bancoandino.example,ACTIVO,40206,Paula Ramírez,40208
+40216,Sara Salazar,ASESOR,40208,Pasto,sara.salazar@bancoandino.example,ACTIVO,40206,Paula Ramírez,40208
+40217,Daniela López,ASESOR,40208,Pasto,daniela.lopez@bancoandino.example,ACTIVO,40206,Paula Ramírez,40208
+40218,Julián Castro,GTE ZONAL,39999,Cúcuta,julian.castro@bancoandino.example,ACTIVO,40218,Julián Castro,
+40219,Julián Duarte,GTE RELACION,40218,Cúcuta,julian.duarte@bancoandino.example,ACTIVO,40218,Julián Castro,
+40220,Alejandro Torres,GTE CN,40218,Cúcuta,alejandro.torres@bancoandino.example,ACTIVO,40218,Julián Castro,
+40221,Daniela Cardona,EJECUTIVO,40220,Cúcuta,daniela.cardona@bancoandino.example,ACTIVO,40218,Julián Castro,40220
+40222,Sara Duarte,EJECUTIVO,40220,Cúcuta,sara.duarte@bancoandino.example,ACTIVO,40218,Julián Castro,40220
+40223,Sara Rojas,EJECUTIVO,40220,Cúcuta,sara.rojas@bancoandino.example,ACTIVO,40218,Julián Castro,40220
+40224,Simón Ramírez,ASESOR,40220,Cúcuta,simon.ramirez@bancoandino.example,ACTIVO,40218,Julián Castro,40220
+40225,Daniela García,ASESOR,40220,Cúcuta,daniela.garcia@bancoandino.example,ACTIVO,40218,Julián Castro,40220
+40226,Paula Arango,ASESOR,40220,Cúcuta,paula.arango@bancoandino.example,ACTIVO,40218,Julián Castro,40220
+40227,Gloria Ospina,ASESOR,40220,Cúcuta,gloria.ospina@bancoandino.example,ACTIVO,40218,Julián Castro,40220
+40228,Ricardo Hernández,GTE ZONAL,39999,Santa Marta,ricardo.hernandez@bancoandino.example,ACTIVO,40228,Ricardo Hernández,
+40229,Isabella Quintero,GTE RELACION,40228,Santa Marta,isabella.quintero@bancoandino.example,ACTIVO,40228,Ricardo Hernández,
+40230,David Rojas,GTE RELACION,40228,Santa Marta,david.rojas@bancoandino.example,ACTIVO,40228,Ricardo Hernández,
+40231,Lina Salazar,GTE CN,40228,Santa Marta,lina.salazar@bancoandino.example,ACTIVO,40228,Ricardo Hernández,
+40232,Juan Pablo Rojas,EJECUTIVO,40231,Santa Marta,juan.rojas@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40231
+40233,Alejandro López,EJECUTIVO,40231,Santa Marta,alejandro.lopez@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40231
+40234,Sebastián Ospina,EJECUTIVO,40231,Santa Marta,sebastian.ospina@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40231
+40235,Camila Ramírez,ASESOR,40231,Santa Marta,camila.ramirez@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40231
+40236,Laura López,ASESOR,40231,Santa Marta,laura.lopez@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40231
+40237,Valentina Gómez,ASESOR,40231,Santa Marta,valentina.gomez@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40231
+40238,Juan Pablo Castro,ASESOR,40231,Santa Marta,juan.castro@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40231
+40239,Mateo Quintero,ASESOR,40231,Santa Marta,mateo.quintero@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40231
+40240,Esteban Restrepo,ASESOR,40231,Santa Marta,esteban.restrepo@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40231
+40241,Carolina García,GTE CN,40228,Santa Marta,carolina.garcia@bancoandino.example,ACTIVO,40228,Ricardo Hernández,
+40242,Santiago Cardona,EJECUTIVO,40241,Santa Marta,santiago.cardona@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40241
+40244,Simón Jiménez,ASESOR,40241,Santa Marta,simon.jimenez@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40241
+40245,Valentina Ortiz,ASESOR,40241,Santa Marta,valentina.ortiz@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40241
+40246,Verónica Muñoz,ASESOR,40241,Santa Marta,veronica.munoz@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40241
+40247,Ricardo Martínez,ASESOR,40241,Santa Marta,ricardo.martinez@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40241
+40248,Isabella Martínez,ASESOR,40241,Santa Marta,isabella.martinez@bancoandino.example,ACTIVO,40228,Ricardo Hernández,40241
+40249,Angélica Ramírez,GTE ZONAL,39999,Montería,angelica.ramirez@bancoandino.example,ACTIVO,40249,Angélica Ramírez,
+40250,Daniela Gómez,GTE RELACION,40249,Montería,daniela.gomez@bancoandino.example,ACTIVO,40249,Angélica Ramírez,
+40251,Ricardo Ramírez,GTE CN,40249,Montería,ricardo.ramirez@bancoandino.example,ACTIVO,40249,Angélica Ramírez,
+40252,Tomás Gómez,EJECUTIVO,40251,Montería,tomas.gomez@bancoandino.example,ACTIVO,40249,Angélica Ramírez,40251
+40253,Daniela Ospina,EJECUTIVO,40251,Montería,daniela.ospina@bancoandino.example,ACTIVO,40249,Angélica Ramírez,40251
+40254,Mauricio Restrepo,ASESOR,40251,Montería,mauricio.restrepo@bancoandino.example,ACTIVO,40249,Angélica Ramírez,40251
+40255,Isabella Duarte,ASESOR,40251,Montería,isabella.duarte@bancoandino.example,ACTIVO,40249,Angélica Ramírez,40251
+40256,Daniela Castro,ASESOR,40251,Montería,daniela.castro@bancoandino.example,ACTIVO,40249,Angélica Ramírez,40251
+40257,Verónica Hernández,ASESOR,40251,Montería,veronica.hernandez@bancoandino.example,ACTIVO,40249,Angélica Ramírez,40251
+40258,Sara Moreno,ASESOR,40251,Montería,sara.moreno@bancoandino.example,ACTIVO,40249,Angélica Ramírez,40251
+40259,Mauricio Castro,ASESOR,40251,Montería,mauricio.castro@bancoandino.example,ACTIVO,40249,Angélica Ramírez,40251
