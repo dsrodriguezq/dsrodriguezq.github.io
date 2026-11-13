@@ -4,279 +4,197 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diana Rodríguez · Análisis de datos y automatización con IA</title>
-<meta name="description" content="Ingeniera Industrial y analista de datos. Tableros de control en Power BI, Tableau y Looker Studio, y automatizaciones con IA para empresas.">
+<meta name="description" content="Analista de datos en Cali. Automatizo reportes con Python, n8n y Power BI e IA. ≈1.200 horas al año devueltas a un equipo comercial.">
 <meta property="og:title" content="Diana Rodríguez · Datos y automatización con IA">
-<meta property="og:description" content="Convierto datos en decisiones y tareas repetitivas en procesos automáticos.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<meta property="og:description" content="Convierto horas de trabajo manual en minutos.">
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#F7F7F4}
-a{color:#0F6E6A}a:hover{color:#0A4F4C}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;box-sizing:border-box}
-.card{transition:transform .15s ease, box-shadow .15s ease}
-.card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(20,24,31,.08)}
-@media (max-width: 760px){
-  .hero-title{font-size:38px !important}
-  .section{padding:64px 20px !important}
+body{margin:0;background:#FFFFFF}
+a{color:#0E1B2C}a:hover{color:#1C6E9E}
+.wrap{max-width:1120px;margin:0 auto;padding-left:40px;padding-right:40px}
+.draw{stroke-dasharray:900;stroke-dashoffset:900;animation:dr 2.4s ease-out forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.svc{display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.3fr);gap:24px;align-items:baseline;padding:28px 0;border-bottom:1px solid #E3E8EF}
+.bar-row{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr) 150px;gap:20px;align-items:center;padding:16px 0;border-bottom:1px solid #E3E8EF}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;font-size:15px;letter-spacing:.04em;text-decoration:none;border-radius:4px}
+@media (max-width: 820px){
+  .wrap{padding-left:20px;padding-right:20px}
+  .hero-h{font-size:40px !important}
+  .svc{grid-template-columns:48px 1fr;}
+  .svc p{grid-column:2}
+  .bar-row{grid-template-columns:1fr;gap:8px}
   .nav-links{display:none !important}
 }
+@media (prefers-reduced-motion: reduce){.draw{animation:none;stroke-dashoffset:0}}
 </style>
-<style>html{scroll-behavior:smooth} img{max-width:100%;display:block}</style>
+<style>html{scroll-behavior:smooth} img,video{max-width:100%;display:block}</style>
 </head>
 <body>
-<div style="font-family: Inter, system-ui, sans-serif; color: #14181F; background: #F7F7F4; width: 100%;">
+<div style="font-family: 'Century Gothic', CenturyGothic, 'Didact Gothic', AppleGothic, sans-serif; color: #0E1B2C; background: #FFFFFF; width: 100%; line-height: 1.6;">
 
   <!-- NAV -->
-  <header style="position: sticky; top: 0; z-index: 10; background: rgba(247,247,244,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E3E5E0;">
-    <nav aria-label="Principal" style="max-width: 1200px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
-      <a href="#inicio" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #14181F;">
-        <span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 9px; background: #0F6E6A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px;">DR</span>
-        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 17px;">Diana Rodríguez</span>
-      </a>
-      <div class="nav-links" style="display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500;">
-        <a href="#servicios" style="color: #3D4552; text-decoration: none;">Servicios</a>
-        <a href="#proyectos" style="color: #3D4552; text-decoration: none;">Proyectos</a>
-        <a href="#experiencia" style="color: #3D4552; text-decoration: none;">Experiencia</a>
-        <a href="#formacion" style="color: #3D4552; text-decoration: none;">Formación</a>
+  <header class="wrap" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-top: 22px; padding-bottom: 22px;">
+    <a href="#inicio" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+      <svg aria-hidden="true" width="30" height="24" viewBox="0 0 30 24"><rect x="0" y="4" width="30" height="5" rx="2.5" fill="#0E1B2C"/><rect x="0" y="15" width="8" height="5" rx="2.5" fill="#1C6E9E"/></svg>
+      <span style="font-size: 15px; letter-spacing: .22em; font-weight: 700;">DIANA RODRÍGUEZ</span>
+    </a>
+    <nav aria-label="Principal" style="display: flex; align-items: center; gap: 30px;">
+      <div class="nav-links" style="display: flex; gap: 28px; font-size: 13px; letter-spacing: .14em;">
+        <a href="#servicios" style="text-decoration: none;">SERVICIOS</a>
+        <a href="#resultados" style="text-decoration: none;">RESULTADOS</a>
+        <a href="#trabajo" style="text-decoration: none;">TRABAJO</a>
+        <a href="#sobre-mi" style="text-decoration: none;">SOBRE MÍ</a>
       </div>
-      <a class="btn" href="#contacto" style="background: #14181F; color: #FFFFFF;">Hablemos</a>
+      <a class="btn" href="#contacto" style="background: #0E1B2C; color: #FFFFFF; min-height: 42px; padding: 0 20px;">Contacto</a>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section id="inicio" class="section" style="max-width: 1200px; margin: 0 auto; padding: 96px 32px 88px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
-    <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
-      <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #0F6E6A;">Ingeniera Industrial · Analista de datos · Automatización con IA</p>
-      <h1 class="hero-title" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 58px; line-height: 1.05; font-weight: 700; letter-spacing: -0.02em;">Convierto datos en decisiones y tareas repetitivas en procesos automáticos.</h1>
-      <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #3D4552; max-width: 620px;">Diseño tableros de control que muestran lo que importa y automatizaciones con IA que ahorran horas de trabajo manual. Experiencia en finanzas, logística, producción y calidad.</p>
-      <div style="display: flex; gap: 12px; flex-wrap: wrap; padding-top: 8px;">
-        <a class="btn" href="#proyectos" style="background: #0F6E6A; color: #FFFFFF;">Ver proyectos</a>
-        <a class="btn" href="mailto:dsrodriguezd@outlook.com" style="background: transparent; color: #14181F; border: 1.5px solid #14181F;">Escríbeme</a>
+  <section id="inicio" class="wrap" style="padding-top: 64px; padding-bottom: 88px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+    <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 26px;">
+      <p style="margin: 0; font-size: 14px; letter-spacing: .16em; color: #1C6E9E;">ANALISTA DE DATOS · AUTOMATIZACIÓN CON IA</p>
+      <h1 class="hero-h" style="margin: 0; font-size: 54px; line-height: 1.08; font-weight: 700; letter-spacing: -0.01em;">Convierto horas de trabajo manual en minutos.</h1>
+      <p style="margin: 0; font-size: 18px; color: #4B5768; max-width: 520px;">Soy Diana, Ingeniera Industrial en Cali. En Banco de Occidente automaticé reportes que le devuelven <strong style="color: #0E1B2C;">≈1.200 horas al año</strong> al equipo comercial. Hoy ayudo a otras empresas a hacer lo mismo con Python, n8n, Power BI e IA.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a class="btn" href="#contacto" style="background: #0E1B2C; color: #FFFFFF;">Agenda una llamada</a>
+        <a class="btn" href="#resultados" style="background: #EEF3F8; color: #0E1B2C;">Ver resultados</a>
       </div>
     </div>
-    <aside aria-label="Herramientas" style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; border: 1px solid #E3E5E0; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 22px;">
-      <div style="display: flex; flex-direction: column; gap: 12px;">
-        <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #5A6270;">Análisis y visualización</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-          <span style="padding: 7px 12px; border-radius: 999px; background: #EAF3F2; color: #0B4F4C; font-size: 14px; font-weight: 500;">Power BI</span>
-          <span style="padding: 7px 12px; border-radius: 999px; background: #EAF3F2; color: #0B4F4C; font-size: 14px; font-weight: 500;">Tableau</span>
-          <span style="padding: 7px 12px; border-radius: 999px; background: #EAF3F2; color: #0B4F4C; font-size: 14px; font-weight: 500;">Looker Studio</span>
-          <span style="padding: 7px 12px; border-radius: 999px; background: #EAF3F2; color: #0B4F4C; font-size: 14px; font-weight: 500;">SQL</span>
-          <span style="padding: 7px 12px; border-radius: 999px; background: #EAF3F2; color: #0B4F4C; font-size: 14px; font-weight: 500;">Python</span>
-          <span style="padding: 7px 12px; border-radius: 999px; background: #EAF3F2; color: #0B4F4C; font-size: 14px; font-weight: 500;">R</span>
-          <span style="padding: 7px 12px; border-radius: 999px; background: #EAF3F2; color: #0B4F4C; font-size: 14px; font-weight: 500;">Excel</span>
-        </div>
-      </div>
-      <div style="height: 1px; background: #E3E5E0;"></div>
-      <div style="display: flex; flex-direction: column; gap: 12px;">
-        <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #5A6270;">Automatización e IA</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-          <span style="padding: 7px 12px; border-radius: 999px; background: #F1EFE9; color: #3D4552; font-size: 14px; font-weight: 500;">n8n</span>
-          <span style="padding: 7px 12px; border-radius: 999px; background: #F1EFE9; color: #3D4552; font-size: 14px; font-weight: 500;">Make</span>
-          <span style="padding: 7px 12px; border-radius: 999px; background: #F1EFE9; color: #3D4552; font-size: 14px; font-weight: 500;">Zapier</span>
-          <span style="padding: 7px 12px; border-radius: 999px; background: #F1EFE9; color: #3D4552; font-size: 14px; font-weight: 500;">OpenAI API</span>
-          <span style="padding: 7px 12px; border-radius: 999px; background: #F1EFE9; color: #3D4552; font-size: 14px; font-weight: 500;">Claude API</span>
-          <span style="padding: 7px 12px; border-radius: 999px; background: #F1EFE9; color: #3D4552; font-size: 14px; font-weight: 500;">Chatbots WhatsApp</span>
-          <span style="padding: 7px 12px; border-radius: 999px; background: #F1EFE9; color: #3D4552; font-size: 14px; font-weight: 500;">JavaScript</span>
-        </div>
-      </div>
-    </aside>
+    <figure style="flex: 1 1 460px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+      <svg role="img" aria-label="Gráfica: seis procesos que pasaron de entre 1 hora y 5 días a entre 3 y 10 minutos" viewBox="40 0 560 450" style="width: 100%; height: auto; display: block;" xmlns="http://www.w3.org/2000/svg"><line x1="150" y1="40" x2="150" y2="430" stroke="#E3E8EF" stroke-width="1"/><line x1="520" y1="40" x2="520" y2="430" stroke="#E3E8EF" stroke-width="1"/><path d="M150 63.2 C 350 63.2, 310 398.1, 520 398.1" fill="none" stroke="#0E1B2C" stroke-opacity="0.18" stroke-width="1"/><path d="M150 66.4 C 350 66.4, 310 398.90000000000003, 520 398.90000000000003" fill="none" stroke="#0E1B2C" stroke-opacity="0.15" stroke-width="1"/><path d="M150 69.6 C 350 69.6, 310 399.7, 520 399.7" fill="none" stroke="#0E1B2C" stroke-opacity="0.11" stroke-width="1"/><path d="M150 72.8 C 350 72.8, 310 400.5, 520 400.5" fill="none" stroke="#0E1B2C" stroke-opacity="0.08" stroke-width="1"/><path d="M150 76.0 C 350 76.0, 310 401.3, 520 401.3" fill="none" stroke="#0E1B2C" stroke-opacity="0.04" stroke-width="1"/><path class="draw" d="M150 60.0 C 350 60.0, 310 397.3, 520 397.3" fill="none" stroke="#0E1B2C" stroke-width="2.4" stroke-linecap="round"/><circle cx="150" cy="60.0" r="4.5" fill="#0E1B2C"/><circle cx="520" cy="397.3" r="3" fill="#0E1B2C"/><path d="M150 247.5 C 350 247.5, 310 405.4, 520 405.4" fill="none" stroke="#1C6E9E" stroke-opacity="0.18" stroke-width="1"/><path d="M150 250.70000000000002 C 350 250.70000000000002, 310 406.2, 520 406.2" fill="none" stroke="#1C6E9E" stroke-opacity="0.15" stroke-width="1"/><path d="M150 253.9 C 350 253.9, 310 406.99999999999994, 520 406.99999999999994" fill="none" stroke="#1C6E9E" stroke-opacity="0.11" stroke-width="1"/><path d="M150 257.1 C 350 257.1, 310 407.79999999999995, 520 407.79999999999995" fill="none" stroke="#1C6E9E" stroke-opacity="0.08" stroke-width="1"/><path d="M150 260.3 C 350 260.3, 310 408.59999999999997, 520 408.59999999999997" fill="none" stroke="#1C6E9E" stroke-opacity="0.04" stroke-width="1"/><path class="draw" d="M150 244.3 C 350 244.3, 310 404.59999999999997, 520 404.59999999999997" fill="none" stroke="#1C6E9E" stroke-width="2.4" stroke-linecap="round"/><circle cx="150" cy="244.3" r="4.5" fill="#1C6E9E"/><circle cx="520" cy="404.59999999999997" r="3" fill="#1C6E9E"/><path d="M150 266.09999999999997 C 350 266.09999999999997, 310 409.2, 520 409.2" fill="none" stroke="#2B8FB8" stroke-opacity="0.18" stroke-width="1"/><path d="M150 269.29999999999995 C 350 269.29999999999995, 310 410.0, 520 410.0" fill="none" stroke="#2B8FB8" stroke-opacity="0.15" stroke-width="1"/><path d="M150 272.5 C 350 272.5, 310 410.79999999999995, 520 410.79999999999995" fill="none" stroke="#2B8FB8" stroke-opacity="0.11" stroke-width="1"/><path d="M150 275.7 C 350 275.7, 310 411.59999999999997, 520 411.59999999999997" fill="none" stroke="#2B8FB8" stroke-opacity="0.08" stroke-width="1"/><path d="M150 278.9 C 350 278.9, 310 412.4, 520 412.4" fill="none" stroke="#2B8FB8" stroke-opacity="0.04" stroke-width="1"/><path class="draw" d="M150 262.9 C 350 262.9, 310 408.4, 520 408.4" fill="none" stroke="#2B8FB8" stroke-width="2.4" stroke-linecap="round"/><circle cx="150" cy="262.9" r="4.5" fill="#2B8FB8"/><circle cx="520" cy="408.4" r="3" fill="#2B8FB8"/><path d="M150 312.09999999999997 C 350 312.09999999999997, 310 411.40000000000003, 520 411.40000000000003" fill="none" stroke="#39B3C6" stroke-opacity="0.18" stroke-width="1"/><path d="M150 315.29999999999995 C 350 315.29999999999995, 310 412.20000000000005, 520 412.20000000000005" fill="none" stroke="#39B3C6" stroke-opacity="0.15" stroke-width="1"/><path d="M150 318.5 C 350 318.5, 310 413.0, 520 413.0" fill="none" stroke="#39B3C6" stroke-opacity="0.11" stroke-width="1"/><path d="M150 321.7 C 350 321.7, 310 413.8, 520 413.8" fill="none" stroke="#39B3C6" stroke-opacity="0.08" stroke-width="1"/><path d="M150 324.9 C 350 324.9, 310 414.6, 520 414.6" fill="none" stroke="#39B3C6" stroke-opacity="0.04" stroke-width="1"/><path class="draw" d="M150 308.9 C 350 308.9, 310 410.6, 520 410.6" fill="none" stroke="#39B3C6" stroke-width="2.4" stroke-linecap="round"/><circle cx="150" cy="308.9" r="4.5" fill="#39B3C6"/><circle cx="520" cy="410.6" r="3" fill="#39B3C6"/><path d="M150 367.7 C 350 367.7, 310 417.20000000000005, 520 417.20000000000005" fill="none" stroke="#7CCBD8" stroke-opacity="0.18" stroke-width="1"/><path d="M150 370.9 C 350 370.9, 310 418.00000000000006, 520 418.00000000000006" fill="none" stroke="#7CCBD8" stroke-opacity="0.15" stroke-width="1"/><path d="M150 374.1 C 350 374.1, 310 418.8, 520 418.8" fill="none" stroke="#7CCBD8" stroke-opacity="0.11" stroke-width="1"/><path d="M150 377.3 C 350 377.3, 310 419.6, 520 419.6" fill="none" stroke="#7CCBD8" stroke-opacity="0.08" stroke-width="1"/><path d="M150 380.5 C 350 380.5, 310 420.40000000000003, 520 420.40000000000003" fill="none" stroke="#7CCBD8" stroke-opacity="0.04" stroke-width="1"/><path class="draw" d="M150 364.5 C 350 364.5, 310 416.40000000000003, 520 416.40000000000003" fill="none" stroke="#7CCBD8" stroke-width="2.4" stroke-linecap="round"/><circle cx="150" cy="364.5" r="4.5" fill="#7CCBD8"/><circle cx="520" cy="416.40000000000003" r="3" fill="#7CCBD8"/><path d="M150 367.7 C 350 367.7, 310 414.2, 520 414.2" fill="none" stroke="#A9DCE5" stroke-opacity="0.18" stroke-width="1"/><path d="M150 370.9 C 350 370.9, 310 415.0, 520 415.0" fill="none" stroke="#A9DCE5" stroke-opacity="0.15" stroke-width="1"/><path d="M150 374.1 C 350 374.1, 310 415.79999999999995, 520 415.79999999999995" fill="none" stroke="#A9DCE5" stroke-opacity="0.11" stroke-width="1"/><path d="M150 377.3 C 350 377.3, 310 416.59999999999997, 520 416.59999999999997" fill="none" stroke="#A9DCE5" stroke-opacity="0.08" stroke-width="1"/><path d="M150 380.5 C 350 380.5, 310 417.4, 520 417.4" fill="none" stroke="#A9DCE5" stroke-opacity="0.04" stroke-width="1"/><path class="draw" d="M150 364.5 C 350 364.5, 310 413.4, 520 413.4" fill="none" stroke="#A9DCE5" stroke-width="2.4" stroke-linecap="round"/><circle cx="150" cy="364.5" r="4.5" fill="#A9DCE5"/><circle cx="520" cy="413.4" r="3" fill="#A9DCE5"/><text x="138" y="64.0" text-anchor="end" font-size="11.5" fill="#4B5768">5 días</text><text x="138" y="248.3" text-anchor="end" font-size="11.5" fill="#4B5768">10 h</text><text x="138" y="266.9" text-anchor="end" font-size="11.5" fill="#4B5768">8 h</text><text x="138" y="312.9" text-anchor="end" font-size="11.5" fill="#4B5768">4 h</text><text x="138" y="366.5" text-anchor="end" font-size="11.5" fill="#4B5768">1 h</text><text x="530" y="410.4" font-size="11.5" fill="#4B5768">3–10 min</text><text x="150" y="30" text-anchor="middle" font-size="11" letter-spacing="1.5" fill="#4B5768">ANTES</text><text x="520" y="30" text-anchor="middle" font-size="11" letter-spacing="1.5" fill="#4B5768">AHORA</text></svg>
+      <figcaption style="font-size: 13px; color: #4B5768; text-align: center;">Cada línea es un proceso real que automaticé: de horas o días, a minutos.</figcaption>
+    </figure>
+  </section>
+
+  <!-- CIFRAS -->
+  <section style="border-top: 1px solid #E3E8EF; border-bottom: 1px solid #E3E8EF;">
+    <div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; padding-top: 36px; padding-bottom: 36px;">
+      <div><p style="margin: 0; font-size: 34px; font-weight: 700;">≈1.200 h</p><p style="margin: 0; font-size: 14px; color: #4B5768;">devueltas al año con automatizaciones</p></div>
+      <div><p style="margin: 0; font-size: 34px; font-weight: 700;">17 zonas</p><p style="margin: 0; font-size: 14px; color: #4B5768;">comerciales con una herramienta de IA propia</p></div>
+      <div><p style="margin: 0; font-size: 34px; font-weight: 700;">5 días → 10 min</p><p style="margin: 0; font-size: 14px; color: #4B5768;">en el balanceo de unidades comerciales</p></div>
+      <div><p style="margin: 0; font-size: 34px; font-weight: 700;">+1.000</p><p style="margin: 0; font-size: 14px; color: #4B5768;">colaboradores capacitados</p></div>
+    </div>
   </section>
 
   <!-- SERVICIOS -->
-  <section id="servicios" style="background: #14181F; color: #E8EAED;">
-    <div class="section" style="max-width: 1200px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 48px;">
-      <div style="display: flex; flex-direction: column; gap: 14px; max-width: 680px;">
-        <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #7FD1C9;">Cómo te ayudo</p>
-        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 40px; line-height: 1.15; font-weight: 600; color: #FFFFFF;">Dos servicios, un objetivo: que tu equipo trabaje con información clara y menos tareas manuales.</h2>
+  <section id="servicios" class="wrap" style="padding-top: 104px; padding-bottom: 96px;">
+    <p style="margin: 0 0 10px; font-size: 13px; letter-spacing: .16em; color: #1C6E9E;">SERVICIOS</p>
+    <h2 style="margin: 0 0 12px; font-size: 38px; font-weight: 700;">En qué te puedo ayudar</h2>
+    <p style="margin: 0 0 32px; font-size: 17px; color: #4B5768; max-width: 640px;">Trabajo con lo que tu equipo ya usa. Si una tarea se repite cada semana, probablemente se puede automatizar.</p>
+    <div style="border-top: 1px solid #0E1B2C;">
+      <div class="svc"><span style="font-size: 15px; color: #1C6E9E;">01</span><h3 style="margin: 0; font-size: 22px; font-weight: 700;">Reportes que se hacen solos</h3><p style="margin: 0; font-size: 16px; color: #4B5768;">Python, n8n, Make, Zapier o Power Automate para que los datos se descarguen, limpien y envíen sin que nadie copie y pegue.</p></div>
+      <div class="svc"><span style="font-size: 15px; color: #1C6E9E;">02</span><h3 style="margin: 0; font-size: 22px; font-weight: 700;">Tableros ejecutivos</h3><p style="margin: 0; font-size: 16px; color: #4B5768;">Power BI, Looker Studio o HTML conectados a tus fuentes, con los indicadores que la gerencia necesita para decidir.</p></div>
+      <div class="svc"><span style="font-size: 15px; color: #1C6E9E;">03</span><h3 style="margin: 0; font-size: 22px; font-weight: 700;">IA aplicada a tu operación</h3><p style="margin: 0; font-size: 16px; color: #4B5768;">Agentes que leen correos, PDF e imágenes, modelos que segmentan clientes o equipos, y asistentes por WhatsApp.</p></div>
+      <div class="svc"><span style="font-size: 15px; color: #1C6E9E;">04</span><h3 style="margin: 0; font-size: 22px; font-weight: 700;">Procesos y capacitación</h3><p style="margin: 0; font-size: 16px; color: #4B5768;">Levantamiento de procesos en BPMN, indicadores operativos y acompañamiento para que tu equipo adopte las nuevas herramientas.</p></div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section id="resultados" style="background: #F5F8FB;">
+    <div class="wrap" style="padding-top: 96px; padding-bottom: 96px;">
+      <p style="margin: 0 0 10px; font-size: 13px; letter-spacing: .16em; color: #1C6E9E;">RESULTADOS</p>
+      <h2 style="margin: 0 0 12px; font-size: 38px; font-weight: 700;">Antes y después</h2>
+      <p style="margin: 0 0 36px; font-size: 17px; color: #4B5768; max-width: 640px;">Tiempo que tomaba cada proceso a mano frente a lo que toma hoy. Procesos de Banco de Occidente, 2026.</p>
+      <div style="border-top: 1px solid #0E1B2C;">
+        <div class="bar-row"><span style="font-size: 16px; font-weight: 700;">Cifras de mercado</span><div style="position: relative; height: 12px; background: #E3E8EF; border-radius: 6px;"><div style="width: 100%; height: 12px; background: #C9D8E6; border-radius: 6px;"></div><span style="position: absolute; left: 0; top: -2px; width: 16px; height: 16px; border-radius: 50%; background: #1C6E9E;"></span></div><span style="font-size: 15px;"><span style="color: #4B5768;">10 h</span> → <strong>6 min</strong></span></div>
+        <div class="bar-row"><span style="font-size: 16px; font-weight: 700;">Informe de rentabilidad (NIM)</span><div style="position: relative; height: 12px; background: #E3E8EF; border-radius: 6px;"><div style="width: 80%; height: 12px; background: #C9D8E6; border-radius: 6px;"></div><span style="position: absolute; left: 0; top: -2px; width: 16px; height: 16px; border-radius: 50%; background: #1C6E9E;"></span></div><span style="font-size: 15px;"><span style="color: #4B5768;">8 h</span> → <strong>5 min</strong></span></div>
+        <div class="bar-row"><span style="font-size: 16px; font-weight: 700;">Reporte de pagos</span><div style="position: relative; height: 12px; background: #E3E8EF; border-radius: 6px;"><div style="width: 40%; height: 12px; background: #C9D8E6; border-radius: 6px;"></div><span style="position: absolute; left: 0; top: -2px; width: 16px; height: 16px; border-radius: 50%; background: #1C6E9E;"></span></div><span style="font-size: 15px;"><span style="color: #4B5768;">4 h</span> → <strong>5 min</strong></span></div>
+        <div class="bar-row"><span style="font-size: 16px; font-weight: 700;">Negocios perdidos</span><div style="position: relative; height: 12px; background: #E3E8EF; border-radius: 6px;"><div style="width: 10%; height: 12px; background: #C9D8E6; border-radius: 6px;"></div><span style="position: absolute; left: 0; top: -2px; width: 16px; height: 16px; border-radius: 50%; background: #1C6E9E;"></span></div><span style="font-size: 15px;"><span style="color: #4B5768;">1 h</span> → <strong>3 min</strong></span></div>
+        <div class="bar-row"><span style="font-size: 16px; font-weight: 700;">Actualización de tasas (UVT)</span><div style="position: relative; height: 12px; background: #E3E8EF; border-radius: 6px;"><div style="width: 10%; height: 12px; background: #C9D8E6; border-radius: 6px;"></div><span style="position: absolute; left: 0; top: -2px; width: 16px; height: 16px; border-radius: 50%; background: #1C6E9E;"></span></div><span style="font-size: 15px;"><span style="color: #4B5768;">1 h</span> → <strong>6 min</strong></span></div>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-        <article style="background: #1D232C; border: 1px solid #2C3440; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 18px;">
-          <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7FD1C9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
-          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF;">Tableros de control y análisis</h3>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C3C8D0;">Reúno tus datos de varias fuentes y los convierto en un tablero que responde las preguntas del negocio.</p>
-          <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: #C3C8D0;">
-            <li>Seguimiento de KPI de ventas, costos, logística y producción</li>
-            <li>Integración de Excel, bases de datos y sistemas internos</li>
-            <li>Reportes que se actualizan solos</li>
-          </ul>
-        </article>
-        <article style="background: #1D232C; border: 1px solid #2C3440; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 18px;">
-          <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7FD1C9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 6h7M7.2 8.2l3.6 7.6M16.8 8.2l-3.6 7.6"/></svg>
-          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600; color: #FFFFFF;">Automatizaciones con IA</h3>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C3C8D0;">Conecto tus herramientas y uso IA para que las tareas repetitivas se hagan sin intervención manual.</p>
-          <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: #C3C8D0;">
-            <li>Asistentes de WhatsApp que responden y agendan</li>
-            <li>Flujos entre formularios, hojas de cálculo y CRM</li>
-            <li>Captura y seguimiento automático de clientes potenciales</li>
-          </ul>
-        </article>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px 40px; padding-top: 18px; font-size: 13px; color: #4B5768;">
+        <span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 22px; height: 10px; background: #C9D8E6; border-radius: 5px;"></span>Tiempo manual (escala hasta 10 h)</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 12px; height: 12px; background: #1C6E9E; border-radius: 50%;"></span>Tiempo automatizado</span>
       </div>
     </div>
   </section>
 
-  <!-- PROYECTOS -->
-  <section id="proyectos" class="section" style="max-width: 1200px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 40px;">
-    <div style="display: flex; flex-direction: column; gap: 14px; max-width: 680px;">
-      <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #0F6E6A;">Proyectos</p>
-      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 40px; line-height: 1.15; font-weight: 600;">Tableros de control</h2>
-      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4552;">Cada proyecto muestra la pregunta de negocio que responde, las herramientas usadas y qué decisiones permite tomar.</p>
+  <!-- TRABAJO -->
+  <section id="trabajo" class="wrap" style="padding-top: 104px; padding-bottom: 96px; display: flex; flex-direction: column; gap: 56px;">
+    <div>
+      <p style="margin: 0 0 10px; font-size: 13px; letter-spacing: .16em; color: #1C6E9E;">TRABAJO</p>
+      <h2 style="margin: 0 0 12px; font-size: 38px; font-weight: 700;">Proyectos seleccionados</h2>
+      <p style="margin: 0; font-size: 17px; color: #4B5768; max-width: 640px;">Los datos del banco son confidenciales: muestro el enfoque y el resultado, con capturas anonimizadas.</p>
     </div>
-
-    <!-- Proyecto destacado -->
-    <article class="card" style="background: #FFFFFF; border: 1px solid #E3E5E0; border-radius: 20px; overflow: hidden; display: flex; flex-wrap: wrap;">
-      <div style="flex: 1 1 480px; min-width: 0; aspect-ratio: 16 / 10; background: #EEF0EC; border-right: 1px solid #E3E5E0; display: flex; align-items: center; justify-content: center; padding: 24px; box-sizing: border-box;">
-        <p style="margin: 0; font-size: 14px; color: #5A6270; text-align: center;">Captura del proyecto · reemplázala por tu imagen</p>
-      </div>
-      <div style="flex: 1 1 380px; min-width: 0; padding: 40px; display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-        <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #0F6E6A;">Proyecto destacado</p>
-        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 28px; line-height: 1.2; font-weight: 600;">Análisis de punta a punta con SQL, Python y Power BI</h3>
-        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3D4552;">[Describe en 2 frases: qué datos analizaste, qué pregunta respondiste y qué encontraste.]</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-          <span style="padding: 5px 10px; border-radius: 6px; background: #F1EFE9; font-size: 13px; font-weight: 500; color: #3D4552;">SQL</span>
-          <span style="padding: 5px 10px; border-radius: 6px; background: #F1EFE9; font-size: 13px; font-weight: 500; color: #3D4552;">Python</span>
-          <span style="padding: 5px 10px; border-radius: 6px; background: #F1EFE9; font-size: 13px; font-weight: 500; color: #3D4552;">Power BI</span>
-        </div>
-        <a href="https://calm-brie-7cb.notion.site" style="font-weight: 600; font-size: 15px; padding-top: 4px;">Ver caso completo →</a>
+    <article style="display: flex; flex-wrap: wrap; gap: 44px; align-items: center;">
+      <div style="flex: 999 1 540px; min-width: 0; aspect-ratio: 16 / 10; background: #EEF3F8; border-radius: 6px; display: flex; align-items: center; justify-content: center;"><p style="margin: 0; font-size: 14px; color: #4B5768;">Video de 20 s de la herramienta</p></div>
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+        <p style="margin: 0; font-size: 13px; letter-spacing: .12em; color: #1C6E9E;">IA · MACHINE LEARNING</p>
+        <h3 style="margin: 0; font-size: 28px; line-height: 1.2; font-weight: 700;">Herramienta de IA para 17 zonas comerciales</h3>
+        <p style="margin: 0; font-size: 16px; color: #4B5768;">Agrupa a los comerciales por desempeño, proyecta el cumplimiento y propone planes de acción a gerentes de relación, ejecutivos y asesores, con un agente de IA para consultarla.</p>
+        <p style="margin: 0; font-size: 16px; padding-left: 16px; border-left: 2px solid #1C6E9E;">Se alcanzó el cumplimiento presupuestal, una meta que no se lograba hace años.</p>
       </div>
     </article>
-
-    <!-- Grid de proyectos -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
-      <article class="card" style="background: #FFFFFF; border: 1px solid #E3E5E0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="aspect-ratio: 16 / 10; background: #EEF0EC; border-bottom: 1px solid #E3E5E0; display: flex; align-items: center; justify-content: center;"><p style="margin: 0; font-size: 13px; color: #5A6270;">Captura del tablero</p></div>
-        <div style="padding: 24px; display: flex; flex-direction: column; gap: 10px;">
-          <p style="margin: 0; font-size: 13px; font-weight: 600; color: #0F6E6A;">Power BI · Comercial</p>
-          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600;">Dashboard comercial</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3D4552;">Ventas por producto, vendedor y año, en distintas líneas de producción y ciudades.</p>
-        </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+      <article style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="aspect-ratio: 16 / 10; background: #EEF3F8; border-radius: 6px; display: flex; align-items: center; justify-content: center;"><p style="margin: 0; font-size: 14px; color: #4B5768;">Captura anonimizada</p></div>
+        <p style="margin: 6px 0 0; font-size: 13px; letter-spacing: .12em; color: #1C6E9E;">API · PYTHON</p>
+        <h3 style="margin: 0; font-size: 21px; font-weight: 700;">Cifras de mercado conectadas a la Superfinanciera</h3>
+        <p style="margin: 0; font-size: 15px; color: #4B5768;">El análisis competitivo se armaba a mano cada semana. Ahora se actualiza solo en 6 minutos.</p>
       </article>
-      <article class="card" style="background: #FFFFFF; border: 1px solid #E3E5E0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="aspect-ratio: 16 / 10; background: #EEF0EC; border-bottom: 1px solid #E3E5E0; display: flex; align-items: center; justify-content: center;"><p style="margin: 0; font-size: 13px; color: #5A6270;">Captura del tablero</p></div>
-        <div style="padding: 24px; display: flex; flex-direction: column; gap: 10px;">
-          <p style="margin: 0; font-size: 13px; font-weight: 600; color: #0F6E6A;">Power BI · Logística</p>
-          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600;">Seguimiento de envíos</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3D4552;">Control de los envíos realizados por la empresa: tiempos, destinos y estado de cada despacho.</p>
-        </div>
+      <article style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="aspect-ratio: 16 / 10; background: #EEF3F8; border-radius: 6px; display: flex; align-items: center; justify-content: center;"><p style="margin: 0; font-size: 14px; color: #4B5768;">Captura anonimizada</p></div>
+        <p style="margin: 6px 0 0; font-size: 13px; letter-spacing: .12em; color: #1C6E9E;">POWER BI · HTML</p>
+        <h3 style="margin: 0; font-size: 21px; font-weight: 700;">Tableros para Vicepresidencia y Comité Directivo</h3>
+        <p style="margin: 0; font-size: 15px; color: #4B5768;">Clientes, desembolsos, recaudos, saldos y rentabilidad por oficina, integrados en un solo lugar.</p>
       </article>
-      <article class="card" style="background: #FFFFFF; border: 1px solid #E3E5E0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="aspect-ratio: 16 / 10; background: #EEF0EC; border-bottom: 1px solid #E3E5E0; display: flex; align-items: center; justify-content: center;"><p style="margin: 0; font-size: 13px; color: #5A6270;">Captura del tablero</p></div>
-        <div style="padding: 24px; display: flex; flex-direction: column; gap: 10px;">
-          <p style="margin: 0; font-size: 13px; font-weight: 600; color: #0F6E6A;">Power BI · Ventas</p>
-          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600;">Ventas por marca y región</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3D4552;">Análisis de ventas por producto, marca, año y región.</p>
-        </div>
-      </article>
-      <article class="card" style="background: #FFFFFF; border: 1px solid #E3E5E0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="aspect-ratio: 16 / 10; background: #EEF0EC; border-bottom: 1px solid #E3E5E0; display: flex; align-items: center; justify-content: center;"><p style="margin: 0; font-size: 13px; color: #5A6270;">Captura del tablero</p></div>
-        <div style="padding: 24px; display: flex; flex-direction: column; gap: 10px;">
-          <p style="margin: 0; font-size: 13px; font-weight: 600; color: #0F6E6A;">Looker Studio · Ventas</p>
-          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600;">Ingresos por departamento y ciudad</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3D4552;">Mapas de ingresos por ciudad, tendencias históricas, utilidades y unidades vendidas.</p>
-        </div>
-      </article>
-      <article class="card" style="background: #FFFFFF; border: 1px solid #E3E5E0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="aspect-ratio: 16 / 10; background: #EEF0EC; border-bottom: 1px solid #E3E5E0; display: flex; align-items: center; justify-content: center;"><p style="margin: 0; font-size: 13px; color: #5A6270;">Captura del tablero</p></div>
-        <div style="padding: 24px; display: flex; flex-direction: column; gap: 10px;">
-          <p style="margin: 0; font-size: 13px; font-weight: 600; color: #0F6E6A;">Tableau · Ventas</p>
-          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600;">Comportamiento de ventas</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3D4552;">Análisis detallado del comportamiento de las ventas. [Agrega el periodo y las variables.]</p>
-        </div>
-      </article>
-      <article class="card" style="background: #FFFFFF; border: 1px solid #E3E5E0; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="aspect-ratio: 16 / 10; background: #EEF0EC; border-bottom: 1px solid #E3E5E0; display: flex; align-items: center; justify-content: center;"><p style="margin: 0; font-size: 13px; color: #5A6270;">Captura del tablero</p></div>
-        <div style="padding: 24px; display: flex; flex-direction: column; gap: 10px;">
-          <p style="margin: 0; font-size: 13px; font-weight: 600; color: #0F6E6A;">[Herramienta] · Finanzas</p>
-          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600;">Análisis de costos</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3D4552;">[Describe qué costos analiza y qué permite decidir.]</p>
-        </div>
-      </article>
-    </div>
-
-    <!-- Automatizaciones -->
-    <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 48px; max-width: 680px;">
-      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 32px; line-height: 1.2; font-weight: 600;">Automatizaciones con IA</h2>
-      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4552;">Proyectos demostrativos en desarrollo. Cada uno incluirá un video corto del flujo funcionando.</p>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-      <article style="border: 1.5px dashed #B9C4C2; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px; background: #FBFBF9;">
-        <span style="align-self: flex-start; padding: 5px 10px; border-radius: 999px; background: #FDF1E3; color: #8A4B08; font-size: 12px; font-weight: 600;">En construcción</span>
-        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600;">Asistente de WhatsApp para agendar citas</h3>
-        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3D4552;">Responde preguntas frecuentes y agenda en Google Calendar, las 24 horas.</p>
-        <p style="margin: 0; font-size: 13px; color: #5A6270;">n8n · WhatsApp API · OpenAI</p>
-      </article>
-      <article style="border: 1.5px dashed #B9C4C2; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px; background: #FBFBF9;">
-        <span style="align-self: flex-start; padding: 5px 10px; border-radius: 999px; background: #FDF1E3; color: #8A4B08; font-size: 12px; font-weight: 600;">En construcción</span>
-        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600;">Recordatorios que reducen inasistencias</h3>
-        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3D4552;">Confirma citas un día antes, reagenda y libera el espacio si el cliente no puede asistir.</p>
-        <p style="margin: 0; font-size: 13px; color: #5A6270;">Make · Google Sheets · WhatsApp</p>
-      </article>
-      <article style="border: 1.5px dashed #B9C4C2; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px; background: #FBFBF9;">
-        <span style="align-self: flex-start; padding: 5px 10px; border-radius: 999px; background: #FDF1E3; color: #8A4B08; font-size: 12px; font-weight: 600;">En construcción</span>
-        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600;">Captura y seguimiento de clientes</h3>
-        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3D4552;">La IA clasifica cada consulta, la registra en el CRM y hace seguimiento automático.</p>
-        <p style="margin: 0; font-size: 13px; color: #5A6270;">Python · OpenAI · Airtable</p>
+      <article style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="aspect-ratio: 16 / 10; background: #0E1B2C; border-radius: 6px; display: flex; align-items: center; justify-content: center;"><p style="margin: 0; font-size: 14px; color: #B9C6D6;">Video del agente funcionando</p></div>
+        <p style="margin: 6px 0 0; font-size: 13px; letter-spacing: .12em; color: #1C6E9E;">PROYECTO PROPIO</p>
+        <h3 style="margin: 0; font-size: 21px; font-weight: 700;">Claw, mi agente de IA</h3>
+        <p style="margin: 0; font-size: 15px; color: #4B5768;">Recoge información de correos, imágenes, PDF y Excel, la valida y la entrega lista para decidir.</p>
       </article>
     </div>
   </section>
 
-  <!-- EXPERIENCIA + FORMACION -->
-  <section style="background: #FFFFFF; border-top: 1px solid #E3E5E0; border-bottom: 1px solid #E3E5E0;">
-    <div class="section" style="max-width: 1200px; margin: 0 auto; padding: 96px 32px; display: flex; flex-wrap: wrap; gap: 64px;">
-      <div id="experiencia" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 28px;">
-        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 600;">Experiencia</h2>
-        <div style="display: flex; flex-direction: column; gap: 0; border-left: 2px solid #D5DBD9; padding-left: 24px;">
-          <div style="position: relative; padding-bottom: 32px; display: flex; flex-direction: column; gap: 6px;">
-            <span aria-hidden="true" style="position: absolute; left: -32px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #0F6E6A; border: 2px solid #FFFFFF;"></span>
-            <p style="margin: 0; font-size: 14px; color: #5A6270;">Oct 2023 – actualidad</p>
-            <h3 style="margin: 0; font-size: 19px; font-weight: 600;">Auxiliar de Ingeniería · Dispapeles</h3>
-            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3D4552;">[1–2 logros con números. Ej.: “Automaticé el reporte semanal de producción y ahorré 6 horas al mes”.]</p>
-          </div>
-          <div style="position: relative; display: flex; flex-direction: column; gap: 6px;">
-            <span aria-hidden="true" style="position: absolute; left: -32px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #9AA6A4; border: 2px solid #FFFFFF;"></span>
-            <p style="margin: 0; font-size: 14px; color: #5A6270;">Mar 2023 – Sep 2023</p>
-            <h3 style="margin: 0; font-size: 19px; font-weight: 600;">Practicante · Grupo Familia</h3>
-            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3D4552;">[Qué tableros o mejoras construiste y qué cambió gracias a ellos.]</p>
-          </div>
-        </div>
+  <!-- TESTIMONIO -->
+  <section style="background: #F5F8FB;">
+    <figure class="wrap" style="margin: 0 auto; padding-top: 88px; padding-bottom: 88px; max-width: 820px; text-align: center; display: flex; flex-direction: column; gap: 22px; align-items: center;">
+      <blockquote style="margin: 0; font-size: 24px; line-height: 1.5;">“[Testimonio de un jefe, compañero o cliente: qué cambió gracias a tu trabajo, en 2 o 3 frases.]”</blockquote>
+      <figcaption style="font-size: 15px; color: #4B5768;"><strong style="color: #0E1B2C;">[Nombre]</strong> · [Cargo, empresa]</figcaption>
+    </figure>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" class="wrap" style="padding-top: 104px; padding-bottom: 96px; display: flex; flex-direction: column; gap: 48px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start;">
+      <div style="flex: 0 0 220px; width: 220px; height: 220px; border-radius: 50%; background: #EEF3F8; border: 3px solid #1C6E9E; display: flex; align-items: center; justify-content: center; text-align: center; box-sizing: border-box; padding: 24px;"><p style="margin: 0; font-size: 13px; color: #4B5768;">Tu foto real</p></div>
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+        <p style="margin: 0; font-size: 13px; letter-spacing: .16em; color: #1C6E9E;">SOBRE MÍ</p>
+        <h2 style="margin: 0; font-size: 38px; font-weight: 700;">Mi historia</h2>
+        <p style="margin: 0; font-size: 17px; color: #4B5768;">Estudié Ingeniería Industrial en la Universidad del Valle y empecé midiendo consumo de energía en una planta. Ahí descubrí que lo que más me gustaba no era el indicador, sino automatizar el camino para llegar a él.</p>
+        <p style="margin: 0; font-size: 17px; color: #4B5768;">En cinco roles he pasado por producción, procesos y banca. Hoy administro el modelo de campañas y oportunidades de la Banca Empresarial de Banco de Occidente, curso una maestría en Analítica e Inteligencia de Negocios y construyo agentes de IA en mis tiempos libres, rodeada de mi familia y mis mascotas.</p>
       </div>
-      <div id="formacion" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 28px;">
-        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 600;">Formación</h2>
-        <div style="background: #F7F7F4; border-radius: 14px; padding: 22px 24px; display: flex; flex-direction: column; gap: 4px;">
-          <p style="margin: 0; font-size: 17px; font-weight: 600;">Ingeniería Industrial</p>
-          <p style="margin: 0; font-size: 15px; color: #3D4552;">Universidad del Valle · 2018 – 2024 · Énfasis en análisis de datos y finanzas</p>
-        </div>
-        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
-          <li style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #E3E5E0; font-size: 15px;"><span><strong style="font-weight: 600;">Ciencia de Datos</strong> · Universidad de los Andes</span><span style="color: #8A4B08; font-weight: 500; white-space: nowrap;">En curso</span></li>
-          <li style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #E3E5E0; font-size: 15px;"><span><strong style="font-weight: 600;">Análisis de datos con R</strong> · Duke University</span><span style="color: #8A4B08; font-weight: 500; white-space: nowrap;">En curso</span></li>
-          <li style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #E3E5E0; font-size: 15px;"><span><strong style="font-weight: 600;">Diplomado en Business Analytics</strong> · Universidad Central</span><span style="color: #5A6270; white-space: nowrap;">2023</span></li>
-          <li style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #E3E5E0; font-size: 15px;"><span><strong style="font-weight: 600;">Power BI</strong> · Essity</span><span style="color: #5A6270; white-space: nowrap;">2023</span></li>
-          <li style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; font-size: 15px;"><span><strong style="font-weight: 600;">Procesamiento y visualización de datos en Power BI</strong> · Universidad del Valle</span><span style="color: #5A6270; white-space: nowrap;">2022</span></li>
-        </ul>
-      </div>
+    </div>
+    <!-- Línea de tiempo -->
+    <div style="position: relative; padding-top: 20px;">
+      <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 27px; height: 1px; background: #C9D8E6;"></div>
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 20px; position: relative;">
+        <li style="display: flex; flex-direction: column; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF; border: 2px solid #0E1B2C;"></span><span style="font-size: 13px; color: #4B5768;">2023</span><strong style="font-size: 15px;">Familia del Pacífico</strong><span style="font-size: 14px; color: #4B5768;">Indicadores de energía y mantenimiento</span></li>
+        <li style="display: flex; flex-direction: column; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF; border: 2px solid #0E1B2C;"></span><span style="font-size: 13px; color: #4B5768;">2023 – 2024</span><strong style="font-size: 15px;">Dispapeles</strong><span style="font-size: 14px; color: #4B5768;">KPI de planta, SMED y MRP</span></li>
+        <li style="display: flex; flex-direction: column; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF; border: 2px solid #0E1B2C;"></span><span style="font-size: 13px; color: #4B5768;">2024 – 2026</span><strong style="font-size: 15px;">Banco de Occidente</strong><span style="font-size: 14px; color: #4B5768;">Analista de Procesos</span></li>
+        <li style="display: flex; flex-direction: column; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF; border: 2px solid #0E1B2C;"></span><span style="font-size: 13px; color: #4B5768;">2026</span><strong style="font-size: 15px;">Banco de Occidente</strong><span style="font-size: 14px; color: #4B5768;">Rentabilidad y Crecimiento Comercial</span></li>
+        <li style="display: flex; flex-direction: column; gap: 6px;"><span style="width: 14px; height: 14px; border-radius: 50%; background: #1C6E9E; border: 2px solid #1C6E9E;"></span><span style="font-size: 13px; color: #4B5768;">2026 – hoy</span><strong style="font-size: 15px;">Banco de Occidente + freelance</strong><span style="font-size: 14px; color: #4B5768;">Oportunity Management · proyectos propios</span></li>
+      </ol>
     </div>
   </section>
 
   <!-- CONTACTO -->
-  <section id="contacto" class="section" style="max-width: 1200px; margin: 0 auto; padding: 96px 32px;">
-    <div style="background: #0F6E6A; color: #FFFFFF; border-radius: 24px; padding: 64px 48px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between;">
-      <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
-        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 40px; line-height: 1.15; font-weight: 600;">¿Tienes datos sin aprovechar o tareas que se repiten todos los días?</h2>
-        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #DDF1EE;">Cuéntame tu caso y en 30 minutos te digo qué se puede medir o automatizar.</p>
-      </div>
-      <div style="flex: 0 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
-        <a class="btn" href="mailto:dsrodriguezd@outlook.com" style="background: #FFFFFF; color: #0B4F4C;">dsrodriguezd@outlook.com</a>
-        <a class="btn" href="https://wa.me/573146796148" style="background: transparent; color: #FFFFFF; border: 1.5px solid #FFFFFF;">WhatsApp · +57 314 679 6148</a>
-        <a class="btn" href="https://www.linkedin.com/" style="background: transparent; color: #FFFFFF; border: 1.5px solid rgba(255,255,255,.6);">LinkedIn [agrega tu enlace]</a>
+  <section id="contacto" style="border-top: 1px solid #E3E8EF;">
+    <div class="wrap" style="padding-top: 104px; padding-bottom: 104px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px;">
+      <p style="margin: 0; font-size: 13px; letter-spacing: .16em; color: #1C6E9E;">CONTACTO</p>
+      <h2 class="hero-h" style="margin: 0; font-size: 46px; line-height: 1.15; font-weight: 700; max-width: 760px;">¿Qué tarea repite tu equipo cada semana?</h2>
+      <p style="margin: 0; font-size: 18px; color: #4B5768; max-width: 560px;">Cuéntamela. En 30 minutos te digo si se puede automatizar y cuánto tiempo te devolvería.</p>
+      <a href="mailto:dsrodriguezd@outlook.com" style="font-size: 22px; font-weight: 700; text-underline-offset: 6px;">dsrodriguezd@outlook.com</a>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; padding-top: 8px;">
+        <a class="btn" href="https://wa.me/573146796148" style="background: #0E1B2C; color: #FFFFFF;">WhatsApp</a>
+        <a class="btn" href="https://www.linkedin.com/" style="background: #EEF3F8; color: #0E1B2C;">LinkedIn [tu enlace]</a>
+        <a class="btn" href="https://github.com/dsrodriguezq" style="background: #EEF3F8; color: #0E1B2C;">GitHub</a>
       </div>
     </div>
   </section>
-
-  <footer style="border-top: 1px solid #E3E5E0;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 28px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: #5A6270;">
-      <span>© 2026 Diana Sofía Rodríguez Díaz · Cali, Colombia</span>
-      <span>Datos · Tableros de control · Automatización con IA</span>
-    </div>
+  <footer class="wrap" style="padding-top: 24px; padding-bottom: 32px; border-top: 1px solid #E3E8EF; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; color: #4B5768;">
+    <span>© 2026 Diana Sofía Rodríguez Díaz</span><span>Cali, Colombia</span>
   </footer>
 </div>
 </body>
