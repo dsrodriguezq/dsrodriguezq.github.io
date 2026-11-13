@@ -112,6 +112,30 @@ def indices(serie, orden=None):
     return valores, {v: i for i, v in enumerate(valores)}
 
 
+def exportar_looker(df, g, m):
+    """CSV planos para Google Sheets (=IMPORTDATA) y Looker Studio. Montos en millones de pesos.
+    Tasa ponderada en Looker: SUM(tasa_x_monto) / SUM(monto_con_tasa)."""
+    carpeta = RAIZ / "datos" / "looker"
+    carpeta.mkdir(exist_ok=True)
+    nombres = {"monto": "monto_millones", "monto_con_tasa": "monto_con_tasa_millones", "tasa_x_monto": "tasa_x_monto"}
+    a = g.copy()
+    a.insert(0, "fecha", a.periodo + "-01")
+    a = a.drop(columns="periodo")
+    for c in ("monto", "monto_con_tasa", "tasa_x_monto"):
+        a[c] = (a[c] / 1e6).round(4 if c == "tasa_x_monto" else 2)
+    a.rename(columns=nombres).to_csv(carpeta / "credito_mensual.csv", index=False)
+
+    d = df.groupby(["periodo", "banco", "depto", "tipo"], as_index=False)[m].sum()
+    d.insert(0, "fecha", d.periodo + "-01")
+    d["departamento"] = d.depto.map(lambda x: DEPARTAMENTOS.get(x, "Sin información"))
+    d["pais"] = "Colombia"
+    d = d[["fecha", "banco", "departamento", "pais", "tipo"] + m]
+    for c in ("monto", "monto_con_tasa", "tasa_x_monto"):
+        d[c] = (d[c] / 1e6).round(4 if c == "tasa_x_monto" else 2)
+    d.rename(columns=nombres).to_csv(carpeta / "credito_departamento.csv", index=False)
+    print(f"[OK] looker/: {len(a):,} filas mensuales y {len(d):,} por departamento")
+
+
 def main():
     df = cargar()
     estado = json.loads((MENSUAL / "estado.json").read_text(encoding="utf-8")) if (MENSUAL / "estado.json").exists() else {}
@@ -145,6 +169,7 @@ def main():
         "dim": dims, "filas": filas, "filas_depto": filas_d,
     }
     SALIDA.write_text(json.dumps(salida, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    exportar_looker(df, g, m)
     print(f"[OK] {SALIDA.name}: {len(dims['periodos'])} meses, {len(dims['bancos'])} bancos, "
           f"{len(filas):,} filas (+{len(filas_d):,} por departamento) · {SALIDA.stat().st_size / 1e6:.1f} MB")
 

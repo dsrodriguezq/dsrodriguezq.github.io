@@ -40,3 +40,18 @@ Opcional: una clave gratuita de datos.gov.co en la variable `SOCRATA_APP_TOKEN` 
 
 ---
 Diana Sofía Rodríguez Díaz · [Portafolio](https://dsrodriguezq.github.io/) · [LinkedIn](https://www.linkedin.com/in/dsrodriguezd/)
+
+## Datos para Looker Studio y Google Sheets
+
+Cada vez que corre la acción, `construir.py` también genera dos CSV planos en `datos/looker/` (montos en millones de pesos):
+
+- `credito_mensual.csv`: fecha, banco, tipo, producto, plazo, monto, desembolsos y los campos para la tasa.
+- `credito_departamento.csv`: fecha, banco, departamento, país, tipo y las mismas métricas.
+
+En Google Sheets se cargan solos y se mantienen al día con:
+
+```
+=IMPORTDATA("https://raw.githubusercontent.com/dsrodriguezq/dsrodriguezq.github.io/main/proyectos/monitor-mercado/datos/looker/credito_mensual.csv")
+```
+
+Tasa ponderada en Looker Studio: `SUM(tasa_x_monto) / SUM(monto_con_tasa_millones)`.
