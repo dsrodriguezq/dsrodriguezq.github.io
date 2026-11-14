@@ -1,0 +1,71 @@
+name: Pruebas E2E (Selenium + Java)
+
+on:
+  push:
+    branches: [main, "pruebas-*"]
+    paths-ignore:
+      - "proyectos/monitor-mercado/datos/**"
+  pull_request:
+  schedule:
+    # Lunes 7:23 a. m. hora de Colombia: prueba el sitio publicado
+    - cron: "23 12 * * 1"
+  workflow_dispatch:
+    inputs:
+      sitio:
+        description: "URL a probar (vacío = copia local del repositorio)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+
+      - name: Elegir el sitio a probar
+        id: sitio
+        env:
+          EVENTO: ${{ github.event_name }}
+          SITIO: ${{ github.event.inputs.sitio }}
+        run: |
+          if [ "$EVENTO" = "schedule" ]; then
+            echo "url=https://dsrodriguezq.github.io" >> "$GITHUB_OUTPUT"
+          elif [[ "$SITIO" =~ ^https?://[A-Za-z0-9.:/_-]+$ ]]; then
+            echo "url=$SITIO" >> "$GITHUB_OUTPUT"
+          else
+            echo "url=http://localhost:8000" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Servir la copia local
+        if: steps.sitio.outputs.url == 'http://localhost:8000'
+        run: |
+          python3 -m http.server 8000 >/dev/null 2>&1 &
+          for i in $(seq 1 20); do curl -sf http://localhost:8000/ >/dev/null && break; sleep 0.5; done
+
+      - name: Correr las pruebas
+        run: mvn -B -ntp test -f pruebas/pom.xml -DbaseUrl=${{ steps.sitio.outputs.url }}
+
+      - name: Resumen
+        if: always()
+        run: python3 pruebas/resumen.py pruebas/target/surefire-reports "${{ steps.sitio.outputs.url }}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Guardar reportes y capturas de fallos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reportes-pruebas
+          path: |
+            pruebas/target/surefire-reports/
+            pruebas/target/capturas/
+          if-no-files-found: ignore
+          retention-days: 14
