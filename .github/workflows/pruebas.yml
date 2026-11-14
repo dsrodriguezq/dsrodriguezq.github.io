@@ -2,7 +2,7 @@ name: Pruebas E2E (Selenium + Java)
 
 on:
   push:
-    branches: [main, "pruebas-*"]
+    branches: [main]
     paths-ignore:
       - "proyectos/monitor-mercado/datos/**"
   pull_request:
