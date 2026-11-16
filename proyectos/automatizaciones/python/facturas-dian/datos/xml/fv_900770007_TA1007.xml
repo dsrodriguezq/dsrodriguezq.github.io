@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FACTURA FICTICIA generada para demostración. No tiene validez tributaria. -->
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+         xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>UBL 2.1</cbc:UBLVersionID>
+  <cbc:ID>TA1007</cbc:ID>
+  <cbc:UUID schemeName="CUFE-SHA384">d45288d84da60fa4ffc1ec645c4c7bd44ee7ca4181f88747f760be587cbd4eaf803b3e3b120d45c3c94ffd1ad50aa4ae</cbc:UUID>
+  <cbc:IssueDate>2026-10-04</cbc:IssueDate>
+  <cbc:DueDate>2026-11-03</cbc:DueDate>
+  <cbc:DocumentCurrencyCode>COP</cbc:DocumentCurrencyCode>
+  <cac:AccountingSupplierParty><cac:Party><cac:PartyTaxScheme>
+    <cbc:RegistrationName>Tecnored Andina S.A.S.</cbc:RegistrationName>
+    <cbc:CompanyID schemeAgencyID="195" schemeID="9" schemeName="31">900770007</cbc:CompanyID>
+  </cac:PartyTaxScheme></cac:Party></cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty><cac:Party><cac:PartyTaxScheme>
+    <cbc:RegistrationName>Estudio Ceiba S.A.S. (ficticio)</cbc:RegistrationName>
+    <cbc:CompanyID schemeID="8" schemeName="31">901555123</cbc:CompanyID>
+  </cac:PartyTaxScheme></cac:Party></cac:AccountingCustomerParty>
+  <cac:TaxTotal><cbc:TaxAmount currencyID="COP">162032.00</cbc:TaxAmount></cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="COP">852800.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="COP">852800.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="COP">1014832.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="COP">1014832.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="94">1</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="COP">850000.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="COP">161500.00</cbc:TaxAmount>
+      <cac:TaxSubtotal><cac:TaxCategory><cbc:Percent>19.00</cbc:Percent><cac:TaxScheme><cbc:ID>01</cbc:ID><cbc:Name>IVA</cbc:Name></cac:TaxScheme></cac:TaxCategory></cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item><cbc:Description>Soporte técnico mensual</cbc:Description></cac:Item>
+    <cac:Price><cbc:PriceAmount currencyID="COP">850000.00</cbc:PriceAmount></cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="94">1</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="COP">2800.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="COP">532.00</cbc:TaxAmount>
+      <cac:TaxSubtotal><cac:TaxCategory><cbc:Percent>19.00</cbc:Percent><cac:TaxScheme><cbc:ID>01</cbc:ID><cbc:Name>IVA</cbc:Name></cac:TaxScheme></cac:TaxCategory></cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item><cbc:Description>Cable de red Cat 6 (m)</cbc:Description></cac:Item>
+    <cac:Price><cbc:PriceAmount currencyID="COP">2800.00</cbc:PriceAmount></cac:Price>
+  </cac:InvoiceLine>
+</Invoice>

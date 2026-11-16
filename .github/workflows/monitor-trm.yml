@@ -1,0 +1,64 @@
+name: Monitor TRM (Python)
+
+on:
+  schedule:
+    # Lunes a sábado, 8:47 a. m. hora de Colombia
+    - cron: "47 13 * * 1-6"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: commits-datos
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install pandas==2.2.3
+
+      - name: Descargar TRM y regenerar el reporte
+        env:
+          SOCRATA_APP_TOKEN: ${{ secrets.SOCRATA_APP_TOKEN }}
+        run: python proyectos/automatizaciones/python/monitor-trm/codigo/trm.py
+
+      - name: Guardar cambios
+        run: |
+          git config user.name "monitor-trm[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add proyectos/automatizaciones/python/monitor-trm
+          if git diff --cached --quiet; then
+            echo "Sin cambios en la TRM."
+          else
+            git commit -m "TRM: actualización automática $(date -u +%Y-%m-%d)"
+            for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 10; done
+          fi
+
+      - name: Abrir alerta si el movimiento es fuerte
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ALERTA=proyectos/automatizaciones/python/monitor-trm/datos/alerta.md
+          if [ -f "$ALERTA" ]; then
+            FECHA=$(python -c "import json;print(json.load(open('proyectos/automatizaciones/python/monitor-trm/datos/resumen.json'))['fecha'])")
+            TITULO="Alerta TRM: movimiento fuerte ($FECHA)"
+            if ! gh issue list --state all --search "$TITULO in:title" --json number -q '.[0].number' | grep -q .; then
+              gh issue create --title "$TITULO" --body-file "$ALERTA"
+            fi
+          fi
+
+      - name: Resumen
+        run: |
+          echo "## TRM" >> "$GITHUB_STEP_SUMMARY"
+          cat proyectos/automatizaciones/python/monitor-trm/datos/resumen.json >> "$GITHUB_STEP_SUMMARY"

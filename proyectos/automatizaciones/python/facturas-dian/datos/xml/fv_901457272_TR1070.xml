@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FACTURA FICTICIA generada para demostración. No tiene validez tributaria. -->
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+         xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>UBL 2.1</cbc:UBLVersionID>
+  <cbc:ID>TR1070</cbc:ID>
+  <cbc:UUID schemeName="CUFE-SHA384">b20de8785ddeb9701a07d552d509dad6cc2ae7e2ea6ccc739e83bea57efd5334c7e019f1e903a8d3df4905daab10b990</cbc:UUID>
+  <cbc:IssueDate>2026-10-22</cbc:IssueDate>
+  <cbc:DueDate>2026-11-21</cbc:DueDate>
+  <cbc:DocumentCurrencyCode>COP</cbc:DocumentCurrencyCode>
+  <cac:AccountingSupplierParty><cac:Party><cac:PartyTaxScheme>
+    <cbc:RegistrationName>Transportes Río Cauca S.A.S.</cbc:RegistrationName>
+    <cbc:CompanyID schemeAgencyID="195" schemeID="7" schemeName="31">901457272</cbc:CompanyID>
+  </cac:PartyTaxScheme></cac:Party></cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty><cac:Party><cac:PartyTaxScheme>
+    <cbc:RegistrationName>Estudio Ceiba S.A.S. (ficticio)</cbc:RegistrationName>
+    <cbc:CompanyID schemeID="8" schemeName="31">901555123</cbc:CompanyID>
+  </cac:PartyTaxScheme></cac:Party></cac:AccountingCustomerParty>
+  <cac:TaxTotal><cbc:TaxAmount currencyID="COP">68400.00</cbc:TaxAmount></cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="COP">670000.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="COP">670000.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="COP">738400.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="COP">738400.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="94">4</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="COP">360000.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="COP">68400.00</cbc:TaxAmount>
+      <cac:TaxSubtotal><cac:TaxCategory><cbc:Percent>19.00</cbc:Percent><cac:TaxScheme><cbc:ID>01</cbc:ID><cbc:Name>IVA</cbc:Name></cac:TaxScheme></cac:TaxCategory></cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item><cbc:Description>Cargue y descargue</cbc:Description></cac:Item>
+    <cac:Price><cbc:PriceAmount currencyID="COP">90000.00</cbc:PriceAmount></cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="94">1</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="COP">310000.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="COP">0.00</cbc:TaxAmount>
+      <cac:TaxSubtotal><cac:TaxCategory><cbc:Percent>0.00</cbc:Percent><cac:TaxScheme><cbc:ID>01</cbc:ID><cbc:Name>IVA</cbc:Name></cac:TaxScheme></cac:TaxCategory></cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item><cbc:Description>Flete Cali–Palmira</cbc:Description></cac:Item>
+    <cac:Price><cbc:PriceAmount currencyID="COP">310000.00</cbc:PriceAmount></cac:Price>
+  </cac:InvoiceLine>
+</Invoice>
