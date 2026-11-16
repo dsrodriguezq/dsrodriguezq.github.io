@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Laboratorio de automatizaciones · Diana Rodríguez</title>
-<meta name="description" content="Seis automatizaciones construidas con planes gratuitos: Make, Zapier, n8n con IA, Looker Studio, Power BI y Power Automate.">
+<meta name="description" content="Diez automatizaciones: seis con planes gratuitos de Make, Zapier, n8n, Looker Studio, Power BI y Power Automate, y cuatro en Python.">
 <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&amp;display=swap" rel="stylesheet">
 <style>
 :root{--ink:#0E1B2C;--muted:#4B5768;--line:#E3E8EF;--soft:#F5F8FB;--blue:#1C6E9E}
@@ -15,6 +15,7 @@ a{color:var(--ink)}a:hover{color:var(--blue)}
 .eyebrow{margin:0 0 10px;font-size:13px;letter-spacing:.16em;color:var(--blue)}
 .notice{background:var(--ink);color:#fff;font-size:14px;text-align:center;padding:10px 16px;letter-spacing:.02em}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
+.grid.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .proj{border:1px solid var(--line);border-radius:6px;padding:26px;display:flex;flex-direction:column;gap:10px}
 .proj h3{margin:0;font-size:21px;line-height:1.3}
 .proj p{margin:0;font-size:15px;color:var(--muted)}
@@ -37,7 +38,7 @@ a{color:var(--ink)}a:hover{color:var(--blue)}
 .inbox div{display:grid;grid-template-columns:130px 170px minmax(0,1fr);gap:10px;padding:6px 0;border-bottom:1px solid var(--line)}
 .inbox code{font-size:12px;color:var(--muted)}
 .done{opacity:.35}
-@media(max-width:820px){.wrap{padding:0 20px}h1{font-size:34px !important}.grid{grid-template-columns:1fr}.lanes{grid-template-columns:1fr 1fr}.inbox div{grid-template-columns:1fr}}
+@media(max-width:820px){.wrap{padding:0 20px}h1{font-size:34px !important}.grid,.grid.g2{grid-template-columns:1fr}.lanes{grid-template-columns:1fr 1fr}.inbox div{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.chip{transition:none}}
 </style>
 </head>
@@ -55,8 +56,8 @@ a{color:var(--ink)}a:hover{color:var(--blue)}
 <main>
   <section class="wrap" style="padding-top:56px;padding-bottom:56px">
     <p class="eyebrow">LABORATORIO DE AUTOMATIZACIONES</p>
-    <h1 style="margin:0 0 14px;font-size:44px;line-height:1.12;max-width:780px">Seis automatizaciones hechas con planes gratuitos</h1>
-    <p style="margin:0;font-size:17px;color:var(--muted);max-width:700px">Cada una resuelve un problema típico de una pyme con la herramienta que mejor encaja. Todas usan las versiones gratuitas para que veas lo que se puede lograr sin pagar licencias desde el primer día.</p>
+    <h1 style="margin:0 0 14px;font-size:44px;line-height:1.12;max-width:780px">Diez automatizaciones: herramientas gratuitas y Python</h1>
+    <p style="margin:0;font-size:17px;color:var(--muted);max-width:700px">Cada una resuelve un problema típico de una pyme con la herramienta que mejor encaja. Seis usan los planes gratuitos de herramientas sin código y cuatro están <a href="#python">escritas en Python</a>, para que veas lo que se logra sin pagar licencias desde el primer día.</p>
   </section>
 
   <section class="wrap" style="padding-bottom:72px">
@@ -103,6 +104,46 @@ a{color:var(--ink)}a:hover{color:var(--blue)}
         <p>Junta los Excel de cada sede, arma el resumen, archiva los originales y deja listo el correo.</p>
         <div class="flow"><span>Carpeta</span><i>→</i><span>Excel</span><i>→</i><span>Resumen</span><i>→</i><span>Correo</span></div>
         <span class="state">Próximamente</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="python" class="wrap" style="padding-bottom:80px">
+    <p class="eyebrow">AUTOMATIZACIONES EN PYTHON</p>
+    <h2 style="margin:0 0 10px;font-size:32px">Cuando el proceso necesita código</h2>
+    <p style="margin:0 0 28px;font-size:16px;color:var(--muted);max-width:720px">Para procesos contables y financieros con reglas propias, Python da control total y no paga licencias. Cada proyecto trae su reporte en vivo y el código en GitHub.</p>
+    <div class="grid g2">
+      <article class="proj py">
+        <span class="tool">PYTHON · XML · EXCEL</span>
+        <h3>Lector de facturas electrónicas</h3>
+        <p>Consolida en Excel las facturas XML de los proveedores y avisa antes de pagar si el NIT, el IVA o el total no cuadran, o si una factura llegó dos veces.</p>
+        <div class="flow"><span>Carpeta de XML</span><i>→</i><span>4 validaciones</span><i>→</i><span>Excel + alertas</span></div>
+        <span class="state ok">Encuentra los 4 errores sembrados en 13 facturas</span>
+        <a href="python/facturas-dian/salida/reporte.html" style="font-size:15px;font-weight:700">Ver el reporte →</a>
+      </article>
+      <article class="proj py">
+        <span class="tool">PYTHON · PANDAS</span>
+        <h3>Conciliación bancaria automática</h3>
+        <p>Cruza el extracto contra el auxiliar contable con tres reglas, clasifica lo pendiente y arma la prueba de saldos.</p>
+        <div class="flow"><span>Extracto</span><i>→</i><span>Auxiliar</span><i>→</i><span>3 reglas</span><i>→</i><span>Prueba de saldos</span></div>
+        <span class="state ok">39 de 43 movimientos cruzados solos · cuadra</span>
+        <a href="python/conciliacion-bancaria/salida/reporte.html" style="font-size:15px;font-weight:700">Ver el reporte →</a>
+      </article>
+      <article class="proj py">
+        <span class="tool">PYTHON · CORREO HTML</span>
+        <h3>Cobranza de cartera</h3>
+        <p>Calcula la edad de la cartera, prioriza a quién gestionar primero y redacta un correo distinto según la mora de cada cliente.</p>
+        <div class="flow"><span>Cartera</span><i>→</i><span>Edades</span><i>→</i><span>Prioridad</span><i>→</i><span>13 correos</span></div>
+        <span class="state ok">4 tonos de correo según el tramo de mora</span>
+        <a href="python/cobranza-cartera/salida/reporte.html" style="font-size:15px;font-weight:700">Ver el reporte →</a>
+      </article>
+      <article class="proj py">
+        <span class="tool">PYTHON · API · GITHUB ACTIONS</span>
+        <h3>Monitor de la TRM</h3>
+        <p>Descarga la tasa de cambio oficial cada día hábil, guarda el histórico y abre una alerta si se mueve más de 1,5 % en un día.</p>
+        <div class="flow"><span>datos.gov.co</span><i>→</i><span>Histórico</span><i>→</i><span>Alerta</span><i>→</i><span>Reporte</span></div>
+        <span class="state ok">Datos reales · se actualiza solo</span>
+        <a href="python/monitor-trm/salida/reporte.html" style="font-size:15px;font-weight:700">Ver el reporte →</a>
       </article>
     </div>
   </section>

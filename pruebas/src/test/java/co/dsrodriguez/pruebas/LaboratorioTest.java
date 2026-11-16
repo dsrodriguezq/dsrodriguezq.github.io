@@ -14,10 +14,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 class LaboratorioTest extends PruebaBase {
 
     @Test
-    @DisplayName("Muestra las seis automatizaciones y el aviso de datos ficticios")
-    void muestraLosSeisProyectos() {
+    @DisplayName("Muestra las seis automatizaciones sin código, las cuatro en Python y el aviso de datos ficticios")
+    void muestraLosProyectos() {
         LaboratorioPage lab = new LaboratorioPage(driver).abrir();
-        assertThat(lab.proyectos()).isEqualTo(6);
+        assertThat(lab.proyectosSinCodigo()).isEqualTo(6);
+        assertThat(lab.reportesPython()).hasSize(4).allMatch(h -> h.endsWith("/salida/reporte.html"));
         assertThat(driver.getPageSource()).contains("Datos 100 % ficticios");
     }
 

@@ -18,7 +18,8 @@ import sys
 import time
 import urllib.parse
 import urllib.request
-from datetime import date
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from html import escape
 from pathlib import Path
 
@@ -31,6 +32,7 @@ from reporte import kpis, pagina, flujo  # noqa: E402
 URL = "https://www.datos.gov.co/resource/32sa-8pi3.json"
 HISTORICO = RAIZ / "datos" / "trm.csv"
 UMBRAL_ALERTA = 1.5  # % de variación diaria
+HOY = datetime.now(ZoneInfo("America/Bogota")).date()
 
 
 def descargar(limite=800):
@@ -69,9 +71,9 @@ def grafica(serie: pd.DataFrame) -> str:
     x = lambda i: ml + i * (w - ml - mr) / max(1, len(s) - 1)  # noqa: E731
     y = lambda v: mt + (hi - v) * (h - mt - mb) / (hi - lo)  # noqa: E731
     pts = " ".join(f"{x(i):.1f},{y(v):.1f}" for i, v in enumerate(s.valor))
-    crudo = (hi - lo) / 4
+    crudo = (hi - lo) / 5
     mag = 10 ** math.floor(math.log10(crudo))
-    paso = next(k * mag for k in (1, 2, 5, 10) if k * mag >= crudo)
+    paso = next(k * mag for k in (1, 2, 2.5, 5, 10) if k * mag >= crudo)
     marcas = []
     v = (lo // paso + 1) * paso
     while v < hi:
@@ -136,7 +138,7 @@ def main(con_red=True):
     resumen = {"fecha": ult.fecha.isoformat(), "valor": round(float(ult.valor), 2), "variacion_dia_pct": round(float(var_dia), 2),
                "variacion_30d_pct": None if var_30 is None else round(float(var_30), 2),
                "max_52s": round(float(anio.valor.max()), 2), "min_52s": round(float(anio.valor.min()), 2),
-               "alerta": bool(abs(var_dia) >= UMBRAL_ALERTA), "actualizado": date.today().isoformat()}
+               "alerta": bool(abs(var_dia) >= UMBRAL_ALERTA), "actualizado": HOY.isoformat()}
     (RAIZ / "datos" / "resumen.json").write_text(json.dumps(resumen, ensure_ascii=False, indent=1), encoding="utf-8")
 
     alerta = RAIZ / "datos" / "alerta.md"
@@ -158,7 +160,7 @@ def main(con_red=True):
         + grafica(hist)
         + f'<p class="nota" style="margin-top:18px">Se actualiza sola cada día hábil con GitHub Actions. Si la TRM se mueve '
           f'{str(UMBRAL_ALERTA).replace(".", ",")} % o más en un día, se abre una alerta automática. Histórico descargable: '
-          f'<a href="../datos/trm.csv">trm.csv</a> · última revisión {date.today():%d/%m/%Y}.</p>'
+          f'<a href="../datos/trm.csv">trm.csv</a> · última revisión {HOY:%d/%m/%Y}.</p>'
     )
     pagina(RAIZ / "salida" / "reporte.html",
            titulo="Monitor de la TRM",

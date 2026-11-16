@@ -24,8 +24,13 @@ public class LaboratorioPage extends Pagina {
         return this;
     }
 
-    public int proyectos() {
-        return driver.findElements(By.cssSelector("article.proj")).size();
+    public int proyectosSinCodigo() {
+        return driver.findElements(By.cssSelector("article.proj:not(.py)")).size();
+    }
+
+    /** Enlaces «Ver el reporte» de los proyectos en Python. */
+    public List<String> reportesPython() {
+        return driver.findElements(By.cssSelector("article.proj.py a")).stream().map(a -> a.getDomAttribute("href")).toList();
     }
 
     public int solicitudesEnBandeja() {
