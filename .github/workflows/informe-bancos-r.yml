@@ -1,0 +1,53 @@
+name: Informes por banco (R)
+
+on:
+  workflow_run:
+    workflows: ["Monitor de mercado"]
+    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - "proyectos/informe-bancos-r/codigo/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: commits-datos
+  cancel-in-progress: false
+
+jobs:
+  generar:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Instalar R, R Markdown y paquetes
+        run: |
+          sudo apt-get update -q
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q --no-install-recommends \
+            r-base-core pandoc r-cran-rmarkdown r-cran-knitr r-cran-ggplot2 r-cran-dplyr r-cran-readr \
+            r-cran-tidyr r-cran-scales r-cran-stringr r-cran-ragg r-cran-systemfonts fonts-urw-base35
+
+      - name: Generar un informe por banco
+        run: Rscript proyectos/informe-bancos-r/codigo/generar.R
+
+      - name: Guardar cambios
+        run: |
+          git config user.name "informes-r[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add proyectos/informe-bancos-r/informes
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los informes."
+          else
+            git commit -m "Informes R: regeneración automática $(date -u +%Y-%m-%d)"
+            for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 10; done
+          fi

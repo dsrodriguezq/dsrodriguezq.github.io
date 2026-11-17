@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - "proyectos/monitor-mercado/datos/**"
       - "proyectos/automatizaciones/python/monitor-trm/**"
+      - "proyectos/informe-bancos-r/informes/**"
   pull_request:
   schedule:
     # Lunes 7:23 a. m. hora de Colombia: prueba el sitio publicado

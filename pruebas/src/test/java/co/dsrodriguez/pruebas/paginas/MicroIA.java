@@ -28,8 +28,20 @@ public class MicroIA {
         this.espera = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
+    /** Abre el panel. Si el primer clic coincide con un repintado de la página, lo intenta una vez más. */
     public MicroIA abrir() {
-        espera.until(ExpectedConditions.elementToBeClickable(BOTON)).click();
+        for (int intento = 0; intento < 2; intento++) {
+            espera.until(ExpectedConditions.elementToBeClickable(BOTON)).click();
+            try {
+                new WebDriverWait(driver, Duration.ofSeconds(4))
+                        .until(ExpectedConditions.visibilityOfElementLocated(PANEL));
+                return this;
+            } catch (org.openqa.selenium.TimeoutException e) {
+                if (driver.findElement(PILDORA).isDisplayed()) {
+                    driver.findElement(RESTAURAR).click();
+                }
+            }
+        }
         espera.until(ExpectedConditions.visibilityOfElementLocated(PANEL));
         return this;
     }

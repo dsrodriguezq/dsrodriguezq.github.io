@@ -1,0 +1,174 @@
+---
+pagetitle: "`r params$banco` · Informe de crédito · Diana Rodríguez"
+lang: es
+params:
+  banco: "Bancolombia"
+  datos: "../../monitor-mercado/datos/looker/credito_mensual.csv"
+output:
+  html_document:
+    theme: null
+    highlight: null
+    mathjax: null
+    self_contained: true
+    css: estilo.css
+    df_print: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE,
+                      dev = "ragg_png", dpi = 110, fig.width = 8.4, fig.height = 4)
+source("funciones.R")
+
+df <- leer_mercado(params$datos)
+banco <- params$banco
+stopifnot(banco %in% df$banco)
+
+mes  <- max(df$fecha)
+prev <- max(df$fecha[df$fecha < mes])
+ini  <- min(df$fecha)
+
+# Totales por banco y mes
+por_banco <- df |>
+  group_by(fecha, banco) |>
+  summarise(monto = sum(monto_millones), creditos = sum(desembolsos),
+            tasa = tasa_pond(tasa_x_monto, monto_con_tasa_millones), .groups = "drop") |>
+  group_by(fecha) |>
+  mutate(part = monto / sum(monto), puesto = min_rank(desc(monto)), n_bancos = n()) |>
+  ungroup()
+
+mercado <- df |>
+  group_by(fecha) |>
+  summarise(monto = sum(monto_millones), tasa = tasa_pond(tasa_x_monto, monto_con_tasa_millones), .groups = "drop")
+
+b      <- filter(por_banco, banco == !!banco)
+b_mes  <- filter(b, fecha == mes)
+b_prev <- filter(b, fecha == prev)
+b_ini  <- filter(b, fecha == ini)
+m_mes  <- filter(mercado, fecha == mes)
+
+var_mes  <- if (nrow(b_prev)) b_mes$monto / b_prev$monto - 1 else NA
+cambio_part <- if (nrow(b_ini)) 100 * (b_mes$part - b_ini$part) else NA
+
+# Por tipo de crédito: banco vs. mercado en el último mes
+por_tipo <- df |>
+  filter(fecha == mes) |>
+  group_by(tipo) |>
+  summarise(
+    monto_mercado = sum(monto_millones),
+    tasa_mercado  = tasa_pond(tasa_x_monto, monto_con_tasa_millones),
+    monto_banco   = sum(monto_millones[banco == !!banco]),
+    tasa_banco    = tasa_pond(tasa_x_monto[banco == !!banco], monto_con_tasa_millones[banco == !!banco]),
+    .groups = "drop") |>
+  filter(monto_banco > 0) |>
+  mutate(part_tipo = monto_banco / monto_mercado,
+         peso_en_banco = monto_banco / sum(monto_banco),
+         dif = tasa_banco - tasa_mercado) |>
+  arrange(desc(monto_banco))
+
+principal <- por_tipo[1, ]
+caros   <- filter(por_tipo, !is.na(dif), dif >= 2, peso_en_banco >= 0.05)
+baratos <- filter(por_tipo, !is.na(dif), dif <= -2, peso_en_banco >= 0.05)
+```
+
+```{=html}
+<div class="aviso" role="note">Datos públicos reales · Superintendencia Financiera de Colombia vía datos.gov.co · informe generado automáticamente con R</div>
+<header class="top"><a href="../../../" class="marca"><svg aria-hidden="true" width="30" height="24" viewBox="0 0 30 24"><rect x="0" y="4" width="30" height="5" rx="2.5" fill="#0E1B2C"/><rect x="0" y="15" width="8" height="5" rx="2.5" fill="#1C6E9E"/></svg><span>DIANA RODRÍGUEZ</span></a><a href="index.html">← Todos los bancos</a></header>
+```
+
+<p class="eyebrow">INFORME MENSUAL · `r toupper(mes_largo(mes))`</p>
+
+<h1 class="titulo">`r banco`: colocación de crédito</h1>
+
+<div class="kpis">
+<div class="kpi"><div class="v">`r pesos_mill(b_mes$monto)`</div><div class="l">desembolsado en `r mes_largo(mes)`</div></div>
+<div class="kpi"><div class="v">`r if (is.na(var_mes)) "—" else signo_pct(var_mes)`</div><div class="l">frente a `r mes_largo(prev)`</div></div>
+<div class="kpi"><div class="v">`r pct_part(b_mes$part)`</div><div class="l">del mercado · puesto `r b_mes$puesto` de `r b_mes$n_bancos`</div></div>
+<div class="kpi"><div class="v">`r pct(b_mes$tasa / 100, 2)`</div><div class="l">tasa ponderada E.A. (mercado `r pct(m_mes$tasa / 100, 2)`)</div></div>
+</div>
+
+## Lectura del mes
+
+- En `r mes_largo(mes)`, **`r banco`** desembolsó **`r pesos_mill(b_mes$monto)`** en `r num_co(b_mes$creditos)` créditos`r if (!is.na(var_mes)) paste0(", ", ifelse(var_mes >= 0, "un aumento", "una caída"), " de ", pct(abs(var_mes)), " frente a ", mes_largo(prev))`.
+- Tiene el **`r pct_part(b_mes$part)`** de lo desembolsado por los bancos y ocupa el puesto `r b_mes$puesto` de `r b_mes$n_bancos`. `r if (!is.na(cambio_part)) paste0("Desde ", mes_largo(ini), " su participación ", ifelse(abs(cambio_part) < 0.05, "se mantiene estable", paste0(ifelse(cambio_part > 0, "ganó ", "perdió "), num_co(abs(cambio_part), 2), " puntos porcentuales")), ".") else ""`
+- Su principal línea es **`r principal$tipo`**, con el `r pct(principal$peso_en_banco)` de su monto; ahí tiene el `r pct_part(principal$part_tipo)` del mercado.
+- `r if (nrow(caros)) paste0("Cobra más que el promedio del mercado en ", enumerar(sprintf("**%s** (%s)", caros$tipo, pp(caros$dif))), ".") else if (nrow(baratos)) "" else "En sus líneas principales cobra tasas cercanas al promedio del mercado (menos de 2 puntos de diferencia)."` `r if (nrow(baratos)) paste0("Es más barato que el mercado en ", enumerar(sprintf("**%s** (%s)", baratos$tipo, pp(baratos$dif))), ".") else ""`
+
+<p class="nota">La tasa total depende de la mezcla de productos: un banco con más consumo tendrá una tasa promedio más alta. Por eso la comparación justa es por tipo de crédito, en la segunda gráfica.</p>
+
+## Participación en el mercado, mes a mes
+
+```{r participacion, fig.height=3.4, fig.alt=paste("Participación mensual de", banco, "en el monto desembolsado por los bancos")}
+ultimo <- filter(b, fecha == mes)
+ggplot(b, aes(fecha, part)) +
+  geom_line(colour = COL_BANCO, linewidth = 0.9) +
+  geom_point(data = ultimo, colour = COL_BANCO, size = 2.6) +
+  geom_text(data = ultimo, aes(label = pct_part(part)), hjust = -0.25, family = FUENTE,
+            colour = TINTA, size = 3.6, fontface = "bold") +
+  scale_x_date(breaks = unique(df$fecha), labels = mes_corto, expand = expansion(mult = c(0.02, 0.09))) +
+  scale_y_continuous(labels = label_number(scale = 100, suffix = " %", decimal.mark = ",", big.mark = "."), limits = c(0, NA),
+                     expand = expansion(mult = c(0, 0.15))) +
+  labs(caption = "Porcentaje del monto desembolsado por todos los establecimientos bancarios.") +
+  tema_informe()
+```
+
+## Tasa por tipo de crédito: `r banco` frente al mercado
+
+```{r tasas, fig.height=max(2.4, 0.55 * sum(por_tipo$peso_en_banco >= 0.01 & !is.na(por_tipo$tasa_banco)) + 1.3), fig.alt=paste("Tasa ponderada de", banco, "frente al mercado por tipo de crédito en", mes_largo(mes))}
+t <- por_tipo |>
+  filter(!is.na(tasa_banco), peso_en_banco >= 0.01) |>
+  mutate(tipo = str_wrap(tipo, 28), tipo = reorder(tipo, tasa_mercado))
+tl <- pivot_longer(t, c(tasa_banco, tasa_mercado), names_to = "quien", values_to = "tasa") |>
+  mutate(quien = factor(ifelse(quien == "tasa_banco", banco, "Mercado"), levels = c(banco, "Mercado")))
+ggplot(t, aes(y = tipo)) +
+  geom_segment(aes(x = tasa_mercado, xend = tasa_banco, yend = tipo), colour = LINEA, linewidth = 2.2) +
+  geom_point(data = tl, aes(x = tasa, colour = quien), size = 3.4) +
+  geom_text(aes(x = pmax(tasa_banco, tasa_mercado), label = pp(dif, 1)), hjust = -0.35,
+            family = FUENTE, colour = GRIS, size = 3.3) +
+  scale_colour_manual(values = setNames(c(COL_BANCO, COL_MERCADO), c(banco, "Mercado"))) +
+  scale_x_continuous(labels = \(x) paste0(num_co(x, 0), " %"), expand = expansion(mult = c(0.04, 0.16))) +
+  labs(caption = str_wrap(paste0("Tasa efectiva anual ponderada por monto, ", mes_largo(mes), ". A la derecha, diferencia del banco en puntos porcentuales. Solo tipos con al menos 1 % del monto del banco."), 110)) +
+  tema_informe() +
+  theme(panel.grid.major.y = element_blank(), panel.grid.major.x = element_line(colour = LINEA, linewidth = 0.4))
+```
+
+## En qué presta
+
+```{r composicion, fig.height=max(2.2, 0.5 * nrow(por_tipo) + 0.8), fig.alt=paste("Monto desembolsado por", banco, "por tipo de crédito en", mes_largo(mes))}
+c <- por_tipo |> mutate(tipo = str_wrap(tipo, 28), tipo = reorder(tipo, monto_banco))
+ggplot(c, aes(monto_banco, tipo)) +
+  geom_col(fill = COL_BANCO, width = 0.62) +
+  geom_text(aes(label = paste0(pesos_mill(monto_banco), " · ", pct(peso_en_banco, 0))), hjust = -0.05,
+            family = FUENTE, colour = TINTA, size = 3.3) +
+  scale_x_continuous(expand = expansion(mult = c(0, 0.45)), labels = NULL) +
+  labs(caption = paste("Monto desembolsado en", mes_largo(mes), "y peso dentro del total del banco.")) +
+  tema_informe() +
+  theme(panel.grid.major.y = element_blank(), axis.text.x = element_blank())
+```
+
+## Principales productos del mes
+
+```{r productos}
+prod <- df |>
+  filter(fecha == mes) |>
+  group_by(producto) |>
+  summarise(m_merc = sum(monto_millones), t_merc = tasa_pond(tasa_x_monto, monto_con_tasa_millones),
+            m_banco = sum(monto_millones[banco == !!banco]),
+            t_banco = tasa_pond(tasa_x_monto[banco == !!banco], monto_con_tasa_millones[banco == !!banco]),
+            .groups = "drop") |>
+  filter(m_banco > 0) |>
+  arrange(desc(m_banco)) |>
+  slice_head(n = 8) |>
+  transmute(Producto = str_to_sentence(producto),
+            Monto = pesos_mill(m_banco),
+            `Participación en el producto` = pct_part(m_banco / m_merc),
+            `Tasa banco` = ifelse(is.na(t_banco), "—", pct(t_banco / 100, 2)),
+            `Tasa mercado` = ifelse(is.na(t_merc), "—", pct(t_merc / 100, 2)),
+            Diferencia = ifelse(is.na(t_banco), "—", pp(t_banco - t_merc)))
+knitr::kable(prod, format = "html", align = c("l", rep("r", 5)), table.attr = 'class="tabla"')
+```
+
+## Cómo se hizo
+
+Este informe se escribe solo. Un script en R lee los datos que el [Monitor de mercado](../../monitor-mercado/) descarga de la Superintendencia Financiera, calcula los indicadores y redacta el texto con reglas: por ejemplo, señala un tipo de crédito como «más caro que el mercado» cuando la diferencia supera 2 puntos y pesa al menos el 5 % del banco. Con R Markdown se genera un informe por cada banco, con los mismos parámetros. GitHub Actions lo vuelve a producir cada vez que llegan datos nuevos.
+
+<p class="nota">Montos en pesos corrientes. Tasas efectivas anuales ponderadas por el monto desembolsado. Cifras de `r mes_largo(ini)` a `r mes_largo(mes)`; el último mes puede ajustarse cuando la Superintendencia publique correcciones. <a href="https://github.com/dsrodriguezq/dsrodriguezq.github.io/tree/main/proyectos/informe-bancos-r">Ver el código en GitHub →</a></p>

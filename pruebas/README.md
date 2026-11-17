@@ -4,7 +4,7 @@
 
 Suite de pruebas automatizadas sobre mis propios proyectos. Simula lo que hace una persona en el navegador (clics, filtros, teclado) y rastrea el sitio para encontrar enlaces rotos. También concilia lo que muestra un tablero contra su fuente de datos.
 
-## Qué cubre (47 pruebas)
+## Qué cubre (54 pruebas)
 
 | Suite | Qué verifica |
 |---|---|
@@ -12,6 +12,7 @@ Suite de pruebas automatizadas sobre mis propios proyectos. Simula lo que hace u
 | `SeguimientoTest` | Aviso de datos ficticios visible; cada pestaña muestra solo su panel; la Micro IA abre con sus tres secciones en todos los niveles, lleva el foco al panel, se minimiza con Esc y se restaura. |
 | `MonitorTest` | **Conciliación de datos:** el total desembolsado del tablero coincide con la suma del CSV fuente del último mes. El top 10 viene ordenado, resalta el banco elegido, las 6 pestañas funcionan y la Micro IA del mercado tiene sus cuatro secciones. |
 | `PythonReportesTest` | Los reportes de las automatizaciones en Python: aviso de datos, indicadores, los 4 errores sembrados en las facturas, que la conciliación cuadre, un correo por cliente en mora con el tono correcto y el tooltip de la gráfica de la TRM. |
+| `InformesRTest` | Los informes de R Markdown: el índice enlaza un informe por banco en orden, el primero coincide con su fila del índice y trae sus gráficas, y la lectura del mes no deja valores vacíos ni errores de codificación. |
 | `EnlacesTest` | **Web scraping con Jsoup:** extrae todos los enlaces, imágenes, estilos y scripts de cada página y confirma que ninguno esté roto. También revisa que las imágenes tengan texto alternativo, que haya un solo `h1` y que el idioma sea español. |
 
 ## Cómo está construida

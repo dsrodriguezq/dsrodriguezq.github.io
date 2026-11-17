@@ -30,7 +30,8 @@ class EnlacesTest {
     @ParameterizedTest(name = "{0}: ningún enlace o recurso interno roto")
     @ValueSource(strings = {"/", "/proyectos/seguimiento-comercial/", "/proyectos/monitor-mercado/", "/proyectos/automatizaciones/",
             PY + "facturas-dian/salida/reporte.html", PY + "conciliacion-bancaria/salida/reporte.html",
-            PY + "cobranza-cartera/salida/reporte.html", PY + "monitor-trm/salida/reporte.html"})
+            PY + "cobranza-cartera/salida/reporte.html", PY + "monitor-trm/salida/reporte.html",
+            "/proyectos/informe-bancos-r/informes/", "/proyectos/informe-bancos-r/informes/bancolombia.html"})
     void sinEnlacesRotos(String ruta) throws Exception {
         String base = PruebaBase.baseUrl();
         Document doc = Jsoup.connect(base + ruta).userAgent("pruebas-portafolio").get();
@@ -55,7 +56,8 @@ class EnlacesTest {
     @ParameterizedTest(name = "{0}: imágenes con texto alternativo y un solo h1")
     @ValueSource(strings = {"/", "/proyectos/seguimiento-comercial/", "/proyectos/monitor-mercado/", "/proyectos/automatizaciones/",
             PY + "facturas-dian/salida/reporte.html", PY + "conciliacion-bancaria/salida/reporte.html",
-            PY + "cobranza-cartera/salida/reporte.html", PY + "monitor-trm/salida/reporte.html"})
+            PY + "cobranza-cartera/salida/reporte.html", PY + "monitor-trm/salida/reporte.html",
+            "/proyectos/informe-bancos-r/informes/", "/proyectos/informe-bancos-r/informes/bancolombia.html"})
     void accesibilidadBasica(String ruta) throws Exception {
         Document doc = Jsoup.connect(PruebaBase.baseUrl() + ruta).userAgent("pruebas-portafolio").get();
         List<String> sinAlt = doc.select("img:not([alt])").eachAttr("src");

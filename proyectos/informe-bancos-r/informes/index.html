@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informes de crédito por banco · Diana Rodríguez</title>
+<meta name="description" content="Un informe automático por cada banco de Colombia, generado con R y R Markdown a partir de datos públicos de la Superintendencia Financiera.">
+<style>:root{--ink:#0E1B2C;--muted:#4B5768;--line:#E3E8EF;--soft:#F5F8FB;--blue:#1C6E9E}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Century Gothic',CenturyGothic,'URW Gothic','Didact Gothic',AppleGothic,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+body{max-width:1040px;margin:0 auto;padding:0 40px}
+a{color:var(--ink)}a:hover{color:var(--blue)}
+.aviso{background:var(--ink);color:#fff;text-align:center;font-size:14px;padding:10px 16px;width:100vw;margin-left:calc(50% - 50vw)}
+html{overflow-x:hidden}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-size:14px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca span{font-size:15px;letter-spacing:.22em;font-weight:700}
+.eyebrow{margin:28px 0 6px;font-size:13px;letter-spacing:.16em;color:var(--blue)}
+h1.titulo{margin:0 0 10px;font-size:38px;line-height:1.15}
+h2{margin:44px 0 10px;font-size:23px}
+p,li{font-size:16px}
+ul{padding-left:20px}li{margin:6px 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:22px 0 8px}
+.kpi{border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+.kpi .v{font-size:25px;font-weight:700;line-height:1.25}
+.kpi .l{font-size:14px;color:var(--muted)}
+.nota{font-size:14px;color:var(--muted)}
+img{max-width:100%;height:auto;display:block;margin:8px 0}
+table.tabla{border-collapse:collapse;width:100%;font-size:14px;border:1px solid var(--line)}
+table.tabla th{text-align:left;background:var(--soft);font-weight:700;padding:9px 12px;border-bottom:1px solid var(--line)}
+table.tabla td{padding:8px 12px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.tabla-wrap{overflow-x:auto}
+@media(max-width:760px){body{padding:0 18px}h1.titulo{font-size:30px}}
+td.n,th.n{text-align:right}</style></head><body>
+<div class="aviso" role="note">Datos públicos reales · Superintendencia Financiera de Colombia vía datos.gov.co · informes generados automáticamente con R</div>
+<header class="top"><a href="../../../" class="marca"><svg aria-hidden="true" width="30" height="24" viewBox="0 0 30 24"><rect x="0" y="4" width="30" height="5" rx="2.5" fill="#0E1B2C"/><rect x="0" y="15" width="8" height="5" rx="2.5" fill="#1C6E9E"/></svg><span>DIANA RODRÍGUEZ</span></a><a href="../../../#trabajo">← Volver al portafolio</a></header>
+<main>
+<p class="eyebrow">R · R MARKDOWN · GGPLOT2 · GITHUB ACTIONS</p>
+<h1 class="titulo">Un informe de crédito para cada banco, escrito solo</h1>
+<p style="max-width:760px;color:#4B5768;font-size:17px">Un solo documento de R Markdown con parámetros produce 29 informes, uno por banco: indicadores, lectura del mes redactada con reglas, comparación de tasas frente al mercado y principales productos. Se regeneran cada vez que el Monitor de mercado trae datos nuevos.</p>
+<div class="kpis">
+<div class="kpi"><div class="v">29</div><div class="l">informes generados</div></div>
+<div class="kpi"><div class="v">Octubre 2026</div><div class="l">mes con datos más reciente</div></div>
+<div class="kpi"><div class="v">$78,83 billones</div><div class="l">desembolsado por los bancos</div></div>
+<div class="kpi"><div class="v">18,58 %</div><div class="l">tasa ponderada E.A. del mercado</div></div>
+</div>
+<h2>Elige un banco</h2>
+<div class="tabla-wrap"><table class="tabla"><thead><tr><th class="n" scope="col">#</th><th scope="col">Banco</th><th class="n" scope="col">Desembolsado</th><th class="n" scope="col">Participación</th><th class="n" scope="col">Tasa E.A.</th></tr></thead>
+<tbody><tr><td class="n">1</td><td><a href="bancolombia.html">Bancolombia</a></td><td class="n">$23,02 billones</td><td class="n">29,2 %</td><td class="n">16,60 %</td></tr>
+<tr><td class="n">2</td><td><a href="banco-davivienda.html">Banco Davivienda</a></td><td class="n">$13,16 billones</td><td class="n">16,7 %</td><td class="n">19,97 %</td></tr>
+<tr><td class="n">3</td><td><a href="banco-de-bogota.html">Banco de Bogotá</a></td><td class="n">$9,01 billones</td><td class="n">11,4 %</td><td class="n">17,93 %</td></tr>
+<tr><td class="n">4</td><td><a href="bbva-colombia.html">BBVA Colombia</a></td><td class="n">$9,00 billones</td><td class="n">11,4 %</td><td class="n">17,79 %</td></tr>
+<tr><td class="n">5</td><td><a href="banco-de-occidente.html">Banco de Occidente</a></td><td class="n">$5,51 billones</td><td class="n">7,0 %</td><td class="n">18,25 %</td></tr>
+<tr><td class="n">6</td><td><a href="banco-davibank.html">Banco Davibank</a></td><td class="n">$2,54 billones</td><td class="n">3,2 %</td><td class="n">24,46 %</td></tr>
+<tr><td class="n">7</td><td><a href="banco-santander.html">Banco Santander</a></td><td class="n">$2,35 billones</td><td class="n">3,0 %</td><td class="n">16,32 %</td></tr>
+<tr><td class="n">8</td><td><a href="itau.html">Itaú</a></td><td class="n">$2,07 billones</td><td class="n">2,6 %</td><td class="n">16,24 %</td></tr>
+<tr><td class="n">9</td><td><a href="av-villas.html">AV Villas</a></td><td class="n">$1,80 billones</td><td class="n">2,3 %</td><td class="n">16,76 %</td></tr>
+<tr><td class="n">10</td><td><a href="banco-falabella.html">Banco Falabella</a></td><td class="n">$1,52 billones</td><td class="n">1,9 %</td><td class="n">26,21 %</td></tr>
+<tr><td class="n">11</td><td><a href="banagrario.html">Banagrario</a></td><td class="n">$1,34 billones</td><td class="n">1,7 %</td><td class="n">19,25 %</td></tr>
+<tr><td class="n">12</td><td><a href="banco-popular.html">Banco Popular</a></td><td class="n">$1,28 billones</td><td class="n">1,6 %</td><td class="n">16,71 %</td></tr>
+<tr><td class="n">13</td><td><a href="banco-caja-social.html">Banco Caja Social</a></td><td class="n">$1,22 billones</td><td class="n">1,5 %</td><td class="n">21,30 %</td></tr>
+<tr><td class="n">14</td><td><a href="citibank.html">Citibank</a></td><td class="n">$898,5 mil millones</td><td class="n">1,1 %</td><td class="n">16,16 %</td></tr>
+<tr><td class="n">15</td><td><a href="banco-gnb-sudameris.html">Banco GNB Sudameris</a></td><td class="n">$775,4 mil millones</td><td class="n">0,98 %</td><td class="n">18,94 %</td></tr>
+<tr><td class="n">16</td><td><a href="banco-pichincha.html">Banco Pichincha</a></td><td class="n">$656,7 mil millones</td><td class="n">0,83 %</td><td class="n">14,75 %</td></tr>
+<tr><td class="n">17</td><td><a href="finandina.html">Finandina</a></td><td class="n">$344,3 mil millones</td><td class="n">0,44 %</td><td class="n">23,36 %</td></tr>
+<tr><td class="n">18</td><td><a href="mibanco.html">Mibanco</a></td><td class="n">$331,9 mil millones</td><td class="n">0,42 %</td><td class="n">43,47 %</td></tr>
+<tr><td class="n">19</td><td><a href="bancoomeva.html">Bancoomeva</a></td><td class="n">$324,5 mil millones</td><td class="n">0,41 %</td><td class="n">19,69 %</td></tr>
+<tr><td class="n">20</td><td><a href="banco-mundo-mujer.html">Banco Mundo Mujer</a></td><td class="n">$306,3 mil millones</td><td class="n">0,39 %</td><td class="n">44,59 %</td></tr>
+<tr><td class="n">21</td><td><a href="banco-serfinanza.html">Banco Serfinanza</a></td><td class="n">$280,4 mil millones</td><td class="n">0,36 %</td><td class="n">24,93 %</td></tr>
+<tr><td class="n">22</td><td><a href="bancamia.html">Bancamía</a></td><td class="n">$207,0 mil millones</td><td class="n">0,26 %</td><td class="n">45,37 %</td></tr>
+<tr><td class="n">23</td><td><a href="banco-btg-pactual-colombia.html">Banco Btg Pactual Colombia</a></td><td class="n">$159,8 mil millones</td><td class="n">0,20 %</td><td class="n">15,77 %</td></tr>
+<tr><td class="n">24</td><td><a href="banco-w.html">Banco W</a></td><td class="n">$153,9 mil millones</td><td class="n">0,20 %</td><td class="n">43,88 %</td></tr>
+<tr><td class="n">25</td><td><a href="lulo-bank.html">Lulo Bank</a></td><td class="n">$146,0 mil millones</td><td class="n">0,19 %</td><td class="n">22,13 %</td></tr>
+<tr><td class="n">26</td><td><a href="coopcentral.html">Coopcentral</a></td><td class="n">$139,1 mil millones</td><td class="n">0,18 %</td><td class="n">14,13 %</td></tr>
+<tr><td class="n">27</td><td><a href="bancien.html">Bancien</a></td><td class="n">$120,8 mil millones</td><td class="n">0,15 %</td><td class="n">20,37 %</td></tr>
+<tr><td class="n">28</td><td><a href="banco-contactar.html">Banco Contactar</a></td><td class="n">$104,1 mil millones</td><td class="n">0,13 %</td><td class="n">51,61 %</td></tr>
+<tr><td class="n">29</td><td><a href="banco-union.html">Banco Unión</a></td><td class="n">$59,8 mil millones</td><td class="n">0,08 %</td><td class="n">24,15 %</td></tr></tbody></table></div>
+<p class="nota" style="margin-top:16px">Cifras de octubre 2026. <a href="https://github.com/dsrodriguezq/dsrodriguezq.github.io/tree/main/proyectos/informe-bancos-r">Ver el código en GitHub →</a></p>
+</main></body></html>
