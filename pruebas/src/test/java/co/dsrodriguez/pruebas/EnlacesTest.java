@@ -29,7 +29,8 @@ class EnlacesTest {
 
     @ParameterizedTest(name = "{0}: ningún enlace o recurso interno roto")
     @ValueSource(strings = {"/", "/proyectos/seguimiento-comercial/", "/proyectos/monitor-mercado/", "/proyectos/automatizaciones/",
-            "/proyectos/automatizaciones/apps-script-resumen/", PY + "facturas-dian/salida/reporte.html", PY + "conciliacion-bancaria/salida/reporte.html",
+            "/proyectos/automatizaciones/apps-script-resumen/",
+            "/proyectos/automatizaciones/apps-script-duplicados/", PY + "facturas-dian/salida/reporte.html", PY + "conciliacion-bancaria/salida/reporte.html",
             PY + "cobranza-cartera/salida/reporte.html", PY + "monitor-trm/salida/reporte.html",
             "/proyectos/informe-bancos-r/informes/", "/proyectos/informe-bancos-r/informes/bancolombia.html"})
     void sinEnlacesRotos(String ruta) throws Exception {
@@ -55,7 +56,8 @@ class EnlacesTest {
 
     @ParameterizedTest(name = "{0}: imágenes con texto alternativo y un solo h1")
     @ValueSource(strings = {"/", "/proyectos/seguimiento-comercial/", "/proyectos/monitor-mercado/", "/proyectos/automatizaciones/",
-            "/proyectos/automatizaciones/apps-script-resumen/", PY + "facturas-dian/salida/reporte.html", PY + "conciliacion-bancaria/salida/reporte.html",
+            "/proyectos/automatizaciones/apps-script-resumen/",
+            "/proyectos/automatizaciones/apps-script-duplicados/", PY + "facturas-dian/salida/reporte.html", PY + "conciliacion-bancaria/salida/reporte.html",
             PY + "cobranza-cartera/salida/reporte.html", PY + "monitor-trm/salida/reporte.html",
             "/proyectos/informe-bancos-r/informes/", "/proyectos/informe-bancos-r/informes/bancolombia.html"})
     void accesibilidadBasica(String ruta) throws Exception {

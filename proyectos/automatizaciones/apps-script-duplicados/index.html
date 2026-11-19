@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detector de duplicados en un CRM · Diana Rodríguez</title>
+<meta name="description" content="Un menú dentro de Google Sheets que encuentra clientes repetidos en un CRM, los marca sin borrarlos y calcula cuánto inflan el embudo de ventas. Hecho con Google Apps Script.">
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&amp;display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0E1B2C;--muted:#4B5768;--line:#E3E8EF;--soft:#F5F8FB;--blue:#1C6E9E}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Century Gothic',CenturyGothic,'Didact Gothic',AppleGothic,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+a{color:var(--ink)}a:hover{color:var(--blue)}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 40px}
+.eyebrow{margin:0 0 10px;font-size:13px;letter-spacing:.16em;color:var(--blue)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.steps li{display:flex;flex-direction:column;gap:8px;padding:20px;border:1px solid #C9D8E6;border-radius:6px}
+.steps li span{font-size:13px;letter-spacing:.12em;color:var(--blue)}
+.steps li strong{font-size:17px}
+.steps li p{margin:0;font-size:14px;color:var(--muted)}
+.steps li.me{background:var(--blue);border-color:var(--blue);color:#fff}
+.steps li.me span,.steps li.me p{color:#fff}
+.steps li.run{background:var(--ink);border-color:var(--ink);color:#fff}
+.steps li.run span{color:#B9C6D6}.steps li.run p{color:#D7E0EA}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;letter-spacing:.08em;color:var(--muted);font-weight:400}
+code{font-size:14px;background:var(--soft);padding:1px 6px;border-radius:4px}
+@media(max-width:820px){.wrap{padding:0 20px}h1{font-size:34px !important}}
+pre{margin:0;background:var(--ink);color:#E6EDF5;padding:22px;border-radius:6px;overflow:auto;font-size:13px;line-height:1.55}
+.shots{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px;align-items:start}
+@media(max-width:820px){.shots{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="wrap" style="display:flex;justify-content:space-between;align-items:center;padding-top:22px;padding-bottom:22px">
+  <a href="../../../" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+    <svg aria-hidden="true" width="30" height="24" viewBox="0 0 30 24"><rect x="0" y="4" width="30" height="5" rx="2.5" fill="#0E1B2C"/><rect x="0" y="15" width="8" height="5" rx="2.5" fill="#1C6E9E"/></svg>
+    <span style="font-size:15px;letter-spacing:.22em;font-weight:700">DIANA RODRÍGUEZ</span>
+  </a>
+  <a href="../../../#trabajo" style="font-size:14px">← Volver al portafolio</a>
+</header>
+
+<main>
+  <section class="wrap" style="padding-top:56px;padding-bottom:48px">
+    <p class="eyebrow">GOOGLE SHEETS + GOOGLE APPS SCRIPT · CALIDAD DE DATOS · PROYECTO PROPIO</p>
+    <h1 style="margin:0 0 14px;font-size:44px;line-height:1.12;max-width:820px">Detector de duplicados en un CRM</h1>
+    <p style="margin:0;font-size:17px;color:var(--muted);max-width:720px">En los CRM que se llevan en una hoja de cálculo, el mismo cliente termina registrado dos veces y el embudo de ventas se infla. Un menú propio en la hoja encuentra los repetidos, aunque cambien tildes, espacios o mayúsculas, los marca sin borrarlos y calcula cuánto dinero sobra en el embudo.</p>
+  </section>
+
+  <section class="wrap" style="padding-bottom:64px">
+    <div class="shots">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <img src="hoja.png" alt="CRM en Google Sheets con 13 prospectos; la fila de P-013, Agencia Viajes Rumbo, aparece en rojo claro con la nota Duplicado de P-012 (fila 13) en la columna Revisión" width="800" height="545" style="width:100%;height:auto;border:1px solid #C9D8E6;border-radius:8px">
+        <figcaption style="font-size:13px;color:var(--muted)">Captura real después de ejecutar el script. Clientes y montos de prueba.</figcaption>
+      </figure>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="padding:24px;border:1px solid #C9D8E6;border-radius:8px">
+          <p class="eyebrow" style="margin-bottom:6px">RESULTADO</p>
+          <p style="margin:0;font-size:30px;font-weight:700;line-height:1.2">$5.300.000</p>
+          <p style="margin:6px 0 0;font-size:15px;color:var(--muted)">inflaban el embudo: «Agencia Viajes Rumbo» estaba registrada en Cierre y otra vez en Prospección.</p>
+        </div>
+        <p style="margin:0;font-size:16px;padding-left:16px;border-left:2px solid var(--blue)">El script no borra nada. Decidir cuál registro conservar es una decisión de negocio, y todo se deshace con un clic.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--soft)">
+    <div class="wrap" style="padding-top:64px;padding-bottom:64px">
+      <p class="eyebrow">CÓMO FUNCIONA</p>
+      <h2 style="margin:0 0 24px;font-size:32px">Cuatro pasos, un solo clic</h2>
+      <ol class="steps">
+        <li class="me"><span>PASO 1 · TÚ DECIDES</span><strong>«Detectar duplicados»</strong><p>Desde el menú «🔍 Calidad de datos» de la propia hoja.</p></li>
+        <li><span>PASO 2</span><strong>Normaliza los nombres</strong><p>Sin tildes, espacios extra ni mayúsculas, para comparar de verdad.</p></li>
+        <li><span>PASO 3</span><strong>Marca los repetidos</strong><p>Pinta la fila y escribe en «Revisión» a qué registro duplica.</p></li>
+        <li class="run"><span>PASO 4 · EN SEGUNDOS</span><strong>Avisa el impacto</strong><p>Una alerta con cuántos duplicados hay y cuánto inflan el embudo.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:64px;padding-bottom:72px">
+    <p class="eyebrow">CÓMO ESTÁ HECHO</p>
+    <h2 style="margin:0 0 20px;font-size:32px">Las piezas</h2>
+    <table>
+      <thead><tr><th>Pieza</th><th>Qué hace</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Normalización</strong></td><td><code>normalize('NFD')</code> y expresiones regulares quitan tildes y espacios, para que «Agencia  Viájes Rumbo » y «agencia viajes rumbo» sean el mismo cliente.</td></tr>
+        <tr><td><strong>Diccionario de vistos</strong></td><td>Guarda la primera aparición de cada cliente; la segunda se marca como duplicado de la primera.</td></tr>
+        <tr><td><strong>Escritura en la hoja</strong></td><td><code>setBackground</code> y <code>setValue</code> marcan la fila y agregan la columna «Revisión».</td></tr>
+        <tr><td><strong><code>SpreadsheetApp.flush()</code></strong></td><td>Aplica los cambios antes de la alerta, para que lo que se ve coincida con lo que hizo el script.</td></tr>
+        <tr><td><strong>Deshacer</strong></td><td>«Limpiar marcas» quita la columna y los colores y deja el CRM como estaba.</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="margin:56px 0 20px;font-size:32px">El código completo</h2>
+    <pre><code style="background:none;padding:0;font-size:13px">/**
+ * Detector de duplicados en un CRM · Google Apps Script
+ *
+ * Hoja esperada (fila 1 = encabezados):  ID | Cliente | Monto | Etapa
+ * Uso: abre el Sheet → menú «🔍 Calidad de datos» → «Detectar duplicados».
+ * No borra nada: marca las filas repetidas y dice cuánto inflan el embudo.
+ */
+
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu(&#x27;🔍 Calidad de datos&#x27;)
+    .addItem(&#x27;Detectar duplicados&#x27;, &#x27;detectarDuplicados&#x27;)
+    .addItem(&#x27;Limpiar marcas&#x27;, &#x27;limpiarMarcas&#x27;)
+    .addToUi();
+}
+
+// Normaliza el nombre: sin tildes, sin espacios extra, en minúsculas
+function normalizar(texto) {
+  return String(texto).normalize(&#x27;NFD&#x27;).replace(/[̀-ͯ]/g, &#x27;&#x27;)
+    .trim().replace(/\s+/g, &#x27; &#x27;).toLowerCase();
+}
+
+function detectarDuplicados() {
+  const hoja = SpreadsheetApp.getActiveSheet();
+  limpiarMarcas();
+  const datos = hoja.getDataRange().getValues();
+  const colRevision = datos[0].length + 1;           // columna nueva al final
+  hoja.getRange(1, colRevision).setValue(&#x27;Revisión&#x27;).setFontWeight(&#x27;bold&#x27;);
+
+  const vistos = {};       // cliente normalizado → primera fila donde apareció
+  let duplicados = 0, montoInflado = 0;
+
+  for (let i = 1; i &lt; datos.length; i++) {
+    const [id, cliente, monto] = datos[i];
+    if (!cliente) continue;
+    const clave = normalizar(cliente);
+    const fila = i + 1;                                // filas de la hoja empiezan en 1
+
+    if (vistos[clave]) {
+      duplicados++;
+      montoInflado += Number(monto);
+      hoja.getRange(fila, 1, 1, colRevision).setBackground(&#x27;#FDE2E1&#x27;);
+      hoja.getRange(fila, colRevision).setValue(`⚠️ Duplicado de ${vistos[clave].id} (fila ${vistos[clave].fila})`);
+    } else {
+      vistos[clave] = { id, fila };
+    }
+  }
+
+  SpreadsheetApp.flush();   // escribe los cambios en la hoja antes de mostrar la alerta
+  const fmt = n =&gt; &#x27;$&#x27; + n.toLocaleString(&#x27;es-CO&#x27;);
+  const texto = duplicados === 1 ? &#x27;Se encontró 1 duplicado&#x27; : `Se encontraron ${duplicados} duplicados`;
+  SpreadsheetApp.getUi().alert(duplicados
+    ? `${texto}.\nEl embudo está inflado en ${fmt(montoInflado)}.`
+    : &#x27;✅ No hay clientes duplicados.&#x27;);
+}
+
+function limpiarMarcas() {
+  const hoja = SpreadsheetApp.getActiveSheet();
+  const encabezados = hoja.getRange(1, 1, 1, hoja.getLastColumn()).getValues()[0];
+  const col = encabezados.indexOf(&#x27;Revisión&#x27;) + 1;
+  if (col &gt; 0) hoja.deleteColumn(col);
+  hoja.getDataRange().setBackground(null);
+  hoja.getRange(1, 1, 1, hoja.getLastColumn()).setBackground(&#x27;#0b57d0&#x27;); // conserva el color del encabezado
+}
+</code></pre>
+    <p style="margin:16px 0 0;font-size:15px"><a href="https://github.com/dsrodriguezq/dsrodriguezq.github.io/tree/main/proyectos/automatizaciones/apps-script-duplicados">Código e instrucciones en GitHub →</a></p>
+  </section>
+</main>
+
+<footer class="wrap" style="padding-top:36px;padding-bottom:48px;font-size:14px;color:var(--muted);border-top:1px solid var(--line)">
+  ¿Quieres algo así para tu equipo? <a href="../../../#contacto">Hablemos →</a>
+</footer>
+</body>
+</html>
