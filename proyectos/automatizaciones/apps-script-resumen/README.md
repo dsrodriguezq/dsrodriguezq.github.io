@@ -1,4 +1,4 @@
-# Resumen de ventas por correo · Google Apps Script
+# Google Sheets + Google Apps Script · Resumen de ventas por correo
 
 > Proyecto propio. Las capturas son reales, con los datos personales ocultos. Los clientes y montos son de prueba.
 
