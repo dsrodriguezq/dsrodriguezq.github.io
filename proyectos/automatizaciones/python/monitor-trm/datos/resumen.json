@@ -1,10 +1,10 @@
 {
- "fecha": "2026-11-19",
- "valor": 3326.96,
- "variacion_dia_pct": 0.53,
- "variacion_30d_pct": 5.41,
+ "fecha": "2026-11-20",
+ "valor": 3415.1,
+ "variacion_dia_pct": 2.65,
+ "variacion_30d_pct": 7.94,
  "max_52s": 3874.71,
  "min_52s": 3048.12,
- "alerta": false,
- "actualizado": "2026-11-19"
+ "alerta": true,
+ "actualizado": "2026-11-20"
 }
