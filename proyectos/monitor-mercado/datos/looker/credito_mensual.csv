@@ -11717,3 +11717,993 @@ fecha,banco,tipo,producto,plazo,monto_millones,desembolsos,monto_con_tasa_millon
 2026-10-01,Mibanco,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),13 a 36 meses,52049.9,2771,52049.9,2679528.4033
 2026-10-01,Mibanco,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),37 a 60 meses,23740.51,1013,23740.51,1159999.9701
 2026-10-01,Mibanco,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),Hasta 12 meses,2463.96,145,2463.96,129027.5862
+2026-11-01,AV Villas,Comercial ordinario,Construcción de proyectos de vivienda no vis (colocación en uvr),37 a 60 meses,487.0,1,487.0,3993.4
+2026-11-01,AV Villas,Comercial ordinario,Construcción de proyectos de vivienda vis (colocación en uvr),13 a 36 meses,456.0,1,456.0,4104.0
+2026-11-01,AV Villas,Comercial ordinario,Construcción de proyectos de vivienda vis (colocación en uvr),Hasta 12 meses,1400.0,1,1400.0,12040.0
+2026-11-01,AV Villas,Comercial ordinario,Empresarial en pesos,13 a 36 meses,8410.95,21,8410.95,125988.6561
+2026-11-01,AV Villas,Comercial ordinario,Empresarial en pesos,37 a 60 meses,2628.0,8,2628.0,39555.4
+2026-11-01,AV Villas,Comercial ordinario,Empresarial en pesos,61 a 120 meses,70.4,1,70.4,1320.0
+2026-11-01,AV Villas,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,1600.0,2,1600.0,22744.0
+2026-11-01,AV Villas,Comercial ordinario,Factoring,Hasta 12 meses,179096.97,1009,179096.97,2560687.8035
+2026-11-01,AV Villas,Comercial ordinario,Financiero e institucional,13 a 36 meses,630.71,8,630.71,9618.3415
+2026-11-01,AV Villas,Comercial ordinario,Oficial o Gobierno,Hasta 12 meses,1269.59,19,1269.59,19413.7451
+2026-11-01,AV Villas,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,22529.78,156,22529.78,638268.7747
+2026-11-01,AV Villas,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,51.56,29,51.56,1458.1516
+2026-11-01,AV Villas,Comercial ordinario,Tarjeta de crédito empresarial,37 a 60 meses,181.41,58,181.41,5130.3354
+2026-11-01,AV Villas,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,91.86,37,91.86,2597.8526
+2026-11-01,AV Villas,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,335.64,170,0.0,0.0
+2026-11-01,AV Villas,Comercial preferencial o corporativo,Corporativo,13 a 36 meses,37319.7,15,37319.7,506501.459
+2026-11-01,AV Villas,Comercial preferencial o corporativo,Corporativo,37 a 60 meses,11010.57,9,11010.57,160817.1744
+2026-11-01,AV Villas,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,7365.0,4,7365.0,108504.75
+2026-11-01,AV Villas,Consumo,Crédito rotativo,13 a 36 meses,122.75,116,122.75,3071.2905
+2026-11-01,AV Villas,Consumo,Crédito rotativo,37 a 60 meses,687.99,148,687.99,16975.5743
+2026-11-01,AV Villas,Consumo,Libranza otros,13 a 36 meses,1523.5,49,1523.5,26817.8549
+2026-11-01,AV Villas,Consumo,Libranza otros,37 a 60 meses,3392.78,91,3392.78,57500.4435
+2026-11-01,AV Villas,Consumo,Libranza otros,61 a 120 meses,19686.48,257,19686.48,336622.2656
+2026-11-01,AV Villas,Consumo,Libranza otros,Hasta 12 meses,64.18,4,64.18,1138.8977
+2026-11-01,AV Villas,Consumo,Libranza otros,Más de 120 meses,55641.6,538,55641.6,936263.6758
+2026-11-01,AV Villas,Consumo,Libre inversión,13 a 36 meses,7145.04,222,7145.04,140239.2015
+2026-11-01,AV Villas,Consumo,Libre inversión,37 a 60 meses,17075.41,250,17075.41,321597.3245
+2026-11-01,AV Villas,Consumo,Libre inversión,61 a 120 meses,46110.13,482,46110.13,869326.7652
+2026-11-01,AV Villas,Consumo,Libre inversión,Hasta 12 meses,430.0,37,430.0,8372.0938
+2026-11-01,AV Villas,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,309.3,178,309.3,8762.4565
+2026-11-01,AV Villas,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,1845.96,1373,1845.96,46749.4017
+2026-11-01,AV Villas,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,37 a 60 meses,1581.57,573,1581.57,39453.2927
+2026-11-01,AV Villas,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,5345.58,2005,5345.58,148363.3927
+2026-11-01,AV Villas,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,14089.77,3917,6796.7,192210.7089
+2026-11-01,AV Villas,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,8968.88,1680,8968.88,201982.3354
+2026-11-01,AV Villas,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,12992.93,1286,12992.93,302464.0
+2026-11-01,AV Villas,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,16239.41,2736,16239.41,418988.5195
+2026-11-01,AV Villas,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,49555.58,4870,12939.04,365915.9242
+2026-11-01,AV Villas,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),13 a 36 meses,1531.84,13,1531.84,27644.024
+2026-11-01,AV Villas,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),37 a 60 meses,847.84,5,847.84,13415.5682
+2026-11-01,AV Villas,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),Hasta 12 meses,345.0,4,345.0,5611.1
+2026-11-01,AV Villas,Vivienda,Adquisición de vivienda no vis (colocación en pesos),37 a 60 meses,155.0,2,155.0,2093.6
+2026-11-01,AV Villas,Vivienda,Adquisición de vivienda no vis (colocación en pesos),61 a 120 meses,198.04,1,198.04,2871.5754
+2026-11-01,AV Villas,Vivienda,Adquisición de vivienda no vis (colocación en pesos),Más de 120 meses,12217.41,41,12217.41,170441.0784
+2026-11-01,AV Villas,Vivienda,Adquisición de vivienda no vis (colocación en uvr),Más de 120 meses,1237.78,6,1237.78,10882.7709
+2026-11-01,AV Villas,Vivienda,Adquisición de vivienda vis (colocación en pesos),37 a 60 meses,249.0,2,249.0,3372.0
+2026-11-01,AV Villas,Vivienda,Adquisición de vivienda vis (colocación en pesos),61 a 120 meses,122.5,1,122.5,1757.875
+2026-11-01,AV Villas,Vivienda,Adquisición de vivienda vis (colocación en pesos),Más de 120 meses,3192.8,28,3192.8,44646.1069
+2026-11-01,AV Villas,Vivienda,Adquisición de vivienda vis (colocación en uvr),Más de 120 meses,975.19,8,975.19,8736.9115
+2026-11-01,AV Villas,Vivienda,Vivienda empleados,Más de 120 meses,626.8,4,626.8,6894.7532
+2026-11-01,BBVA Colombia,Comercial ordinario,Comerciales con recursos provenientes de redescuento,13 a 36 meses,22047.7,30,22047.7,350741.001
+2026-11-01,BBVA Colombia,Comercial ordinario,Comerciales con recursos provenientes de redescuento,37 a 60 meses,3146.0,6,3146.0,57119.54
+2026-11-01,BBVA Colombia,Comercial ordinario,Comerciales con recursos provenientes de redescuento,61 a 120 meses,3240.0,3,3240.0,47489.0
+2026-11-01,BBVA Colombia,Comercial ordinario,Comerciales con recursos provenientes de redescuento,Hasta 12 meses,2712.9,10,2712.9,48876.722
+2026-11-01,BBVA Colombia,Comercial ordinario,Construcción de proyectos de vivienda no vis (colocación en pesos),13 a 36 meses,7100.0,5,7100.0,100300.0
+2026-11-01,BBVA Colombia,Comercial ordinario,Construcción de proyectos de vivienda no vis (colocación en pesos),Hasta 12 meses,800.0,2,800.0,11754.0
+2026-11-01,BBVA Colombia,Comercial ordinario,Construcción de proyectos de vivienda no vis (colocación en uvr),13 a 36 meses,980.0,1,980.0,5821.2
+2026-11-01,BBVA Colombia,Comercial ordinario,Construcción de proyectos de vivienda no vis (colocación en uvr),Hasta 12 meses,903.61,2,903.61,6424.6988
+2026-11-01,BBVA Colombia,Comercial ordinario,Construcción de proyectos de vivienda vis (colocación en pesos),13 a 36 meses,27474.58,11,27474.58,375925.704
+2026-11-01,BBVA Colombia,Comercial ordinario,Construcción de proyectos de vivienda vis (colocación en pesos),Hasta 12 meses,8597.0,4,8597.0,117615.3
+2026-11-01,BBVA Colombia,Comercial ordinario,Construcción de proyectos de vivienda vis (colocación en uvr),13 a 36 meses,7370.0,2,7370.0,50636.0
+2026-11-01,BBVA Colombia,Comercial ordinario,Construcción de proyectos de vivienda vis (colocación en uvr),Hasta 12 meses,350.0,1,350.0,2663.5
+2026-11-01,BBVA Colombia,Comercial ordinario,Empresarial en pesos,13 a 36 meses,41237.01,88,41237.01,720565.3125
+2026-11-01,BBVA Colombia,Comercial ordinario,Empresarial en pesos,37 a 60 meses,23073.28,24,23073.28,380446.8333
+2026-11-01,BBVA Colombia,Comercial ordinario,Empresarial en pesos,61 a 120 meses,75181.48,24,75181.48,1224954.3799
+2026-11-01,BBVA Colombia,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,103415.89,96,103415.89,1562077.9037
+2026-11-01,BBVA Colombia,Comercial ordinario,Factoring,Hasta 12 meses,815296.56,1778,815296.56,12097885.3547
+2026-11-01,BBVA Colombia,Comercial ordinario,Financiero e institucional,13 a 36 meses,1600.0,1,1600.0,20528.0
+2026-11-01,BBVA Colombia,Comercial ordinario,Leasing financiero - financiación inmuebles diferente de habitacional,61 a 120 meses,6150.0,5,6150.0,102748.0
+2026-11-01,BBVA Colombia,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,13 a 36 meses,974.55,8,974.55,14162.4771
+2026-11-01,BBVA Colombia,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,37 a 60 meses,9406.6,10,9406.6,147414.8406
+2026-11-01,BBVA Colombia,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,61 a 120 meses,2409.34,2,2409.34,36551.6751
+2026-11-01,BBVA Colombia,Comercial ordinario,Leasing financiero - financiación vehículos,13 a 36 meses,1000.54,5,1000.54,15306.9571
+2026-11-01,BBVA Colombia,Comercial ordinario,Leasing financiero - financiación vehículos,37 a 60 meses,3224.01,6,3224.01,55800.3289
+2026-11-01,BBVA Colombia,Comercial ordinario,Leasing financiero - financiación vehículos,61 a 120 meses,2826.15,5,2826.15,44309.5804
+2026-11-01,BBVA Colombia,Comercial ordinario,Leasing financiero - otros,13 a 36 meses,1642.17,2,1642.17,24840.9436
+2026-11-01,BBVA Colombia,Comercial ordinario,Oficial o Gobierno,61 a 120 meses,20128.0,10,20128.0,316583.01
+2026-11-01,BBVA Colombia,Comercial ordinario,Oficial o Gobierno,Hasta 12 meses,21650.0,1,21650.0,283831.5
+2026-11-01,BBVA Colombia,Comercial ordinario,Otros Construcción (Colocacion en pesos),Hasta 12 meses,10000.0,1,10000.0,157300.0
+2026-11-01,BBVA Colombia,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,227431.6,354,227431.6,6419159.6743
+2026-11-01,BBVA Colombia,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,3747.88,2336,3747.88,105667.0865
+2026-11-01,BBVA Colombia,Comercial ordinario,Tarjeta de crédito empresarial,37 a 60 meses,2.2,1,2.2,62.2792
+2026-11-01,BBVA Colombia,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,1245.88,749,1193.25,32773.9011
+2026-11-01,BBVA Colombia,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,15451.26,4841,1477.69,39881.9781
+2026-11-01,BBVA Colombia,Comercial preferencial o corporativo,Corporativo,13 a 36 meses,95219.23,12,95219.23,1321674.0422
+2026-11-01,BBVA Colombia,Comercial preferencial o corporativo,Corporativo,37 a 60 meses,223660.94,6,223660.94,3151835.9767
+2026-11-01,BBVA Colombia,Comercial preferencial o corporativo,Corporativo,61 a 120 meses,20000.0,1,20000.0,291000.0
+2026-11-01,BBVA Colombia,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,111037.67,41,111037.67,1528283.4843
+2026-11-01,BBVA Colombia,Comercial tesoreria,Empresarial - Tesoreria,Hasta 12 meses,23061.54,3,23061.54,343297.7657
+2026-11-01,BBVA Colombia,Consumo,Consumo empleados,37 a 60 meses,160.88,2,160.88,2506.7875
+2026-11-01,BBVA Colombia,Consumo,Consumo empleados,61 a 120 meses,956.66,10,956.66,15077.7814
+2026-11-01,BBVA Colombia,Consumo,Consumo empleados,Hasta 12 meses,8.25,1,8.25,131.0206
+2026-11-01,BBVA Colombia,Consumo,Consumo empleados,Más de 120 meses,118.48,2,118.48,1172.9745
+2026-11-01,BBVA Colombia,Consumo,Crédito rotativo,13 a 36 meses,814.29,230,814.29,23077.0167
+2026-11-01,BBVA Colombia,Consumo,Crédito rotativo,37 a 60 meses,6274.74,953,6274.74,166148.1661
+2026-11-01,BBVA Colombia,Consumo,Crédito rotativo,61 a 120 meses,21.46,8,21.46,545.3844
+2026-11-01,BBVA Colombia,Consumo,Libranza otros,13 a 36 meses,3392.88,124,3392.88,56061.9077
+2026-11-01,BBVA Colombia,Consumo,Libranza otros,37 a 60 meses,11894.94,167,11894.94,211939.961
+2026-11-01,BBVA Colombia,Consumo,Libranza otros,61 a 120 meses,50217.54,346,50217.54,902606.6668
+2026-11-01,BBVA Colombia,Consumo,Libranza otros,Hasta 12 meses,100.22,10,100.22,1587.919
+2026-11-01,BBVA Colombia,Consumo,Libranza otros,Más de 120 meses,59585.82,245,59585.82,1020764.4422
+2026-11-01,BBVA Colombia,Consumo,Libre inversión,13 a 36 meses,19136.58,1062,19136.58,432900.5569
+2026-11-01,BBVA Colombia,Consumo,Libre inversión,37 a 60 meses,123801.17,2161,123801.17,2786760.0757
+2026-11-01,BBVA Colombia,Consumo,Libre inversión,61 a 120 meses,33503.06,498,33503.06,708429.0069
+2026-11-01,BBVA Colombia,Consumo,Libre inversión,Hasta 12 meses,227.43,10,227.43,6129.5867
+2026-11-01,BBVA Colombia,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,1309.8,252,1309.8,37001.7764
+2026-11-01,BBVA Colombia,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,14085.02,3497,13552.79,359649.6726
+2026-11-01,BBVA Colombia,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,37 a 60 meses,12954.69,2317,12136.48,315077.6003
+2026-11-01,BBVA Colombia,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,18863.37,3555,18619.99,491176.8839
+2026-11-01,BBVA Colombia,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,129374.28,8951,96114.98,2721965.4138
+2026-11-01,BBVA Colombia,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,32585.81,4506,31109.36,806493.1741
+2026-11-01,BBVA Colombia,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,51875.12,4319,48825.29,1191300.9521
+2026-11-01,BBVA Colombia,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,39813.05,4664,38935.14,997021.9404
+2026-11-01,BBVA Colombia,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,262661.36,13076,141359.82,4003984.8996
+2026-11-01,BBVA Colombia,Consumo,Vehículo,13 a 36 meses,398.0,10,398.0,8308.2
+2026-11-01,BBVA Colombia,Consumo,Vehículo,37 a 60 meses,2033.52,35,2033.52,40559.9374
+2026-11-01,BBVA Colombia,Consumo,Vehículo,61 a 120 meses,19315.86,163,19315.86,403449.9103
+2026-11-01,BBVA Colombia,Vivienda,Adquisición de vivienda no vis (colocación en pesos),37 a 60 meses,405.0,5,405.0,6091.45
+2026-11-01,BBVA Colombia,Vivienda,Adquisición de vivienda no vis (colocación en pesos),61 a 120 meses,218.68,2,218.68,2967.2313
+2026-11-01,BBVA Colombia,Vivienda,Adquisición de vivienda no vis (colocación en pesos),Más de 120 meses,15574.88,44,15574.88,230868.6406
+2026-11-01,BBVA Colombia,Vivienda,Adquisición de vivienda no vis (colocación en uvr),Más de 120 meses,1913.0,5,1913.0,15712.75
+2026-11-01,BBVA Colombia,Vivienda,Adquisición de vivienda vis (colocación en pesos),37 a 60 meses,532.55,8,532.55,7069.239
+2026-11-01,BBVA Colombia,Vivienda,Adquisición de vivienda vis (colocación en pesos),61 a 120 meses,229.8,3,229.8,3159.816
+2026-11-01,BBVA Colombia,Vivienda,Adquisición de vivienda vis (colocación en pesos),Más de 120 meses,15850.6,50,15850.6,206746.0421
+2026-11-01,BBVA Colombia,Vivienda,Adquisición de vivienda vis (colocación en uvr),37 a 60 meses,20.0,1,20.0,142.0
+2026-11-01,BBVA Colombia,Vivienda,Adquisición de vivienda vis (colocación en uvr),61 a 120 meses,85.56,1,85.56,733.2838
+2026-11-01,BBVA Colombia,Vivienda,Adquisición de vivienda vis (colocación en uvr),Más de 120 meses,11638.53,32,11638.53,82828.0603
+2026-11-01,BBVA Colombia,Vivienda,Adquisición leasing habitacional no vis (colocación en pesos),37 a 60 meses,15.0,1,15.0,207.75
+2026-11-01,BBVA Colombia,Vivienda,Adquisición leasing habitacional no vis (colocación en pesos),61 a 120 meses,109.0,1,109.0,1822.48
+2026-11-01,BBVA Colombia,Vivienda,Adquisición leasing habitacional no vis (colocación en pesos),Más de 120 meses,10468.7,25,10468.7,153970.8206
+2026-11-01,BBVA Colombia,Vivienda,Adquisición leasing habitacional vis (colocación en pesos),Más de 120 meses,400.9,3,400.9,4690.26
+2026-11-01,BBVA Colombia,Vivienda,Vivienda empleados,Más de 120 meses,1763.0,6,1763.0,19997.18
+2026-11-01,Banagrario,Comercial ordinario,Comerciales con recursos provenientes de redescuento,13 a 36 meses,3590.77,49,3590.77,74028.8759
+2026-11-01,Banagrario,Comercial ordinario,Comerciales con recursos provenientes de redescuento,37 a 60 meses,3118.48,30,3118.48,63288.3663
+2026-11-01,Banagrario,Comercial ordinario,Comerciales con recursos provenientes de redescuento,61 a 120 meses,9063.89,86,9063.89,185225.0756
+2026-11-01,Banagrario,Comercial ordinario,Comerciales con recursos provenientes de redescuento,Hasta 12 meses,1834.23,20,1834.23,36966.0047
+2026-11-01,Banagrario,Comercial ordinario,Construcción - financiación de proyectos viales en pesos,61 a 120 meses,50.0,1,50.0,1170.0
+2026-11-01,Banagrario,Comercial ordinario,Construcción - financiación de proyectos viales en pesos,Hasta 12 meses,395.5,5,395.5,7323.87
+2026-11-01,Banagrario,Comercial ordinario,Oficial o Gobierno,61 a 120 meses,6651.0,3,6651.0,91227.62
+2026-11-01,Banagrario,Comercial ordinario,Otros Comercial,13 a 36 meses,17294.44,159,17294.44,320493.4084
+2026-11-01,Banagrario,Comercial ordinario,Otros Comercial,37 a 60 meses,2768.0,19,2768.0,56303.79
+2026-11-01,Banagrario,Comercial ordinario,Otros Comercial,61 a 120 meses,3476.64,21,3476.64,72457.3707
+2026-11-01,Banagrario,Comercial ordinario,Otros Comercial,Hasta 12 meses,18873.12,205,18873.12,329553.5791
+2026-11-01,Banagrario,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,2368.47,71,2368.47,67051.3739
+2026-11-01,Banagrario,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,15.46,8,15.46,417.2804
+2026-11-01,Banagrario,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,62.06,25,62.06,1675.3471
+2026-11-01,Banagrario,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,217.49,64,139.9,3774.603
+2026-11-01,Banagrario,Comercial preferencial o corporativo,Corporativo,13 a 36 meses,12612.3,9,12612.3,183435.22
+2026-11-01,Banagrario,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,8761.6,9,8761.6,119543.562
+2026-11-01,Banagrario,Comercial tesoreria,Otros Comercial,Hasta 12 meses,350.0,1,350.0,7514.5
+2026-11-01,Banagrario,Consumo,Consumo empleados,37 a 60 meses,229.99,3,229.99,1437.4375
+2026-11-01,Banagrario,Consumo,Consumo otros,37 a 60 meses,60.72,2,60.72,1410.6418
+2026-11-01,Banagrario,Consumo,Crédito rotativo,13 a 36 meses,318.4,19,318.4,8849.468
+2026-11-01,Banagrario,Consumo,Crédito rotativo,Hasta 12 meses,92.0,1,92.0,2554.84
+2026-11-01,Banagrario,Consumo,Libranza otros,13 a 36 meses,2013.04,140,2013.04,38266.788
+2026-11-01,Banagrario,Consumo,Libranza otros,37 a 60 meses,3551.53,153,3551.53,67152.6135
+2026-11-01,Banagrario,Consumo,Libranza otros,61 a 120 meses,30283.46,706,30283.46,512327.5919
+2026-11-01,Banagrario,Consumo,Libranza otros,Hasta 12 meses,261.7,32,261.7,5136.906
+2026-11-01,Banagrario,Consumo,Libre inversión,13 a 36 meses,77.0,3,77.0,1902.7
+2026-11-01,Banagrario,Consumo,Libre inversión,37 a 60 meses,369.4,17,369.4,9020.04
+2026-11-01,Banagrario,Consumo,Libre inversión,61 a 120 meses,79.2,5,79.2,2094.84
+2026-11-01,Banagrario,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,2499.52,186,2499.52,70761.3856
+2026-11-01,Banagrario,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,17.0,22,17.0,449.1197
+2026-11-01,Banagrario,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,328.97,745,328.97,8098.4037
+2026-11-01,Banagrario,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,273.57,793,152.04,3927.2635
+2026-11-01,Banagrario,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,346.7,406,346.7,8349.4196
+2026-11-01,Banagrario,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,8649.62,7262,8649.62,203980.6438
+2026-11-01,Banagrario,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,4958.84,6164,1955.29,48500.6796
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo rural (con recursos de redescuento),13 a 36 meses,5522.92,862,5522.92,100752.8036
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo rural (con recursos de redescuento),37 a 60 meses,1201.94,168,1201.94,21423.3601
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo rural (con recursos de redescuento),61 a 120 meses,3790.82,483,3790.82,65322.1323
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo rural (con recursos de redescuento),Hasta 12 meses,788.48,134,788.48,15899.3376
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),13 a 36 meses,3186.52,510,3186.52,114247.2802
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),37 a 60 meses,296.3,40,296.3,10256.742
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),61 a 120 meses,7.5,1,7.5,224.325
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),Hasta 12 meses,1003.23,212,1003.23,27684.365
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo urbano  (con recursos de redescuento),13 a 36 meses,5620.57,826,5620.57,104189.3832
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo urbano  (con recursos de redescuento),37 a 60 meses,919.33,129,919.33,16479.7224
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo urbano  (con recursos de redescuento),61 a 120 meses,2087.81,279,2087.81,36108.73
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo urbano  (con recursos de redescuento),Hasta 12 meses,929.83,148,929.83,18288.5963
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),13 a 36 meses,8162.68,1252,8162.68,289776.119
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),37 a 60 meses,754.72,94,754.72,27139.18
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),61 a 120 meses,10.0,1,10.0,234.5
+2026-11-01,Banagrario,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),Hasta 12 meses,2107.46,447,2107.46,65454.4034
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo de mayor monto (con recursos de redescuento),13 a 36 meses,9236.6,155,9236.6,166742.3687
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo de mayor monto (con recursos de redescuento),37 a 60 meses,5431.39,93,5431.39,100524.515
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo de mayor monto (con recursos de redescuento),61 a 120 meses,18561.12,313,18561.12,337432.3889
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo de mayor monto (con recursos de redescuento),Hasta 12 meses,7133.82,115,7133.82,128757.8306
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),13 a 36 meses,1275.0,17,1275.0,29415.25
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),37 a 60 meses,1279.62,17,1279.62,30416.1996
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),61 a 120 meses,1099.46,14,1099.46,24239.7148
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),Hasta 12 meses,856.0,13,856.0,18155.85
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo rural  (con recursos de redescuento),13 a 36 meses,12776.38,562,12776.38,222944.3289
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo rural  (con recursos de redescuento),37 a 60 meses,8301.2,351,8301.2,148446.8323
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo rural  (con recursos de redescuento),61 a 120 meses,37525.17,1544,37525.17,643426.8346
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo rural  (con recursos de redescuento),Hasta 12 meses,5717.96,227,5717.96,103208.7303
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),13 a 36 meses,5128.51,256,5128.51,129278.5981
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),37 a 60 meses,1984.96,86,1984.96,51069.4936
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),61 a 120 meses,91.0,4,91.0,2594.92
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),Hasta 12 meses,923.95,48,923.95,20264.921
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo urbano  (con recursos de redescuento),13 a 36 meses,13286.21,614,13286.21,231302.8549
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo urbano  (con recursos de redescuento),37 a 60 meses,8116.07,349,8116.07,145618.2662
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo urbano  (con recursos de redescuento),61 a 120 meses,19470.65,808,19470.65,335691.1298
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo urbano  (con recursos de redescuento),Hasta 12 meses,6981.5,278,6981.5,121944.6141
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),13 a 36 meses,13416.13,667,13416.13,426806.0572
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),37 a 60 meses,5086.46,203,5086.46,159577.5113
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),61 a 120 meses,579.44,22,579.44,14695.781
+2026-11-01,Banagrario,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),Hasta 12 meses,1817.27,93,1817.27,42329.9096
+2026-11-01,Banagrario,Vivienda,Adquisición de vivienda no vis (colocación en pesos),61 a 120 meses,278.0,2,278.0,4253.4
+2026-11-01,Banagrario,Vivienda,Adquisición de vivienda no vis (colocación en pesos),Más de 120 meses,3727.81,23,3727.81,50575.6378
+2026-11-01,Banagrario,Vivienda,Adquisición de vivienda no vis (colocación en uvr),Más de 120 meses,323.0,3,323.0,3018.4
+2026-11-01,Banagrario,Vivienda,Adquisición de vivienda vis (colocación en pesos),37 a 60 meses,57.0,2,57.0,843.6
+2026-11-01,Banagrario,Vivienda,Adquisición de vivienda vis (colocación en pesos),Más de 120 meses,4090.11,47,4090.11,60225.7719
+2026-11-01,Banagrario,Vivienda,Adquisición de vivienda vis (colocación en uvr),Más de 120 meses,367.0,4,367.0,3229.6
+2026-11-01,Banagrario,Vivienda,Vivienda empleados,Más de 120 meses,1244.0,6,1244.0,6220.0
+2026-11-01,Bancamía,Consumo,Consumo empleados,13 a 36 meses,25.38,7,25.38,147.2015
+2026-11-01,Bancamía,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),13 a 36 meses,3945.76,675,3945.76,243414.1965
+2026-11-01,Bancamía,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),37 a 60 meses,91.66,10,91.66,6041.7283
+2026-11-01,Bancamía,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),Hasta 12 meses,566.94,136,566.94,35446.7717
+2026-11-01,Bancamía,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),13 a 36 meses,11744.46,2179,11744.46,786346.4441
+2026-11-01,Bancamía,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),37 a 60 meses,315.96,35,315.96,20652.9003
+2026-11-01,Bancamía,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),Hasta 12 meses,2256.26,554,2256.26,143904.758
+2026-11-01,Bancamía,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),13 a 36 meses,23615.97,377,23615.97,826082.5817
+2026-11-01,Bancamía,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),37 a 60 meses,18061.52,222,18061.52,615812.0943
+2026-11-01,Bancamía,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),Hasta 12 meses,407.3,8,407.3,13983.1103
+2026-11-01,Bancamía,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),13 a 36 meses,3848.86,196,3848.86,127619.159
+2026-11-01,Bancamía,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),37 a 60 meses,442.73,21,442.73,14885.7384
+2026-11-01,Bancamía,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),Hasta 12 meses,129.91,7,129.91,4313.4123
+2026-11-01,Bancamía,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),13 a 36 meses,18994.05,964,18994.05,955091.243
+2026-11-01,Bancamía,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),37 a 60 meses,3172.8,150,3172.8,164710.9155
+2026-11-01,Bancamía,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),Hasta 12 meses,787.35,50,787.35,40424.4233
+2026-11-01,Bancien,Consumo,Libranza otros,13 a 36 meses,596.26,70,596.26,12147.0987
+2026-11-01,Bancien,Consumo,Libranza otros,37 a 60 meses,1620.56,68,1620.56,33075.2577
+2026-11-01,Bancien,Consumo,Libranza otros,61 a 120 meses,3729.54,126,3729.54,76419.2938
+2026-11-01,Bancien,Consumo,Libranza otros,Hasta 12 meses,12.05,4,12.05,258.9571
+2026-11-01,Bancien,Consumo,Libranza otros,Más de 120 meses,22314.53,575,22314.53,453575.6199
+2026-11-01,Bancien,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,1.25,7,0.02,0.7057
+2026-11-01,Bancien,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,8.68,30,1.31,37.2108
+2026-11-01,Bancien,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,7.17,38,2.88,50.764
+2026-11-01,Bancien,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,56.17,125,50.74,1428.1517
+2026-11-01,Bancien,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,1.27,2,1.27,36.2673
+2026-11-01,Bancien,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,419.16,629,405.45,11050.8735
+2026-11-01,Bancien,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,164.33,485,156.06,4138.1854
+2026-11-01,Banco Btg Pactual Colombia,Comercial ordinario,Factoring,Hasta 12 meses,37361.37,245,37361.37,574391.4398
+2026-11-01,Banco Btg Pactual Colombia,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,7500.0,1,7500.0,116700.0
+2026-11-01,Banco Caja Social,Comercial ordinario,Empresarial en pesos,13 a 36 meses,18220.34,37,18220.34,293436.8361
+2026-11-01,Banco Caja Social,Comercial ordinario,Empresarial en pesos,37 a 60 meses,1216.11,3,1216.11,20150.1515
+2026-11-01,Banco Caja Social,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,6508.0,9,6508.0,97652.543
+2026-11-01,Banco Caja Social,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,7226.39,1242,7226.39,203442.6762
+2026-11-01,Banco Caja Social,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,1164.03,1585,1164.03,29064.5997
+2026-11-01,Banco Caja Social,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,3159.86,3585,3159.86,78838.9634
+2026-11-01,Banco Caja Social,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,4025.44,6426,4025.44,100469.5971
+2026-11-01,Banco Caja Social,Comercial preferencial o corporativo,Construcción de proyectos de vivienda  vis (colocación en uvr),13 a 36 meses,7012.65,7,7012.65,47983.389
+2026-11-01,Banco Caja Social,Comercial preferencial o corporativo,Construcción de proyectos de vivienda  vis (colocación en uvr),37 a 60 meses,3750.0,2,3750.0,23475.0
+2026-11-01,Banco Caja Social,Comercial preferencial o corporativo,Corporativo,13 a 36 meses,8516.04,12,8516.04,130752.1179
+2026-11-01,Banco Caja Social,Comercial preferencial o corporativo,Corporativo,37 a 60 meses,247.0,1,247.0,4389.19
+2026-11-01,Banco Caja Social,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,10648.63,9,10648.63,150878.6195
+2026-11-01,Banco Caja Social,Consumo,Consumo empleados,13 a 36 meses,440.28,18,440.28,3170.0472
+2026-11-01,Banco Caja Social,Consumo,Consumo empleados,Hasta 12 meses,10.0,2,10.0,72.0
+2026-11-01,Banco Caja Social,Consumo,Crédito rotativo,13 a 36 meses,233.04,109,233.04,6463.0897
+2026-11-01,Banco Caja Social,Consumo,Libranza otros,13 a 36 meses,2733.16,176,2733.16,53034.0575
+2026-11-01,Banco Caja Social,Consumo,Libranza otros,37 a 60 meses,5528.15,201,5528.15,103810.1566
+2026-11-01,Banco Caja Social,Consumo,Libranza otros,61 a 120 meses,24564.64,444,24564.64,466892.6166
+2026-11-01,Banco Caja Social,Consumo,Libranza otros,Hasta 12 meses,208.8,37,208.8,4207.339
+2026-11-01,Banco Caja Social,Consumo,Libranza otros,Más de 120 meses,13096.35,189,13096.35,221705.5619
+2026-11-01,Banco Caja Social,Consumo,Libre inversión,13 a 36 meses,8428.44,836,8428.44,201513.7237
+2026-11-01,Banco Caja Social,Consumo,Libre inversión,37 a 60 meses,33044.75,1291,33044.75,760846.7143
+2026-11-01,Banco Caja Social,Consumo,Libre inversión,Hasta 12 meses,1099.8,188,1099.8,26726.444
+2026-11-01,Banco Caja Social,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,1972.11,1958,1972.11,55529.0395
+2026-11-01,Banco Caja Social,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,644.51,1509,644.51,17792.8154
+2026-11-01,Banco Caja Social,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,2410.12,3528,2410.12,66516.8198
+2026-11-01,Banco Caja Social,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,4286.97,7380,4286.97,118295.3936
+2026-11-01,Banco Caja Social,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,4770.77,4022,4770.77,131560.0415
+2026-11-01,Banco Caja Social,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,9450.12,7333,9450.12,260377.7446
+2026-11-01,Banco Caja Social,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,22845.62,16733,22845.62,629874.678
+2026-11-01,Banco Caja Social,Consumo,Vehículo,13 a 36 meses,292.2,4,292.2,5666.2473
+2026-11-01,Banco Caja Social,Consumo,Vehículo,37 a 60 meses,1302.13,16,1302.13,25302.4083
+2026-11-01,Banco Caja Social,Consumo,Vehículo,61 a 120 meses,11615.99,105,11615.99,227017.4805
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),13 a 36 meses,230.15,39,230.15,13306.2575
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),Hasta 12 meses,43.9,15,43.9,2783.635
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),13 a 36 meses,5545.29,931,5545.29,348205.6607
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),37 a 60 meses,144.05,18,144.05,8121.3525
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),Hasta 12 meses,2275.63,599,2275.63,151758.361
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),13 a 36 meses,22557.49,266,22557.49,540664.9763
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),37 a 60 meses,5794.8,85,5794.8,178844.141
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),61 a 120 meses,50.88,1,50.88,988.1368
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),Hasta 12 meses,1073.72,9,1073.72,20440.0972
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo rural  (con recursos de redescuento),37 a 60 meses,40.0,1,40.0,1182.0
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),13 a 36 meses,1652.45,88,1652.45,49788.2725
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),37 a 60 meses,287.7,17,287.7,8591.005
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),Hasta 12 meses,105.8,8,105.8,3170.17
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo urbano  (con recursos de redescuento),13 a 36 meses,397.6,19,397.6,18518.957
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo urbano  (con recursos de redescuento),Hasta 12 meses,68.0,4,68.0,3012.79
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),13 a 36 meses,16402.21,797,16402.21,772840.8346
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),37 a 60 meses,3852.75,167,3852.75,183730.16
+2026-11-01,Banco Caja Social,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),Hasta 12 meses,1266.21,81,1266.21,62499.986
+2026-11-01,Banco Caja Social,Vivienda,Adquisición de vivienda no vis (colocación en pesos),37 a 60 meses,643.0,10,643.0,10213.0
+2026-11-01,Banco Caja Social,Vivienda,Adquisición de vivienda no vis (colocación en pesos),61 a 120 meses,589.74,7,589.74,9305.4141
+2026-11-01,Banco Caja Social,Vivienda,Adquisición de vivienda no vis (colocación en pesos),Más de 120 meses,20343.73,94,20343.73,317969.9989
+2026-11-01,Banco Caja Social,Vivienda,Adquisición de vivienda no vis (colocación en uvr),Más de 120 meses,2272.11,11,2272.11,20543.0425
+2026-11-01,Banco Caja Social,Vivienda,Adquisición de vivienda vis (colocación en pesos),37 a 60 meses,1431.55,47,1431.55,21963.7252
+2026-11-01,Banco Caja Social,Vivienda,Adquisición de vivienda vis (colocación en pesos),61 a 120 meses,636.47,16,636.47,9558.0429
+2026-11-01,Banco Caja Social,Vivienda,Adquisición de vivienda vis (colocación en pesos),Más de 120 meses,24206.39,170,24206.39,350555.7715
+2026-11-01,Banco Caja Social,Vivienda,Adquisición de vivienda vis (colocación en uvr),Más de 120 meses,7562.85,43,7562.85,58245.4393
+2026-11-01,Banco Contactar,Comercial ordinario,Otros Comercial,13 a 36 meses,641.9,7,641.9,18212.99
+2026-11-01,Banco Contactar,Comercial ordinario,Otros Comercial,37 a 60 meses,94.0,1,94.0,2663.96
+2026-11-01,Banco Contactar,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),13 a 36 meses,2978.4,614,2978.4,184469.97
+2026-11-01,Banco Contactar,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),37 a 60 meses,9.2,1,9.2,573.16
+2026-11-01,Banco Contactar,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),Hasta 12 meses,613.0,232,613.0,38032.95
+2026-11-01,Banco Contactar,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),13 a 36 meses,10967.9,2082,10967.9,728879.087
+2026-11-01,Banco Contactar,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),37 a 60 meses,124.4,15,124.4,7917.952
+2026-11-01,Banco Contactar,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),Hasta 12 meses,1467.2,585,1467.2,111015.977
+2026-11-01,Banco Contactar,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),13 a 36 meses,2186.1,34,2186.1,83326.863
+2026-11-01,Banco Contactar,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),37 a 60 meses,1605.9,23,1605.9,62789.518
+2026-11-01,Banco Contactar,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),Hasta 12 meses,46.3,1,46.3,1907.56
+2026-11-01,Banco Contactar,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),13 a 36 meses,7839.7,449,7839.7,241392.379
+2026-11-01,Banco Contactar,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),37 a 60 meses,925.2,42,925.2,28498.928
+2026-11-01,Banco Contactar,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),Hasta 12 meses,324.1,17,324.1,10000.792
+2026-11-01,Banco Contactar,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),13 a 36 meses,10314.8,577,10314.8,549157.132
+2026-11-01,Banco Contactar,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),37 a 60 meses,1958.73,88,1958.73,101610.056
+2026-11-01,Banco Contactar,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),Hasta 12 meses,233.9,15,233.9,12888.95
+2026-11-01,Banco Davivienda,Comercial ordinario,Comerciales con recursos provenientes de redescuento,13 a 36 meses,5812.7,33,5812.7,70888.837
+2026-11-01,Banco Davivienda,Comercial ordinario,Comerciales con recursos provenientes de redescuento,37 a 60 meses,3846.81,10,3846.81,66254.4895
+2026-11-01,Banco Davivienda,Comercial ordinario,Comerciales con recursos provenientes de redescuento,61 a 120 meses,1100.25,2,1100.25,20035.672
+2026-11-01,Banco Davivienda,Comercial ordinario,Comerciales con recursos provenientes de redescuento,Hasta 12 meses,3686.88,3,3686.88,52994.73
+2026-11-01,Banco Davivienda,Comercial ordinario,Empresarial en pesos,13 a 36 meses,115544.82,833,115544.82,2038592.7028
+2026-11-01,Banco Davivienda,Comercial ordinario,Empresarial en pesos,37 a 60 meses,5836.31,24,5836.31,113535.1062
+2026-11-01,Banco Davivienda,Comercial ordinario,Empresarial en pesos,61 a 120 meses,8227.22,11,8227.22,139763.5935
+2026-11-01,Banco Davivienda,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,69433.22,507,69433.22,1483607.3709
+2026-11-01,Banco Davivienda,Comercial ordinario,Factoring,Hasta 12 meses,287975.98,222,287975.98,4233307.3227
+2026-11-01,Banco Davivienda,Comercial ordinario,Leasing financiero - financiación inmuebles diferente de habitacional,37 a 60 meses,991.64,2,991.64,17069.089
+2026-11-01,Banco Davivienda,Comercial ordinario,Leasing financiero - financiación inmuebles diferente de habitacional,61 a 120 meses,5340.29,8,5340.29,95803.8409
+2026-11-01,Banco Davivienda,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,37 a 60 meses,2691.61,12,2691.61,51828.7516
+2026-11-01,Banco Davivienda,Comercial ordinario,Leasing financiero - financiación vehículos,13 a 36 meses,179.23,1,179.23,3828.3673
+2026-11-01,Banco Davivienda,Comercial ordinario,Leasing financiero - financiación vehículos,37 a 60 meses,10855.88,33,10855.88,215572.4774
+2026-11-01,Banco Davivienda,Comercial ordinario,Leasing financiero - financiación vehículos,61 a 120 meses,3526.63,8,3526.63,63130.4254
+2026-11-01,Banco Davivienda,Comercial ordinario,Otros Comercial,13 a 36 meses,1847.0,1,1847.0,13113.7
+2026-11-01,Banco Davivienda,Comercial ordinario,Otros Comercial,Hasta 12 meses,7357.66,19,7357.66,119460.3152
+2026-11-01,Banco Davivienda,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,1909376.11,4012,1909376.11,49011664.3769
+2026-11-01,Banco Davivienda,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,3094.79,1537,3094.79,87445.6079
+2026-11-01,Banco Davivienda,Comercial ordinario,Tarjeta de crédito empresarial,37 a 60 meses,7040.45,843,7040.45,199480.1538
+2026-11-01,Banco Davivienda,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,2924.65,1091,2924.65,82575.1336
+2026-11-01,Banco Davivienda,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,54182.44,6159,31438.77,213046.8914
+2026-11-01,Banco Davivienda,Comercial preferencial o corporativo,Construcción de proyectos de vivienda  vis (colocación en uvr),13 a 36 meses,22811.0,13,22811.0,165462.9
+2026-11-01,Banco Davivienda,Comercial preferencial o corporativo,Construcción de proyectos de vivienda  vis (colocación en uvr),Hasta 12 meses,54526.1,28,54526.1,386547.5758
+2026-11-01,Banco Davivienda,Comercial preferencial o corporativo,Construcción de proyectos de vivienda no vis (colocación en pesos),13 a 36 meses,884.0,1,884.0,13215.8
+2026-11-01,Banco Davivienda,Comercial preferencial o corporativo,Construcción de proyectos de vivienda no vis (colocación en uvr),13 a 36 meses,40416.9,16,40416.9,288413.655
+2026-11-01,Banco Davivienda,Comercial preferencial o corporativo,Construcción de proyectos de vivienda no vis (colocación en uvr),Hasta 12 meses,56373.8,25,56373.8,402179.2549
+2026-11-01,Banco Davivienda,Comercial preferencial o corporativo,Corporativo,13 a 36 meses,38229.55,22,38229.55,524764.6641
+2026-11-01,Banco Davivienda,Comercial preferencial o corporativo,Corporativo,37 a 60 meses,61204.23,15,61204.23,956260.4509
+2026-11-01,Banco Davivienda,Comercial preferencial o corporativo,Corporativo,61 a 120 meses,15805.86,12,15805.86,204003.0082
+2026-11-01,Banco Davivienda,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,100816.55,70,100816.55,1719103.1277
+2026-11-01,Banco Davivienda,Comercial preferencial o corporativo,Otros Construcción (Colocacion en UVR),13 a 36 meses,1530.0,1,1530.0,12178.8
+2026-11-01,Banco Davivienda,Comercial preferencial o corporativo,Otros Construcción (Colocacion en UVR),Hasta 12 meses,1000.0,1,1000.0,7500.0
+2026-11-01,Banco Davivienda,Comercial tesoreria,Empresarial - Tesoreria,Hasta 12 meses,1664.0,1,1664.0,24344.32
+2026-11-01,Banco Davivienda,Consumo,Consumo empleados,37 a 60 meses,74.99,1,74.99,1143.5975
+2026-11-01,Banco Davivienda,Consumo,Consumo empleados,61 a 120 meses,427.18,6,427.18,6564.4537
+2026-11-01,Banco Davivienda,Consumo,Consumo otros,37 a 60 meses,94.5,1,94.5,1649.025
+2026-11-01,Banco Davivienda,Consumo,Consumo otros,Hasta 12 meses,10226.46,1585,10226.46,172697.2923
+2026-11-01,Banco Davivienda,Consumo,Crédito rotativo,13 a 36 meses,38368.92,4951,38368.92,1062660.7157
+2026-11-01,Banco Davivienda,Consumo,Crédito rotativo,37 a 60 meses,78178.42,6303,78178.42,2150113.7701
+2026-11-01,Banco Davivienda,Consumo,Crédito rotativo,61 a 120 meses,708.43,63,708.43,19285.8782
+2026-11-01,Banco Davivienda,Consumo,Crédito rotativo,Hasta 12 meses,41083.44,6829,41083.44,1140317.9908
+2026-11-01,Banco Davivienda,Consumo,Créditos de consumo de bajo monto,13 a 36 meses,6872.48,970,6872.48,345118.5822
+2026-11-01,Banco Davivienda,Consumo,Créditos de consumo de bajo monto,Hasta 12 meses,436.16,137,436.16,28101.0704
+2026-11-01,Banco Davivienda,Consumo,Libranza otros,13 a 36 meses,8045.76,302,8045.76,167799.415
+2026-11-01,Banco Davivienda,Consumo,Libranza otros,37 a 60 meses,19188.6,396,19188.6,388327.5565
+2026-11-01,Banco Davivienda,Consumo,Libranza otros,61 a 120 meses,75083.39,920,75083.39,1475823.2599
+2026-11-01,Banco Davivienda,Consumo,Libranza otros,Hasta 12 meses,1217.84,102,1217.84,25096.9999
+2026-11-01,Banco Davivienda,Consumo,Libre inversión,13 a 36 meses,61480.61,1818,61480.61,1400950.3232
+2026-11-01,Banco Davivienda,Consumo,Libre inversión,37 a 60 meses,235632.69,3308,235632.69,5177808.8883
+2026-11-01,Banco Davivienda,Consumo,Libre inversión,61 a 120 meses,58761.74,454,58761.74,1355985.9847
+2026-11-01,Banco Davivienda,Consumo,Libre inversión,Hasta 12 meses,12866.42,664,12866.42,296062.8411
+2026-11-01,Banco Davivienda,Consumo,Libre inversión,Más de 120 meses,500.7,3,500.7,8877.411
+2026-11-01,Banco Davivienda,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,30803.22,2960,30803.22,872700.1837
+2026-11-01,Banco Davivienda,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,23112.55,11777,23053.51,645711.7301
+2026-11-01,Banco Davivienda,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,37 a 60 meses,15817.57,2106,15816.12,442930.1722
+2026-11-01,Banco Davivienda,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,75008.06,27657,74519.35,2051870.3064
+2026-11-01,Banco Davivienda,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,160519.68,63173,134022.42,2366471.1638
+2026-11-01,Banco Davivienda,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,181757.69,33195,177361.35,4809767.1369
+2026-11-01,Banco Davivienda,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,103746.58,10809,103746.58,2716288.3046
+2026-11-01,Banco Davivienda,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,292244.89,57222,288393.93,7670928.3548
+2026-11-01,Banco Davivienda,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,1062547.82,126750,904016.67,17572829.701
+2026-11-01,Banco Davivienda,Consumo,Vehículo,13 a 36 meses,140.0,2,140.0,2961.2
+2026-11-01,Banco Davivienda,Consumo,Vehículo,37 a 60 meses,5885.96,69,5885.96,121552.5229
+2026-11-01,Banco Davivienda,Consumo,Vehículo,61 a 120 meses,15554.41,118,15554.41,300929.4351
+2026-11-01,Banco Davivienda,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),13 a 36 meses,0.05,1,0.05,3.8294
+2026-11-01,Banco Davivienda,Vivienda,Adquisición de vivienda no vis (colocación en pesos),37 a 60 meses,821.6,7,821.6,13097.12
+2026-11-01,Banco Davivienda,Vivienda,Adquisición de vivienda no vis (colocación en pesos),61 a 120 meses,240.0,3,240.0,3743.5
+2026-11-01,Banco Davivienda,Vivienda,Adquisición de vivienda no vis (colocación en pesos),Más de 120 meses,67130.06,195,67130.06,1046437.6786
+2026-11-01,Banco Davivienda,Vivienda,Adquisición de vivienda no vis (colocación en uvr),Más de 120 meses,520.0,3,520.0,4712.0
+2026-11-01,Banco Davivienda,Vivienda,Adquisición de vivienda vis (colocación en pesos),37 a 60 meses,675.13,7,675.13,9951.0085
+2026-11-01,Banco Davivienda,Vivienda,Adquisición de vivienda vis (colocación en pesos),61 a 120 meses,438.29,4,438.29,6331.3897
+2026-11-01,Banco Davivienda,Vivienda,Adquisición de vivienda vis (colocación en pesos),Más de 120 meses,77824.43,299,77824.43,1129912.6199
+2026-11-01,Banco Davivienda,Vivienda,Adquisición de vivienda vis (colocación en uvr),Más de 120 meses,25413.0,73,25413.0,202587.1649
+2026-11-01,Banco Davivienda,Vivienda,Adquisición leasing habitacional no vis (colocación en pesos),37 a 60 meses,445.0,5,445.0,7280.25
+2026-11-01,Banco Davivienda,Vivienda,Adquisición leasing habitacional no vis (colocación en pesos),61 a 120 meses,100.0,1,100.0,1595.0
+2026-11-01,Banco Davivienda,Vivienda,Adquisición leasing habitacional no vis (colocación en pesos),Más de 120 meses,49708.55,134,49708.55,737744.1733
+2026-11-01,Banco Davivienda,Vivienda,Adquisición leasing habitacional no vis (colocación en uvr),Más de 120 meses,1259.3,4,1259.3,11459.63
+2026-11-01,Banco Davivienda,Vivienda,Adquisición leasing habitacional vis (colocación en pesos),37 a 60 meses,163.0,1,163.0,2282.0
+2026-11-01,Banco Davivienda,Vivienda,Adquisición leasing habitacional vis (colocación en pesos),Más de 120 meses,7489.18,43,7489.18,104634.3252
+2026-11-01,Banco Davivienda,Vivienda,Adquisición leasing habitacional vis (colocación en uvr),Más de 120 meses,459.4,3,459.4,3700.74
+2026-11-01,Banco Davivienda,Vivienda,Libranza adquisición de vivienda vis (colocación en pesos),Más de 120 meses,128.0,1,128.0,921.6
+2026-11-01,Banco Davivienda,Vivienda,Vivienda empleados,Más de 120 meses,6440.84,21,6440.84,84730.9256
+2026-11-01,Banco Falabella,Consumo,Créditos de consumo de bajo monto,13 a 36 meses,78.5,20,78.5,3446.84
+2026-11-01,Banco Falabella,Consumo,Créditos de consumo de bajo monto,37 a 60 meses,57.2,12,57.2,2648.24
+2026-11-01,Banco Falabella,Consumo,Créditos de consumo de bajo monto,Hasta 12 meses,25.6,8,25.6,1125.21
+2026-11-01,Banco Falabella,Consumo,Libre inversión,13 a 36 meses,27194.31,1190,27194.31,651904.0865
+2026-11-01,Banco Falabella,Consumo,Libre inversión,37 a 60 meses,27800.04,995,27800.04,662065.7547
+2026-11-01,Banco Falabella,Consumo,Libre inversión,61 a 120 meses,42150.65,763,42150.65,975851.7112
+2026-11-01,Banco Falabella,Consumo,Libre inversión,Hasta 12 meses,8612.32,683,8612.32,206385.1438
+2026-11-01,Banco Falabella,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,304.93,289,304.93,8642.8732
+2026-11-01,Banco Falabella,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,14003.66,4366,14000.11,395235.9127
+2026-11-01,Banco Falabella,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,43866.98,8250,43576.31,1225290.4013
+2026-11-01,Banco Falabella,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,78098.39,12121,19868.31,518164.9908
+2026-11-01,Banco Falabella,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,44589.21,7753,44567.11,1258172.4633
+2026-11-01,Banco Falabella,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,101766.07,12636,101178.67,2825928.6677
+2026-11-01,Banco Falabella,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,217925.55,18301,43825.75,1126568.1211
+2026-11-01,Banco GNB Sudameris,Comercial ordinario,Comerciales con recursos provenientes de redescuento,37 a 60 meses,2000.0,1,2000.0,36740.0
+2026-11-01,Banco GNB Sudameris,Comercial ordinario,Comerciales con recursos provenientes de redescuento,61 a 120 meses,15500.0,2,15500.0,298430.0
+2026-11-01,Banco GNB Sudameris,Comercial ordinario,Construcción de proyectos de vivienda no vis (colocación en pesos),37 a 60 meses,3000.0,1,3000.0,52980.0
+2026-11-01,Banco GNB Sudameris,Comercial ordinario,Empresarial en pesos,13 a 36 meses,843.0,5,843.0,15265.21
+2026-11-01,Banco GNB Sudameris,Comercial ordinario,Empresarial en pesos,37 a 60 meses,165.0,2,165.0,2945.65
+2026-11-01,Banco GNB Sudameris,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,2782.0,8,2782.0,45596.7
+2026-11-01,Banco GNB Sudameris,Comercial ordinario,Financiero e institucional,Hasta 12 meses,500.0,1,500.0,7600.0
+2026-11-01,Banco GNB Sudameris,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,73413.66,94,73413.66,1990244.437
+2026-11-01,Banco GNB Sudameris,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,1057.08,323,1057.08,27762.6731
+2026-11-01,Banco GNB Sudameris,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,87.65,54,87.65,2306.7338
+2026-11-01,Banco GNB Sudameris,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,1740.59,468,1740.59,45744.2549
+2026-11-01,Banco GNB Sudameris,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,44761.0,9,44761.0,726019.8
+2026-11-01,Banco GNB Sudameris,Consumo,Consumo empleados,13 a 36 meses,57.8,3,57.8,668.746
+2026-11-01,Banco GNB Sudameris,Consumo,Consumo empleados,37 a 60 meses,150.0,1,150.0,1735.5
+2026-11-01,Banco GNB Sudameris,Consumo,Crédito rotativo,37 a 60 meses,179.43,64,179.43,4812.4344
+2026-11-01,Banco GNB Sudameris,Consumo,Libranza otros,13 a 36 meses,642.65,39,642.65,13613.7535
+2026-11-01,Banco GNB Sudameris,Consumo,Libranza otros,37 a 60 meses,1667.15,68,1667.15,35773.234
+2026-11-01,Banco GNB Sudameris,Consumo,Libranza otros,61 a 120 meses,6261.07,146,6261.07,132201.9443
+2026-11-01,Banco GNB Sudameris,Consumo,Libranza otros,Hasta 12 meses,12.0,1,12.0,196.2
+2026-11-01,Banco GNB Sudameris,Consumo,Libranza otros,Más de 120 meses,64319.58,342,64319.58,1238137.4178
+2026-11-01,Banco GNB Sudameris,Consumo,Libre inversión,13 a 36 meses,245.43,9,245.43,4685.5611
+2026-11-01,Banco GNB Sudameris,Consumo,Libre inversión,37 a 60 meses,495.77,8,495.77,9872.2732
+2026-11-01,Banco GNB Sudameris,Consumo,Libre inversión,61 a 120 meses,4191.1,6,4191.1,84220.089
+2026-11-01,Banco GNB Sudameris,Consumo,Libre inversión,Hasta 12 meses,412.0,4,412.0,7391.12
+2026-11-01,Banco GNB Sudameris,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,278.65,133,278.65,7554.1516
+2026-11-01,Banco GNB Sudameris,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,47.86,101,47.86,1253.5609
+2026-11-01,Banco GNB Sudameris,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,160.2,175,160.2,4207.1509
+2026-11-01,Banco GNB Sudameris,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,573.51,314,573.51,15133.2091
+2026-11-01,Banco GNB Sudameris,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,1343.84,480,1343.84,34992.8059
+2026-11-01,Banco GNB Sudameris,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,1383.38,449,1383.38,36162.3207
+2026-11-01,Banco GNB Sudameris,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,6027.68,1019,6027.68,157729.9023
+2026-11-01,Banco GNB Sudameris,Vivienda,Vivienda empleados,Más de 120 meses,1579.79,7,1579.79,11901.097
+2026-11-01,Banco J.P: Morgan Colombia,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,33000.0,1,33000.0,473220.0
+2026-11-01,Banco Mundo Mujer,Comercial ordinario,Empresarial en pesos,13 a 36 meses,5489.08,133,5489.08,141587.4168
+2026-11-01,Banco Mundo Mujer,Comercial ordinario,Empresarial en pesos,37 a 60 meses,2497.3,25,2497.3,58894.661
+2026-11-01,Banco Mundo Mujer,Comercial ordinario,Empresarial en pesos,61 a 120 meses,920.0,2,920.0,17480.0
+2026-11-01,Banco Mundo Mujer,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,1077.25,111,1077.25,30556.9837
+2026-11-01,Banco Mundo Mujer,Consumo,Libre inversión,13 a 36 meses,14390.54,1270,14390.54,404084.3342
+2026-11-01,Banco Mundo Mujer,Consumo,Libre inversión,37 a 60 meses,695.17,35,695.17,18477.9898
+2026-11-01,Banco Mundo Mujer,Consumo,Libre inversión,Hasta 12 meses,2037.78,632,2037.78,57362.0614
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),13 a 36 meses,4547.52,1157,4547.52,295326.7518
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),37 a 60 meses,10.1,1,10.1,661.045
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),Hasta 12 meses,1713.16,800,1713.16,110529.2881
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),13 a 36 meses,21447.57,4985,21447.57,1389917.2803
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),37 a 60 meses,51.41,5,51.41,3255.409
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),Hasta 12 meses,10108.24,4469,10108.24,649966.6233
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),13 a 36 meses,6094.05,109,6094.05,212778.635
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),37 a 60 meses,3153.1,45,3153.1,98484.75
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),Hasta 12 meses,237.3,5,237.3,8821.59
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),13 a 36 meses,6779.53,426,6779.53,228237.2121
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),37 a 60 meses,2185.36,118,2185.36,73505.9752
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),Hasta 12 meses,583.05,39,583.05,19685.9899
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),13 a 36 meses,21132.99,1186,21132.99,1027974.0114
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),37 a 60 meses,4850.33,240,4850.33,230178.3807
+2026-11-01,Banco Mundo Mujer,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),Hasta 12 meses,3072.2,262,3072.2,151373.3774
+2026-11-01,Banco Pichincha,Comercial ordinario,Empresarial en pesos,13 a 36 meses,3975.98,2,3975.98,53579.6989
+2026-11-01,Banco Pichincha,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,8300.0,4,8300.0,112391.0
+2026-11-01,Banco Pichincha,Comercial ordinario,Factoring,Hasta 12 meses,30006.36,13,22431.9,284118.4625
+2026-11-01,Banco Pichincha,Comercial preferencial o corporativo,Corporativo,13 a 36 meses,409.0,1,409.0,5619.66
+2026-11-01,Banco Pichincha,Consumo,Consumo empleados,37 a 60 meses,81.0,1,81.0,1279.8
+2026-11-01,Banco Pichincha,Consumo,Libranza otros,13 a 36 meses,469.4,10,469.4,7622.96
+2026-11-01,Banco Pichincha,Consumo,Libranza otros,37 a 60 meses,906.2,11,906.2,14776.919
+2026-11-01,Banco Pichincha,Consumo,Libranza otros,61 a 120 meses,17113.43,72,17113.43,265412.9629
+2026-11-01,Banco Pichincha,Consumo,Libranza otros,Más de 120 meses,8593.22,41,8593.22,135523.1729
+2026-11-01,Banco Popular,Comercial ordinario,Comerciales con recursos provenientes de redescuento,13 a 36 meses,6900.0,2,6900.0,73215.0
+2026-11-01,Banco Popular,Comercial ordinario,Comerciales con recursos provenientes de redescuento,Hasta 12 meses,11400.0,2,11400.0,162106.0
+2026-11-01,Banco Popular,Comercial ordinario,Empresarial en pesos,13 a 36 meses,13845.0,5,13845.0,213555.85
+2026-11-01,Banco Popular,Comercial ordinario,Empresarial en pesos,37 a 60 meses,11275.56,2,11275.56,172521.6444
+2026-11-01,Banco Popular,Comercial ordinario,Empresarial en pesos,61 a 120 meses,80.0,1,80.0,1815.2
+2026-11-01,Banco Popular,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,52557.48,12,52557.48,739994.9829
+2026-11-01,Banco Popular,Comercial ordinario,Leasing financiero - financiación inmuebles diferente de habitacional,61 a 120 meses,2160.0,1,2160.0,36892.8
+2026-11-01,Banco Popular,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,1240.5,19,1240.5,34778.8289
+2026-11-01,Banco Popular,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,22.46,13,22.46,636.2779
+2026-11-01,Banco Popular,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,3.95,2,3.95,111.9967
+2026-11-01,Banco Popular,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,55.07,49,0.0,0.0
+2026-11-01,Banco Popular,Consumo,Libranza otros,13 a 36 meses,1789.37,124,1789.37,31674.6303
+2026-11-01,Banco Popular,Consumo,Libranza otros,37 a 60 meses,5388.93,195,5388.93,94413.7597
+2026-11-01,Banco Popular,Consumo,Libranza otros,61 a 120 meses,31157.12,530,31157.12,556083.9447
+2026-11-01,Banco Popular,Consumo,Libranza otros,Más de 120 meses,122344.86,973,122344.86,2123019.41
+2026-11-01,Banco Popular,Consumo,Libre inversión,61 a 120 meses,118.0,4,118.0,2959.94
+2026-11-01,Banco Popular,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,4.79,2,4.79,135.594
+2026-11-01,Banco Popular,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,142.73,140,142.73,4017.5093
+2026-11-01,Banco Popular,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,719.78,557,710.47,19706.1882
+2026-11-01,Banco Popular,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,914.34,875,308.19,7904.7804
+2026-11-01,Banco Popular,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,2351.96,1032,2351.96,66190.4889
+2026-11-01,Banco Popular,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,11.88,5,11.88,335.5968
+2026-11-01,Banco Popular,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,8821.2,2409,8737.14,238805.0504
+2026-11-01,Banco Popular,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,30030.0,5217,16304.15,429416.8972
+2026-11-01,Banco Popular,Vivienda,Vivienda empleados,Más de 120 meses,955.21,4,955.21,4965.1536
+2026-11-01,Banco Santander,Comercial ordinario,Comerciales con recursos provenientes de redescuento,61 a 120 meses,1042.94,1,1042.94,18220.0774
+2026-11-01,Banco Santander,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,23749.78,2,23749.78,398814.2715
+2026-11-01,Banco Santander,Comercial preferencial o corporativo,Corporativo,13 a 36 meses,2600.0,1,2600.0,51922.0
+2026-11-01,Banco Santander,Comercial preferencial o corporativo,Corporativo,61 a 120 meses,20300.0,1,20300.0,324596.9877
+2026-11-01,Banco Santander,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,246390.76,229,246390.76,3909213.8984
+2026-11-01,Banco Santander,Comercial tesoreria,Empresarial - Tesoreria,Hasta 12 meses,321377.57,188,321377.57,4164912.8441
+2026-11-01,Banco Santander,Consumo,Vehículo,13 a 36 meses,1712.4,22,1712.4,32099.099
+2026-11-01,Banco Santander,Consumo,Vehículo,37 a 60 meses,9683.66,57,9551.17,132235.2476
+2026-11-01,Banco Santander,Consumo,Vehículo,61 a 120 meses,55700.12,241,55613.65,1292013.0677
+2026-11-01,Banco Santander,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),13 a 36 meses,2043.11,377,2043.11,103801.9179
+2026-11-01,Banco Santander,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),Hasta 12 meses,1130.93,375,1130.93,62500.7276
+2026-11-01,Banco Santander,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),13 a 36 meses,4870.6,936,4870.6,309260.8774
+2026-11-01,Banco Santander,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),Hasta 12 meses,2147.69,746,2147.69,145050.6086
+2026-11-01,Banco Santander,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),13 a 36 meses,2384.41,48,2384.41,81856.8634
+2026-11-01,Banco Santander,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),37 a 60 meses,724.51,14,724.51,24872.4692
+2026-11-01,Banco Santander,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),Hasta 12 meses,64.66,1,64.66,2219.7553
+2026-11-01,Banco Santander,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),13 a 36 meses,3324.99,219,3324.99,111553.253
+2026-11-01,Banco Santander,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),37 a 60 meses,81.67,3,81.67,2740.1724
+2026-11-01,Banco Santander,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),Hasta 12 meses,469.06,32,469.06,15736.9905
+2026-11-01,Banco Santander,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),13 a 36 meses,3547.9,241,3547.9,194407.6149
+2026-11-01,Banco Santander,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),37 a 60 meses,284.0,10,284.0,15825.7113
+2026-11-01,Banco Santander,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),Hasta 12 meses,389.88,30,389.88,20766.2815
+2026-11-01,Banco Serfinanza,Comercial ordinario,Comerciales con recursos provenientes de redescuento,37 a 60 meses,379.3,2,379.3,5400.089
+2026-11-01,Banco Serfinanza,Comercial ordinario,Construcción - financiación de proyectos viales en pesos,37 a 60 meses,55.0,1,55.0,1269.95
+2026-11-01,Banco Serfinanza,Comercial ordinario,Construcción - financiación de proyectos viales en pesos,Hasta 12 meses,769.83,5,769.83,17627.6898
+2026-11-01,Banco Serfinanza,Comercial ordinario,Empresarial en pesos,13 a 36 meses,464.5,3,464.5,8079.9337
+2026-11-01,Banco Serfinanza,Comercial ordinario,Empresarial en pesos,37 a 60 meses,8134.21,17,8134.21,155412.1264
+2026-11-01,Banco Serfinanza,Comercial ordinario,Empresarial en pesos,61 a 120 meses,46.0,1,46.0,1091.12
+2026-11-01,Banco Serfinanza,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,11660.89,68,11660.89,249097.1304
+2026-11-01,Banco Serfinanza,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,61 a 120 meses,469.25,1,469.25,9990.3789
+2026-11-01,Banco Serfinanza,Comercial ordinario,Otros Construcción (Colocacion en pesos),13 a 36 meses,600.0,2,600.0,10317.0
+2026-11-01,Banco Serfinanza,Comercial ordinario,Otros Construcción (Colocacion en pesos),37 a 60 meses,540.0,1,540.0,11815.2
+2026-11-01,Banco Serfinanza,Comercial ordinario,Otros Construcción (Colocacion en pesos),Hasta 12 meses,915.89,7,915.89,21380.2054
+2026-11-01,Banco Serfinanza,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,1113.47,46,1113.47,31555.7339
+2026-11-01,Banco Serfinanza,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,165.34,146,165.34,4675.8735
+2026-11-01,Banco Serfinanza,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,171.64,94,171.64,4854.1
+2026-11-01,Banco Serfinanza,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,428.69,297,428.69,12123.3337
+2026-11-01,Banco Serfinanza,Consumo,Consumo empleados,13 a 36 meses,85.28,78,85.28,2134.8606
+2026-11-01,Banco Serfinanza,Consumo,Consumo empleados,37 a 60 meses,34.35,11,34.35,524.0848
+2026-11-01,Banco Serfinanza,Consumo,Consumo empleados,61 a 120 meses,180.6,6,180.6,2589.592
+2026-11-01,Banco Serfinanza,Consumo,Consumo empleados,Hasta 12 meses,259.37,144,259.37,6938.1341
+2026-11-01,Banco Serfinanza,Consumo,Crédito rotativo,13 a 36 meses,1872.96,538,1872.96,34647.6818
+2026-11-01,Banco Serfinanza,Consumo,Crédito rotativo,37 a 60 meses,159.14,28,159.14,2863.0453
+2026-11-01,Banco Serfinanza,Consumo,Crédito rotativo,Hasta 12 meses,122.91,59,122.91,1986.1544
+2026-11-01,Banco Serfinanza,Consumo,Créditos educativos diferentes a libranza,13 a 36 meses,7.47,1,7.47,177.3283
+2026-11-01,Banco Serfinanza,Consumo,Libranza otros,13 a 36 meses,389.16,17,389.16,10368.9156
+2026-11-01,Banco Serfinanza,Consumo,Libranza otros,37 a 60 meses,1165.89,23,1165.89,31224.6997
+2026-11-01,Banco Serfinanza,Consumo,Libranza otros,61 a 120 meses,1902.16,32,1902.16,38646.4437
+2026-11-01,Banco Serfinanza,Consumo,Libranza otros,Hasta 12 meses,11.8,3,11.8,332.76
+2026-11-01,Banco Serfinanza,Consumo,Libranza otros,Más de 120 meses,2848.54,49,2848.54,62318.8141
+2026-11-01,Banco Serfinanza,Consumo,Libre inversión,13 a 36 meses,961.16,69,961.16,23011.697
+2026-11-01,Banco Serfinanza,Consumo,Libre inversión,37 a 60 meses,1286.17,71,1286.17,30995.665
+2026-11-01,Banco Serfinanza,Consumo,Libre inversión,61 a 120 meses,2507.35,117,2507.35,58570.213
+2026-11-01,Banco Serfinanza,Consumo,Libre inversión,Hasta 12 meses,269.79,34,269.79,6719.0142
+2026-11-01,Banco Serfinanza,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,43.23,5,43.23,1225.1805
+2026-11-01,Banco Serfinanza,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,1686.86,2126,1686.86,46446.4402
+2026-11-01,Banco Serfinanza,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,37 a 60 meses,233.59,216,233.59,5631.5477
+2026-11-01,Banco Serfinanza,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,9946.07,5363,9946.07,280810.2826
+2026-11-01,Banco Serfinanza,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,17689.42,8319,17689.42,487728.047
+2026-11-01,Banco Serfinanza,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,2649.66,2151,2649.66,70284.6923
+2026-11-01,Banco Serfinanza,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,539.37,164,539.37,10047.3667
+2026-11-01,Banco Serfinanza,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,9448.63,4211,9446.24,264061.4872
+2026-11-01,Banco Serfinanza,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,18530.01,6649,18530.01,507928.033
+2026-11-01,Banco Serfinanza,Consumo,Vehículo,61 a 120 meses,117.0,1,117.0,1945.71
+2026-11-01,Banco Serfinanza,Vivienda,Adquisición de vivienda no vis (colocación en pesos),Más de 120 meses,614.87,1,614.87,9715.0044
+2026-11-01,Banco Serfinanza,Vivienda,Vivienda empleados,Más de 120 meses,780.0,1,780.0,10303.8
+2026-11-01,Banco Unión,Consumo,Crédito rotativo,13 a 36 meses,2048.2,474,2048.2,57697.6934
+2026-11-01,Banco Unión,Consumo,Crédito rotativo,37 a 60 meses,3793.51,555,3793.51,106863.0538
+2026-11-01,Banco Unión,Consumo,Crédito rotativo,Hasta 12 meses,6676.76,1181,6676.76,188084.4481
+2026-11-01,Banco Unión,Consumo,Libranza otros,61 a 120 meses,60.3,3,60.3,1250.919
+2026-11-01,Banco Unión,Consumo,Libranza otros,Más de 120 meses,1294.2,23,1294.2,26927.3786
+2026-11-01,Banco Unión,Consumo,Libre inversión,13 a 36 meses,45.46,7,45.46,1167.6711
+2026-11-01,Banco Unión,Consumo,Libre inversión,37 a 60 meses,23.39,2,23.39,530.8478
+2026-11-01,Banco Unión,Consumo,Libre inversión,Hasta 12 meses,59.53,10,59.53,1656.9123
+2026-11-01,Banco Unión,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,3.09,7,3.09,82.4181
+2026-11-01,Banco Unión,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,37 a 60 meses,2.07,8,2.07,55.1597
+2026-11-01,Banco Unión,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,34.9,56,34.9,930.8586
+2026-11-01,Banco Unión,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,112.3,115,112.3,2994.9795
+2026-11-01,Banco Unión,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,5.04,10,5.04,134.2978
+2026-11-01,Banco Unión,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,4.02,13,4.02,107.2284
+2026-11-01,Banco Unión,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,52.77,66,52.77,1407.2886
+2026-11-01,Banco Unión,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,151.74,116,151.74,4046.7923
+2026-11-01,Banco Unión,Vivienda,Adquisición de vivienda no vis (colocación en pesos),Más de 120 meses,877.98,3,877.98,15803.5572
+2026-11-01,Banco Unión,Vivienda,Adquisición de vivienda vis (colocación en pesos),37 a 60 meses,99.79,1,99.79,1694.3562
+2026-11-01,Banco Unión,Vivienda,Adquisición de vivienda vis (colocación en pesos),Más de 120 meses,633.58,4,633.58,10754.8975
+2026-11-01,Banco W,Comercial ordinario,Empresarial en pesos,13 a 36 meses,33.02,1,33.02,858.526
+2026-11-01,Banco W,Comercial ordinario,Empresarial en pesos,37 a 60 meses,266.18,3,266.18,7479.4387
+2026-11-01,Banco W,Comercial ordinario,Empresarial en pesos,61 a 120 meses,210.0,1,210.0,5040.0
+2026-11-01,Banco W,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,4.84,13,4.84,134.6075
+2026-11-01,Banco W,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,45.75,194,45.75,1273.0971
+2026-11-01,Banco W,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,59.36,357,59.36,1652.0782
+2026-11-01,Banco W,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,13.43,45,13.43,373.7601
+2026-11-01,Banco W,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,0.31,2,0.31,8.7575
+2026-11-01,Banco W,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,338.95,944,338.95,9432.8856
+2026-11-01,Banco W,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,377.7,1482,377.7,10511.4339
+2026-11-01,Banco W,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),13 a 36 meses,1505.99,372,1505.99,97670.9586
+2026-11-01,Banco W,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),37 a 60 meses,33.36,4,33.36,2201.5932
+2026-11-01,Banco W,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),Hasta 12 meses,474.63,202,474.63,28737.3448
+2026-11-01,Banco W,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),13 a 36 meses,8274.64,2021,8274.64,574309.5843
+2026-11-01,Banco W,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),37 a 60 meses,570.32,70,570.32,39204.0356
+2026-11-01,Banco W,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),61 a 120 meses,7.37,1,7.37,515.6999
+2026-11-01,Banco W,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),Hasta 12 meses,2405.98,1111,2405.98,164170.1505
+2026-11-01,Banco W,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),13 a 36 meses,1789.04,29,1789.04,60807.8409
+2026-11-01,Banco W,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),37 a 60 meses,10400.22,155,10400.22,330522.0335
+2026-11-01,Banco W,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),61 a 120 meses,455.98,7,455.98,10869.0796
+2026-11-01,Banco W,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),Hasta 12 meses,47.91,1,47.91,1285.0328
+2026-11-01,Banco W,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),13 a 36 meses,1450.47,97,1450.47,48097.7011
+2026-11-01,Banco W,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),37 a 60 meses,2130.36,114,2130.36,70206.9574
+2026-11-01,Banco W,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),Hasta 12 meses,122.32,7,122.32,4134.5712
+2026-11-01,Banco W,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),13 a 36 meses,4028.49,260,4028.49,228835.2626
+2026-11-01,Banco W,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),37 a 60 meses,4645.17,254,4645.17,246674.5131
+2026-11-01,Banco W,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),61 a 120 meses,243.5,10,243.5,7087.1166
+2026-11-01,Banco W,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),Hasta 12 meses,301.31,21,301.31,17969.2222
+2026-11-01,Banco de Bogotá,Comercial ordinario,Comerciales con recursos provenientes de redescuento,13 a 36 meses,67.55,2,67.55,1231.301
+2026-11-01,Banco de Bogotá,Comercial ordinario,Comerciales con recursos provenientes de redescuento,37 a 60 meses,933.1,6,933.1,13080.842
+2026-11-01,Banco de Bogotá,Comercial ordinario,Comerciales con recursos provenientes de redescuento,61 a 120 meses,21786.71,18,21786.71,251120.0866
+2026-11-01,Banco de Bogotá,Comercial ordinario,Comerciales con recursos provenientes de redescuento,Hasta 12 meses,3989.05,7,3989.05,49179.3485
+2026-11-01,Banco de Bogotá,Comercial ordinario,Construcción de proyectos de vivienda no vis (colocación en pesos),13 a 36 meses,27017.83,12,27017.83,413661.8747
+2026-11-01,Banco de Bogotá,Comercial ordinario,Construcción de proyectos de vivienda no vis (colocación en pesos),Hasta 12 meses,21017.96,13,21017.96,302602.776
+2026-11-01,Banco de Bogotá,Comercial ordinario,Construcción de proyectos de vivienda vis (colocación en pesos),13 a 36 meses,10817.29,7,10817.29,165557.4923
+2026-11-01,Banco de Bogotá,Comercial ordinario,Construcción de proyectos de vivienda vis (colocación en pesos),Hasta 12 meses,9861.27,9,9861.27,156259.7157
+2026-11-01,Banco de Bogotá,Comercial ordinario,Construcción de proyectos de vivienda vis (colocación en uvr),13 a 36 meses,9377.07,2,9377.07,76736.9557
+2026-11-01,Banco de Bogotá,Comercial ordinario,Empresarial en UVR,37 a 60 meses,5555.56,1,5555.56,28388.8889
+2026-11-01,Banco de Bogotá,Comercial ordinario,Empresarial en pesos,13 a 36 meses,73579.37,1095,73579.37,1202577.3517
+2026-11-01,Banco de Bogotá,Comercial ordinario,Empresarial en pesos,37 a 60 meses,232770.92,261,232770.92,3493328.3951
+2026-11-01,Banco de Bogotá,Comercial ordinario,Empresarial en pesos,61 a 120 meses,130489.62,223,130489.62,2082338.3787
+2026-11-01,Banco de Bogotá,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,364744.48,1015,364744.48,5456331.0136
+2026-11-01,Banco de Bogotá,Comercial ordinario,Factoring,Hasta 12 meses,25445.9,259,25445.9,373179.9491
+2026-11-01,Banco de Bogotá,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,13 a 36 meses,303.93,1,303.93,3850.7424
+2026-11-01,Banco de Bogotá,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,37 a 60 meses,4118.17,7,4118.17,59034.9174
+2026-11-01,Banco de Bogotá,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,61 a 120 meses,7752.13,15,7752.13,124498.5449
+2026-11-01,Banco de Bogotá,Comercial ordinario,Leasing financiero - financiación vehículos,37 a 60 meses,3742.72,8,3742.72,57307.4636
+2026-11-01,Banco de Bogotá,Comercial ordinario,Leasing financiero - financiación vehículos,61 a 120 meses,6009.94,16,6009.94,95222.0972
+2026-11-01,Banco de Bogotá,Comercial ordinario,Leasing financiero - financiación vehículos,Hasta 12 meses,134.99,1,134.99,1947.9057
+2026-11-01,Banco de Bogotá,Comercial ordinario,Leasing financiero - otros,61 a 120 meses,35478.22,16,35478.22,568097.3441
+2026-11-01,Banco de Bogotá,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,220291.39,1970,220291.39,4990961.4814
+2026-11-01,Banco de Bogotá,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,20581.56,4390,20581.56,579578.647
+2026-11-01,Banco de Bogotá,Comercial ordinario,Tarjeta de crédito empresarial,37 a 60 meses,2993.23,771,2993.01,84558.2727
+2026-11-01,Banco de Bogotá,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,4236.27,1621,4183.3,117079.9173
+2026-11-01,Banco de Bogotá,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,54347.05,7580,10611.7,121629.2773
+2026-11-01,Banco de Bogotá,Comercial preferencial o corporativo,Corporativo,13 a 36 meses,48750.53,34,48750.53,736350.8126
+2026-11-01,Banco de Bogotá,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,235280.71,97,235280.71,3219636.9788
+2026-11-01,Banco de Bogotá,Comercial tesoreria,Empresarial - Tesoreria,Hasta 12 meses,8144.18,4,8144.18,112347.028
+2026-11-01,Banco de Bogotá,Consumo,Consumo empleados,13 a 36 meses,41.0,1,41.0,338.25
+2026-11-01,Banco de Bogotá,Consumo,Consumo empleados,37 a 60 meses,244.0,3,244.0,2013.0
+2026-11-01,Banco de Bogotá,Consumo,Consumo empleados,61 a 120 meses,2702.82,20,2702.82,22298.2995
+2026-11-01,Banco de Bogotá,Consumo,Crédito rotativo,37 a 60 meses,33612.69,4558,33612.69,898062.4144
+2026-11-01,Banco de Bogotá,Consumo,Créditos de consumo de bajo monto,13 a 36 meses,10248.09,1116,10248.09,659440.6148
+2026-11-01,Banco de Bogotá,Consumo,Créditos de consumo de bajo monto,37 a 60 meses,2973.88,383,2973.88,193566.6655
+2026-11-01,Banco de Bogotá,Consumo,Créditos de consumo de bajo monto,61 a 120 meses,7419.98,822,7419.98,486922.0116
+2026-11-01,Banco de Bogotá,Consumo,Libranza otros,13 a 36 meses,434.05,40,434.05,8819.3295
+2026-11-01,Banco de Bogotá,Consumo,Libranza otros,37 a 60 meses,2251.64,104,2251.64,41658.0102
+2026-11-01,Banco de Bogotá,Consumo,Libranza otros,61 a 120 meses,24415.84,381,24415.84,493889.1265
+2026-11-01,Banco de Bogotá,Consumo,Libranza otros,Más de 120 meses,31915.56,362,31915.56,550364.8898
+2026-11-01,Banco de Bogotá,Consumo,Libre inversión,13 a 36 meses,54933.28,3157,54933.28,1438725.9253
+2026-11-01,Banco de Bogotá,Consumo,Libre inversión,37 a 60 meses,71574.87,2781,71574.87,1801346.4909
+2026-11-01,Banco de Bogotá,Consumo,Libre inversión,61 a 120 meses,193840.48,3990,193840.48,4372564.9566
+2026-11-01,Banco de Bogotá,Consumo,Libre inversión,Hasta 12 meses,474.77,87,474.77,13055.9845
+2026-11-01,Banco de Bogotá,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,6491.1,1734,6491.1,183957.9043
+2026-11-01,Banco de Bogotá,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,10556.32,5940,10516.14,296461.7298
+2026-11-01,Banco de Bogotá,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,37 a 60 meses,940.95,467,913.87,22865.2335
+2026-11-01,Banco de Bogotá,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,9882.78,4757,9745.14,261980.6516
+2026-11-01,Banco de Bogotá,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,20776.12,10129,7074.64,198966.0751
+2026-11-01,Banco de Bogotá,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,115384.95,20599,114589.42,3136955.5993
+2026-11-01,Banco de Bogotá,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,34037.45,3315,33995.01,720747.3519
+2026-11-01,Banco de Bogotá,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,98089.18,19871,96555.23,2508898.386
+2026-11-01,Banco de Bogotá,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,298737.54,41929,77422.99,2134975.8189
+2026-11-01,Banco de Bogotá,Consumo,Vehículo,13 a 36 meses,35.0,2,35.0,660.9
+2026-11-01,Banco de Bogotá,Consumo,Vehículo,37 a 60 meses,743.57,13,743.57,15477.7249
+2026-11-01,Banco de Bogotá,Consumo,Vehículo,61 a 120 meses,16967.11,172,16967.11,347091.988
+2026-11-01,Banco de Bogotá,Vivienda,Adquisición de vivienda no vis (colocación en pesos),37 a 60 meses,989.79,20,989.79,15598.157
+2026-11-01,Banco de Bogotá,Vivienda,Adquisición de vivienda no vis (colocación en pesos),61 a 120 meses,516.82,6,516.82,8324.6091
+2026-11-01,Banco de Bogotá,Vivienda,Adquisición de vivienda no vis (colocación en pesos),Más de 120 meses,50199.19,227,50199.19,782090.2733
+2026-11-01,Banco de Bogotá,Vivienda,Adquisición de vivienda no vis (colocación en uvr),Más de 120 meses,4565.42,14,4565.42,42516.2229
+2026-11-01,Banco de Bogotá,Vivienda,Adquisición de vivienda vis (colocación en pesos),37 a 60 meses,70.28,1,70.28,976.1586
+2026-11-01,Banco de Bogotá,Vivienda,Adquisición de vivienda vis (colocación en pesos),Más de 120 meses,33404.28,205,33404.28,479851.5775
+2026-11-01,Banco de Bogotá,Vivienda,Adquisición de vivienda vis (colocación en uvr),Más de 120 meses,12330.19,70,12330.19,107778.3101
+2026-11-01,Banco de Bogotá,Vivienda,Adquisición leasing habitacional no vis (colocación en pesos),Más de 120 meses,8699.45,17,8699.45,134042.856
+2026-11-01,Banco de Bogotá,Vivienda,Vivienda empleados,Más de 120 meses,6105.73,17,6105.73,33268.4169
+2026-11-01,Banco de Occidente,Comercial ordinario,Comerciales con recursos provenientes de redescuento,13 a 36 meses,67625.0,2,67625.0,737690.0
+2026-11-01,Banco de Occidente,Comercial ordinario,Comerciales con recursos provenientes de redescuento,37 a 60 meses,47136.4,15,47136.4,714973.6675
+2026-11-01,Banco de Occidente,Comercial ordinario,Comerciales con recursos provenientes de redescuento,61 a 120 meses,59498.58,4,59498.58,864585.2499
+2026-11-01,Banco de Occidente,Comercial ordinario,Comerciales con recursos provenientes de redescuento,Hasta 12 meses,17391.0,8,17391.0,242597.69
+2026-11-01,Banco de Occidente,Comercial ordinario,Construcción de proyectos de vivienda no vis (colocación en pesos),13 a 36 meses,1200.0,1,1200.0,20556.0
+2026-11-01,Banco de Occidente,Comercial ordinario,Empresarial en pesos,13 a 36 meses,6711.88,33,6711.88,115713.5743
+2026-11-01,Banco de Occidente,Comercial ordinario,Empresarial en pesos,37 a 60 meses,37531.19,72,37531.19,620237.83
+2026-11-01,Banco de Occidente,Comercial ordinario,Empresarial en pesos,61 a 120 meses,2930.0,4,2930.0,55790.2
+2026-11-01,Banco de Occidente,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,51041.07,105,51041.07,800328.5153
+2026-11-01,Banco de Occidente,Comercial ordinario,Factoring,Hasta 12 meses,279907.2,529,279907.2,4099598.8379
+2026-11-01,Banco de Occidente,Comercial ordinario,Financiero e institucional,37 a 60 meses,11111.11,2,11111.11,115333.3333
+2026-11-01,Banco de Occidente,Comercial ordinario,Financiero e institucional,61 a 120 meses,15140.25,1,15140.25,208178.4141
+2026-11-01,Banco de Occidente,Comercial ordinario,Leasing financiero - financiación inmuebles diferente de habitacional,13 a 36 meses,5230.77,1,5230.77,78723.0769
+2026-11-01,Banco de Occidente,Comercial ordinario,Leasing financiero - financiación inmuebles diferente de habitacional,37 a 60 meses,700.0,1,700.0,12845.0
+2026-11-01,Banco de Occidente,Comercial ordinario,Leasing financiero - financiación inmuebles diferente de habitacional,61 a 120 meses,37395.94,14,37395.94,632247.9695
+2026-11-01,Banco de Occidente,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,13 a 36 meses,970.43,4,970.43,16297.3494
+2026-11-01,Banco de Occidente,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,37 a 60 meses,17198.08,8,17198.08,241572.3884
+2026-11-01,Banco de Occidente,Comercial ordinario,Leasing financiero - financiación vehículos,13 a 36 meses,900.99,4,900.99,14349.1717
+2026-11-01,Banco de Occidente,Comercial ordinario,Leasing financiero - financiación vehículos,37 a 60 meses,7494.67,26,7494.67,134667.2578
+2026-11-01,Banco de Occidente,Comercial ordinario,Leasing financiero - financiación vehículos,61 a 120 meses,890.59,6,890.59,18525.1626
+2026-11-01,Banco de Occidente,Comercial ordinario,Leasing financiero - otros,13 a 36 meses,222.24,1,222.24,4509.1715
+2026-11-01,Banco de Occidente,Comercial ordinario,Oficial o Gobierno,37 a 60 meses,10000.0,1,10000.0,187200.0
+2026-11-01,Banco de Occidente,Comercial ordinario,Oficial o Gobierno,61 a 120 meses,349323.05,3,349323.05,4746191.0525
+2026-11-01,Banco de Occidente,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,13 a 36 meses,8.87,1,8.87,250.0755
+2026-11-01,Banco de Occidente,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,259062.52,1691,259062.52,7302972.3148
+2026-11-01,Banco de Occidente,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,60.24,23,60.24,1698.1564
+2026-11-01,Banco de Occidente,Comercial ordinario,Tarjeta de crédito empresarial,37 a 60 meses,3.54,2,3.54,99.8578
+2026-11-01,Banco de Occidente,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,2340.52,207,2340.52,60051.0196
+2026-11-01,Banco de Occidente,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,23731.78,605,23731.78,664938.1134
+2026-11-01,Banco de Occidente,Comercial preferencial o corporativo,Corporativo,13 a 36 meses,11176.19,3,11176.19,167970.2939
+2026-11-01,Banco de Occidente,Comercial preferencial o corporativo,Corporativo,37 a 60 meses,18491.0,3,18491.0,290711.62
+2026-11-01,Banco de Occidente,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,66371.09,10,66371.09,923920.3785
+2026-11-01,Banco de Occidente,Comercial tesoreria,Empresarial - Tesoreria,Hasta 12 meses,88290.12,7,88290.12,1379408.4686
+2026-11-01,Banco de Occidente,Consumo,Consumo empleados,13 a 36 meses,108.8,6,108.8,1887.984
+2026-11-01,Banco de Occidente,Consumo,Consumo empleados,37 a 60 meses,290.74,19,290.74,5313.7229
+2026-11-01,Banco de Occidente,Consumo,Consumo empleados,61 a 120 meses,1776.27,48,1776.27,29947.52
+2026-11-01,Banco de Occidente,Consumo,Consumo empleados,Más de 120 meses,65.26,1,65.26,304.0989
+2026-11-01,Banco de Occidente,Consumo,Consumo otros,13 a 36 meses,71.74,4,71.74,737.1368
+2026-11-01,Banco de Occidente,Consumo,Consumo otros,37 a 60 meses,166.87,15,166.87,2890.699
+2026-11-01,Banco de Occidente,Consumo,Consumo otros,61 a 120 meses,1858.72,42,1858.72,20999.8407
+2026-11-01,Banco de Occidente,Consumo,Consumo otros,Hasta 12 meses,1.95,1,1.95,54.7365
+2026-11-01,Banco de Occidente,Consumo,Consumo otros,Más de 120 meses,2034.12,26,2034.12,31175.2481
+2026-11-01,Banco de Occidente,Consumo,Crédito rotativo,13 a 36 meses,8.0,1,8.0,224.4
+2026-11-01,Banco de Occidente,Consumo,Crédito rotativo,37 a 60 meses,1183.81,75,1183.81,29881.2468
+2026-11-01,Banco de Occidente,Consumo,Crédito rotativo,Hasta 12 meses,1.0,1,1.0,27.8
+2026-11-01,Banco de Occidente,Consumo,Libranza otros,13 a 36 meses,746.75,57,746.75,13721.919
+2026-11-01,Banco de Occidente,Consumo,Libranza otros,37 a 60 meses,4083.21,128,4083.21,73714.1443
+2026-11-01,Banco de Occidente,Consumo,Libranza otros,61 a 120 meses,25395.12,387,25395.12,514890.9107
+2026-11-01,Banco de Occidente,Consumo,Libranza otros,Hasta 12 meses,19.7,4,19.7,353.193
+2026-11-01,Banco de Occidente,Consumo,Libranza otros,Más de 120 meses,12145.89,120,12145.89,228835.0866
+2026-11-01,Banco de Occidente,Consumo,Libre inversión,13 a 36 meses,1231.73,50,1231.73,27306.5145
+2026-11-01,Banco de Occidente,Consumo,Libre inversión,37 a 60 meses,5823.93,118,5823.93,123733.1623
+2026-11-01,Banco de Occidente,Consumo,Libre inversión,61 a 120 meses,62648.45,402,62648.45,1331877.8552
+2026-11-01,Banco de Occidente,Consumo,Libre inversión,Hasta 12 meses,328.02,9,328.02,8513.7103
+2026-11-01,Banco de Occidente,Consumo,Libre inversión,Más de 120 meses,1342.04,10,1342.04,29083.5181
+2026-11-01,Banco de Occidente,Consumo,Sobregiro en cuenta corriente persona natural,13 a 36 meses,19.98,2,19.98,563.1704
+2026-11-01,Banco de Occidente,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,5540.19,457,5540.19,156178.0968
+2026-11-01,Banco de Occidente,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,5526.71,764,5526.71,135944.7647
+2026-11-01,Banco de Occidente,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,2340.15,151,2340.15,40942.4151
+2026-11-01,Banco de Occidente,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,28127.37,1659,28127.37,774610.3869
+2026-11-01,Banco de Occidente,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,109750.5,3059,109750.5,2877621.9754
+2026-11-01,Banco de Occidente,Consumo,Vehículo,13 a 36 meses,594.38,17,594.38,12044.757
+2026-11-01,Banco de Occidente,Consumo,Vehículo,37 a 60 meses,1638.35,23,1638.35,31654.8513
+2026-11-01,Banco de Occidente,Consumo,Vehículo,61 a 120 meses,26573.16,175,26573.16,518811.4057
+2026-11-01,Banco de Occidente,Consumo,Vehículo,Más de 120 meses,979.19,7,979.19,17285.7582
+2026-11-01,Banco de Occidente,Crédito productivo,Crédito productivo de mayor monto (con recursos de redescuento),37 a 60 meses,1019.9,10,1019.9,22184.448
+2026-11-01,Banco de Occidente,Crédito productivo,Crédito productivo de mayor monto (con recursos de redescuento),61 a 120 meses,156.9,1,156.9,3977.415
+2026-11-01,Banco de Occidente,Crédito productivo,Crédito productivo de mayor monto (con recursos de redescuento),Hasta 12 meses,150.0,1,150.0,3435.0
+2026-11-01,Banco de Occidente,Vivienda,Adquisición de vivienda no vis (colocación en pesos),37 a 60 meses,207.0,1,207.0,3235.41
+2026-11-01,Banco de Occidente,Vivienda,Adquisición de vivienda no vis (colocación en pesos),Más de 120 meses,10501.65,30,10501.65,158883.9951
+2026-11-01,Banco de Occidente,Vivienda,Adquisición de vivienda no vis (colocación en uvr),Más de 120 meses,960.8,2,960.8,7382.4671
+2026-11-01,Banco de Occidente,Vivienda,Adquisición de vivienda vis (colocación en pesos),Más de 120 meses,1861.69,7,1861.69,27508.7307
+2026-11-01,Banco de Occidente,Vivienda,Adquisición de vivienda vis (colocación en uvr),Más de 120 meses,174.49,2,174.49,439.561
+2026-11-01,Banco de Occidente,Vivienda,Adquisición leasing habitacional no vis (colocación en pesos),Más de 120 meses,4460.99,9,4460.99,65690.2023
+2026-11-01,Banco de Occidente,Vivienda,Adquisición leasing habitacional vis (colocación en pesos),Más de 120 meses,188.26,1,188.26,3149.5542
+2026-11-01,Bancolombia,Comercial especial,Comerciales especiales establecidos mediante leyes,Hasta 12 meses,19073.75,143,19073.75,287650.0432
+2026-11-01,Bancolombia,Comercial ordinario,Comerciales con recursos provenientes de redescuento,13 a 36 meses,9867.04,70,9867.04,226575.2819
+2026-11-01,Bancolombia,Comercial ordinario,Comerciales con recursos provenientes de redescuento,37 a 60 meses,3071.0,6,3071.0,46332.11
+2026-11-01,Bancolombia,Comercial ordinario,Comerciales con recursos provenientes de redescuento,61 a 120 meses,1111.36,3,1111.36,11378.8566
+2026-11-01,Bancolombia,Comercial ordinario,Comerciales con recursos provenientes de redescuento,Hasta 12 meses,683.0,5,683.0,16218.82
+2026-11-01,Bancolombia,Comercial ordinario,Construcción - financiación de proyectos viales en UVR,37 a 60 meses,20940.17,1,20940.17,112029.9145
+2026-11-01,Bancolombia,Comercial ordinario,Construcción de proyectos de vivienda no vis (colocación en uvr),13 a 36 meses,30074.2,15,30074.2,224601.3018
+2026-11-01,Bancolombia,Comercial ordinario,Construcción de proyectos de vivienda no vis (colocación en uvr),37 a 60 meses,1000.0,1,1000.0,8400.0
+2026-11-01,Bancolombia,Comercial ordinario,Construcción de proyectos de vivienda no vis (colocación en uvr),Hasta 12 meses,9034.92,5,9034.92,67761.9904
+2026-11-01,Bancolombia,Comercial ordinario,Construcción de proyectos de vivienda vis (colocación en uvr),13 a 36 meses,51530.7,27,51530.7,380953.3715
+2026-11-01,Bancolombia,Comercial ordinario,Construcción de proyectos de vivienda vis (colocación en uvr),Hasta 12 meses,13937.25,9,13937.25,104509.7852
+2026-11-01,Bancolombia,Comercial ordinario,Empresarial en UVR,13 a 36 meses,2840.0,1,2840.0,20448.0
+2026-11-01,Bancolombia,Comercial ordinario,Empresarial en UVR,61 a 120 meses,855.0,3,855.0,9172.5
+2026-11-01,Bancolombia,Comercial ordinario,Empresarial en UVR,Hasta 12 meses,1000.0,1,1000.0,7550.0
+2026-11-01,Bancolombia,Comercial ordinario,Empresarial en pesos,13 a 36 meses,408166.99,1813,408166.99,6874920.7139
+2026-11-01,Bancolombia,Comercial ordinario,Empresarial en pesos,37 a 60 meses,27851.54,78,27851.54,504019.5344
+2026-11-01,Bancolombia,Comercial ordinario,Empresarial en pesos,61 a 120 meses,9786.97,27,9786.97,170618.218
+2026-11-01,Bancolombia,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,606311.42,4839,606311.42,10198856.3429
+2026-11-01,Bancolombia,Comercial ordinario,Factoring,13 a 36 meses,1493.0,1,1493.0,27799.66
+2026-11-01,Bancolombia,Comercial ordinario,Factoring,Hasta 12 meses,512915.77,5209,512915.77,7278688.3638
+2026-11-01,Bancolombia,Comercial ordinario,Financiero e institucional,Hasta 12 meses,63889.8,13,63889.8,849766.204
+2026-11-01,Bancolombia,Comercial ordinario,Leasing financiero - financiación inmuebles diferente de habitacional,13 a 36 meses,1200.0,1,1200.0,21336.0
+2026-11-01,Bancolombia,Comercial ordinario,Leasing financiero - financiación inmuebles diferente de habitacional,37 a 60 meses,5850.35,6,5850.35,94638.7007
+2026-11-01,Bancolombia,Comercial ordinario,Leasing financiero - financiación inmuebles diferente de habitacional,61 a 120 meses,30502.9,21,30502.9,488159.9137
+2026-11-01,Bancolombia,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,13 a 36 meses,1015.58,4,1015.58,16955.416
+2026-11-01,Bancolombia,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,37 a 60 meses,4711.37,17,4711.37,84619.6153
+2026-11-01,Bancolombia,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,61 a 120 meses,7020.39,5,7020.39,101802.3532
+2026-11-01,Bancolombia,Comercial ordinario,Leasing financiero - financiación vehículos,13 a 36 meses,6774.95,12,6774.95,99322.8355
+2026-11-01,Bancolombia,Comercial ordinario,Leasing financiero - financiación vehículos,37 a 60 meses,17029.92,56,17029.92,292231.1415
+2026-11-01,Bancolombia,Comercial ordinario,Leasing financiero - financiación vehículos,61 a 120 meses,32178.0,9,32178.0,485503.8626
+2026-11-01,Bancolombia,Comercial ordinario,Leasing financiero - otros,13 a 36 meses,548.9,2,548.9,9158.5236
+2026-11-01,Bancolombia,Comercial ordinario,Leasing financiero - otros,37 a 60 meses,1122.68,4,1122.68,19463.4779
+2026-11-01,Bancolombia,Comercial ordinario,Leasing financiero - otros,61 a 120 meses,47614.88,77,47614.88,630739.0199
+2026-11-01,Bancolombia,Comercial ordinario,Oficial o Gobierno,37 a 60 meses,3241.75,1,3241.75,45125.1767
+2026-11-01,Bancolombia,Comercial ordinario,Oficial o Gobierno,61 a 120 meses,35057.34,13,35057.34,507895.7467
+2026-11-01,Bancolombia,Comercial ordinario,Oficial o Gobierno,Hasta 12 meses,15000.0,1,15000.0,186300.0
+2026-11-01,Bancolombia,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,1652909.25,10963,1294910.11,25485619.0194
+2026-11-01,Bancolombia,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,62183.42,18326,62116.18,1759751.3648
+2026-11-01,Bancolombia,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,17751.13,7976,17182.73,482863.5795
+2026-11-01,Bancolombia,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,234888.7,43878,18111.02,497968.3542
+2026-11-01,Bancolombia,Comercial preferencial o corporativo,Corporativo,13 a 36 meses,269532.88,30,269532.88,3794762.0584
+2026-11-01,Bancolombia,Comercial preferencial o corporativo,Corporativo,37 a 60 meses,144484.17,3,144484.17,2159346.3095
+2026-11-01,Bancolombia,Comercial preferencial o corporativo,Corporativo,61 a 120 meses,107209.0,4,107209.0,1585534.94
+2026-11-01,Bancolombia,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,431753.1,318,431753.1,6224397.4925
+2026-11-01,Bancolombia,Consumo,Consumo empleados,13 a 36 meses,83.5,9,83.5,1020.255
+2026-11-01,Bancolombia,Consumo,Consumo empleados,37 a 60 meses,4929.05,92,4929.05,60442.0408
+2026-11-01,Bancolombia,Consumo,Consumo empleados,61 a 120 meses,613.6,11,613.6,7516.9722
+2026-11-01,Bancolombia,Consumo,Consumo otros,37 a 60 meses,58.39,1,58.39,713.4846
+2026-11-01,Bancolombia,Consumo,Crédito rotativo,13 a 36 meses,985.92,150,985.92,24399.9404
+2026-11-01,Bancolombia,Consumo,Crédito rotativo,37 a 60 meses,90377.79,7898,90377.79,2270105.259
+2026-11-01,Bancolombia,Consumo,Crédito rotativo,Hasta 12 meses,0.13,1,0.13,3.1363
+2026-11-01,Bancolombia,Consumo,Créditos de consumo de bajo monto,13 a 36 meses,11637.65,343,11637.65,707019.708
+2026-11-01,Bancolombia,Consumo,Créditos de consumo de bajo monto,Hasta 12 meses,9033.3,474,9033.3,545857.7952
+2026-11-01,Bancolombia,Consumo,Libranza otros,37 a 60 meses,9.2,1,9.2,129.1462
+2026-11-01,Bancolombia,Consumo,Libranza otros,61 a 120 meses,62390.45,1708,62390.45,1241622.9395
+2026-11-01,Bancolombia,Consumo,Libranza otros,Más de 120 meses,8665.38,260,8665.38,181614.3734
+2026-11-01,Bancolombia,Consumo,Libre inversión,37 a 60 meses,521927.19,7814,521927.19,11474071.0957
+2026-11-01,Bancolombia,Consumo,Libre inversión,61 a 120 meses,2799.41,21,2799.41,56002.5525
+2026-11-01,Bancolombia,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,63087.34,9083,63085.97,1786135.932
+2026-11-01,Bancolombia,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,17216.77,9309,16845.58,473603.0697
+2026-11-01,Bancolombia,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,42913.39,17807,42078.35,1121237.6491
+2026-11-01,Bancolombia,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,178738.46,53640,152384.35,2646312.5263
+2026-11-01,Bancolombia,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,138069.63,26985,136557.95,3828232.2684
+2026-11-01,Bancolombia,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,180742.21,35037,178184.51,4769052.5288
+2026-11-01,Bancolombia,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,928903.85,103403,664803.65,7861371.7469
+2026-11-01,Bancolombia,Consumo,Vehículo,13 a 36 meses,1049.6,23,1049.6,22601.0295
+2026-11-01,Bancolombia,Consumo,Vehículo,37 a 60 meses,6628.34,80,6263.4,111387.5028
+2026-11-01,Bancolombia,Consumo,Vehículo,61 a 120 meses,65469.31,440,63305.23,1090660.1573
+2026-11-01,Bancolombia,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),13 a 36 meses,344.4,65,344.4,19765.819
+2026-11-01,Bancolombia,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),37 a 60 meses,42.78,8,42.78,2038.6394
+2026-11-01,Bancolombia,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),13 a 36 meses,4162.65,677,4162.65,263761.8415
+2026-11-01,Bancolombia,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),37 a 60 meses,915.86,139,915.86,44396.8445
+2026-11-01,Bancolombia,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),13 a 36 meses,7472.93,132,7472.93,172690.064
+2026-11-01,Bancolombia,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),37 a 60 meses,8262.5,146,8262.5,189761.074
+2026-11-01,Bancolombia,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),13 a 36 meses,1913.96,78,1913.96,54518.6244
+2026-11-01,Bancolombia,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),37 a 60 meses,612.4,23,612.4,17278.91
+2026-11-01,Bancolombia,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),13 a 36 meses,19789.22,807,19789.22,813295.5278
+2026-11-01,Bancolombia,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),37 a 60 meses,8517.92,337,8517.92,283461.3293
+2026-11-01,Bancolombia,Vivienda,Adquisición de vivienda no vis (colocación en pesos),37 a 60 meses,649.69,5,649.69,10338.8475
+2026-11-01,Bancolombia,Vivienda,Adquisición de vivienda no vis (colocación en pesos),61 a 120 meses,333.06,2,333.06,5415.653
+2026-11-01,Bancolombia,Vivienda,Adquisición de vivienda no vis (colocación en pesos),Más de 120 meses,92197.69,276,92197.69,1452637.1751
+2026-11-01,Bancolombia,Vivienda,Adquisición de vivienda no vis (colocación en uvr),Más de 120 meses,17270.21,53,17270.21,170248.1353
+2026-11-01,Bancolombia,Vivienda,Adquisición de vivienda vis (colocación en pesos),37 a 60 meses,659.5,5,659.5,9965.35
+2026-11-01,Bancolombia,Vivienda,Adquisición de vivienda vis (colocación en pesos),61 a 120 meses,510.36,5,510.36,7679.7595
+2026-11-01,Bancolombia,Vivienda,Adquisición de vivienda vis (colocación en pesos),Más de 120 meses,46945.36,239,46945.36,714406.8636
+2026-11-01,Bancolombia,Vivienda,Adquisición de vivienda vis (colocación en uvr),Más de 120 meses,29908.52,159,29908.52,275567.5919
+2026-11-01,Bancolombia,Vivienda,Construcción de vivienda individual no vis (colocación en pesos),37 a 60 meses,161.64,2,161.64,2567.106
+2026-11-01,Bancolombia,Vivienda,Construcción de vivienda individual no vis (colocación en pesos),Más de 120 meses,17390.64,87,17390.64,270457.7402
+2026-11-01,Bancolombia,Vivienda,Construcción de vivienda individual no vis (colocación en uvr),Más de 120 meses,1072.22,7,1072.22,10875.6107
+2026-11-01,Bancolombia,Vivienda,Construcción de vivienda individual vis (colocación en pesos),37 a 60 meses,75.0,2,75.0,1149.5
+2026-11-01,Bancolombia,Vivienda,Construcción de vivienda individual vis (colocación en pesos),Más de 120 meses,2496.13,37,2496.13,38021.3306
+2026-11-01,Bancolombia,Vivienda,Construcción de vivienda individual vis (colocación en uvr),Más de 120 meses,436.49,7,436.49,4009.2277
+2026-11-01,Bancolombia,Vivienda,Vivienda empleados,Más de 120 meses,12396.02,33,12396.02,60864.4699
+2026-11-01,Bancoomeva,Comercial ordinario,Empresarial en pesos,13 a 36 meses,7490.0,8,7490.0,155768.5
+2026-11-01,Bancoomeva,Comercial ordinario,Empresarial en pesos,37 a 60 meses,16363.65,15,16363.65,281683.0665
+2026-11-01,Bancoomeva,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,2959.66,13,2959.66,47083.3577
+2026-11-01,Bancoomeva,Comercial ordinario,Financiero e institucional,Hasta 12 meses,15000.0,1,15000.0,337350.0
+2026-11-01,Bancoomeva,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,185.82,16,185.82,5092.495
+2026-11-01,Bancoomeva,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,105.57,42,105.57,2952.1134
+2026-11-01,Bancoomeva,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,25.49,20,25.49,713.7762
+2026-11-01,Bancoomeva,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,382.71,72,382.71,10703.113
+2026-11-01,Bancoomeva,Consumo,Crédito rotativo,13 a 36 meses,798.99,215,798.99,19524.4913
+2026-11-01,Bancoomeva,Consumo,Crédito rotativo,37 a 60 meses,471.75,110,471.75,11259.0463
+2026-11-01,Bancoomeva,Consumo,Crédito rotativo,61 a 120 meses,1445.9,183,1445.9,35192.5823
+2026-11-01,Bancoomeva,Consumo,Crédito rotativo,Hasta 12 meses,853.71,286,853.71,20832.7688
+2026-11-01,Bancoomeva,Consumo,Créditos educativos diferentes a libranza,13 a 36 meses,15.39,2,15.39,341.0884
+2026-11-01,Bancoomeva,Consumo,Créditos educativos diferentes a libranza,37 a 60 meses,5.39,1,5.39,130.1934
+2026-11-01,Bancoomeva,Consumo,Créditos educativos diferentes a libranza,Hasta 12 meses,5.93,1,5.93,139.3481
+2026-11-01,Bancoomeva,Consumo,Libranza otros,13 a 36 meses,42.19,2,42.19,450.9743
+2026-11-01,Bancoomeva,Consumo,Libranza otros,37 a 60 meses,65.88,1,65.88,942.0953
+2026-11-01,Bancoomeva,Consumo,Libranza otros,61 a 120 meses,339.45,4,339.45,6613.61
+2026-11-01,Bancoomeva,Consumo,Libranza otros,Hasta 12 meses,0.91,1,0.91,24.8941
+2026-11-01,Bancoomeva,Consumo,Libre inversión,13 a 36 meses,352.86,22,352.86,7727.0469
+2026-11-01,Bancoomeva,Consumo,Libre inversión,37 a 60 meses,768.76,36,768.76,16889.6046
+2026-11-01,Bancoomeva,Consumo,Libre inversión,61 a 120 meses,18580.98,282,18580.98,408597.1452
+2026-11-01,Bancoomeva,Consumo,Libre inversión,Hasta 12 meses,30.7,9,30.7,629.2139
+2026-11-01,Bancoomeva,Consumo,Sobregiro en cuenta corriente persona natural,Hasta 12 meses,32.96,22,32.96,927.0801
+2026-11-01,Bancoomeva,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,5833.74,601,5833.74,119382.2865
+2026-11-01,Bancoomeva,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,37 a 60 meses,1260.85,218,1260.85,27930.727
+2026-11-01,Bancoomeva,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,2430.9,540,2428.72,62883.3526
+2026-11-01,Bancoomeva,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,4068.79,1033,4058.99,105575.4678
+2026-11-01,Bancoomeva,Consumo,Vehículo,61 a 120 meses,2421.44,21,2421.44,51231.6972
+2026-11-01,Bancoomeva,Vivienda,Adquisición de vivienda no vis (colocación en pesos),Más de 120 meses,1169.04,4,1169.04,18744.6613
+2026-11-01,Bancoomeva,Vivienda,Adquisición de vivienda vis (colocación en pesos),Más de 120 meses,124.0,2,124.0,1768.8
+2026-11-01,Citibank,Comercial ordinario,Factoring,Hasta 12 meses,39481.9,238,39481.9,587536.3891
+2026-11-01,Citibank,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,23894.73,23,23894.73,678771.3046
+2026-11-01,Citibank,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,16866.71,544,0.0,0.0
+2026-11-01,Citibank,Comercial preferencial o corporativo,Corporativo,13 a 36 meses,15900.0,1,15900.0,317205.0
+2026-11-01,Citibank,Comercial preferencial o corporativo,Corporativo,Hasta 12 meses,185655.91,423,185655.91,2779645.9062
+2026-11-01,Coopcentral,Comercial ordinario,Empresarial en pesos,13 a 36 meses,5480.0,8,5480.0,75197.2
+2026-11-01,Coopcentral,Comercial ordinario,Empresarial en pesos,37 a 60 meses,16454.3,10,16454.3,232934.457
+2026-11-01,Coopcentral,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,1669.75,5,1669.75,23941.48
+2026-11-01,Coopcentral,Comercial ordinario,Financiero e institucional,13 a 36 meses,6500.0,2,6500.0,95220.0
+2026-11-01,Coopcentral,Comercial ordinario,Financiero e institucional,37 a 60 meses,1752.8,4,1752.8,24767.104
+2026-11-01,Coopcentral,Comercial ordinario,Financiero e institucional,Hasta 12 meses,200.0,1,200.0,3024.0
+2026-11-01,Coopcentral,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,865.22,11,865.22,24226.0593
+2026-11-01,Coopcentral,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,164.0,142,164.0,3288.2979
+2026-11-01,Coopcentral,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,3.84,5,3.84,76.9076
+2026-11-01,Coopcentral,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,451.59,155,451.59,9054.3593
+2026-11-01,Coopcentral,Comercial preferencial o corporativo,Corporativo,13 a 36 meses,4000.0,1,4000.0,57400.0
+2026-11-01,Coopcentral,Consumo,Libranza otros,13 a 36 meses,155.5,3,155.5,2293.5
+2026-11-01,Coopcentral,Consumo,Libranza otros,37 a 60 meses,37.0,3,37.0,629.0
+2026-11-01,Coopcentral,Consumo,Libranza otros,61 a 120 meses,134.0,3,134.0,1984.0
+2026-11-01,Coopcentral,Consumo,Libre inversión,37 a 60 meses,60.0,4,60.0,1245.0
+2026-11-01,Coopcentral,Consumo,Libre inversión,61 a 120 meses,85.0,1,85.0,1530.0
+2026-11-01,Coopcentral,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,8.34,29,8.34,167.1498
+2026-11-01,Coopcentral,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,37 a 60 meses,1.62,1,1.62,32.5552
+2026-11-01,Coopcentral,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,16.0,24,16.0,320.8599
+2026-11-01,Coopcentral,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,50.98,77,50.98,1022.1632
+2026-11-01,Coopcentral,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,78.24,93,78.24,1568.6985
+2026-11-01,Coopcentral,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,0.22,1,0.22,4.3108
+2026-11-01,Coopcentral,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,146.4,127,146.4,2935.2789
+2026-11-01,Coopcentral,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,398.93,290,398.93,7998.5233
+2026-11-01,Finandina,Comercial ordinario,Leasing financiero - financiación vehículos,61 a 120 meses,332.0,2,332.0,9219.54
+2026-11-01,Finandina,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,350.98,155,350.98,9939.4363
+2026-11-01,Finandina,Comercial ordinario,Tarjeta de crédito empresarial,37 a 60 meses,21.52,6,21.52,565.2891
+2026-11-01,Finandina,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,105.74,71,105.74,2934.0473
+2026-11-01,Finandina,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,367.75,281,367.75,10435.5658
+2026-11-01,Finandina,Consumo,Libranza otros,13 a 36 meses,129.0,18,129.0,3251.196
+2026-11-01,Finandina,Consumo,Libranza otros,37 a 60 meses,229.67,19,229.67,5419.0642
+2026-11-01,Finandina,Consumo,Libranza otros,61 a 120 meses,1141.15,39,1141.15,26829.0359
+2026-11-01,Finandina,Consumo,Libranza otros,Más de 120 meses,4702.72,121,4702.72,109520.7562
+2026-11-01,Finandina,Consumo,Libre inversión,13 a 36 meses,590.05,34,590.05,16649.1097
+2026-11-01,Finandina,Consumo,Libre inversión,37 a 60 meses,992.29,48,992.29,27998.2861
+2026-11-01,Finandina,Consumo,Libre inversión,61 a 120 meses,571.43,19,571.43,16045.2492
+2026-11-01,Finandina,Consumo,Libre inversión,Hasta 12 meses,64.99,10,64.99,1790.7446
+2026-11-01,Finandina,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,398.54,711,398.54,11271.167
+2026-11-01,Finandina,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,37 a 60 meses,39.95,25,39.95,985.8256
+2026-11-01,Finandina,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,300.79,476,300.79,8491.3644
+2026-11-01,Finandina,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,726.59,1124,726.59,20621.1255
+2026-11-01,Finandina,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,3910.34,1894,3910.34,109303.0846
+2026-11-01,Finandina,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,1058.39,116,1058.39,27135.3923
+2026-11-01,Finandina,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,3005.25,1690,3005.25,84935.792
+2026-11-01,Finandina,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,4274.69,3102,4274.69,121326.992
+2026-11-01,Finandina,Consumo,Vehículo,13 a 36 meses,2191.18,46,2191.18,46518.9501
+2026-11-01,Finandina,Consumo,Vehículo,37 a 60 meses,10374.19,148,10374.19,229633.6805
+2026-11-01,Finandina,Consumo,Vehículo,61 a 120 meses,36650.77,381,36650.77,836042.0217
+2026-11-01,Finandina,Consumo,Vehículo,Hasta 12 meses,134.87,11,134.87,2644.5834
+2026-11-01,Finandina,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),13 a 36 meses,47.76,1,47.76,833.412
+2026-11-01,Finandina,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),37 a 60 meses,353.26,4,353.26,7300.8988
+2026-11-01,Finandina,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),61 a 120 meses,1526.52,14,1526.52,40329.5239
+2026-11-01,Itaú,Comercial ordinario,Empresarial en pesos,13 a 36 meses,22970.38,20,22970.38,357947.8537
+2026-11-01,Itaú,Comercial ordinario,Empresarial en pesos,37 a 60 meses,24003.87,1,24003.87,383101.8422
+2026-11-01,Itaú,Comercial ordinario,Empresarial en pesos,61 a 120 meses,8964.0,1,8964.0,139838.4
+2026-11-01,Itaú,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,198002.89,151,198002.89,3124663.7483
+2026-11-01,Itaú,Comercial ordinario,Factoring,Hasta 12 meses,39468.14,149,39468.14,617302.9755
+2026-11-01,Itaú,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,13 a 36 meses,1373.79,2,1373.79,19823.3447
+2026-11-01,Itaú,Comercial ordinario,Leasing financiero - financiación maquinaria y equipo,37 a 60 meses,303.21,3,303.21,4719.045
+2026-11-01,Itaú,Comercial ordinario,Leasing financiero - financiación vehículos,37 a 60 meses,535.9,1,535.9,7877.73
+2026-11-01,Itaú,Comercial ordinario,Leasing financiero - otros,37 a 60 meses,1140.4,2,1140.4,17398.7769
+2026-11-01,Itaú,Comercial ordinario,Otros Comercial,13 a 36 meses,1725.53,1,1725.53,27090.8364
+2026-11-01,Itaú,Comercial ordinario,Sobregiro en cuenta corriente persona jurídica o persona natural,Hasta 12 meses,199832.61,83,199832.61,3228109.9294
+2026-11-01,Itaú,Comercial ordinario,Tarjeta de crédito empresarial,13 a 36 meses,185.13,82,185.13,5240.4867
+2026-11-01,Itaú,Comercial ordinario,Tarjeta de crédito empresarial,Hasta 12 meses,151.79,97,151.79,4297.2427
+2026-11-01,Itaú,Comercial ordinario,Tarjeta de crédito empresarial,Sin plazo,4656.08,1160,0.0,0.0
+2026-11-01,Itaú,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,13 a 36 meses,32.72,17,32.72,926.9661
+2026-11-01,Itaú,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Hasta 12 meses,75.92,37,75.92,2149.0639
+2026-11-01,Itaú,Consumo,Tarjeta de crédito para ingresos hasta 2 SMMLV,Sin plazo,855.12,166,0.0,0.0
+2026-11-01,Itaú,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,41.45,4,41.45,1172.9118
+2026-11-01,Itaú,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,24.76,4,24.76,700.8528
+2026-11-01,Itaú,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,514.1,33,0.0,0.0
+2026-11-01,Lulo Bank,Comercial ordinario,Factoring,Hasta 12 meses,5199.8,52,5199.8,97537.9989
+2026-11-01,Lulo Bank,Consumo,Libre inversión,13 a 36 meses,14077.24,888,14077.24,293791.5157
+2026-11-01,Lulo Bank,Consumo,Libre inversión,37 a 60 meses,22879.69,993,22879.69,532993.8098
+2026-11-01,Lulo Bank,Consumo,Libre inversión,Hasta 12 meses,2213.31,582,2213.31,47900.7604
+2026-11-01,Lulo Bank,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,13 a 36 meses,5135.17,2374,5135.17,143572.356
+2026-11-01,Lulo Bank,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,37 a 60 meses,98.33,39,98.33,2781.8554
+2026-11-01,Lulo Bank,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Hasta 12 meses,3971.32,1660,3802.16,93946.785
+2026-11-01,Lulo Bank,Consumo,Tarjeta de crédito para ingresos superiores a 2 SMMLV,Sin plazo,7310.67,3175,0.0,0.0
+2026-11-01,Mibanco,Comercial ordinario,Empresarial en pesos,13 a 36 meses,566.05,30,566.05,15798.57
+2026-11-01,Mibanco,Comercial ordinario,Empresarial en pesos,37 a 60 meses,238.43,7,238.43,6048.476
+2026-11-01,Mibanco,Comercial ordinario,Empresarial en pesos,Hasta 12 meses,95.38,31,95.38,2631.8098
+2026-11-01,Mibanco,Consumo,Consumo empleados,13 a 36 meses,12.0,1,12.0,180.0
+2026-11-01,Mibanco,Consumo,Consumo empleados,37 a 60 meses,45.0,3,45.0,675.0
+2026-11-01,Mibanco,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),13 a 36 meses,2898.57,621,2898.57,176478.1697
+2026-11-01,Mibanco,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),37 a 60 meses,156.89,19,156.89,9545.1602
+2026-11-01,Mibanco,Crédito productivo,Crédito popular productivo rural (sin recursos de redescuento),Hasta 12 meses,360.43,191,360.43,20208.3088
+2026-11-01,Mibanco,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),13 a 36 meses,22118.39,4586,22118.39,1452639.837
+2026-11-01,Mibanco,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),37 a 60 meses,1440.35,194,1440.35,90383.2305
+2026-11-01,Mibanco,Crédito productivo,Crédito popular productivo urbano (sin recursos de redescuento),Hasta 12 meses,4030.78,2078,4030.78,265823.2437
+2026-11-01,Mibanco,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),13 a 36 meses,13295.02,211,13295.02,440594.5616
+2026-11-01,Mibanco,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),37 a 60 meses,41005.94,568,41005.94,1295487.5518
+2026-11-01,Mibanco,Crédito productivo,Crédito productivo de mayor monto (sin recursos de redescuento),Hasta 12 meses,591.17,11,591.17,22367.9273
+2026-11-01,Mibanco,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),13 a 36 meses,2059.48,108,2059.48,68606.8446
+2026-11-01,Mibanco,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),37 a 60 meses,668.45,25,668.45,22110.9075
+2026-11-01,Mibanco,Crédito productivo,Crédito productivo rural (sin recursos de redescuento),Hasta 12 meses,137.3,6,137.3,4478.415
+2026-11-01,Mibanco,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),13 a 36 meses,20831.06,1121,20831.06,1089558.289
+2026-11-01,Mibanco,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),37 a 60 meses,9028.27,405,9028.27,444347.7794
+2026-11-01,Mibanco,Crédito productivo,Crédito productivo urbano (sin recursos de redescuento),Hasta 12 meses,1435.99,85,1435.99,74361.8202
